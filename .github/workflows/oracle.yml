@@ -1,0 +1,51 @@
+name: Score Oracle
+
+on:
+  schedule:
+    - cron: "0 5 * * *"        # 08:00 Israel, every morning
+  workflow_dispatch:           # the "run now" button
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oracle
+  cancel-in-progress: false
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Restore source cache
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: oracle-cache-${{ github.run_id }}
+          restore-keys: oracle-cache-
+
+      - name: Update data
+        run: python -m oracle update
+
+      - name: Backtest and learn weights
+        run: python -m oracle backtest --days 540 --step 14
+
+      - name: Predict and export
+        run: python -m oracle predict --days 8 --export
+
+      - name: Commit results
+        run: |
+          git config user.name "score-oracle-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add docs/data.json data/ledger.csv data/ensemble.json data/matches.csv
+          git diff --cached --quiet || git commit -m "predictions $(date -u +%Y-%m-%d\ %H:%M) UTC"
+          git push

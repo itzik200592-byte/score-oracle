@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Score Oracle</title>
+<meta name="description" content="חיזוי תוצאות כדורגל סטטיסטי: ליגת האלופות, ליגת העל, אנגליה, ספרד, איטליה, צרפת">
+<meta name="theme-color" content="#0b0f14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Oracle">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b0f14' stroke='%23c8f542' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23c8f542'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23c8f542' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23c8f542'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Rubik:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f14;--surface:#121821;--surface-2:#182130;--line:rgba(255,255,255,.09);
+  --ink:#eef2f6;--ink-dim:#9aa7b6;--ink-faint:#5f6c7b;
+  --accent:#c8f542;--accent-ink:#0b0f14;
+  --a:#c8f542;--b:#f5b942;--c:#7d8ba0;
+  --home:#4dd4a1;--draw:#6b7a8e;--away:#5aa9ff;
+  --r:16px;--pad:16px;
+  --ease:cubic-bezier(.2,.8,.2,1);--dur:220ms;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{margin:0;font-family:Heebo,system-ui,sans-serif;font-size:16px;line-height:1.5;color:var(--ink);background:
+  radial-gradient(900px 500px at 80% -10%,rgba(200,245,66,.08),transparent 60%),var(--bg);
+  min-height:100dvh;padding-bottom:calc(24px + env(safe-area-inset-bottom));overscroll-behavior-y:contain}
+::selection{background:var(--accent);color:var(--accent-ink)}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
+.num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+header{position:sticky;top:0;z-index:20;background:rgba(11,15,20,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) var(--pad) 10px}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px}
+h1{font-family:Rubik,Heebo,sans-serif;font-weight:900;font-size:22px;margin:0;letter-spacing:0;line-height:1}
+h1 span{color:var(--accent)}
+.meta{color:var(--ink-dim);font-size:13px;margin-top:3px}
+.actions{display:flex;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--line);
+  background:var(--surface-2);font-weight:500;font-size:14px;text-decoration:none;transition:transform var(--dur) var(--ease),background var(--dur) var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:transparent;font-weight:700}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.icon{padding:0;width:44px;justify-content:center}
+.btn[aria-busy="true"] svg{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:12px var(--pad) 4px;margin:0 calc(-1*var(--pad))}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-dim);
+  font-weight:500;font-size:14px;transition:all var(--dur) var(--ease);white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:700}
+
+main{padding:0 var(--pad);max-width:720px;margin:0 auto}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.stat b{display:block;font-family:Rubik,sans-serif;font-weight:800;font-size:22px;line-height:1.1}
+.stat small{color:var(--ink-dim);font-size:12px;display:block;margin-top:2px}
+
+h2{font-family:Rubik,sans-serif;font-weight:800;font-size:17px;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+h2 .count{font:500 12px Heebo;color:var(--ink-dim);background:var(--surface-2);padding:2px 8px;border-radius:999px}
+.day{color:var(--ink-dim);font-size:13px;font-weight:500;margin:16px 0 6px;position:sticky;top:122px;z-index:5}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:10px;
+  animation:in .35s var(--ease) both}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.card.A{border-color:rgba(200,245,66,.35);box-shadow:0 0 0 1px rgba(200,245,66,.12) inset}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.teams{min-width:0;flex:1}
+.team{font-weight:700;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:ltr;text-align:right}
+.team.away{color:var(--ink-dim);font-weight:500}
+.pick{flex:none;text-align:center;min-width:76px}
+.pick b{display:block;font-family:Rubik,sans-serif;font-weight:900;font-size:30px;line-height:1;direction:ltr;letter-spacing:-1px}
+.pick small{display:block;font-size:12px;color:var(--ink-dim);margin-top:2px}
+.tier{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;margin-top:6px}
+.tier.A{background:rgba(200,245,66,.14);color:var(--a)}
+.tier.B{background:rgba(245,185,66,.14);color:var(--b)}
+.tier.C{background:rgba(125,139,160,.14);color:var(--c)}
+.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin:12px 0 4px;background:var(--surface-2)}
+.bar i{display:block;height:100%}
+.bar .h{background:var(--home)}.bar .d{background:var(--draw)}.bar .a{background:var(--away)}
+.legend{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-dim)}
+.legend b{color:var(--ink);font-weight:500}
+.alts{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.alt{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:3px 8px;color:var(--ink-dim);direction:ltr}
+.alt b{color:var(--ink)}
+.more{display:flex;gap:14px;font-size:12px;color:var(--ink-dim);margin-top:8px;flex-wrap:wrap}
+
+.empty{text-align:center;color:var(--ink-dim);padding:40px 0}
+.skel{height:120px;border-radius:var(--r);background:linear-gradient(90deg,var(--surface),var(--surface-2),var(--surface));
+  background-size:200% 100%;animation:sh 1.2s linear infinite;margin-bottom:10px}
+@keyframes sh{to{background-position:-200% 0}}
+details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:0 14px;margin:14px 0}
+summary{min-height:48px;display:flex;align-items:center;font-weight:700;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";margin-inline-start:auto;width:8px;height:8px;border-inline-end:2px solid var(--ink-dim);border-bottom:2px solid var(--ink-dim);transform:rotate(45deg);transition:transform var(--dur)}
+details[open] summary::after{transform:rotate(-135deg)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px}
+td,th{padding:7px 4px;border-top:1px solid var(--line);text-align:right}
+th{color:var(--ink-dim);font-weight:500}
+.hit{color:var(--a);font-weight:700}.miss{color:var(--ink-faint)}
+.note{font-size:13px;color:var(--ink-dim);line-height:1.6;padding:8px 0 14px}
+footer{text-align:center;color:var(--ink-faint);font-size:12px;padding:30px var(--pad) 0}
+.toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));inset-inline:16px;background:var(--ink);color:var(--bg);padding:12px 16px;
+  border-radius:12px;font-weight:500;transform:translateY(120%);transition:transform .3s var(--ease);z-index:50;text-align:center}
+.toast.show{transform:none}
+@media (min-width:720px){.stats{grid-template-columns:repeat(3,1fr)}.pick b{font-size:34px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div>
+      <h1>Score<span>Oracle</span></h1>
+      <div class="meta" id="updated">טוען...</div>
+    </div>
+    <div class="actions">
+      <button class="btn icon" id="reload" aria-label="רענן נתונים" title="רענן">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></svg>
+      </button>
+      <a class="btn primary" id="run" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l14 8-14 8z"/></svg>
+        הרץ חישוב
+      </a>
+    </div>
+  </div>
+  <div class="tabs" role="tablist" id="tabs"></div>
+</header>
+
+<main>
+  <div class="stats" id="stats"></div>
+  <div id="list"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
+
+  <details id="ledger"><summary>מעקב פגיעות אמיתי</summary><div id="ledgerBody"></div></details>
+  <details><summary>איך לקרוא את זה</summary>
+    <div class="note">
+      <b>הניחוש</b> הוא התוצאה הבודדת הסבירה ביותר לפי שילוב של חמישה מודלים סטטיסטיים (Dixon-Coles, xG, Elo, מודל מאוחד ושוק).<br>
+      <b>דרגה A</b> = המודל בטוח יחסית בתוצאה המדויקת. בבדיקה לאחור דרגה A פוגעת כמעט פי שניים מדרגה C.<br>
+      <b>דרגה B</b> = ודאות בינונית. <b>דרגה C</b> = משחק פתוח, כמה תוצאות כמעט שוות.<br>
+      הפס הצבעוני מראה ניצחון בית / תיקו / ניצחון חוץ. גם בדרגה A, פגיעה מדויקת היא בערך אחת מכל חמישה משחקים. זו תקרה של כדורגל, לא של המודל.<br>
+      זה ניתוח סטטיסטי בלבד, לא ייעוץ הימורים.
+    </div>
+  </details>
+</main>
+<footer id="foot"></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const REPO = "itzik200592-byte/score-oracle";
+const RUN_URL = `https://github.com/${REPO}/actions/workflows/oracle.yml`;
+const ORDER = ["sniper","IL","CL","PL","LL","SA","L1"];
+const NAMES = {sniper:"סניפר"};
+const DAYS = ["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
+let DATA = null, current = localStorage.getItem("tab") || "sniper";
+document.getElementById("run").href = RUN_URL;
+
+const toast = (t)=>{const e=document.getElementById("toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),3000)};
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmtDate = iso=>{const d=new Date(iso+"T12:00:00");return `יום ${DAYS[d.getDay()]}, ${d.getDate()}.${d.getMonth()+1}`};
+const ago = iso=>{const m=Math.round((Date.now()-new Date(iso))/60000);if(m<60)return `לפני ${m} דק'`;const h=Math.round(m/60);if(h<48)return `לפני ${h} שעות`;return `לפני ${Math.round(h/24)} ימים`};
+
+async function load(){
+  const btn=document.getElementById("reload");btn.setAttribute("aria-busy","true");
+  try{
+    const r=await fetch(`data.json?t=${Date.now()}`,{cache:"no-store"});
+    if(!r.ok) throw new Error(r.status);
+    DATA=await r.json();
+    render();
+  }catch(e){
+    document.getElementById("list").innerHTML=`<div class="empty">לא הצלחתי לטעון נתונים.<br><small>${esc(e.message)}</small></div>`;
+  }finally{btn.removeAttribute("aria-busy")}
+}
+
+function render(){
+  const g=new Date(DATA.generated_at);
+  document.getElementById("updated").textContent=`עודכן ${ago(DATA.generated_at)} (${g.toLocaleString("he-IL",{timeZone:"Asia/Jerusalem",day:"numeric",month:"numeric",hour:"2-digit",minute:"2-digit"})})`;
+  // tabs
+  const counts={sniper:DATA.predictions.filter(p=>p.tier==="A").length};
+  for(const p of DATA.predictions) counts[p.league]=(counts[p.league]||0)+1;
+  document.getElementById("tabs").innerHTML=ORDER.filter(k=>counts[k]).map(k=>
+    `<button class="tab" role="tab" data-k="${k}" aria-selected="${k===current}">${esc(NAMES[k]||DATA.leagues[k])} <span class="num">${counts[k]}</span></button>`).join("");
+  if(!counts[current]) current="sniper";
+  document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{current=b.dataset.k;localStorage.setItem("tab",current);render();window.scrollTo({top:0,behavior:"smooth"})});
+  // stats
+  const L=DATA.ledger&&DATA.ledger.all, B=DATA.backtest;
+  document.getElementById("stats").innerHTML=[
+    L&&L.n?[`<span class="num">${L.exact_pct}%</span>`,`פגיעה מדויקת בפועל (${L.n} משחקים)`]:[`<span class="num">${counts.sniper}</span>`,"משחקי סניפר השבוע"],
+    B?[`<span class="num">${B.tiers.find(t=>t.tier==="A")?.hit_pct??"-"}%</span>`,"פגיעה בדרגה A בבדיקה"]:["-",""],
+    B?[`<span class="num">${B.result_pct}%</span>`,"כיוון נכון בבדיקה"]:["-",""]
+  ].map(([v,l])=>`<div class="stat"><b>${v}</b><small>${l}</small></div>`).join("");
+  // list
+  let rows=current==="sniper"?DATA.predictions.filter(p=>p.tier==="A"):DATA.predictions.filter(p=>p.league===current);
+  rows=[...rows].sort((a,b)=>a.date.localeCompare(b.date)||b.p_pick-a.p_pick);
+  const list=document.getElementById("list");
+  if(!rows.length){list.innerHTML=`<div class="empty">אין משחקים בקטגוריה הזאת בימים הקרובים.</div>`;return}
+  let html="",day="",i=0;
+  for(const p of rows){
+    if(p.date!==day){day=p.date;html+=`<div class="day">${fmtDate(day)}</div>`}
+    html+=card(p,i++);
+  }
+  list.innerHTML=html;
+  renderLedger();
+  document.getElementById("foot").innerHTML=`כיסוי: ${DATA.coverage.map(c=>`${esc(DATA.leagues[c.league])} <span class="num">${c.played}</span>`).join(" · ")}`;
+}
+
+function card(p,i){
+  const tierTxt={A:"סניפר",B:"ירייה",C:"פתוח"}[p.tier];
+  return `<article class="card ${p.tier}" style="animation-delay:${Math.min(i,10)*40}ms">
+    <div class="row">
+      <div class="teams">
+        <div class="team">${esc(p.home)}</div>
+        <div class="team away">${esc(p.away)}</div>
+        <span class="tier ${p.tier}">${p.tier} · ${tierTxt}</span>
+        ${current==="sniper"?`<span class="tier C" style="margin-inline-start:4px">${esc(DATA.leagues[p.league])}</span>`:""}
+      </div>
+      <div class="pick"><b>${p.pick}</b><small><span class="num">${p.p_pick}%</span> לתוצאה</small></div>
+    </div>
+    <div class="bar" aria-hidden="true"><i class="h" style="width:${p.pH}%"></i><i class="d" style="width:${p.pD}%"></i><i class="a" style="width:${p.pA}%"></i></div>
+    <div class="legend"><span>בית <b class="num">${p.pH}%</b></span><span>תיקו <b class="num">${p.pD}%</b></span><span>חוץ <b class="num">${p.pA}%</b></span></div>
+    <div class="alts">${p.top.slice(1,4).map(t=>`<span class="alt"><b>${t.score}</b> ${t.p.toFixed(1)}%</span>`).join("")}</div>
+    <div class="more"><span>מעל 2.5: <b class="num">${p.over25}%</b></span><span>שתיהן מבקיעות: <b class="num">${p.btts}%</b></span><span>שערים צפויים: <b class="num">${p.xg_h} - ${p.xg_a}</b></span></div>
+  </article>`;
+}
+
+function renderLedger(){
+  const L=DATA.ledger, el=document.getElementById("ledgerBody");
+  if(!L||!L.n&&!(L.all&&L.all.n)){el.innerHTML=`<div class="note">עוד אין משחקים שהסתיימו אחרי שנוחשו. הטבלה תתמלא אוטומטית.</div>`;return}
+  const tiers=Object.entries(L.by_tier).map(([t,b])=>`<tr><td>דרגה ${t}</td><td class="num">${b.n}</td><td class="num">${b.exact_pct}%</td><td class="num">${b.result_pct}%</td></tr>`).join("");
+  const rec=L.recent.map(r=>`<tr><td>${esc(r.home)} - ${esc(r.away)}</td><td class="num">${r.pick}</td><td class="num ${r.hit?"hit":"miss"}">${r.actual}</td><td>${r.tier}</td></tr>`).join("");
+  el.innerHTML=`<div class="note">סה"כ <b class="num">${L.all.n}</b> ניחושים שהסתיימו: פגיעה מדויקת <b class="num">${L.all.exact_pct}%</b>, כיוון נכון <b class="num">${L.all.result_pct}%</b>.</div>
+  <table><tr><th>דרגה</th><th>משחקים</th><th>מדויק</th><th>כיוון</th></tr>${tiers}</table>
+  <table><tr><th>משחק</th><th>ניחוש</th><th>בפועל</th><th>דרגה</th></tr>${rec}</table>`;
+}
+
+document.getElementById("reload").onclick=()=>{load();toast("מרענן...")};
+document.getElementById("run").onclick=()=>toast("נפתח GitHub. לחץ שם על Run workflow, והתוצאות יופיעו כאן אחרי כ-10 דקות.");
+load();
+</script>
+</body>
+</html>
