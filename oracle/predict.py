@@ -6,7 +6,7 @@ from .models import Suite, COMPONENTS, outcome_probs, over25, btts
 from .evaluate import blend, group_of, GROUPS
 from .sniper import pick, top_k, tier
 
-DEFAULT_CFG = dict(weights={g: {c: 1 / len(cs) for c in cs} for g, cs in GROUPS.items()}, beta=0.0, draw_scale=0.9,
+DEFAULT_CFG = dict(weights={g: {c: 1 / len(cs) for c in cs} for g, cs in GROUPS.items()}, beta=0.0, draw_scale=1.0,
                    cuts=[0.11, 0.14], params={})
 
 
@@ -37,8 +37,7 @@ def predict_fixtures(m, fixtures, cfg=None, adj=None, as_of=None):
         pH, pD, pA = outcome_probs(P)
         tops = top_k(P, 5)
         p_pick = float(P[h, a])
-        base = cfg.get("score_base")
-        sscore = p_pick ** 2 / base[h][a] if base else p_pick  # see evaluate.py: rewards edge over the base rate
+        sscore = p_pick  # tier = the model's own confidence in the picked scoreline
         out.append(dict(date=r.date.date().isoformat(), league=r.league, home=r.home, away=r.away, pick=f"{h}-{a}",
                         p_pick=p_pick, tier=tier(sscore, cfg["cuts"]), pH=pH, pD=pD, pA=pA, over25=over25(P), btts=btts(P),
                         top5=" | ".join(f"{x}-{y} {100 * p:.1f}%" for (x, y), p in tops),
