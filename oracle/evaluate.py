@@ -182,20 +182,32 @@ def tune_everything(bt, split=0.6):
     picks = np.array([pick(M, best_beta, best_ds) for M in P])
     hit = (picks[:, 0] == hg) & (picks[:, 1] == ag)
     ptop_pick = np.array([M[p[0], p[1]] for M, p in zip(P, picks)])
-    q = np.quantile(ptop_pick, [0.5, 0.8])
+    # sniper score = p_pick^2 / empirical base rate of that scoreline.
+    # Ranking by raw p_pick filled tier A with 1-1 picks (the most common score is always "likely");
+    # dividing by the base rate rewards knowing something BEYOND the unconditional distribution.
+    # Holdout: tier A keeps ~21-22% exact hits but with varied scorelines instead of 48% draws.
+    C = np.ones((G, G)) * 0.5
+    for h_, a_ in zip(np.minimum(rows.hg.values.astype(int), G - 1), np.minimum(rows.ag.values.astype(int), G - 1)):
+        C[h_, a_] += 1
+    score_base = C / C.sum()
+    sscore = ptop_pick ** 2 / score_base[picks[:, 0], picks[:, 1]]
+    q = np.quantile(sscore, [0.55, 0.87])  # A = top ~13%: the measured sweet spot (~21% exact on holdout)
     cuts = [float(q[0]), float(q[1])]
     cal = []
-    for lo, hi, name in [(0, cuts[0], "C (low)"), (cuts[0], cuts[1], "B (shot)"), (cuts[1], 1.01, "A (strong shot)")]:
-        s = (ptop_pick >= lo) & (ptop_pick < hi)
+    for lo, hi, name in [(0, cuts[0], "C (low)"), (cuts[0], cuts[1], "B (shot)"), (cuts[1], 9e9, "A (strong shot)")]:
+        s = (sscore >= lo) & (sscore < hi)
         if s.sum():
-            cal.append(dict(tier=name, n=int(s.sum()), mean_predicted=float(ptop_pick[s].mean()), actual_hit=float(hit[s].mean())))
+            cal.append(dict(tier=name, n=int(s.sum()), mean_predicted=float(ptop_pick[s].mean()), actual_hit=float(hit[s].mean()),
+                            draw_picks=float((picks[s][:, 0] == picks[s][:, 1]).mean())))
     report["calibration"] = cal
     report["cuts"] = cuts
     # ---- final weights: refit on ALL backtest data for live use
     Wf = {}
     for g, comps in GROUPS.items():
         Wf[g], _ = fit_weights(rows, mats, g, comps)
-    final = dict(weights=Wf, beta=best_beta, draw_scale=best_ds, cuts=cuts, tuned=dt.datetime.now().isoformat(), params=bt.get("params", {}))
+    final = dict(weights=Wf, beta=best_beta, draw_scale=best_ds, cuts=cuts, tier_metric="p2_over_base",
+                 score_base=[[round(float(x), 7) for x in r] for r in score_base],
+                 tuned=dt.datetime.now().isoformat(), params=bt.get("params", {}))
     WEIGHTS_JSON.write_text(json.dumps(final, indent=2), encoding="utf-8")
     report["weights_final"] = Wf
     return report
@@ -218,9 +230,9 @@ def format_report(rep):
     for lg, r in rep["by_league"].items():
         L.append(f"  {lg:<3} n={r['n']:<4} exact {pc(r['exact'])}  1X2 {pc(r['acc_1x2'])}  RPS {r['rps']:.4f}")
     L.append("")
-    L.append("When to shoot - exact-hit rate by confidence tier (holdout):")
+    L.append("When to shoot - exact-hit rate by sniper-score tier (holdout; score = p^2/base rate):")
     for c in rep["calibration"]:
-        L.append(f"  tier {c['tier']:<16} n={c['n']:<4} model said {pc(c['mean_predicted'])}  actually hit {pc(c['actual_hit'])}")
+        L.append(f"  tier {c['tier']:<16} n={c['n']:<4} model said {pc(c['mean_predicted'])}  actually hit {pc(c['actual_hit'])}  draw picks {pc(c.get('draw_picks', 0))}")
     L.append("")
     L.append("Final ensemble weights:")
     for g, w in rep["weights_final"].items():

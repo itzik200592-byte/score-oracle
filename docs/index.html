@@ -73,8 +73,10 @@ h2 .count{font:500 12px Heebo;color:var(--ink-dim);background:var(--surface-2);p
 .card.A{border-color:rgba(200,245,66,.35);box-shadow:0 0 0 1px rgba(200,245,66,.12) inset}
 .row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .teams{min-width:0;flex:1}
-.team{font-weight:700;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:ltr;text-align:right}
-.team.away{color:var(--ink-dim);font-weight:500}
+.team{font-weight:500;font-size:16px;color:var(--ink-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:ltr;text-align:right}
+.team.fav{color:var(--accent);font-weight:800}
+.team .wp{font:600 11px Heebo;color:var(--accent-ink);background:var(--accent);border-radius:999px;padding:1px 7px;margin-inline-start:6px;vertical-align:2px}
+.evenchip{font-size:11px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-inline-start:6px}
 .pick{flex:none;text-align:center;min-width:76px}
 .pick b{display:block;font-family:Rubik,sans-serif;font-weight:900;font-size:30px;line-height:1;direction:ltr;letter-spacing:-1px}
 .pick small{display:block;font-size:12px;color:var(--ink-dim);margin-top:2px}
@@ -142,7 +144,8 @@ footer{text-align:center;color:var(--ink-faint);font-size:12px;padding:30px var(
   <details><summary>איך לקרוא את זה</summary>
     <div class="note">
       <b>הניחוש</b> הוא התוצאה הבודדת הסבירה ביותר לפי שילוב של חמישה מודלים סטטיסטיים (Dixon-Coles, xG, Elo, מודל מאוחד ושוק).<br>
-      <b>דרגה A</b> = המודל בטוח יחסית בתוצאה המדויקת. בבדיקה לאחור דרגה A פוגעת כמעט פי שניים מדרגה C.<br>
+      <b>דרגה A</b> = למודל יש יתרון אמיתי מעבר לשכיחות הטבעית של התוצאה, לא סתם "1-1 כי זה נפוץ". בבדיקה לאחור דרגה A פוגעת פי שניים מדרגה C, עם תוצאות מגוונות.<br>
+      <b>הקבוצה המודגשת בירוק</b> היא זו שצפויה לנצח, עם אחוז הניצחון שלה.<br>
       <b>דרגה B</b> = ודאות בינונית. <b>דרגה C</b> = משחק פתוח, כמה תוצאות כמעט שוות.<br>
       הפס הצבעוני מראה ניצחון בית / תיקו / ניצחון חוץ. גם בדרגה A, פגיעה מדויקת היא בערך אחת מכל חמישה משחקים. זו תקרה של כדורגל, לא של המודל.<br>
       זה ניתוח סטטיסטי בלבד, לא ייעוץ הימורים.
@@ -212,11 +215,14 @@ function render(){
 
 function card(p,i){
   const tierTxt={A:"סניפר",B:"ירייה",C:"פתוח"}[p.tier];
+  const fav = p.pH>Math.max(p.pD,p.pA) ? "h" : (p.pA>Math.max(p.pD,p.pH) ? "a" : null);
+  const chip = v=>`<span class="wp num">${v}%</span>`;
   return `<article class="card ${p.tier}" style="animation-delay:${Math.min(i,10)*40}ms">
     <div class="row">
       <div class="teams">
-        <div class="team">${esc(p.home)}</div>
-        <div class="team away">${esc(p.away)}</div>
+        <div class="team ${fav==="h"?"fav":""}">${esc(p.home)}${fav==="h"?chip(p.pH):""}</div>
+        <div class="team ${fav==="a"?"fav":""}">${esc(p.away)}${fav==="a"?chip(p.pA):""}</div>
+        ${fav?"":`<span class="evenchip">משחק צמוד, נוטה לתיקו</span>`}
         <span class="tier ${p.tier}">${p.tier} · ${tierTxt}</span>
         ${current==="sniper"?`<span class="tier C" style="margin-inline-start:4px">${esc(DATA.leagues[p.league])}</span>`:""}
       </div>

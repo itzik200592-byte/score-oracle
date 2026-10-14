@@ -37,8 +37,10 @@ def predict_fixtures(m, fixtures, cfg=None, adj=None, as_of=None):
         pH, pD, pA = outcome_probs(P)
         tops = top_k(P, 5)
         p_pick = float(P[h, a])
+        base = cfg.get("score_base")
+        sscore = p_pick ** 2 / base[h][a] if base else p_pick  # see evaluate.py: rewards edge over the base rate
         out.append(dict(date=r.date.date().isoformat(), league=r.league, home=r.home, away=r.away, pick=f"{h}-{a}",
-                        p_pick=p_pick, tier=tier(p_pick, cfg["cuts"]), pH=pH, pD=pD, pA=pA, over25=over25(P), btts=btts(P),
+                        p_pick=p_pick, tier=tier(sscore, cfg["cuts"]), pH=pH, pD=pD, pA=pA, over25=over25(P), btts=btts(P),
                         top5=" | ".join(f"{x}-{y} {100 * p:.1f}%" for (x, y), p in tops),
                         exp_goals_h=float((P.sum(1) * np.arange(P.shape[0])).sum()),
                         exp_goals_a=float((P.sum(0) * np.arange(P.shape[1])).sum()),
