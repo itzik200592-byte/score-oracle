@@ -15,7 +15,7 @@ concurrency:
 jobs:
   predict:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -27,7 +27,8 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Restore source cache
-        uses: actions/cache@v4
+        id: cache
+        uses: actions/cache/restore@v4
         with:
           path: data/cache
           key: oracle-cache-${{ github.run_id }}
@@ -35,6 +36,13 @@ jobs:
 
       - name: Update data
         run: python -m oracle update
+
+      - name: Save source cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: data/cache
+          key: oracle-cache-${{ github.run_id }}
 
       - name: Backtest and learn weights
         run: python -m oracle backtest --days 540 --step 14
