@@ -76,6 +76,10 @@ h2 .count{font:500 12px Heebo;color:var(--ink-dim);background:var(--surface-2);p
 .team{font-weight:500;font-size:16px;color:var(--ink-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:ltr;text-align:right}
 .team.fav{color:var(--accent);font-weight:800}
 .team .wp{font:600 11px Heebo;color:var(--accent-ink);background:var(--accent);border-radius:999px;padding:1px 7px;margin-inline-start:6px;vertical-align:2px}
+.dir{display:flex;align-items:center;gap:8px;margin-top:10px;padding:8px 10px;border-radius:10px;background:var(--surface-2);font-size:14px}
+.dir b{font-weight:800}.dir .n{margin-inline-start:auto;font-weight:800;direction:ltr}
+.dir.h b,.dir.h .n{color:var(--home)}.dir.a b,.dir.a .n{color:var(--away)}.dir.d b,.dir.d .n{color:var(--ink)}
+.dir small{display:block;color:var(--ink-dim);font-size:12px;font-weight:400}
 .evenchip{font-size:11px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-inline-start:6px}
 .pick{flex:none;text-align:center;min-width:76px}
 .pick b{display:block;font-family:Rubik,sans-serif;font-weight:900;font-size:30px;line-height:1;direction:ltr;letter-spacing:-1px}
@@ -147,7 +151,7 @@ footer{text-align:center;color:var(--ink-faint);font-size:12px;padding:30px var(
       <b>דרגה A</b> = למודל יש יתרון אמיתי מעבר לשכיחות הטבעית של התוצאה, לא סתם "1-1 כי זה נפוץ". בבדיקה לאחור דרגה A פוגעת פי שניים מדרגה C, עם תוצאות מגוונות.<br>
       <b>הקבוצה המודגשת בירוק</b> היא זו שצפויה לנצח, עם אחוז הניצחון שלה.<br>
       <b>דרגה B</b> = ודאות בינונית. <b>דרגה C</b> = משחק פתוח, כמה תוצאות כמעט שוות.<br>
-      הפס הצבעוני מראה ניצחון בית / תיקו / ניצחון חוץ. גם בדרגה A, פגיעה מדויקת היא בערך אחת מכל חמישה משחקים. זו תקרה של כדורגל, לא של המודל.<br>
+      <b>"הכיוון הסביר"</b> הוא ניצחון / תיקו / הפסד לפי כל התוצאות יחד, ובבדיקה לאחור הוא נכון ב-53% מהמשחקים (65% בליגת האלופות). לפעמים הכיוון הוא ניצחון אבל התוצאה הבודדת הסבירה היא 1-1, כי התיקו מרוכז בתוצאה אחת והניצחון מתפזר על כמה תוצאות.<br>הפס הצבעוני מראה ניצחון בית / תיקו / ניצחון חוץ. גם בדרגה A, פגיעה מדויקת היא בערך אחת מכל חמישה משחקים. זו תקרה של כדורגל, לא של המודל.<br>
       זה ניתוח סטטיסטי בלבד, לא ייעוץ הימורים.
     </div>
   </details>
@@ -217,6 +221,12 @@ function card(p,i){
   const tierTxt={A:"סניפר",B:"ירייה",C:"פתוח"}[p.tier];
   const fav = p.pH>Math.max(p.pD,p.pA) ? "h" : (p.pA>Math.max(p.pD,p.pH) ? "a" : null);
   const chip = v=>`<span class="wp num">${v}%</span>`;
+  const mx=Math.max(p.pH,p.pD,p.pA), dk = mx===p.pH?"h":(mx===p.pA?"a":"d");
+  const sorted=[p.pH,p.pD,p.pA].sort((x,y)=>y-x), close = sorted[0]-sorted[1] < 5;
+  const dirTxt = (dk==="h"?`ניצחון ${esc(p.home)}`:(dk==="a"?`ניצחון ${esc(p.away)}`:"תיקו")) + (close?" (בהפרש קטן)":"");
+  const [ph_,pa_]=p.pick.split("-").map(Number);
+  const pickDir = ph_>pa_?"h":(ph_<pa_?"a":"d");
+  const note = pickDir!==dk ? `<small>${close?"משחק פתוח: ":""}התוצאה הבודדת הסבירה היא ${p.pick}, אבל מצטבר ${dk==="d"?"תיקו":"ניצחון"} סביר יותר.</small>` : "";
   return `<article class="card ${p.tier}" style="animation-delay:${Math.min(i,10)*40}ms">
     <div class="row">
       <div class="teams">
@@ -228,6 +238,7 @@ function card(p,i){
       </div>
       <div class="pick"><b>${p.pick}</b><small><span class="num">${p.p_pick}%</span> לתוצאה</small></div>
     </div>
+    <div class="dir ${dk}" role="note"><div><b>הכיוון הסביר: ${dirTxt}</b>${note}</div><span class="n num">${mx}%</span></div>
     <div class="bar" aria-hidden="true"><i class="h" style="width:${p.pH}%"></i><i class="d" style="width:${p.pD}%"></i><i class="a" style="width:${p.pA}%"></i></div>
     <div class="legend"><span>בית <b class="num">${p.pH}%</b></span><span>תיקו <b class="num">${p.pD}%</b></span><span>חוץ <b class="num">${p.pA}%</b></span></div>
     <div class="alts">${p.top.slice(1,4).map(t=>`<span class="alt"><b>${t.score}</b> ${t.p.toFixed(1)}%</span>`).join("")}</div>
