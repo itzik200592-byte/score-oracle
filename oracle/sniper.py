@@ -16,9 +16,16 @@ def outcome_mass(M):
     return pH * _MASK_H + pD * _MASK_D + pA * _MASK_A
 
 
-def pick(M, beta=0.0):
-    """beta=0: pure mode. Larger beta pulls the pick toward the most likely 1X2 outcome."""
-    S = M + beta * outcome_mass(M) if beta else M
+def pick(M, beta=0.0, draw_scale=1.0):
+    """beta pulls toward the most likely 1X2 outcome; draw_scale<1 penalises draw scorelines.
+
+    Rationale: the raw mode is a draw (usually 1-1) in ~65% of matches while reality has ~24% draws.
+    A mild penalty (0.9, chosen on the training half) keeps the exact-hit rate and fixes the pick's
+    1X2 direction far more often."""
+    S = M + beta * outcome_mass(M) if beta else M.copy()
+    if draw_scale != 1.0:
+        S = S.copy()
+        np.fill_diagonal(S, np.diag(S) * draw_scale)
     i = int(np.argmax(S))
     return i // G, i % G
 

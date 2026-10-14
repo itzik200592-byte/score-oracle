@@ -6,7 +6,8 @@ from .models import Suite, COMPONENTS, outcome_probs, over25, btts
 from .evaluate import blend, group_of, GROUPS
 from .sniper import pick, top_k, tier
 
-DEFAULT_CFG = dict(weights={g: {c: 1 / len(cs) for c in cs} for g, cs in GROUPS.items()}, beta=0.0, cuts=[0.11, 0.14], params={})
+DEFAULT_CFG = dict(weights={g: {c: 1 / len(cs) for c in cs} for g, cs in GROUPS.items()}, beta=0.0, draw_scale=0.9,
+                   cuts=[0.11, 0.14], params={})
 
 
 def load_cfg():
@@ -32,7 +33,7 @@ def predict_fixtures(m, fixtures, cfg=None, adj=None, as_of=None):
         P = blend({c: mats[c][i] for c in w}, w)
         if P is None:
             continue
-        h, a = pick(P, cfg["beta"])
+        h, a = pick(P, cfg["beta"], cfg.get("draw_scale", 1.0))
         pH, pD, pA = outcome_probs(P)
         tops = top_k(P, 5)
         p_pick = float(P[h, a])

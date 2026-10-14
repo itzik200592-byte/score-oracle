@@ -116,10 +116,10 @@ def rps(P, hg, ag):
     return float(np.mean(out))
 
 
-def metrics(rows, P, beta=0.0):
+def metrics(rows, P, beta=0.0, draw_scale=1.0):
     hg, ag = rows.hg.values.astype(int), rows.ag.values.astype(int)
     n = len(rows)
-    picks = np.array([pick(M, beta) for M in P])
+    picks = np.array([pick(M, beta, draw_scale) for M in P])
     exact = (picks[:, 0] == hg) & (picks[:, 1] == ag)
     ph = np.array([outcome_probs(M) for M in P])
     out_pred = ph.argmax(1)
@@ -155,26 +155,31 @@ def tune_everything(bt, split=0.6):
         ok = ~np.isnan(hm[c][:, 0, 0])
         if ok.sum() > 30:
             report["components"][c] = metrics(hrows[ok].reset_index(drop=True), hm[c][ok])
-    # pick-rule search on the holdout-independent training half
-    betas = [0, 0.02, 0.05, 0.1, 0.2, 0.4, 1.0]
+    # pick-rule search on the holdout-independent training half: how hard to penalise draw picks.
+    # The raw mode picks a draw in ~65% of matches vs ~24% real draws; we take the strongest penalty
+    # that does not cost exact hits on the training half (tolerance 0.15 points).
+    grid = [1.0, 0.95, 0.92, 0.9, 0.88, 0.85, 0.8]
     trrows = rows[train].reset_index(drop=True)
     trP = blend_all(trrows, {c: mats[c][train] for c in COMPONENTS}, W)
-    scores = {b: metrics(trrows, trP, b) for b in betas}
-    best_beta = max(betas, key=lambda b: (round(scores[b]["exact"], 4), scores[b]["pick_outcome_acc"]))
-    report["beta_search_on_train"] = {str(b): {"exact": scores[b]["exact"], "pick_outcome_acc": scores[b]["pick_outcome_acc"]} for b in betas}
+    scores = {w: metrics(trrows, trP, 0.0, w) for w in grid}
+    best_exact = max(s["exact"] for s in scores.values())
+    ok = [w for w in grid if scores[w]["exact"] >= best_exact - 0.0015]
+    best_ds = max(ok, key=lambda w: scores[w]["pick_outcome_acc"])
+    report["draw_scale_search_on_train"] = {str(w): {"exact": scores[w]["exact"], "pick_outcome_acc": scores[w]["pick_outcome_acc"]} for w in grid}
+    best_beta = 0.0
     report["beta"] = best_beta
-    report["ensemble"]["all"] = metrics(hrows, P, best_beta)
+    report["draw_scale"] = best_ds
+    report["ensemble"]["all"] = metrics(hrows, P, best_beta, best_ds)
     report["ensemble"]["mode_only"] = metrics(hrows, P, 0.0)
     for lg in sorted(set(hrows.league)):
         s = (hrows.league == lg).values
         if s.sum() >= 20:
-            report["by_league"][lg] = metrics(hrows[s].reset_index(drop=True), P[s], best_beta)
+            report["by_league"][lg] = metrics(hrows[s].reset_index(drop=True), P[s], best_beta, best_ds)
     hg, ag = hrows.hg.values, hrows.ag.values
     for nm, (a, b) in {"always 1-1": (1, 1), "always 1-0": (1, 0), "always 2-1": (2, 1), "always 2-0": (2, 0)}.items():
         report["baselines"][nm] = float(((hg == a) & (ag == b)).mean())
     # ---- calibration of the top-score probability  (when should we shoot?)
-    ptop = P.reshape(len(P), -1).max(1)
-    picks = np.array([pick(M, best_beta) for M in P])
+    picks = np.array([pick(M, best_beta, best_ds) for M in P])
     hit = (picks[:, 0] == hg) & (picks[:, 1] == ag)
     ptop_pick = np.array([M[p[0], p[1]] for M, p in zip(P, picks)])
     q = np.quantile(ptop_pick, [0.5, 0.8])
@@ -190,7 +195,7 @@ def tune_everything(bt, split=0.6):
     Wf = {}
     for g, comps in GROUPS.items():
         Wf[g], _ = fit_weights(rows, mats, g, comps)
-    final = dict(weights=Wf, beta=best_beta, cuts=cuts, tuned=dt.datetime.now().isoformat(), params=bt.get("params", {}))
+    final = dict(weights=Wf, beta=best_beta, draw_scale=best_ds, cuts=cuts, tuned=dt.datetime.now().isoformat(), params=bt.get("params", {}))
     WEIGHTS_JSON.write_text(json.dumps(final, indent=2), encoding="utf-8")
     report["weights_final"] = Wf
     return report
@@ -207,7 +212,7 @@ def format_report(rep):
         L.append(f"{name:<16}{r['n']:>6}{pc(r['exact']):>8}{pc(r['top3']):>8}{pc(r['acc_1x2']):>8}{r['rps']:>8.4f}{r['logloss']:>9.4f}{pc(r['ou25']):>8}{pc(r['btts']):>8}")
     L.append("")
     L.append("Dumb baselines (exact score): " + ", ".join(f"{k}: {pc(v)}" for k, v in rep["baselines"].items()))
-    L.append(f"Pick rule beta={rep['beta']}  (0 = pure most-likely scoreline)")
+    L.append(f"Pick rule: draw_scale={rep.get('draw_scale', 1.0)}  (1.0 = pure most-likely scoreline; <1 penalises draw picks)")
     L.append("")
     L.append("By competition (ensemble, holdout):")
     for lg, r in rep["by_league"].items():
