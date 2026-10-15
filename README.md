@@ -19,3 +19,9 @@ Dixon-Coles (time decayed, ridge shrunk), DC blended with xG, pooled cross-leagu
 
 ## Agent
 `.claude/agents/score-sniper.md` runs the pipeline, checks injuries and lineups, applies bounded adjustments.
+
+## Winner odds (runs on your PC)
+`python -m oracle sync` refreshes data, collects Winner.co.il odds (1X2, over/under 2.5, exact score) from its public line endpoint,
+adds fixtures our free sources miss, predicts, exports docs/data.json and pushes to GitHub so the phone site updates.
+It must run on your own computer: Winner's bot protection returns 403 to cloud IPs (GitHub Actions) and we do not work around it.
+Schedule `scripts/sync.cmd` with Windows Task Scheduler to automate it.
