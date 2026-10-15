@@ -6,7 +6,7 @@ from .models import Suite, COMPONENTS, outcome_probs, over25, btts
 from .evaluate import blend, group_of, GROUPS
 from .sniper import pick, top_k, tier
 from .models import score_matrix, DEFAULT_RHO, BIG4
-from .odds import load_live, devig_power, lambdas_from_probs, LIVE_MARKET_WEIGHT
+from .odds import load_live, devig_power, lambdas_from_probs, p_over_from, LIVE_MARKET_WEIGHT
 from .names import norm
 
 DEFAULT_CFG = dict(weights={g: {c: 1 / len(cs) for c in cs} for g, cs in GROUPS.items()}, beta=0.0, draw_scale=1.0,
@@ -45,7 +45,7 @@ def predict_fixtures(m, fixtures, cfg=None, adj=None, as_of=None):
             # competitions without odds history: fold the live bookmaker price into the blend
             o = live[key]
             T = float((base.sum(1) * np.arange(base.shape[0])).sum() + (base.sum(0) * np.arange(base.shape[1])).sum())
-            lh, la = lambdas_from_probs(devig_power([o["h"], o["d"], o["a"]]), T)
+            lh, la = lambdas_from_probs(devig_power([o["h"], o["d"], o["a"]]), T, p_over_from(o))
             comps["mkt"] = score_matrix(lh, la, DEFAULT_RHO)
             w = {c: (1 - LIVE_MARKET_WEIGHT) * v for c, v in w.items()}
             w["mkt"] = LIVE_MARKET_WEIGHT

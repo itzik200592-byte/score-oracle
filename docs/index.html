@@ -234,7 +234,7 @@ function card(p,i){
   const oname={h:p.home,d:"תיקו",a:p.away};
   const starSvg=`<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>`;
   const oddsHtml = o ? `<div class="odds" aria-label="יחסי הימורים">${["h","d","a"].map(k=>`<div class="${st&&st.outcome===k?"pk":""}"><small>${k==="h"?"בית":(k==="d"?"תיקו":"חוץ")}</small><b class="num">${o[k].toFixed(2)}</b><i class="${o.ev[k]>0?"pos":"neg"}">מודל ${[p.pH,p.pD,p.pA][["h","d","a"].indexOf(k)]}% · שוק ${o.market_p[k]}%</i></div>`).join("")}</div>
-    <div class="osrc">מקור: ${esc(o.src)}${o.at?` · ${new Date(o.at).toLocaleString("he-IL",{timeZone:"Asia/Jerusalem",hour:"2-digit",minute:"2-digit"})}`:""} · מרווח הבוקי ${o.margin}%</div>` : "";
+    <div class="osrc">${o.pick_price?`יחס לתוצאה המדויקת <b class="num">${p.pick}</b>: <b class="num">${o.pick_price.toFixed(2)}</b> · `:""}${o.over25?`מעל 2.5: <b class="num">${o.over25.toFixed(2)}</b> · מתחת: <b class="num">${o.under25?o.under25.toFixed(2):"-"}</b> · `:""}מקור: ${esc(o.src)}${o.at?` · ${new Date(o.at).toLocaleString("he-IL",{timeZone:"Asia/Jerusalem",hour:"2-digit",minute:"2-digit"})}`:""} · מרווח הבוקי ${o.margin}%</div>` : "";
   const starBadge = st ? `<span class="star">${starSvg} כוכב: ${esc(oname[st.outcome])} ביחס ${st.odds.toFixed(2)}</span>` : "";
   const fav = p.pH>Math.max(p.pD,p.pA) ? "h" : (p.pA>Math.max(p.pD,p.pH) ? "a" : null);
   const chip = v=>`<span class="wp num">${v}%</span>`;
@@ -247,6 +247,7 @@ function card(p,i){
   return `<article class="card ${st?"S":p.tier}" style="animation-delay:${Math.min(i,10)*40}ms">
     <div class="row">
       <div class="teams">
+        ${o&&o.kickoff?`<div class="osrc" style="margin:0 0 4px">${o.kickoff} שעון ישראל</div>`:""}
         <div class="team ${fav==="h"?"fav":""}">${esc(p.home)}${fav==="h"?chip(p.pH):""}</div>
         <div class="team ${fav==="a"?"fav":""}">${esc(p.away)}${fav==="a"?chip(p.pA):""}</div>
         ${fav?"":`<span class="evenchip">משחק צמוד, נוטה לתיקו</span>`}

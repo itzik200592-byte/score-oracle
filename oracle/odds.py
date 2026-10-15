@@ -29,6 +29,14 @@ def load_live():
     return out, j.get("fetched_at")
 
 
+def p_over_from(o):
+    """Two-way de-vig of over/under 2.5 -> P(over), or None."""
+    ov, un = o.get("over25"), o.get("under25")
+    if ov and un and ov > 1 and un > 1:
+        return float(devig_power([ov, un])[0])
+    return None
+
+
 def devig_power(odds):
     inv = 1 / np.asarray(odds, float)
     if inv.sum() <= 1.0:
@@ -38,13 +46,20 @@ def devig_power(odds):
     return p / p.sum()
 
 
-def lambdas_from_probs(p, total_hint):
-    """Goal rates whose 1X2 matches the (de-vigged) market; total goals softly anchored to the model's expectation
-    because 1X2 alone does not pin down the total."""
+def lambdas_from_probs(p, total_hint, p_over=None):
+    """Goal rates whose 1X2 matches the (de-vigged) market. If the over/under 2.5 price is known it pins the total;
+    otherwise the total is softly anchored to the model's expectation (1X2 alone does not determine it)."""
+    from .models import over25 as _over25
+
     def res(x):
         lh, la = np.exp(x)
         M = score_matrix(lh, la, DEFAULT_RHO)
-        return np.append(np.array(outcome_probs(M)) - p, 0.25 * (np.log(lh + la) - np.log(total_hint)))
+        r = list(np.array(outcome_probs(M)) - p)
+        if p_over is not None:
+            r.append(_over25(M) - p_over)
+        else:
+            r.append(0.25 * (np.log(lh + la) - np.log(total_hint)))
+        return np.array(r)
     s = least_squares(res, np.log([max(total_hint * 0.55, 0.3), max(total_hint * 0.45, 0.3)]),
                       bounds=(np.log(0.15), np.log(5.0)))
     return float(np.exp(s.x[0])), float(np.exp(s.x[1]))

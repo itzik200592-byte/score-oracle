@@ -5,3 +5,4 @@ data/backtest.pkl
 data/adjustments.json
 output/
 .claude/settings.local.json
+data/winner_sample.json

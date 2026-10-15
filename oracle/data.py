@@ -2,7 +2,7 @@
 import datetime as dt
 import numpy as np, pandas as pd
 from . import sources as S
-from .config import MATCHES_CSV, BIG4, FIRST_SEASON, season_of
+from .config import DATA, MATCHES_CSV, BIG4, FIRST_SEASON, season_of
 from .names import Resolver
 
 PRIORITY = {"football-data": 0, "openfootball": 1, "espn": 2, "thesportsdb": 3}
@@ -118,6 +118,21 @@ def build(fast=False):
             for c in NUM_EXTRA:
                 if pd.isna(t.get(c)) and not pd.isna(d.get(c)):
                     t[c] = d[c]
+    # fixtures that Winner lists but the free schedule sources miss (written by oracle.winner)
+    extra = DATA / "extra_fixtures.json"
+    if extra.exists():
+        import json as _json
+        try:
+            for x in _json.loads(extra.read_text(encoding="utf-8")):
+                dts = pd.Timestamp(x["date"])
+                if any(abs((kept[pos]["date"] - dts).days) <= 3 for pos in index.get((x["league"], x["home"], x["away"]), [])):
+                    continue
+                d0 = dict(date=dts, league=x["league"], home=x["home"], away=x["away"], hg=np.nan, ag=np.nan,
+                          played=False, src="winner", n_src=1)
+                index.setdefault((x["league"], x["home"], x["away"]), []).append(len(kept))
+                kept.append(d0)
+        except Exception as ex:
+            _log(f"extra fixtures skipped: {ex}")
     m = pd.DataFrame(kept)
     _log(f"merged -> {len(m)} matches ({int(m.played.sum())} played), score conflicts between sources: {conflicts}")
     if rs.fuzzy_log:

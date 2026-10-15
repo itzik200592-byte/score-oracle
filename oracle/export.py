@@ -57,6 +57,12 @@ def _attach_odds(m, rows):
         if key in live:
             e = live[key]
             o = dict(h=e["h"], d=e["d"], a=e["a"], src=e.get("source") or "live", at=fetched)
+            for k in ("over25", "under25", "btts_yes", "btts_no", "kickoff"):
+                if e.get(k):
+                    o[k] = e[k]
+            cs = (e.get("cs") or {}).get(row["pick"].replace("-", "-"))
+            if cs:
+                o["pick_price"] = cs
         elif key in fd:
             e = fd[key]
             o = dict(h=round(float(e.o_h), 2), d=round(float(e.o_d), 2), a=round(float(e.o_a), 2),

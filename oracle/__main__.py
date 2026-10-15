@@ -27,6 +27,9 @@ def main():
     mm = sub.add_parser("match", help="predict a single match (any two teams from the same competition)")
     mm.add_argument("home"); mm.add_argument("away"); mm.add_argument("league", choices=list(LEAGUES))
     sub.add_parser("review", help="score past predictions against real results")
+    o = sub.add_parser("odds-sync", help="collect Winner odds from THIS computer (cloud IPs are blocked by Winner)")
+    sy = sub.add_parser("sync", help="update data + collect odds + predict + export + push to GitHub (run on this PC)")
+    sy.add_argument("--no-push", action="store_true")
     sub.add_parser("status", help="data coverage report")
     adj = sub.add_parser("adjust", help="manual news adjustment: oracle adjust Arsenal --att 0.9 --def 1.0 ; 'clear' removes all")
     adj.add_argument("team"); adj.add_argument("--att", type=float, default=1.0); adj.add_argument("--def", dest="deff", type=float, default=1.0)
@@ -47,6 +50,10 @@ def main():
         (OUT / "backtest_report.json").write_text(json.dumps(rep, indent=2, default=str), encoding="utf-8")
         return
     from . import predict as P
+    if a.cmd in ("odds-sync", "sync"):
+        from . import sync as SY
+        SY.run(m, push=(a.cmd == "sync" and not a.no_push), full=(a.cmd == "sync"))
+        return
     if a.cmd == "review":
         print(P.review(m)); return
     if a.cmd == "adjust":
