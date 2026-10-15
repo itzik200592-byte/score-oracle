@@ -39,10 +39,13 @@ def run(m, push=True, full=True):
     pred.to_csv(OUT / "predictions_latest.csv", index=False, encoding="utf-8")
     print("site data:", export(m, pred))
     if push:
-        _git("add", "docs/data.json", "data/ledger.csv", "data/matches.csv", "data/odds_live.json",
-             "data/team_he_learned.json", check=False)
+        # only add files that exist: one missing pathspec makes `git add` fail for ALL of them
+        paths = [p for p in ("docs/data.json", "data/ledger.csv", "data/matches.csv", "data/odds_live.json",
+                             "data/team_he_learned.json", "data/extra_fixtures.json", "data/ensemble.json") if (ROOT / p).exists()]
+        _git("add", *paths)
         if _git("diff", "--cached", "--quiet", check=False).returncode != 0:
-            _git("commit", "-m", f"sync {stamp} (PC: data + Winner odds + predictions)")
+            _git("-c", "user.name=Score Oracle (PC)", "-c", "user.email=itzik200592@gmail.com",
+                 "commit", "-m", f"sync {stamp} (PC: data + Winner odds + predictions)")
             _git("pull", "--rebase", "-X", "theirs", check=False)
             r = _git("push", check=False)
             print("pushed to GitHub" if r.returncode == 0 else f"push failed: {r.stderr.strip()[:200]}")

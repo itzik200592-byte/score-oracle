@@ -21,7 +21,13 @@ def load_cfg():
 
 
 def load_adj():
-    return json.loads(ADJ_JSON.read_text(encoding="utf-8")) if ADJ_JSON.exists() else {}
+    """News adjustments expire by themselves (default: end of the day they were entered) so they never leak into
+    tomorrow's predictions, and a later sync the same day keeps them."""
+    if not ADJ_JSON.exists():
+        return {}
+    today = dt.date.today().isoformat()
+    cur = json.loads(ADJ_JSON.read_text(encoding="utf-8"))
+    return {t: v for t, v in cur.items() if v.get("until", today) >= today}
 
 
 def predict_fixtures(m, fixtures, cfg=None, adj=None, as_of=None):

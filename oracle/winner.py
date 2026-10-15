@@ -132,7 +132,14 @@ def _kick(t):
 
 
 def _entry(e, r):
-    cs = {k.replace(" ", ""): v for k, v in (e.get("cs") or {}).items()}
+    # Winner prints scores right-to-left ("away - home"); normalise to home-away
+    cs = {}
+    for k, v in (e.get("cs") or {}).items():
+        try:
+            a_, h_ = k.replace(" ", "").split("-")
+            cs[f"{h_}-{a_}"] = v
+        except ValueError:
+            continue
     return {"date": r.date.date().isoformat(), "home": r.home, "away": r.away, "h": e["h"], "d": e["d"], "a": e["a"],
             "over25": e.get("over25"), "under25": e.get("under25"), "btts_yes": e.get("btts_yes"), "btts_no": e.get("btts_no"),
             "cs": cs, "kickoff": _kick(e["time"]), "source": "Winner.co.il", "bookmakers": "Winner (single bookmaker)"}

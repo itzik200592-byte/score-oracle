@@ -32,7 +32,7 @@ def main():
     sy.add_argument("--no-push", action="store_true")
     sub.add_parser("status", help="data coverage report")
     adj = sub.add_parser("adjust", help="manual news adjustment: oracle adjust Arsenal --att 0.9 --def 1.0 ; 'clear' removes all")
-    adj.add_argument("team"); adj.add_argument("--att", type=float, default=1.0); adj.add_argument("--def", dest="deff", type=float, default=1.0)
+    adj.add_argument("team"); adj.add_argument("--until", default=None, help="last day the news applies (YYYY-MM-DD), default today"); adj.add_argument("--att", type=float, default=1.0); adj.add_argument("--def", dest="deff", type=float, default=1.0)
     a = ap.parse_args()
 
     if a.cmd == "update":
@@ -62,7 +62,8 @@ def main():
         if a.team.lower() == "clear":
             cur = {}
         else:
-            cur[a.team] = {"att": a.att, "def": a.deff}
+            import datetime as _dt
+            cur[a.team] = {"att": a.att, "def": a.deff, "until": a.until or _dt.date.today().isoformat()}
         ADJ_JSON.write_text(json.dumps(cur, indent=2), encoding="utf-8")
         print("adjustments:", cur); return
     if a.cmd == "predict":
