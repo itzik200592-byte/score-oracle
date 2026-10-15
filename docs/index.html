@@ -90,6 +90,14 @@ h2 .count{font:500 12px Heebo;color:var(--ink-dim);background:var(--surface-2);p
 .odds b{font-size:17px;font-weight:800;direction:ltr;display:block}
 .odds i{font-style:normal;font-size:11px;color:var(--ink-dim);direction:ltr;display:block}
 .odds i.pos{color:var(--home)}.odds i.neg{color:#ff8a80}
+.op{margin-top:10px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);overflow:hidden}
+.op summary{min-height:44px;padding:0 12px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+.op .lean{margin-inline-start:auto;font-size:12px;font-weight:800;padding:2px 9px;border-radius:999px;background:rgba(90,169,255,.15);color:var(--away)}
+.op .lean.h{background:rgba(77,212,161,.15);color:var(--home)}.op .lean.d{background:rgba(125,139,160,.2);color:var(--ink)}
+.op .body{padding:2px 12px 12px;font-size:14px;line-height:1.55}
+.op h4{margin:10px 0 2px;font-size:13px;color:var(--accent)}
+.op .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.op .chips span{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:2px 8px;color:var(--ink-dim)}
 .osrc{color:var(--ink-faint);font-size:11px;margin-top:4px}
 .evenchip{font-size:11px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-inline-start:6px}
 .pick{flex:none;text-align:center;min-width:76px}
@@ -235,6 +243,8 @@ function card(p,i){
   const starSvg=`<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>`;
   const oddsHtml = o ? `<div class="odds" aria-label="יחסי הימורים">${["h","d","a"].map(k=>`<div class="${st&&st.outcome===k?"pk":""}"><small>${k==="h"?"בית":(k==="d"?"תיקו":"חוץ")}</small><b class="num">${o[k].toFixed(2)}</b><i class="${o.ev[k]>0?"pos":"neg"}">מודל ${[p.pH,p.pD,p.pA][["h","d","a"].indexOf(k)]}% · שוק ${o.market_p[k]}%</i></div>`).join("")}</div>
     <div class="osrc">${o.pick_price?`יחס לתוצאה המדויקת <b class="num">${p.pick}</b>: <b class="num">${o.pick_price.toFixed(2)}</b> · `:""}${o.over25?`מעל 2.5: <b class="num">${o.over25.toFixed(2)}</b> · מתחת: <b class="num">${o.under25?o.under25.toFixed(2):"-"}</b> · `:""}מקור: ${esc(o.src)}${o.at?` · ${new Date(o.at).toLocaleString("he-IL",{timeZone:"Asia/Jerusalem",hour:"2-digit",minute:"2-digit"})}`:""} · מרווח הבוקי ${o.margin}%</div>` : "";
+  const op = p.opinion;
+  const opHtml = op ? `<details class="op"><summary>חוות דעת הסוכן <span class="lean ${op.lean}">${op.lean==="h"?"נוטה: בית":(op.lean==="a"?"נוטה: חוץ":"נוטה: תיקו")} · ביטחון ${esc(op.confidence||"")}</span></summary><div class="body"><div>${esc(op.summary||"")}</div><h4>${esc(p.home)}</h4><div>${esc(op.home_view||"")}</div><h4>${esc(p.away)}</h4><div>${esc(op.away_view||"")}</div>${(op.factors&&op.factors.length)?`<div class="chips">${op.factors.map(f=>`<span>${esc(f)}</span>`).join("")}</div>`:""}${(op.adjustments&&op.adjustments.length)?`<h4>התאמות שהוכנסו</h4><div>${op.adjustments.map(esc).join("<br>")}</div>`:""}<div class="osrc">${(op.sources||[]).map(esc).join(" · ")}</div></div></details>` : "";
   const starBadge = st ? `<span class="star">${starSvg} כוכב: ${esc(oname[st.outcome])} ביחס ${st.odds.toFixed(2)}</span>` : "";
   const fav = p.pH>Math.max(p.pD,p.pA) ? "h" : (p.pA>Math.max(p.pD,p.pH) ? "a" : null);
   const chip = v=>`<span class="wp num">${v}%</span>`;
@@ -261,6 +271,7 @@ function card(p,i){
     <div class="legend"><span>בית <b class="num">${p.pH}%</b></span><span>תיקו <b class="num">${p.pD}%</b></span><span>חוץ <b class="num">${p.pA}%</b></span></div>
     <div class="alts">${p.top.slice(1,4).map(t=>`<span class="alt"><b>${t.score}</b> ${t.p.toFixed(1)}%</span>`).join("")}</div>
     ${oddsHtml}
+    ${opHtml}
     <div class="more"><span>מעל 2.5: <b class="num">${p.over25}%</b></span><span>שתיהן מבקיעות: <b class="num">${p.btts}%</b></span><span>שערים צפויים: <b class="num">${p.xg_h} - ${p.xg_a}</b></span></div>
   </article>`;
 }

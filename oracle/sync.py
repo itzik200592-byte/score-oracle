@@ -43,6 +43,8 @@ def run(m, push=True, full=True):
         paths = [p for p in ("docs/data.json", "data/ledger.csv", "data/matches.csv", "data/odds_live.json",
                              "data/team_he_learned.json", "data/extra_fixtures.json", "data/ensemble.json") if (ROOT / p).exists()]
         _git("add", *paths)
+        if (ROOT / "data" / "opinions").exists():
+            _git("add", "data/opinions")
         if _git("diff", "--cached", "--quiet", check=False).returncode != 0:
             _git("-c", "user.name=Score Oracle (PC)", "-c", "user.email=itzik200592@gmail.com",
                  "commit", "-m", f"sync {stamp} (PC: data + Winner odds + predictions)")

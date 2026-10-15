@@ -82,6 +82,24 @@ def _attach_odds(m, rows):
         row["odds"] = o
 
 
+def _opinions():
+    """Situation-analyst opinions saved by the agent in data/opinions/*.json -> {(date, norm_home, norm_away): entry}"""
+    from .names import norm
+    out = {}
+    d = ROOT / "data" / "opinions"
+    if not d.exists():
+        return out
+    for f in sorted(d.glob("*.json")):
+        try:
+            j = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for e in j.get("matches", []):
+            if e.get("date") and e.get("home") and e.get("away"):
+                out[(e["date"], norm(e["home"]), norm(e["away"]))] = dict(e, made_at=j.get("made_at"))
+    return out
+
+
 def export(m, pred):
     DOCS.mkdir(exist_ok=True)
     rows = []
@@ -93,6 +111,12 @@ def export(m, pred):
                          xg_h=round(r.exp_goals_h, 2), xg_a=round(r.exp_goals_a, 2), top=tops,
                          live_mkt=bool(getattr(r, "live_mkt", False)), model_only=[round(100 * r.pH0), round(100 * r.pD0), round(100 * r.pA0)]))
     _attach_odds(m, rows)
+    from .names import norm as _norm
+    ops = _opinions()
+    for row in rows:
+        e = ops.get((row["date"], _norm(row["home"]), _norm(row["away"])))
+        if e:
+            row["opinion"] = e
     bt = None
     f = OUT / "backtest_report.json"
     if f.exists():

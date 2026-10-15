@@ -91,7 +91,8 @@ def market_lambdas(m: pd.DataFrame):
 
 # ------------------------------------------------------------------ Dixon-Coles (time-decayed, ridge-shrunk)
 class DC:
-    def __init__(self, half_life=330, ridge=3.0, xw=0.0, pooled=False, years=4, name="dc", newcomer=(-0.15, -0.20), level_hl=None, level_k=20.0):
+    def __init__(self, half_life=330, ridge=3.0, xw=0.0, pooled=False, years=4, name="dc", newcomer=(-0.15, -0.20), level_hl=None, level_k=20.0, hteam_ridge=None):
+        self.hteam_ridge = hteam_ridge
         self.half_life, self.ridge, self.xw, self.pooled, self.years, self.name = half_life, ridge, xw, pooled, years, name
         self.level_hl, self.level_k = level_hl, level_k
         self.newcomer = newcomer
@@ -136,7 +137,9 @@ class DC:
         self.tl = tl
         pooled = self.pooled
         r, r_lo = self.ridge, 0.4
-        n_par = 2 * nL + 2 * nT + (2 * nO if pooled else 0)
+        use_h = self.hteam_ridge is not None
+        rh = self.hteam_ridge or 0.0
+        n_par = 2 * nL + 2 * nT + (2 * nO if pooled else 0) + (nT if use_h else 0)
 
         def unpack(x):
             mu, hfa = x[:nL], x[nL:2 * nL]
@@ -149,12 +152,15 @@ class DC:
 
         def f(x):
             mu, hfa, a, dd, Ao, Do = unpack(x)
+            ht = x[n_par - nT:] if use_h else None
             ae = a + (Ao[tl] if pooled else 0)
             de = dd + (Do[tl] if pooled else 0)
-            lh = np.exp(mu[Lm] + hfa[Lm] + ae[H] - de[A])
+            lh = np.exp(mu[Lm] + hfa[Lm] + ae[H] - de[A] + (ht[H] if use_h else 0))
             la = np.exp(mu[Lm] + ae[A] - de[H])
             nll = -np.sum(w * (gh * np.log(lh) - lh + ga * np.log(la) - la))
             nll += r * (a @ a + dd @ dd)
+            if use_h:
+                nll += rh * (ht @ ht)
             gh_, ga_ = w * (gh - lh), w * (ga - la)
             g_mu = -np.bincount(Lm, gh_ + ga_, nL)
             g_hfa = -np.bincount(Lm, gh_, nL)
@@ -164,6 +170,8 @@ class DC:
             if pooled:
                 nll += r_lo * (Ao @ Ao + Do @ Do)
                 parts += [np.bincount(tl, g_ae, nO) + 2 * r_lo * Ao, np.bincount(tl, g_de, nO) + 2 * r_lo * Do]
+            if use_h:
+                parts.append(-np.bincount(H, gh_, nT) + 2 * rh * ht)
             return nll, np.concatenate(parts)
 
         x0 = np.zeros(n_par)
@@ -171,10 +179,11 @@ class DC:
         x0[nL:2 * nL] = 0.2
         sol = minimize(f, x0, jac=True, method="L-BFGS-B", options={"maxiter": 400})
         self.mu, self.hfa, self.a, self.d, self.Ao, self.Do = unpack(sol.x)
+        self.ht = sol.x[n_par - nT:] if use_h else None
         # rho from low scores
         ae = self.a + (self.Ao[tl] if pooled else 0)
         de = self.d + (self.Do[tl] if pooled else 0)
-        lh = np.exp(self.mu[Lm] + self.hfa[Lm] + ae[H] - de[A])
+        lh = np.exp(self.mu[Lm] + self.hfa[Lm] + ae[H] - de[A] + (self.ht[H] if self.ht is not None else 0))
         la = np.exp(self.mu[Lm] + ae[A] - de[H])
         hi, ai = d.hg.values, d.ag.values
         best, brho = -1e18, DEFAULT_RHO
@@ -221,7 +230,8 @@ class DC:
                 a += self.Ao[self.olix["OTH"]]; dd += self.Do[self.olix["OTH"]]
             return a, dd
         ah, dh = eff(home); aa, da = eff(away)
-        lh = np.exp(self.mu[li] + self.hfa[li] + ah - da)
+        hh = self.ht[self.tix[home]] if (self.ht is not None and home in self.tix) else 0.0
+        lh = np.exp(self.mu[li] + self.hfa[li] + ah - da + hh)
         la = np.exp(self.mu[li] + aa - dh)
         return float(lh), float(la), float(self.rho)
 
@@ -308,7 +318,7 @@ class Suite:
     """All component models fitted on data strictly before `as_of`."""
 
     def __init__(self, params=None):
-        p = dict(dc_hl=330, dc_ridge=3.0, dcx_hl=200, dcx_ridge=3.0, dcx_w=0.5, pool_hl=420, pool_ridge=3.0, elo_k=20.0, elo_map_hl=900, level_hl=120, level_k=20.0, disp={"CL": 0.3, "IL": 0.3, "EL": 0.3})
+        p = dict(dc_hl=330, dc_ridge=3.0, dcx_hl=200, dcx_ridge=3.0, dcx_w=0.5, pool_hl=420, pool_ridge=3.0, elo_k=20.0, elo_map_hl=900, level_hl=120, level_k=20.0, hteam_ridge=None, disp={"CL": 0.3, "IL": 0.3, "EL": 0.3})
         p.update(params or {})
         self.p = p
 
@@ -316,7 +326,7 @@ class Suite:
         p = self.p
         self.dc, self.dcx = {}, {}
         for lg in BIG4 + ["IL"]:
-            self.dc[lg] = DC(p["dc_hl"], p["dc_ridge"], 0.0, False, 4, "dc", level_hl=p["level_hl"], level_k=p["level_k"]).fit(m, as_of, [lg])
+            self.dc[lg] = DC(p["dc_hl"], p["dc_ridge"], 0.0, False, 4, "dc", level_hl=p["level_hl"], level_k=p["level_k"], hteam_ridge=p["hteam_ridge"]).fit(m, as_of, [lg])
         for lg in BIG4:
             self.dcx[lg] = DC(p["dcx_hl"], p["dcx_ridge"], p["dcx_w"], False, 3, "dcx", level_hl=p["level_hl"], level_k=p["level_k"]).fit(m, as_of, [lg])
         self.pool = DC(p["pool_hl"], p["pool_ridge"], 0.0, True, 4, "pool", level_hl=p["level_hl"], level_k=p["level_k"]).fit(m, as_of)

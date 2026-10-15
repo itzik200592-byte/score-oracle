@@ -27,6 +27,8 @@ def main():
     mm = sub.add_parser("match", help="predict a single match (any two teams from the same competition)")
     mm.add_argument("home"); mm.add_argument("away"); mm.add_argument("league", choices=list(LEAGUES))
     sub.add_parser("review", help="score past predictions against real results")
+    cx = sub.add_parser("context", help="situation dossier for a fixture (venue records, form, congestion, H2H, table)")
+    cx.add_argument("home"); cx.add_argument("away"); cx.add_argument("league", choices=list(LEAGUES))
     o = sub.add_parser("odds-sync", help="collect Winner odds from THIS computer (cloud IPs are blocked by Winner)")
     sy = sub.add_parser("sync", help="update data + collect odds + predict + export + push to GitHub (run on this PC)")
     sy.add_argument("--no-push", action="store_true")
@@ -54,6 +56,9 @@ def main():
         from . import sync as SY
         SY.run(m, push=(a.cmd == "sync" and not a.no_push), full=(a.cmd == "sync"))
         return
+    if a.cmd == "context":
+        from . import context as CX
+        print(CX.as_text(CX.dossier(m, a.home, a.away, a.league))); return
     if a.cmd == "review":
         print(P.review(m)); return
     if a.cmd == "adjust":
