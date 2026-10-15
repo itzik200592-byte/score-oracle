@@ -80,6 +80,17 @@ h2 .count{font:500 12px Heebo;color:var(--ink-dim);background:var(--surface-2);p
 .dir b{font-weight:800}.dir .n{margin-inline-start:auto;font-weight:800;direction:ltr}
 .dir.h b,.dir.h .n{color:var(--home)}.dir.a b,.dir.a .n{color:var(--away)}.dir.d b,.dir.d .n{color:var(--ink)}
 .dir small{display:block;color:var(--ink-dim);font-size:12px;font-weight:400}
+.star{display:inline-flex;align-items:center;gap:4px;color:#ffc94d;font-weight:800;font-size:12px;background:rgba(255,201,77,.12);border:1px solid rgba(255,201,77,.4);border-radius:999px;padding:2px 9px;margin-inline-start:6px}
+.star svg{width:14px;height:14px}
+.card.S{border-color:rgba(255,201,77,.55);box-shadow:0 0 0 1px rgba(255,201,77,.18) inset}
+.odds{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+.odds div{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:6px 4px;text-align:center}
+.odds div.pk{border-color:#ffc94d;background:rgba(255,201,77,.10)}
+.odds small{display:block;color:var(--ink-dim);font-size:11px}
+.odds b{font-size:17px;font-weight:800;direction:ltr;display:block}
+.odds i{font-style:normal;font-size:11px;color:var(--ink-dim);direction:ltr;display:block}
+.odds i.pos{color:var(--home)}.odds i.neg{color:#ff8a80}
+.osrc{color:var(--ink-faint);font-size:11px;margin-top:4px}
 .evenchip{font-size:11px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-inline-start:6px}
 .pick{flex:none;text-align:center;min-width:76px}
 .pick b{display:block;font-family:Rubik,sans-serif;font-weight:900;font-size:30px;line-height:1;direction:ltr;letter-spacing:-1px}
@@ -149,7 +160,7 @@ footer{text-align:center;color:var(--ink-faint);font-size:12px;padding:30px var(
     <div class="note">
       <b>הניחוש</b> הוא התוצאה הבודדת הסבירה ביותר לפי שילוב של חמישה מודלים סטטיסטיים (Dixon-Coles, xG, Elo, מודל מאוחד ושוק).<br>
       <b>דרגה A</b> = למודל יש יתרון אמיתי מעבר לשכיחות הטבעית של התוצאה, לא סתם "1-1 כי זה נפוץ". בבדיקה לאחור דרגה A פוגעת פי שניים מדרגה C, עם תוצאות מגוונות.<br>
-      <b>הקבוצה המודגשת בירוק</b> היא זו שצפויה לנצח, עם אחוז הניצחון שלה.<br>
+      <b>כוכב</b> = יחס של 1.5 ומעלה, המודל מעריך לפחות 50% לתוצאה, והסיכוי שלו כפול היחס גבוה מ-1. חשוב: השוק בדרך כלל מדויק יותר ממודל, אז כוכב הוא "המודל רואה יותר ממה שהיחס מגלם", לא ערובה, ולא המלצת הימור.<br><b>הקבוצה המודגשת בירוק</b> היא זו שצפויה לנצח, עם אחוז הניצחון שלה.<br>
       <b>דרגה B</b> = ודאות בינונית. <b>דרגה C</b> = משחק פתוח, כמה תוצאות כמעט שוות.<br>
       <b>"הכיוון הסביר"</b> הוא ניצחון / תיקו / הפסד לפי כל התוצאות יחד, ובבדיקה לאחור הוא נכון ב-53% מהמשחקים (65% בליגת האלופות). לפעמים הכיוון הוא ניצחון אבל התוצאה הבודדת הסבירה היא 1-1, כי התיקו מרוכז בתוצאה אחת והניצחון מתפזר על כמה תוצאות.<br>הפס הצבעוני מראה ניצחון בית / תיקו / ניצחון חוץ. גם בדרגה A, פגיעה מדויקת היא בערך אחת מכל חמישה משחקים. זו תקרה של כדורגל, לא של המודל.<br>
       זה ניתוח סטטיסטי בלבד, לא ייעוץ הימורים.
@@ -162,8 +173,8 @@ footer{text-align:center;color:var(--ink-faint);font-size:12px;padding:30px var(
 <script>
 const REPO = "itzik200592-byte/score-oracle";
 const RUN_URL = `https://github.com/${REPO}/actions/workflows/oracle.yml`;
-const ORDER = ["sniper","IL","CL","EL","PL","LL","SA","L1"];
-const NAMES = {sniper:"סניפר"};
+const ORDER = ["sniper","stars","IL","CL","EL","PL","LL","SA","L1"];
+const NAMES = {sniper:"סניפר",stars:"כוכבים"};
 const DAYS = ["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
 let DATA = null, current = localStorage.getItem("tab") || "sniper";
 document.getElementById("run").href = RUN_URL;
@@ -189,7 +200,7 @@ function render(){
   const g=new Date(DATA.generated_at);
   document.getElementById("updated").textContent=`עודכן ${ago(DATA.generated_at)} (${g.toLocaleString("he-IL",{timeZone:"Asia/Jerusalem",day:"numeric",month:"numeric",hour:"2-digit",minute:"2-digit"})})`;
   // tabs
-  const counts={sniper:DATA.predictions.filter(p=>p.tier==="A").length};
+  const counts={sniper:DATA.predictions.filter(p=>p.tier==="A").length, stars:DATA.predictions.filter(p=>p.odds&&p.odds.star).length};
   for(const p of DATA.predictions) counts[p.league]=(counts[p.league]||0)+1;
   document.getElementById("tabs").innerHTML=ORDER.filter(k=>counts[k]).map(k=>
     `<button class="tab" role="tab" data-k="${k}" aria-selected="${k===current}">${esc(NAMES[k]||DATA.leagues[k])} <span class="num">${counts[k]}</span></button>`).join("");
@@ -203,7 +214,7 @@ function render(){
     B?[`<span class="num">${B.result_pct}%</span>`,"כיוון נכון בבדיקה"]:["-",""]
   ].map(([v,l])=>`<div class="stat"><b>${v}</b><small>${l}</small></div>`).join("");
   // list
-  let rows=current==="sniper"?DATA.predictions.filter(p=>p.tier==="A"):DATA.predictions.filter(p=>p.league===current);
+  let rows=current==="sniper"?DATA.predictions.filter(p=>p.tier==="A"):(current==="stars"?DATA.predictions.filter(p=>p.odds&&p.odds.star):DATA.predictions.filter(p=>p.league===current));
   rows=[...rows].sort((a,b)=>a.date.localeCompare(b.date)||b.p_pick-a.p_pick);
   const list=document.getElementById("list");
   if(!rows.length){list.innerHTML=`<div class="empty">אין משחקים בקטגוריה הזאת בימים הקרובים.</div>`;return}
@@ -219,6 +230,12 @@ function render(){
 
 function card(p,i){
   const tierTxt={A:"סניפר",B:"ירייה",C:"פתוח"}[p.tier];
+  const o=p.odds, st=o&&o.star;
+  const oname={h:p.home,d:"תיקו",a:p.away};
+  const starSvg=`<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>`;
+  const oddsHtml = o ? `<div class="odds" aria-label="יחסי הימורים">${["h","d","a"].map(k=>`<div class="${st&&st.outcome===k?"pk":""}"><small>${k==="h"?"בית":(k==="d"?"תיקו":"חוץ")}</small><b class="num">${o[k].toFixed(2)}</b><i class="${o.ev[k]>0?"pos":"neg"}">מודל ${[p.pH,p.pD,p.pA][["h","d","a"].indexOf(k)]}% · שוק ${o.market_p[k]}%</i></div>`).join("")}</div>
+    <div class="osrc">מקור: ${esc(o.src)}${o.at?` · ${new Date(o.at).toLocaleString("he-IL",{timeZone:"Asia/Jerusalem",hour:"2-digit",minute:"2-digit"})}`:""} · מרווח הבוקי ${o.margin}%</div>` : "";
+  const starBadge = st ? `<span class="star">${starSvg} כוכב: ${esc(oname[st.outcome])} ביחס ${st.odds.toFixed(2)}</span>` : "";
   const fav = p.pH>Math.max(p.pD,p.pA) ? "h" : (p.pA>Math.max(p.pD,p.pH) ? "a" : null);
   const chip = v=>`<span class="wp num">${v}%</span>`;
   const mx=Math.max(p.pH,p.pD,p.pA), dk = mx===p.pH?"h":(mx===p.pA?"a":"d");
@@ -227,13 +244,13 @@ function card(p,i){
   const [ph_,pa_]=p.pick.split("-").map(Number);
   const pickDir = ph_>pa_?"h":(ph_<pa_?"a":"d");
   const note = pickDir!==dk ? `<small>${close?"משחק פתוח: ":""}התוצאה הבודדת הסבירה היא ${p.pick}, אבל מצטבר ${dk==="d"?"תיקו":"ניצחון"} סביר יותר.</small>` : "";
-  return `<article class="card ${p.tier}" style="animation-delay:${Math.min(i,10)*40}ms">
+  return `<article class="card ${st?"S":p.tier}" style="animation-delay:${Math.min(i,10)*40}ms">
     <div class="row">
       <div class="teams">
         <div class="team ${fav==="h"?"fav":""}">${esc(p.home)}${fav==="h"?chip(p.pH):""}</div>
         <div class="team ${fav==="a"?"fav":""}">${esc(p.away)}${fav==="a"?chip(p.pA):""}</div>
         ${fav?"":`<span class="evenchip">משחק צמוד, נוטה לתיקו</span>`}
-        <span class="tier ${p.tier}">${p.tier} · ${tierTxt}</span>
+        <span class="tier ${p.tier}">${p.tier} · ${tierTxt}</span>${starBadge}
         ${current==="sniper"?`<span class="tier C" style="margin-inline-start:4px">${esc(DATA.leagues[p.league])}</span>`:""}
       </div>
       <div class="pick"><b>${p.pick}</b><small><span class="num">${p.p_pick}%</span> לתוצאה</small></div>
@@ -242,6 +259,7 @@ function card(p,i){
     <div class="bar" aria-hidden="true"><i class="h" style="width:${p.pH}%"></i><i class="d" style="width:${p.pD}%"></i><i class="a" style="width:${p.pA}%"></i></div>
     <div class="legend"><span>בית <b class="num">${p.pH}%</b></span><span>תיקו <b class="num">${p.pD}%</b></span><span>חוץ <b class="num">${p.pA}%</b></span></div>
     <div class="alts">${p.top.slice(1,4).map(t=>`<span class="alt"><b>${t.score}</b> ${t.p.toFixed(1)}%</span>`).join("")}</div>
+    ${oddsHtml}
     <div class="more"><span>מעל 2.5: <b class="num">${p.over25}%</b></span><span>שתיהן מבקיעות: <b class="num">${p.btts}%</b></span><span>שערים צפויים: <b class="num">${p.xg_h} - ${p.xg_a}</b></span></div>
   </article>`;
 }

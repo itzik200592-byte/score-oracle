@@ -33,6 +33,49 @@ def _ledger_stats(m):
     return out
 
 
+from .odds import load_live as _load_live, ODDS_LIVE, LIVE_MARKET_WEIGHT  # noqa: F401
+
+MIN_STAR_ODDS = 1.5     # user rule: odds of 1.5 or more ...
+MIN_STAR_PROB = 50.0    # ... and the prediction rates that outcome at 50% or more ("looks safe")
+
+
+def _live_odds():
+    return _load_live()
+
+
+def _attach_odds(m, rows):
+    """Adds bookmaker odds + model edge + a star flag to each prediction row (in place)."""
+    from .names import norm
+    live, fetched = _live_odds()
+    fd = {}
+    for r in m[~m.played].itertuples(index=False):
+        if r.o_h == r.o_h and r.o_d == r.o_d and r.o_a == r.o_a:
+            fd[(r.date.date().isoformat(), norm(r.home), norm(r.away))] = r
+    for row in rows:
+        key = (row["date"], norm(row["home"]), norm(row["away"]))
+        o = None
+        if key in live:
+            e = live[key]
+            o = dict(h=e["h"], d=e["d"], a=e["a"], src=e.get("source") or "live", at=fetched)
+        elif key in fd:
+            e = fd[key]
+            o = dict(h=round(float(e.o_h), 2), d=round(float(e.o_d), 2), a=round(float(e.o_a), 2),
+                     src="football-data (ממוצע שוק)", at=None)
+        if not o:
+            continue
+        p = dict(h=row["pH"], d=row["pD"], a=row["pA"])
+        implied = {k: 1 / o[k] for k in "hda"}
+        tot = sum(implied.values())
+        o["margin"] = round(100 * (tot - 1), 1)
+        o["market_p"] = {k: round(100 * implied[k] / tot) for k in "hda"}
+        o["ev"] = {k: round(p[k] / 100 * o[k] - 1, 3) for k in "hda"}
+        cands = [k for k in "hda" if o[k] >= MIN_STAR_ODDS and p[k] >= MIN_STAR_PROB]
+        if cands:
+            k = max(cands, key=lambda c: p[c])
+            o["star"] = dict(outcome=k, odds=o[k], model_p=p[k], market_p=o["market_p"][k], ev=o["ev"][k], value=o["ev"][k] > 0)
+        row["odds"] = o
+
+
 def export(m, pred):
     DOCS.mkdir(exist_ok=True)
     rows = []
@@ -41,7 +84,9 @@ def export(m, pred):
         rows.append(dict(date=r.date, league=r.league, home=r.home, away=r.away, pick=r.pick,
                          p_pick=round(100 * r.p_pick, 1), tier=r.tier, pH=round(100 * r.pH), pD=round(100 * r.pD),
                          pA=round(100 * r.pA), over25=round(100 * r.over25), btts=round(100 * r.btts),
-                         xg_h=round(r.exp_goals_h, 2), xg_a=round(r.exp_goals_a, 2), top=tops))
+                         xg_h=round(r.exp_goals_h, 2), xg_a=round(r.exp_goals_a, 2), top=tops,
+                         live_mkt=bool(getattr(r, "live_mkt", False)), model_only=[round(100 * r.pH0), round(100 * r.pD0), round(100 * r.pA0)]))
+    _attach_odds(m, rows)
     bt = None
     f = OUT / "backtest_report.json"
     if f.exists():

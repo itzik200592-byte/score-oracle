@@ -5,6 +5,9 @@ from .config import WEIGHTS_JSON, LEDGER_CSV, ADJ_JSON, OUT, LEAGUES
 from .models import Suite, COMPONENTS, outcome_probs, over25, btts
 from .evaluate import blend, group_of, GROUPS
 from .sniper import pick, top_k, tier
+from .models import score_matrix, DEFAULT_RHO, BIG4
+from .odds import load_live, devig_power, lambdas_from_probs, LIVE_MARKET_WEIGHT
+from .names import norm
 
 DEFAULT_CFG = dict(weights={g: {c: 1 / len(cs) for c in cs} for g, cs in GROUPS.items()}, beta=0.0, draw_scale=1.0,
                    cuts=[0.11, 0.14], params={})
@@ -27,19 +30,34 @@ def predict_fixtures(m, fixtures, cfg=None, adj=None, as_of=None):
     as_of = as_of or (pd.Timestamp.now().normalize() + pd.Timedelta(days=1))
     suite = Suite(cfg.get("params") or {}).fit(m[m.played], as_of)
     mats = suite.matrices(fixtures, adj)
+    live, _ = load_live()
     out = []
     for i, r in enumerate(fixtures.itertuples(index=False)):
-        w = cfg["weights"][group_of(r.league)]
-        P = blend({c: mats[c][i] for c in w}, w)
-        if P is None:
+        w = dict(cfg["weights"][group_of(r.league)])
+        comps = {c: mats[c][i] for c in w}
+        base = blend(comps, w)
+        if base is None:
             continue
+        pH0, pD0, pA0 = outcome_probs(base)
+        live_used = False
+        key = (r.date.date().isoformat(), norm(r.home), norm(r.away))
+        if key in live and r.league not in BIG4:
+            # competitions without odds history: fold the live bookmaker price into the blend
+            o = live[key]
+            T = float((base.sum(1) * np.arange(base.shape[0])).sum() + (base.sum(0) * np.arange(base.shape[1])).sum())
+            lh, la = lambdas_from_probs(devig_power([o["h"], o["d"], o["a"]]), T)
+            comps["mkt"] = score_matrix(lh, la, DEFAULT_RHO)
+            w = {c: (1 - LIVE_MARKET_WEIGHT) * v for c, v in w.items()}
+            w["mkt"] = LIVE_MARKET_WEIGHT
+            live_used = True
+        P = blend(comps, w)
         h, a = pick(P, cfg["beta"], cfg.get("draw_scale", 1.0))
         pH, pD, pA = outcome_probs(P)
         tops = top_k(P, 5)
         p_pick = float(P[h, a])
         sscore = p_pick  # tier = the model's own confidence in the picked scoreline
         out.append(dict(date=r.date.date().isoformat(), league=r.league, home=r.home, away=r.away, pick=f"{h}-{a}",
-                        p_pick=p_pick, tier=tier(sscore, cfg["cuts"]), pH=pH, pD=pD, pA=pA, over25=over25(P), btts=btts(P),
+                        p_pick=p_pick, tier=tier(sscore, cfg["cuts"]), pH=pH, pD=pD, pA=pA, pH0=pH0, pD0=pD0, pA0=pA0, live_mkt=live_used, over25=over25(P), btts=btts(P),
                         top5=" | ".join(f"{x}-{y} {100 * p:.1f}%" for (x, y), p in tops),
                         exp_goals_h=float((P.sum(1) * np.arange(P.shape[0])).sum()),
                         exp_goals_a=float((P.sum(0) * np.arange(P.shape[1])).sum()),
