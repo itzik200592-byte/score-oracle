@@ -8,6 +8,7 @@ K = np.arange(G)
 LOGFACT = gammaln(K + 1)
 BIG4 = ["PL", "LL", "SA", "L1"]
 DEFAULT_RHO = -0.04
+LEVEL_LEAGUES = {"CL", "IL", "EL"}   # competitions whose scoring level drifts (the big 4 are already well anchored)
 
 
 def pois(lam):
@@ -23,6 +24,17 @@ def score_matrix(lh, la, rho=DEFAULT_RHO):
         M[0, 1] *= max(1 + lh * rho, 0.01)
         M[1, 0] *= max(1 + la * rho, 0.01)
         M[1, 1] *= max(1 - rho, 0.01)
+    return M / M.sum()
+
+
+def score_matrix_disp(lh, la, rho=DEFAULT_RHO, disp=0.0):
+    """Common-shock mixture: the match 'tempo' scales BOTH rates by (1-d, 1, 1+d) with weights (.25, .5, .25).
+    Gives fatter tails (open games with many goals, blowouts) than independent Poisson. disp=0 is plain Dixon-Coles."""
+    if not disp:
+        return score_matrix(lh, la, rho)
+    M = 0.5 * score_matrix(lh, la, rho)
+    M += 0.25 * score_matrix(lh * (1 - disp), la * (1 - disp), rho)
+    M += 0.25 * score_matrix(lh * (1 + disp), la * (1 + disp), rho)
     return M / M.sum()
 
 
@@ -79,8 +91,9 @@ def market_lambdas(m: pd.DataFrame):
 
 # ------------------------------------------------------------------ Dixon-Coles (time-decayed, ridge-shrunk)
 class DC:
-    def __init__(self, half_life=330, ridge=3.0, xw=0.0, pooled=False, years=4, name="dc", newcomer=(-0.15, -0.20)):
+    def __init__(self, half_life=330, ridge=3.0, xw=0.0, pooled=False, years=4, name="dc", newcomer=(-0.15, -0.20), level_hl=None, level_k=20.0):
         self.half_life, self.ridge, self.xw, self.pooled, self.years, self.name = half_life, ridge, xw, pooled, years, name
+        self.level_hl, self.level_k = level_hl, level_k
         self.newcomer = newcomer
         self.ok = False
 
@@ -178,6 +191,17 @@ class DC:
             if ll > best:
                 best, brho = ll, rho
         self.rho = brho
+        if self.level_hl:
+            # re-anchor each competition's goal level to the RECENT actual level (scoring environments drift:
+            # CL averaged 2.98 goals in 2022 and 3.44+ now). Shrunk toward 'no change' by level_k.
+            wr = 0.5 ** (age / self.level_hl)
+            tot_act, tot_exp = gh + ga, lh + la
+            for lname, li in self.lix.items():
+                if lname not in LEVEL_LEAGUES:
+                    continue
+                sel = Lm == li
+                A = np.sum(wr[sel] * tot_act[sel]); E = np.sum(wr[sel] * tot_exp[sel])
+                self.mu[li] += np.log((A + self.level_k) / (E + self.level_k))
         self.ok = True
         return self
 
@@ -207,8 +231,9 @@ INIT_ELO = {"PL": 1650, "LL": 1630, "SA": 1600, "L1": 1560, "IL": 1380, "CL": 15
 
 
 class Elo:
-    def __init__(self, k=20.0, hfa=65.0, name="elo"):
-        self.k, self.hfa, self.name = k, hfa, name
+    def __init__(self, k=20.0, hfa=65.0, name="elo", map_hl=900, level_hl=None, level_k=20.0):
+        self.k, self.hfa, self.name, self.map_hl = k, hfa, name, map_hl
+        self.level_hl, self.level_k = level_hl, level_k
         self.ok = False
 
     def fit(self, df, as_of):
@@ -240,7 +265,7 @@ class Elo:
         x = (pre + self.hfa) / 400
         gh, ga = d.hg.values.astype(float), d.ag.values.astype(float)
         age = (as_of - d.date).dt.days.values
-        w = 0.5 ** (age / 900)
+        w = 0.5 ** (age / self.map_hl)
         nL = len(lgs)
 
         def nll(p):
@@ -252,6 +277,15 @@ class Elo:
         p0 = np.concatenate([np.full(nL, 0.1), [0.5, 0.0]])
         sol = minimize(nll, p0, method="L-BFGS-B")
         self.c0, self.c1, self.c2 = sol.x[:nL], sol.x[nL], sol.x[nL + 1]
+        if self.level_hl:
+            lh = np.exp(self.c0[Lm] + self.c2 + self.c1 * x); la = np.exp(self.c0[Lm] - self.c1 * x)
+            wr = 0.5 ** (age / self.level_hl)
+            for lname, li in self.lix.items():
+                if lname not in LEVEL_LEAGUES:
+                    continue
+                sel = Lm == li
+                A = np.sum(wr[sel] * (gh + ga)[sel]); E = np.sum(wr[sel] * (lh + la)[sel])
+                self.c0[li] += np.log((A + self.level_k) / (E + self.level_k))
         self.ok = len(d) > 100
         return self
 
@@ -274,7 +308,7 @@ class Suite:
     """All component models fitted on data strictly before `as_of`."""
 
     def __init__(self, params=None):
-        p = dict(dc_hl=330, dc_ridge=3.0, dcx_hl=200, dcx_ridge=3.0, dcx_w=0.5, pool_hl=420, pool_ridge=3.0, elo_k=20.0)
+        p = dict(dc_hl=330, dc_ridge=3.0, dcx_hl=200, dcx_ridge=3.0, dcx_w=0.5, pool_hl=420, pool_ridge=3.0, elo_k=20.0, elo_map_hl=900, level_hl=120, level_k=20.0, disp={"CL": 0.3, "IL": 0.3, "EL": 0.3})
         p.update(params or {})
         self.p = p
 
@@ -282,11 +316,11 @@ class Suite:
         p = self.p
         self.dc, self.dcx = {}, {}
         for lg in BIG4 + ["IL"]:
-            self.dc[lg] = DC(p["dc_hl"], p["dc_ridge"], 0.0, False, 4, "dc").fit(m, as_of, [lg])
+            self.dc[lg] = DC(p["dc_hl"], p["dc_ridge"], 0.0, False, 4, "dc", level_hl=p["level_hl"], level_k=p["level_k"]).fit(m, as_of, [lg])
         for lg in BIG4:
-            self.dcx[lg] = DC(p["dcx_hl"], p["dcx_ridge"], p["dcx_w"], False, 3, "dcx").fit(m, as_of, [lg])
-        self.pool = DC(p["pool_hl"], p["pool_ridge"], 0.0, True, 4, "pool").fit(m, as_of)
-        self.elo = Elo(p["elo_k"]).fit(m, as_of)
+            self.dcx[lg] = DC(p["dcx_hl"], p["dcx_ridge"], p["dcx_w"], False, 3, "dcx", level_hl=p["level_hl"], level_k=p["level_k"]).fit(m, as_of, [lg])
+        self.pool = DC(p["pool_hl"], p["pool_ridge"], 0.0, True, 4, "pool", level_hl=p["level_hl"], level_k=p["level_k"]).fit(m, as_of)
+        self.elo = Elo(p["elo_k"], map_hl=p["elo_map_hl"], level_hl=p["level_hl"], level_k=p["level_k"]).fit(m, as_of)
         return self
 
     def lams(self, row, adj=None):
@@ -317,6 +351,7 @@ class Suite:
         n = len(rows)
         out = {c: np.full((n, G, G), np.nan) for c in COMPONENTS}
         for i, row in enumerate(rows.itertuples(index=False)):
+            d = self.p["disp"].get(row.league, 0.0)
             for c, (lh, la, rho) in self.lams(row, adj).items():
-                out[c][i] = score_matrix(lh, la, rho)
+                out[c][i] = score_matrix_disp(lh, la, rho, d if c != "mkt" else 0.0)
         return out

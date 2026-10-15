@@ -16,24 +16,27 @@ def _log(msg):
 def collect(fast=False):
     """Pull all sources. Returns (frames dict, resolver)."""
     fr = {}
-    _log("[1/6] football-data.co.uk  (results + odds, 4 leagues)")
+    _log("[1/7] football-data.co.uk  (results + odds, 4 leagues)")
     fr["fd"] = S.football_data()
     _log(f"      {len(fr['fd'])} rows")
-    _log("[2/6] Understat            (xG per match)")
+    _log("[2/7] Understat            (xG per match)")
     fr["us"] = S.understat()
     _log(f"      {len(fr['us'])} rows")
-    _log("[3/6] openfootball         (Champions League history)")
+    _log("[3/7] openfootball         (Champions League history)")
     fr["ofb"] = S.openfootball_cl()
     _log(f"      {len(fr['ofb'])} rows")
-    _log("[4/6] ESPN                 (fixtures + results, current season, 6 competitions)")
+    _log("[4/7] ESPN                 (fixtures + results, current season, 6 competitions)")
     fr["espn"] = S.espn()
     _log(f"      {len(fr['espn'])} rows")
-    _log("[5/6] TheSportsDB          (Israeli league; first run scans 3 seasons, then cached)")
+    _log("[5/7] TheSportsDB          (Israeli league; first run scans 3 seasons, then cached)")
     fr["tsdb"] = S.thesportsdb("IL", seasons=1 if fast else 3)
     _log(f"      {len(fr['tsdb'])} rows")
-    _log("[6/6] ESPN history         (Israeli league results 2020-21 .. 2024-25; fills TheSportsDB gaps)")
+    _log("[6/7] ESPN history         (Israeli league results 2020-21 .. 2024-25; fills TheSportsDB gaps)")
     fr["espn_il"] = S.espn_history("IL", first=FIRST_SEASON)
     _log(f"      {len(fr['espn_il'])} rows")
+    _log("[7/7] ESPN history         (Europa League 2020-21 .. last season; Tue-Fri only)")
+    fr["espn_el"] = S.espn_history("EL", first=FIRST_SEASON, weekdays=(1, 2, 3, 4))
+    _log(f"      {len(fr['espn_el'])} rows")
     return fr
 
 
@@ -77,7 +80,7 @@ def build(fast=False):
                 rs.register(r, "CL")
 
     parts = []
-    for key in ("fd", "ofb", "espn", "espn_il", "tsdb"):
+    for key in ("fd", "ofb", "espn", "espn_il", "espn_el", "tsdb"):
         df = fr[key]
         if df is None or df.empty:
             continue

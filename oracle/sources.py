@@ -120,11 +120,13 @@ def _espn_day(lg, day, today):
     return out
 
 
-def espn(leagues=None, start=None, end=None):
+def espn(leagues=None, start=None, end=None, weekdays=None):
     today = dt.date.today()
     start = start or dt.date(current_season(), 8, 1)
     end = end or today + dt.timedelta(days=14)
     days = [start + dt.timedelta(days=i) for i in range((end - start).days + 1)]
+    if weekdays is not None:
+        days = [d for d in days if d.weekday() in weekdays]
     jobs = [(lg, d) for lg in (leagues or list(LEAGUES)) for d in days]
     with ThreadPoolExecutor(8) as ex:
         res = list(ex.map(lambda a: _espn_day(a[0], a[1], today), jobs))
@@ -132,13 +134,13 @@ def espn(leagues=None, start=None, end=None):
     return pd.DataFrame(rows) if rows else _empty()
 
 
-def espn_history(lg="IL", first=FIRST_SEASON):
+def espn_history(lg="IL", first=FIRST_SEASON, weekdays=None, months=None):
     """Past seasons of one competition from the ESPN scoreboard, day by day (cached forever once fetched).
     Only seasons that ended before the current one; ESPN's Israeli coverage runs 2020-21 .. 2024-25."""
     cur = current_season()
     parts = []
     for s in range(first, cur):
-        df = espn([lg], start=dt.date(s, 8, 1), end=dt.date(s + 1, 7, 31))
+        df = espn([lg], start=dt.date(s, 8, 1), end=dt.date(s + 1, 7, 31), weekdays=weekdays)
         if not df.empty:
             parts.append(df[df.played])
     return pd.concat(parts, ignore_index=True) if parts else _empty()

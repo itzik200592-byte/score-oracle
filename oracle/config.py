@@ -20,6 +20,7 @@ LEAGUES = {
     "L1": dict(name="Ligue 1", he="ליגה 1 צרפתית", fd="F1", us="Ligue_1", espn="fra.1", tsdb=4334, cc="FRA"),
     "IL": dict(name="Israeli Premier League", he="ליגת העל", fd=None, us=None, espn="isr.1", tsdb=4644, cc="ISR"),
     "CL": dict(name="Champions League", he="ליגת האלופות", fd=None, us=None, espn="uefa.champions", tsdb=4480, cc=None),
+    "EL": dict(name="Europa League", he="הליגה האירופית", fd=None, us=None, espn="uefa.europa", tsdb=4481, cc=None),
 }
 BIG4 = ["PL", "LL", "SA", "L1"]
 CC2LG = {v["cc"]: k for k, v in LEAGUES.items() if v["cc"]}

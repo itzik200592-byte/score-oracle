@@ -8,7 +8,7 @@ from .models import Suite, COMPONENTS, G, outcome_probs, over25, btts
 from .sniper import pick, top_k
 
 BT_PKL = DATA / "backtest.pkl"
-GROUPS = {"big4": ["dc", "dcx", "pool", "elo", "mkt"], "IL": ["dc", "pool", "elo"], "CL": ["pool", "elo"]}
+GROUPS = {"big4": ["dc", "dcx", "pool", "elo", "mkt"], "IL": ["dc", "pool", "elo"], "CL": ["pool", "elo"], "EL": ["pool", "elo"]}
 
 
 def group_of(lg):

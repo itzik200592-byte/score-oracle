@@ -104,7 +104,7 @@ th,td{padding:9px 10px;text-align:right;border-bottom:1px solid #222c38;font-siz
 .small{color:#8b98a5;font-size:12px;direction:ltr;text-align:left}.note{margin-top:22px;color:#8b98a5;font-size:13px;line-height:1.7}"""
     parts = [f"<!doctype html><html lang='he' dir='rtl'><meta charset='utf-8'><title>Score Oracle</title><style>{css}</style><body>",
              f"<h1>Score Oracle: חיזוי תוצאות</h1><div class='sub'>נוצר ב-{dt.datetime.now():%d/%m/%Y %H:%M}. מודלים סטטיסטיים בלבד, לא ייעוץ הימורים.</div>"]
-    for lg in ["IL", "CL", "PL", "LL", "SA", "L1"]:
+    for lg in ["IL", "CL", "EL", "PL", "LL", "SA", "L1"]:
         g = pred[pred.league == lg]
         if g.empty:
             continue
