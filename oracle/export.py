@@ -63,6 +63,8 @@ def _attach_odds(m, rows):
             cs = (e.get("cs") or {}).get(row["pick"].replace("-", "-"))
             if cs:
                 o["pick_price"] = cs
+            if row.get("dist"):
+                o["cs"] = {t["s"]: e["cs"][t["s"]] for t in row["dist"]["top"] if t["s"] in (e.get("cs") or {})}
         elif key in fd:
             e = fd[key]
             o = dict(h=round(float(e.o_h), 2), d=round(float(e.o_d), 2), a=round(float(e.o_a), 2),
@@ -80,6 +82,27 @@ def _attach_odds(m, rows):
             k = max(cands, key=lambda c: p[c])
             o["star"] = dict(outcome=k, odds=o[k], model_p=p[k], market_p=o["market_p"][k], ev=o["ev"][k], value=o["ev"][k] > 0)
         row["odds"] = o
+
+
+def _compact(c):
+    if not c or "note" in c:
+        return None
+    def rec(r):
+        return None if not r else f"{r['W']}-{r['D']}-{r['L']} (ש {r['gf']}:{r['ga']})"
+    out = dict(form=c.get("form_last6"), last10=rec(c.get("last10")), home10=rec(c.get("home_record_last10")),
+               away10=rec(c.get("away_record_last10")), table=c.get("table"), rest=c.get("days_since_last_match"),
+               m14=c.get("matches_last14d"), partial=bool((c.get("data_coverage") or {}).get("warning")))
+    return out
+
+
+def _attach_context(m, rows):
+    from . import context as CX
+    for row in rows:
+        try:
+            dos = CX.dossier(m, row["home"], row["away"], row["league"])
+        except Exception:
+            continue
+        row["ctx"] = dict(home=_compact(dos["home_team"]), away=_compact(dos["away_team"]), h2h=dos["head_to_head_recent"][-3:])
 
 
 def _opinions():
@@ -109,8 +132,9 @@ def export(m, pred):
                          p_pick=round(100 * r.p_pick, 1), tier=r.tier, pH=round(100 * r.pH), pD=round(100 * r.pD),
                          pA=round(100 * r.pA), over25=round(100 * r.over25), btts=round(100 * r.btts),
                          xg_h=round(r.exp_goals_h, 2), xg_a=round(r.exp_goals_a, 2), top=tops,
-                         live_mkt=bool(getattr(r, "live_mkt", False)), model_only=[round(100 * r.pH0), round(100 * r.pD0), round(100 * r.pA0)]))
+                         dist=getattr(r, "dist", None), live_mkt=bool(getattr(r, "live_mkt", False)), model_only=[round(100 * r.pH0), round(100 * r.pD0), round(100 * r.pA0)]))
     _attach_odds(m, rows)
+    _attach_context(m, rows)
     from .names import norm as _norm
     ops = _opinions()
     for row in rows:
@@ -130,8 +154,12 @@ def export(m, pred):
         p = g[g.played]
         cov.append(dict(league=lg, played=int(len(p)), upcoming=int((~g.played).sum()),
                         last=str(p.date.max().date()) if len(p) else None))
+    calib = {}
+    if bt is not None and f.exists():
+        calib = {lg: dict(n=v["n"], direction=round(100 * v["acc_1x2"], 1), exact=round(100 * v["exact"], 1))
+                 for lg, v in rep.get("by_league", {}).items()}
     data = dict(generated_at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
                 leagues={k: v["he"] for k, v in LEAGUES.items()}, predictions=rows,
-                ledger=_ledger_stats(m), backtest=bt, coverage=cov)
+                ledger=_ledger_stats(m), backtest=bt, coverage=cov, calib=calib)
     (DOCS / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     return DOCS / "data.json"

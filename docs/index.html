@@ -98,6 +98,29 @@ h2 .count{font:500 12px Heebo;color:var(--ink-dim);background:var(--surface-2);p
 .op h4{margin:10px 0 2px;font-size:13px;color:var(--accent)}
 .op .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .op .chips span{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:2px 8px;color:var(--ink-dim)}
+.vbtn{width:100%;min-height:48px;margin-top:12px;border:0;border-radius:12px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform var(--dur) var(--ease)}
+.vbtn:active{transform:scale(.98)}.vbtn svg{width:18px;height:18px}
+dialog.sheet{border:0;padding:0;width:100%;max-width:720px;max-height:92dvh;margin:auto auto 0;border-radius:20px 20px 0 0;background:var(--surface);color:var(--ink);overflow:auto}
+dialog.sheet::backdrop{background:rgba(0,0,0,.6)}
+.sheet .in{padding:16px var(--pad) calc(24px + env(safe-area-inset-bottom))}
+.sheet header.sh{position:static;background:none;border:0;padding:0;display:flex;justify-content:space-between;gap:10px;align-items:flex-start;backdrop-filter:none}
+.sheet h3{margin:0;font-family:Rubik,sans-serif;font-weight:900;font-size:20px;line-height:1.25}
+.sheet .x{min-width:44px;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);font-size:20px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.hero>div{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:12px}
+.hero small{display:block;color:var(--ink-dim);font-size:12px}
+.hero b{display:block;font-family:Rubik,sans-serif;font-weight:900;font-size:24px;line-height:1.15;margin-top:2px}
+.hero .acc{color:var(--accent)}
+.sec{margin-top:16px}.sec h4{margin:0 0 8px;font-size:14px;color:var(--ink-dim);font-weight:700}
+.hb{display:grid;grid-template-columns:34px 1fr 74px;align-items:center;gap:8px;font-size:13px;margin:5px 0}
+.hb i{display:block;height:10px;border-radius:5px;background:var(--away);min-width:2px}
+.hb i.top{background:var(--accent)}
+.lines{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.lines div{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-size:13px}
+.lines b{float:inline-end;font-size:15px}
+.trust{font-size:12px;color:var(--ink-dim);line-height:1.6;border-top:1px solid var(--line);margin-top:16px;padding-top:12px}
+.sheet .row2{display:flex;gap:8px;margin-top:14px}
+.sheet .row2 .btn{flex:1;justify-content:center}
 .osrc{color:var(--ink-faint);font-size:11px;margin-top:4px}
 .evenchip{font-size:11px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-inline-start:6px}
 .pick{flex:none;text-align:center;min-width:76px}
@@ -176,6 +199,7 @@ footer{text-align:center;color:var(--ink-faint);font-size:12px;padding:30px var(
   </details>
 </main>
 <footer id="foot"></footer>
+<dialog class="sheet" id="sheet" aria-label="פסק דין"></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -272,6 +296,7 @@ function card(p,i){
     <div class="alts">${p.top.slice(1,4).map(t=>`<span class="alt"><b>${t.score}</b> ${t.p.toFixed(1)}%</span>`).join("")}</div>
     ${oddsHtml}
     ${opHtml}
+    <button class="vbtn" data-v="${p.date}|${p.home}|${p.away}" aria-label="פסק דין מלא על ${esc(p.home)} נגד ${esc(p.away)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></svg>פסק דין מלא: תוצאה, מנצחת, שערים</button>
     <div class="more"><span>מעל 2.5: <b class="num">${p.over25}%</b></span><span>שתיהן מבקיעות: <b class="num">${p.btts}%</b></span><span>שערים צפויים: <b class="num">${p.xg_h} - ${p.xg_a}</b></span></div>
   </article>`;
 }
@@ -290,5 +315,6 @@ document.getElementById("reload").onclick=()=>{load();toast("מרענן...")};
 document.getElementById("run").onclick=()=>toast("נפתח GitHub. לחץ שם על Run workflow, והתוצאות יופיעו כאן אחרי כ-10 דקות.");
 load();
 </script>
+<script src="verdict.js"></script>
 </body>
 </html>

@@ -30,6 +30,27 @@ def load_adj():
     return {t: v for t, v in cur.items() if v.get("until", today) >= today}
 
 
+_II, _JJ = np.meshgrid(np.arange(11), np.arange(11), indexing="ij")
+
+
+def distribution(P):
+    """Everything the 'verdict' panel needs from one score matrix (all probabilities in %)."""
+    tot = _II + _JJ
+    tp = [float(P[tot == k].sum()) for k in range(6)] + [float(P[tot >= 6].sum())]
+    flat = [(float(P[i, j]), i, j) for i in range(11) for j in range(11)]
+    flat.sort(reverse=True)
+    mean_t = float((P * tot).sum())
+    margin = _II - _JJ
+    return dict(
+        total=[round(100 * x, 1) for x in tp],
+        over={k: round(100 * float(P[tot >= int(k + 0.5)].sum()), 1) for k in (0.5, 1.5, 2.5, 3.5, 4.5)},
+        btts=round(100 * float(P[(_II > 0) & (_JJ > 0)].sum()), 1),
+        cs_home=round(100 * float(P[_JJ == 0].sum()), 1), cs_away=round(100 * float(P[_II == 0].sum()), 1),
+        home_by2=round(100 * float(P[margin >= 2].sum()), 1), away_by2=round(100 * float(P[margin <= -2].sum()), 1),
+        exp_total=round(mean_t, 2), likely_total=int(np.argmax(tp)),
+        top=[dict(s=f"{i}-{j}", p=round(100 * pr, 1)) for pr, i, j in flat[:8]])
+
+
 def predict_fixtures(m, fixtures, cfg=None, adj=None, as_of=None):
     cfg = cfg or load_cfg()
     adj = load_adj() if adj is None else adj
@@ -63,7 +84,7 @@ def predict_fixtures(m, fixtures, cfg=None, adj=None, as_of=None):
         p_pick = float(P[h, a])
         sscore = p_pick  # tier = the model's own confidence in the picked scoreline
         out.append(dict(date=r.date.date().isoformat(), league=r.league, home=r.home, away=r.away, pick=f"{h}-{a}",
-                        p_pick=p_pick, tier=tier(sscore, cfg["cuts"]), pH=pH, pD=pD, pA=pA, pH0=pH0, pD0=pD0, pA0=pA0, live_mkt=live_used, over25=over25(P), btts=btts(P),
+                        p_pick=p_pick, tier=tier(sscore, cfg["cuts"]), pH=pH, pD=pD, pA=pA, pH0=pH0, pD0=pD0, pA0=pA0, live_mkt=live_used, dist=distribution(P), over25=over25(P), btts=btts(P),
                         top5=" | ".join(f"{x}-{y} {100 * p:.1f}%" for (x, y), p in tops),
                         exp_goals_h=float((P.sum(1) * np.arange(P.shape[0])).sum()),
                         exp_goals_a=float((P.sum(0) * np.arange(P.shape[1])).sum()),
