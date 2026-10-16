@@ -35,13 +35,12 @@ def run(m, push=True, full=True):
         return
     fx = P.upcoming(m, 8)
     pred = P.predict_fixtures(m, fx)
-    P.ledger_add(pred)
     pred.to_csv(OUT / "predictions_latest.csv", index=False, encoding="utf-8")
     print("site data:", export(m, pred))
     if push:
         # only add files that exist: one missing pathspec makes `git add` fail for ALL of them
         paths = [p for p in ("docs/data.json", "data/ledger.csv", "data/matches.csv", "data/odds_live.json",
-                             "data/team_he_learned.json", "data/extra_fixtures.json", "data/ensemble.json") if (ROOT / p).exists()]
+                             "data/team_he_learned.json", "data/extra_fixtures.json", "data/ensemble.json", "data/adjustments.json") if (ROOT / p).exists()]
         _git("add", *paths)
         if (ROOT / "data" / "opinions").exists():
             _git("add", "data/opinions")

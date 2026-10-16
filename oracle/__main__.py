@@ -60,7 +60,8 @@ def main():
         from . import context as CX
         print(CX.as_text(CX.dossier(m, a.home, a.away, a.league))); return
     if a.cmd == "review":
-        print(P.review(m)); return
+        from . import track
+        print(track.text_report(m)); return
     if a.cmd == "adjust":
         from .config import ADJ_JSON
         cur = P.load_adj()
@@ -84,11 +85,9 @@ def main():
             print(show.to_string(index=False))
         pred.to_csv(OUT / "predictions_latest.csv", index=False, encoding="utf-8")
         print("html:", P.html_report(pred))
-        if not a.no_ledger:
-            P.ledger_add(pred)
         if a.export:
             from .export import export
-            print("site data:", export(m, pred))
+            print("site data:", export(m, pred, ledger=not a.no_ledger))
         return
     if a.cmd == "match":
         from .models import Suite

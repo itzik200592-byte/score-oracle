@@ -2,7 +2,7 @@ name: Score Oracle
 
 on:
   schedule:
-    - cron: "0 5 * * *"        # 08:00 Israel, every morning
+    - cron: "17 */3 * * *"     # every 3 hours (GitHub may delay a run by an hour or two): keeps results fresh overnight
   workflow_dispatch:           # the "run now" button
 
 permissions:
@@ -44,8 +44,21 @@ jobs:
           path: data/cache
           key: oracle-cache-${{ github.run_id }}
 
-      - name: Backtest and learn weights
-        run: python -m oracle backtest --days 540 --step 14
+      - name: Backtest and learn weights (weekly)
+        run: |
+          python - <<'PY' > /tmp/age.txt
+          import json, datetime as dt, pathlib
+          p = pathlib.Path("data/ensemble.json")
+          age = 99
+          if p.exists():
+              t = json.loads(p.read_text(encoding="utf-8")).get("tuned")
+              if t:
+                  age = (dt.datetime.now() - dt.datetime.fromisoformat(t)).days
+          print(age)
+          PY
+          age=$(cat /tmp/age.txt)
+          echo "ensemble age: $age days"
+          if [ "$age" -ge 7 ]; then python -m oracle backtest --days 540 --step 14; fi
 
       - name: Predict and export
         run: python -m oracle predict --days 8 --export
@@ -54,6 +67,7 @@ jobs:
         run: |
           git config user.name "score-oracle-bot"
           git config user.email "bot@users.noreply.github.com"
+          git add docs/data.json data/ledger.csv data/ensemble.json data/matches.csv data/extra_fixtures.json data/adjustments.json 2>/dev/null || true
           git add docs/data.json data/ledger.csv data/ensemble.json data/matches.csv
           git diff --cached --quiet || git commit -m "predictions $(date -u +%Y-%m-%d\ %H:%M) UTC"
           git pull --rebase -X theirs

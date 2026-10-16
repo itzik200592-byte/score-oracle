@@ -123,7 +123,7 @@ def _opinions():
     return out
 
 
-def export(m, pred):
+def export(m, pred, ledger=True):
     DOCS.mkdir(exist_ok=True)
     rows = []
     for r in pred.itertuples(index=False):
@@ -141,6 +141,9 @@ def export(m, pred):
         e = ops.get((row["date"], _norm(row["home"]), _norm(row["away"])))
         if e:
             row["opinion"] = e
+    from . import track
+    if ledger:
+        track.upsert(rows, m)
     bt = None
     f = OUT / "backtest_report.json"
     if f.exists():
@@ -160,6 +163,6 @@ def export(m, pred):
                  for lg, v in rep.get("by_league", {}).items()}
     data = dict(generated_at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
                 leagues={k: v["he"] for k, v in LEAGUES.items()}, predictions=rows,
-                ledger=_ledger_stats(m), backtest=bt, coverage=cov, calib=calib)
+                ledger=_ledger_stats(m), track=track.export_block(m), backtest=bt, coverage=cov, calib=calib)
     (DOCS / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     return DOCS / "data.json"

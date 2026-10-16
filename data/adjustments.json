@@ -1,0 +1,47 @@
+{
+  "Lyon": {
+    "att": 0.92,
+    "def": 1.0,
+    "until": "2026-10-15"
+  },
+  "Crystal Palace": {
+    "att": 0.92,
+    "def": 1.0,
+    "until": "2026-10-15"
+  },
+  "Sunderland": {
+    "att": 1.0,
+    "def": 1.07,
+    "until": "2026-10-15"
+  },
+  "Celta": {
+    "att": 0.92,
+    "def": 1.0,
+    "until": "2026-10-15"
+  },
+  "Juventus": {
+    "att": 0.92,
+    "def": 1.0,
+    "until": "2026-10-15"
+  },
+  "Sassuolo": {
+    "att": 1.0,
+    "def": 1.07,
+    "until": "2026-10-16"
+  },
+  "Bournemouth": {
+    "att": 0.96,
+    "def": 1.0,
+    "until": "2026-10-15"
+  },
+  "SK Sturm Graz": {
+    "att": 0.96,
+    "def": 1.0,
+    "until": "2026-10-15"
+  },
+  "Olympiakos": {
+    "att": 0.96,
+    "def": 1.0,
+    "until": "2026-10-15"
+  }
+}

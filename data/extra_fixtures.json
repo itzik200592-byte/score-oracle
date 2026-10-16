@@ -28,5 +28,17 @@
   "date": "2026-10-19",
   "home": "Beitar Jerusalem",
   "away": "Maccabi Tel Aviv"
+ },
+ {
+  "league": "IL",
+  "date": "2026-10-18",
+  "home": "Hapoel Be'er Sheva",
+  "away": "Hapoel Jerusalem"
+ },
+ {
+  "league": "CL",
+  "date": "2026-10-21",
+  "home": "Aston Villa",
+  "away": "Viking FK"
  }
 ]
