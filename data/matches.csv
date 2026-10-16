@@ -12522,10 +12522,10 @@ date,league,hg,ag,played,o_h,o_d,o_a,o_ov,o_un,src,home,away,n_src,xg_h,xg_a,sea
 2026-10-15,EL,2.0,3.0,True,,,,,,espn,TSG Hoffenheim,Beşiktaş,1,,,2026,,
 2026-10-15,EL,1.0,2.0,True,,,,,,espn,Torreense,Sunderland,1,,,2026,,
 2026-10-15,EL,1.0,1.0,True,,,,,,espn,Union St.-Gilloise,Sociedad,1,,,2026,,
-2026-10-16,L1,,,False,2.9,3.51,2.31,1.64,2.17,football-data,Le Mans,Toulouse,2,,,2026,1.3810452504406723,1.5653674427843762
-2026-10-16,LL,,,False,,,,,,espn,Deportivo,Levante,1,,,2026,,
+2026-10-16,L1,0.0,3.0,True,2.9,3.51,2.31,1.64,2.17,football-data,Le Mans,Toulouse,2,0.609329,2.06038,2026,1.3810452504406723,1.5653674427843762
+2026-10-16,LL,1.0,1.0,True,,,,,,espn,Deportivo,Levante,1,,,2026,,
 2026-10-16,LL,,,False,2.06,3.46,3.51,1.87,1.87,football-data,La Coruna,Levante,1,,,2026,1.5339626274407665,1.1271176658946425
-2026-10-16,SA,,,False,2.31,3.78,2.73,1.4,2.82,football-data,Frosinone,Sassuolo,2,,,2026,1.7822723242096348,1.6335314337356646
+2026-10-16,SA,4.0,2.0,True,2.31,3.78,2.73,1.4,2.82,football-data,Frosinone,Sassuolo,2,2.94443,1.82074,2026,1.7822723242096348,1.6335314337356646
 2026-10-17,IL,,,False,,,,,,thesportsdb,Beitar Jerusalem,Maccabi Tel Aviv,1,,,2026,,
 2026-10-17,IL,,,False,,,,,,winner,Bnei Sakhnin,Hapoel Petah Tikva,1,,,2026,,
 2026-10-17,IL,,,False,,,,,,thesportsdb,Hapoel Be'er Sheva,Hapoel Jerusalem,1,,,2026,,
