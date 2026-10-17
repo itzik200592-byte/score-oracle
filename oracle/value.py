@@ -56,34 +56,58 @@ def scan(rows):
                                 ev=round(100 * (t["p"] / 100 * pr - 1), 1), hist_roi=None, surprise=False))
     for s in out:
         s["flag"] = s["ev"] >= 100 * MIN_EDGE[s["market"]]
+        s["strategies"] = strategies(s)
+        s["loss_per_100"] = round(-s["ev"], 1) if s["ev"] < 0 else 0.0        # expected loss per 100 NIS staked, by the model
+        s["stake_pct"] = stake_pct(s)
     return sorted(out, key=lambda s: -s["ev"])
 
 
+def strategies(s):
+    """Tags for the paper ledger: several strategies are tracked side by side so we learn which (if any) survives Winner."""
+    t = []
+    if s["flag"]:
+        t.append("model_ev")                                   # model edge above Winner's margin (historically lost)
+    if s["market"] == "1x2" and s["odds"] <= 1.6 and s["model_p"] >= 62:
+        t.append("favourite")                                  # strong favourites: least negative bucket in the backtest
+    if s.get("sharp_flag"):
+        t.append("sharp_vs_winner")                            # Winner pays more than the sharp market (only evidence-backed edge)
+    return t
+
+
+def stake_pct(s):
+    """Fractional Kelly (1/4) of bankroll. Negative edge -> 0: the honest answer is not to bet."""
+    p = s["model_p"] / 100
+    b = s["odds"] - 1
+    k = (p * b - (1 - p)) / b if b > 0 else 0
+    return round(max(0.0, 0.25 * k) * 100, 2)
+
+
 # ------------------------------------------------------------ paper bets
-PCOLS = ["made", "date", "league", "home", "away", "market", "sel", "label", "odds", "model_p", "ev", "kickoff", "stake", "result", "pnl", "settled"]
+PCOLS = ["made", "date", "league", "home", "away", "market", "sel", "label", "odds", "model_p", "ev", "kickoff", "stake", "result", "pnl", "settled", "strategy"]
 
 
 def record(selections):
     """Log every flagged selection once (first time seen, before kickoff) as a 1-unit paper bet."""
     now = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None)
     led = pd.read_csv(PAPER_CSV) if PAPER_CSV.exists() else pd.DataFrame(columns=PCOLS)
-    have = {(r.date, r.home, r.away, r.market, r.sel) for r in led.itertuples()}
+    if "strategy" not in led:
+        led["strategy"] = "model_ev"
+    have = {(r.date, r.home, r.away, r.market, r.sel, r.strategy) for r in led.itertuples()}
     new = []
     for s in selections:
-        if not s["flag"]:
-            continue
-        key = (s["date"], s["home"], s["away"], s["market"], s["sel"])
-        if key in have:
-            continue
-        ko = s.get("kickoff")
-        if ko and ":" in str(ko):
-            hh, mm = [int(x) for x in str(ko).split(":")]
-            cutoff = dt.datetime.fromisoformat(s["date"]).replace(hour=hh, minute=mm) - dt.timedelta(hours=3, minutes=15)
-            if now >= cutoff:
+        for strat in s.get("strategies") or []:
+            key = (s["date"], s["home"], s["away"], s["market"], s["sel"], strat)
+            if key in have:
                 continue
-        new.append(dict(made=now.isoformat(timespec="minutes"), date=s["date"], league=s["league"], home=s["home"], away=s["away"],
-                        market=s["market"], sel=s["sel"], label=s["label"], odds=s["odds"], model_p=s["model_p"], ev=s["ev"],
-                        kickoff=ko, stake=1.0, result="", pnl=np.nan, settled=False))
+            ko = s.get("kickoff")
+            if ko and ":" in str(ko):
+                hh, mm = [int(x) for x in str(ko).split(":")]
+                cutoff = dt.datetime.fromisoformat(s["date"]).replace(hour=hh, minute=mm) - dt.timedelta(hours=3, minutes=15)
+                if now >= cutoff:
+                    continue
+            new.append(dict(made=now.isoformat(timespec="minutes"), date=s["date"], league=s["league"], home=s["home"], away=s["away"],
+                            market=s["market"], sel=s["sel"], label=s["label"], odds=s["odds"], model_p=s["model_p"], ev=s["ev"],
+                            kickoff=ko, stake=1.0, result="", pnl=np.nan, settled=False, strategy=strat))
     if new:
         led = pd.concat([led, pd.DataFrame(new)], ignore_index=True)
         led.to_csv(PAPER_CSV, index=False, encoding="utf-8")
@@ -114,11 +138,17 @@ def settle(m):
         led.at[i, "pnl"] = round(float(r.stake) * (float(r.odds) - 1), 2) if won else -float(r.stake)
         led.at[i, "settled"] = True
     led.to_csv(PAPER_CSV, index=False, encoding="utf-8")
+    if "strategy" not in led:
+        led["strategy"] = "model_ev"
     s = led[led.settled.astype(str) == "True"]
     by = {}
     for mk, g in s.groupby("market"):
         by[mk] = dict(n=int(len(g)), won=int((g.pnl > 0).sum()), pnl=round(float(g.pnl.sum()), 2), roi=round(100 * float(g.pnl.sum()) / max(len(g), 1), 1))
+    by_strat = {}
+    for st, g in s.groupby("strategy"):
+        by_strat[st] = dict(n=int(len(g)), won=int((g.pnl > 0).sum()), pnl=round(float(g.pnl.sum()), 2), roi=round(100 * float(g.pnl.sum()) / max(len(g), 1), 1),
+                            open=int(((led.strategy == st) & (led.settled.astype(str) != "True")).sum()))
     return dict(n=int(len(s)), open=int(len(led) - len(s)), won=int((s.pnl > 0).sum()), pnl=round(float(s.pnl.sum()), 2),
-                roi=round(100 * float(s.pnl.sum()) / max(len(s), 1), 1), by_market=by,
-                recent=[dict(date=r.date, home=r.home, away=r.away, label=r.label, odds=r.odds, model_p=r.model_p, result=r.result, pnl=r.pnl)
+                roi=round(100 * float(s.pnl.sum()) / max(len(s), 1), 1), by_market=by, by_strategy=by_strat,
+                recent=[dict(date=r.date, home=r.home, away=r.away, label=r.label, odds=r.odds, model_p=r.model_p, result=r.result, pnl=r.pnl, strategy=r.strategy)
                         for r in s.sort_values("date", ascending=False).head(30).itertuples()])

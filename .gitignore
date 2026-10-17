@@ -5,3 +5,4 @@ data/backtest.pkl
 output/
 .claude/settings.local.json
 data/winner_sample.json
+data/odds_api_key.txt

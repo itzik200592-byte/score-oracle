@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-17T14:02+00:00",
+ "generated_at": "2026-10-17T14:12+00:00",
  "leagues": {
   "PL": "פרמיירליג אנגלית",
   "LL": "לה ליגה ספרדית",
@@ -117,7 +117,7 @@
     "d": 2.9,
     "a": 3.1,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.7,
     "under25": 1.6,
     "btts_yes": 1.65,
@@ -293,7 +293,7 @@
     "d": 3.85,
     "a": 4.9,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "btts_yes": 1.4,
@@ -473,7 +473,7 @@
     "d": 6.8,
     "a": 10.5,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.3,
     "under25": 2.25,
     "btts_yes": 1.7,
@@ -647,7 +647,7 @@
     "d": 3.6,
     "a": 4.4,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "btts_yes": 1.45,
@@ -831,7 +831,7 @@
     "d": 5.5,
     "a": 1.25,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.3,
     "under25": 2.25,
     "btts_yes": 1.4,
@@ -1007,7 +1007,7 @@
     "d": 3.45,
     "a": 3.35,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.5,
     "under25": 1.85,
     "kickoff": "21:45",
@@ -1189,7 +1189,7 @@
     "d": 5.0,
     "a": 1.35,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.25,
     "under25": 2.45,
     "kickoff": "18:15",
@@ -1363,7 +1363,7 @@
     "d": 3.55,
     "a": 1.85,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.5,
     "under25": 1.85,
     "kickoff": "21:45",
@@ -1545,7 +1545,7 @@
     "d": 5.2,
     "a": 1.35,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.15,
     "under25": 3.0,
     "kickoff": "19:30",
@@ -1719,7 +1719,7 @@
     "d": 3.9,
     "a": 1.55,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "kickoff": "15:00",
@@ -1901,7 +1901,7 @@
     "d": 3.1,
     "a": 2.2,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.75,
     "under25": 1.55,
     "kickoff": "22:00",
@@ -2075,7 +2075,7 @@
     "d": 4.9,
     "a": 6.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.3,
     "under25": 2.25,
     "kickoff": "17:15",
@@ -2249,7 +2249,7 @@
     "d": 3.7,
     "a": 2.35,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.4,
     "under25": 2.0,
     "kickoff": "17:00",
@@ -2423,7 +2423,7 @@
     "d": 3.75,
     "a": 4.6,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.55,
     "under25": 1.75,
     "kickoff": "17:00",
@@ -2601,7 +2601,7 @@
     "d": 7.0,
     "a": 10.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.2,
     "under25": 2.65,
     "kickoff": "17:00",
@@ -2774,7 +2774,7 @@
     "d": 3.45,
     "a": 2.75,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.4,
     "under25": 2.0,
     "kickoff": "19:30",
@@ -2948,7 +2948,7 @@
     "d": 4.1,
     "a": 1.45,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "kickoff": "19:00",
@@ -3122,7 +3122,7 @@
     "d": 3.9,
     "a": 6.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.65,
     "under25": 1.65,
     "kickoff": "21:45",
@@ -3296,7 +3296,7 @@
     "d": 3.7,
     "a": 1.6,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "kickoff": "16:00",
@@ -3478,7 +3478,7 @@
     "d": 5.2,
     "a": 8.5,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.35,
     "under25": 2.15,
     "btts_yes": 1.35,
@@ -3654,7 +3654,7 @@
     "d": 3.5,
     "a": 2.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "kickoff": "16:00",
@@ -3828,7 +3828,7 @@
     "d": 3.2,
     "a": 2.9,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.6,
     "under25": 1.7,
     "kickoff": "18:15",
@@ -4002,7 +4002,7 @@
     "d": 3.2,
     "a": 2.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.7,
     "under25": 1.6,
     "kickoff": "18:15",
@@ -4176,7 +4176,7 @@
     "d": 3.75,
     "a": 4.1,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "kickoff": "21:45",
@@ -4358,7 +4358,7 @@
     "d": 3.3,
     "a": 2.8,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "kickoff": "18:15",
@@ -4531,7 +4531,7 @@
     "d": 3.1,
     "a": 3.15,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.85,
     "under25": 1.5,
     "kickoff": "17:15",
@@ -4705,7 +4705,7 @@
     "d": 3.3,
     "a": 2.1,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.55,
     "under25": 1.75,
     "kickoff": "19:30",
@@ -4875,7 +4875,7 @@
     "d": 3.55,
     "a": 3.3,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "kickoff": "15:00",
@@ -5045,7 +5045,7 @@
     "d": 5.8,
     "a": 9.2,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.3,
     "under25": 2.25,
     "kickoff": "22:00",
@@ -5219,7 +5219,7 @@
     "d": 3.25,
     "a": 3.2,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.65,
     "under25": 1.65,
     "kickoff": "16:00",
@@ -5392,7 +5392,7 @@
     "d": 4.3,
     "a": 5.2,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.4,
     "under25": 2.0,
     "kickoff": "16:00",
@@ -5566,7 +5566,7 @@
     "d": 3.35,
     "a": 2.7,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.5,
     "under25": 1.85,
     "kickoff": "16:00",
@@ -5740,7 +5740,7 @@
     "d": 3.6,
     "a": 1.6,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.65,
     "under25": 1.65,
     "kickoff": "18:30",
@@ -5922,7 +5922,7 @@
     "d": 3.4,
     "a": 2.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "kickoff": "16:00",
@@ -6096,7 +6096,7 @@
     "d": 3.55,
     "a": 4.6,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.65,
     "under25": 1.65,
     "kickoff": "21:45",
@@ -6278,7 +6278,7 @@
     "d": 3.55,
     "a": 4.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.55,
     "under25": 1.75,
     "kickoff": "19:00",
@@ -6460,7 +6460,7 @@
     "d": 3.3,
     "a": 3.9,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.75,
     "under25": 1.55,
     "kickoff": "13:30",
@@ -6642,7 +6642,7 @@
     "d": 3.1,
     "a": 2.25,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.35,
     "under25": 2.15,
     "btts_yes": 1.3,
@@ -6818,7 +6818,7 @@
     "d": 2.85,
     "a": 2.5,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 2.15,
     "under25": 1.35,
     "kickoff": "22:00",
@@ -6992,7 +6992,7 @@
     "d": 4.4,
     "a": 5.6,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.4,
     "under25": 2.0,
     "kickoff": "22:00",
@@ -7162,7 +7162,7 @@
     "d": 3.0,
     "a": 2.9,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.75,
     "under25": 1.55,
     "kickoff": "19:30",
@@ -7336,7 +7336,7 @@
     "d": 2.9,
     "a": 2.3,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 2.0,
     "under25": 1.4,
     "kickoff": "21:45",
@@ -7510,7 +7510,7 @@
     "d": 3.85,
     "a": 4.4,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.45,
     "under25": 1.9,
     "btts_yes": 1.5,
@@ -7692,7 +7692,7 @@
     "d": 4.3,
     "a": 5.4,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.4,
     "under25": 2.0,
     "btts_yes": 1.5,
@@ -7867,7 +7867,7 @@
     "d": 9.0,
     "a": 22.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.2,
     "under25": 2.65,
     "btts_yes": 2.15,
@@ -8039,7 +8039,7 @@
     "d": 4.1,
     "a": 4.6,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.35,
     "under25": 2.15,
     "btts_yes": 1.4,
@@ -8219,7 +8219,7 @@
     "d": 4.1,
     "a": 2.35,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "btts_yes": 1.15,
     "btts_no": 3.0,
     "kickoff": "22:00",
@@ -8393,7 +8393,7 @@
     "d": 3.8,
     "a": 3.8,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.4,
     "under25": 2.0,
     "btts_yes": 1.4,
@@ -8573,7 +8573,7 @@
     "d": 6.8,
     "a": 12.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.2,
     "under25": 2.65,
     "btts_yes": 1.65,
@@ -8745,7 +8745,7 @@
     "d": 5.4,
     "a": 1.25,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.3,
     "under25": 2.25,
     "btts_yes": 1.55,
@@ -8917,7 +8917,7 @@
     "d": 3.5,
     "a": 2.2,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "over25": 1.4,
     "under25": 2.0,
     "btts_yes": 1.35,
@@ -9089,7 +9089,7 @@
     "d": 5.6,
     "a": 9.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "22:00",
     "pick_price": 6.8,
     "cs": {
@@ -9204,7 +9204,7 @@
      "3.5": 58.2,
      "4.5": 39.3
     },
-    "btts": 57.5,
+    "btts": 57.6,
     "cs_home": 40.0,
     "cs_away": 4.5,
     "home_by2": 63.1,
@@ -9257,7 +9257,7 @@
     "d": 5.6,
     "a": 9.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "22:00",
     "pick_price": 6.8,
     "cs": {
@@ -9425,7 +9425,7 @@
     "d": 3.45,
     "a": 2.95,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "22:00",
     "pick_price": 5.4,
     "cs": {
@@ -9597,7 +9597,7 @@
     "d": 4.4,
     "a": 4.9,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "22:00",
     "pick_price": 6.6,
     "cs": {
@@ -9775,7 +9775,7 @@
     "d": 3.5,
     "a": 3.0,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "22:00",
     "pick_price": 5.4,
     "cs": {
@@ -9943,7 +9943,7 @@
     "d": 3.5,
     "a": 2.75,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "19:45",
     "pick_price": 5.4,
     "cs": {
@@ -10056,7 +10056,7 @@
      "1.5": 90.8,
      "2.5": 76.4,
      "3.5": 57.7,
-     "4.5": 38.8
+     "4.5": 38.9
     },
     "btts": 57.3,
     "cs_home": 40.2,
@@ -10111,7 +10111,7 @@
     "d": 6.2,
     "a": 9.4,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "22:00",
     "pick_price": 6.4,
     "cs": {
@@ -10283,7 +10283,7 @@
     "d": 3.4,
     "a": 2.9,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "19:45",
     "pick_price": 5.2,
     "cs": {
@@ -10459,7 +10459,7 @@
     "d": 5.8,
     "a": 7.8,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "22:00",
     "pick_price": 7.4,
     "cs": {
@@ -10631,7 +10631,7 @@
     "d": 6.0,
     "a": 8.6,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "22:00",
     "pick_price": 6.4,
     "cs": {
@@ -10799,7 +10799,7 @@
     "d": 3.2,
     "a": 2.05,
     "src": "Winner.co.il",
-    "at": "2026-10-17T17:01+03:00",
+    "at": "2026-10-17T17:12+03:00",
     "kickoff": "21:00",
     "pick_price": 4.8,
     "cs": {
@@ -11336,7 +11336,7 @@
     "cs_home": 20.9,
     "cs_away": 28.4,
     "home_by2": 13.0,
-    "away_by2": 22.9,
+    "away_by2": 22.8,
     "exp_total": 2.93,
     "likely_total": 2,
     "top": [
@@ -11468,7 +11468,7 @@
      "1.5": 78.1,
      "2.5": 55.9,
      "3.5": 35.2,
-     "4.5": 19.5
+     "4.5": 19.6
     },
     "btts": 56.4,
     "cs_home": 33.0,
@@ -11606,7 +11606,7 @@
      "1.5": 78.0,
      "2.5": 56.0,
      "3.5": 35.2,
-     "4.5": 19.7
+     "4.5": 19.6
     },
     "btts": 58.3,
     "cs_home": 28.5,
@@ -12288,7 +12288,7 @@
      24.0,
      20.6,
      14.1,
-     8.1,
+     8.0,
      6.7
     ],
     "over": {
@@ -12575,7 +12575,7 @@
      "4.5": 14.7
     },
     "btts": 51.5,
-    "cs_home": 36.1,
+    "cs_home": 36.2,
     "cs_away": 20.6,
     "home_by2": 27.0,
     "away_by2": 8.9,
@@ -12986,7 +12986,7 @@
      "1.5": 78.9,
      "2.5": 57.2,
      "3.5": 36.4,
-     "4.5": 20.6
+     "4.5": 20.5
     },
     "btts": 57.0,
     "cs_home": 16.2,
@@ -13399,7 +13399,7 @@
     ],
     "over": {
      "0.5": 94.1,
-     "1.5": 78.8,
+     "1.5": 78.7,
      "2.5": 55.3,
      "3.5": 33.0,
      "4.5": 16.8
@@ -13821,7 +13821,7 @@
     "over": {
      "0.5": 93.6,
      "1.5": 77.0,
-     "2.5": 53.0,
+     "2.5": 52.9,
      "3.5": 30.8,
      "4.5": 15.3
     },
@@ -13910,6 +13910,432 @@
      "2024-03-30 Torino 1-0 Monza (SA)",
      "2024-11-24 Torino 1-1 Monza (SA)",
      "2025-03-02 Monza 0-2 Torino (SA)"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "league": "IL",
+   "home": "Hapoel Jerusalem",
+   "away": "Hapoel Tel-Aviv",
+   "pick": "1-1",
+   "p_pick": 12.0,
+   "tier": "C",
+   "pH": 23,
+   "pD": 27,
+   "pA": 50,
+   "over25": 48,
+   "btts": 50,
+   "xg_h": 1.01,
+   "xg_a": 1.61,
+   "top": [
+    {
+     "score": "1-1",
+     "p": 12.0
+    },
+    {
+     "score": "0-1",
+     "p": 11.5
+    },
+    {
+     "score": "0-0",
+     "p": 9.5
+    },
+    {
+     "score": "0-2",
+     "p": 9.1
+    },
+    {
+     "score": "1-2",
+     "p": 8.8
+    }
+   ],
+   "dist": {
+    "total": [
+     9.5,
+     18.3,
+     24.6,
+     20.2,
+     13.5,
+     7.6,
+     6.3
+    ],
+    "over": {
+     "0.5": 90.5,
+     "1.5": 72.2,
+     "2.5": 47.6,
+     "3.5": 27.4,
+     "4.5": 13.9
+    },
+    "btts": 50.5,
+    "cs_home": 21.4,
+    "cs_away": 37.6,
+    "home_by2": 8.3,
+    "away_by2": 26.7,
+    "exp_total": 2.62,
+    "likely_total": 2,
+    "top": [
+     {
+      "s": "1-1",
+      "p": 12.0
+     },
+     {
+      "s": "0-1",
+      "p": 11.5
+     },
+     {
+      "s": "0-0",
+      "p": 9.5
+     },
+     {
+      "s": "0-2",
+      "p": 9.1
+     },
+     {
+      "s": "1-2",
+      "p": 8.8
+     },
+     {
+      "s": "1-0",
+      "p": 6.8
+     },
+     {
+      "s": "2-1",
+      "p": 5.5
+     },
+     {
+      "s": "1-3",
+      "p": 4.8
+     }
+    ]
+   },
+   "live_mkt": false,
+   "model_only": [
+    23,
+    27,
+    50
+   ],
+   "ctx": {
+    "home": {
+     "form": "L L L W D L",
+     "last10": "3-2-5 (ש 1.1:1.7)",
+     "home10": "3-1-6 (ש 1.0:1.8)",
+     "away10": "1-4-5 (ש 0.8:1.6)",
+     "table": {
+      "rank": 10,
+      "of": 14,
+      "pts": 4,
+      "played": 5,
+      "gd": -5
+     },
+     "rest": 5,
+     "m14": 1,
+     "partial": false
+    },
+    "away": {
+     "form": "D D W W L W",
+     "last10": "4-3-3 (ש 1.5:1.2)",
+     "home10": "7-1-2 (ש 2.1:0.5)",
+     "away10": "3-3-4 (ש 0.8:1.3)",
+     "table": {
+      "rank": 4,
+      "of": 14,
+      "pts": 10,
+      "played": 5,
+      "gd": 7
+     },
+     "rest": 29,
+     "m14": 0,
+     "partial": false
+    },
+    "h2h": [
+     "2024-04-01 Hapoel Jerusalem 2-0 Hapoel Tel-Aviv (IL)",
+     "2025-11-08 Hapoel Jerusalem 0-0 Hapoel Tel-Aviv (IL)",
+     "2026-02-13 Hapoel Tel-Aviv 3-1 Hapoel Jerusalem (IL)"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "league": "IL",
+   "home": "Maccabi Haifa",
+   "away": "Hapoel Be'er Sheva",
+   "pick": "1-1",
+   "p_pick": 11.6,
+   "tier": "C",
+   "pH": 37,
+   "pD": 26,
+   "pA": 37,
+   "over25": 56,
+   "btts": 60,
+   "xg_h": 1.5,
+   "xg_a": 1.5,
+   "top": [
+    {
+     "score": "1-1",
+     "p": 11.6
+    },
+    {
+     "score": "2-1",
+     "p": 7.8
+    },
+    {
+     "score": "1-2",
+     "p": 7.8
+    },
+    {
+     "score": "1-0",
+     "p": 7.3
+    },
+    {
+     "score": "0-1",
+     "p": 7.3
+    }
+   ],
+   "dist": {
+    "total": [
+     6.9,
+     14.6,
+     22.5,
+     20.8,
+     15.7,
+     9.8,
+     9.8
+    ],
+    "over": {
+     "0.5": 93.1,
+     "1.5": 78.6,
+     "2.5": 56.1,
+     "3.5": 35.3,
+     "4.5": 19.6
+    },
+    "btts": 59.7,
+    "cs_home": 23.6,
+    "cs_away": 23.5,
+    "home_by2": 17.9,
+    "away_by2": 17.8,
+    "exp_total": 3.0,
+    "likely_total": 2,
+    "top": [
+     {
+      "s": "1-1",
+      "p": 11.6
+     },
+     {
+      "s": "2-1",
+      "p": 7.8
+     },
+     {
+      "s": "1-2",
+      "p": 7.8
+     },
+     {
+      "s": "1-0",
+      "p": 7.3
+     },
+     {
+      "s": "0-1",
+      "p": 7.3
+     },
+     {
+      "s": "0-0",
+      "p": 6.9
+     },
+     {
+      "s": "2-2",
+      "p": 5.9
+     },
+     {
+      "s": "2-0",
+      "p": 5.5
+     }
+    ]
+   },
+   "live_mkt": false,
+   "model_only": [
+    37,
+    26,
+    37
+   ],
+   "ctx": {
+    "home": {
+     "form": "W W L W W W",
+     "last10": "7-1-2 (ש 2.5:1.3)",
+     "home10": "6-1-3 (ש 2.0:1.2)",
+     "away10": "4-1-5 (ש 1.7:2.0)",
+     "table": {
+      "rank": 2,
+      "of": 14,
+      "pts": 12,
+      "played": 5,
+      "gd": 4
+     },
+     "rest": 5,
+     "m14": 1,
+     "partial": false
+    },
+    "away": {
+     "form": "D L W D W L",
+     "last10": "4-3-3 (ש 1.6:1.6)",
+     "home10": "3-5-2 (ש 1.6:1.7)",
+     "away10": "6-1-3 (ש 1.7:0.9)",
+     "table": {
+      "rank": 7,
+      "of": 14,
+      "pts": 7,
+      "played": 4,
+      "gd": 0
+     },
+     "rest": 2,
+     "m14": 1,
+     "partial": false
+    },
+    "h2h": [
+     "2026-01-10 Hapoel Be'er Sheva 0-0 Maccabi Haifa (IL)",
+     "2026-05-06 Maccabi Haifa 0-1 Hapoel Be'er Sheva (IL)",
+     "2026-05-23 Hapoel Be'er Sheva 2-5 Maccabi Haifa (IL)"
+    ]
+   }
+  },
+  {
+   "date": "2026-10-24",
+   "league": "IL",
+   "home": "Maccabi Tel Aviv",
+   "away": "Hapoel Haifa",
+   "pick": "2-0",
+   "p_pick": 10.0,
+   "tier": "C",
+   "pH": 62,
+   "pD": 22,
+   "pA": 16,
+   "over25": 58,
+   "btts": 54,
+   "xg_h": 2.1,
+   "xg_a": 0.97,
+   "top": [
+    {
+     "score": "2-0",
+     "p": 10.0
+    },
+    {
+     "score": "1-0",
+     "p": 9.8
+    },
+    {
+     "score": "1-1",
+     "p": 9.8
+    },
+    {
+     "score": "2-1",
+     "p": 9.3
+    },
+    {
+     "score": "3-0",
+     "p": 6.7
+    }
+   ],
+   "dist": {
+    "total": [
+     6.3,
+     14.0,
+     22.0,
+     20.9,
+     16.1,
+     10.3,
+     10.4
+    ],
+    "over": {
+     "0.5": 93.7,
+     "1.5": 79.6,
+     "2.5": 57.7,
+     "3.5": 36.8,
+     "4.5": 20.7
+    },
+    "btts": 54.0,
+    "cs_home": 38.8,
+    "cs_away": 13.5,
+    "home_by2": 39.1,
+    "away_by2": 5.4,
+    "exp_total": 3.07,
+    "likely_total": 2,
+    "top": [
+     {
+      "s": "2-0",
+      "p": 10.0
+     },
+     {
+      "s": "1-0",
+      "p": 9.8
+     },
+     {
+      "s": "1-1",
+      "p": 9.8
+     },
+     {
+      "s": "2-1",
+      "p": 9.3
+     },
+     {
+      "s": "3-0",
+      "p": 6.7
+     },
+     {
+      "s": "3-1",
+      "p": 6.5
+     },
+     {
+      "s": "0-0",
+      "p": 6.3
+     },
+     {
+      "s": "2-2",
+      "p": 4.5
+     }
+    ]
+   },
+   "live_mkt": false,
+   "model_only": [
+    62,
+    22,
+    16
+   ],
+   "ctx": {
+    "home": {
+     "form": "D W W W W D",
+     "last10": "5-3-2 (ש 2.6:1.4)",
+     "home10": "6-1-3 (ש 1.9:1.0)",
+     "away10": "5-3-2 (ש 2.7:1.7)",
+     "table": {
+      "rank": 1,
+      "of": 14,
+      "pts": 13,
+      "played": 5,
+      "gd": 11
+     },
+     "rest": 7,
+     "m14": 1,
+     "partial": false
+    },
+    "away": {
+     "form": "W D D W L W",
+     "last10": "5-4-1 (ש 1.6:0.8)",
+     "home10": "5-2-3 (ש 1.5:1.2)",
+     "away10": "2-5-3 (ש 0.8:1.1)",
+     "table": {
+      "rank": 5,
+      "of": 14,
+      "pts": 8,
+      "played": 5,
+      "gd": 2
+     },
+     "rest": 7,
+     "m14": 1,
+     "partial": false
+    },
+    "h2h": [
+     "2025-04-26 Hapoel Haifa 1-3 Maccabi Tel Aviv (IL)",
+     "2025-12-03 Maccabi Tel Aviv 2-1 Hapoel Haifa (IL)",
+     "2026-04-05 Hapoel Haifa 1-4 Maccabi Tel Aviv (IL)"
     ]
    }
   },
@@ -15501,7 +15927,7 @@
    "dist": {
     "total": [
      5.5,
-     15.1,
+     15.2,
      23.0,
      22.3,
      16.4,
@@ -15788,7 +16214,7 @@
      26.3,
      20.8,
      12.5,
-     6.1,
+     6.0,
      3.6
     ],
     "over": {
@@ -16042,7 +16468,7 @@
    "over25": 57,
    "btts": 59,
    "xg_h": 1.63,
-   "xg_a": 1.34,
+   "xg_a": 1.33,
    "top": [
     {
      "score": "1-1",
@@ -16216,7 +16642,7 @@
     "over": {
      "0.5": 94.7,
      "1.5": 80.4,
-     "2.5": 57.8,
+     "2.5": 57.7,
      "3.5": 35.4,
      "4.5": 18.7
     },
@@ -16349,7 +16775,7 @@
     "total": [
      6.8,
      16.9,
-     24.5,
+     24.6,
      22.1,
      15.2,
      8.4,
@@ -16775,7 +17201,7 @@
     "total": [
      13.7,
      25.6,
-     26.8,
+     26.9,
      18.1,
      9.5,
      4.1,
@@ -18205,7 +18631,7 @@
     "btts": 51.0,
     "cs_home": 37.0,
     "cs_away": 19.6,
-    "home_by2": 27.9,
+    "home_by2": 27.8,
     "away_by2": 8.3,
     "exp_total": 2.63,
     "likely_total": 2,
@@ -18481,7 +18907,7 @@
     ],
     "over": {
      "0.5": 90.6,
-     "1.5": 69.4,
+     "1.5": 69.3,
      "2.5": 43.2,
      "3.5": 22.5,
      "4.5": 9.9
@@ -18626,7 +19052,7 @@
      "1.5": 73.7,
      "2.5": 48.4,
      "3.5": 26.7,
-     "4.5": 12.5
+     "4.5": 12.4
     },
     "btts": 51.5,
     "cs_home": 21.1,
@@ -20053,7 +20479,30 @@
   ],
   "since": "2026-10-14"
  },
- "backtest": null,
+ "backtest": {
+  "holdout_from": "2024-12-01",
+  "n": 3650,
+  "exact_pct": 12.4,
+  "result_pct": 53.8,
+  "baseline_11": 11.0,
+  "tiers": [
+   {
+    "tier": "C",
+    "n": 1825,
+    "hit_pct": 10.1
+   },
+   {
+    "tier": "B",
+    "n": 1095,
+    "hit_pct": 13.7
+   },
+   {
+    "tier": "A",
+    "n": 730,
+    "hit_pct": 16.2
+   }
+  ]
+ },
  "coverage": [
   {
    "league": "CL",
@@ -20070,7 +20519,7 @@
   {
    "league": "IL",
    "played": 1425,
-   "upcoming": 10,
+   "upcoming": 14,
    "last": "2026-10-12"
   },
   {
@@ -20098,7 +20547,43 @@
    "last": "2026-10-16"
   }
  ],
- "calib": {},
+ "calib": {
+  "CL": {
+   "n": 324,
+   "direction": 60.8,
+   "exact": 6.8
+  },
+  "EL": {
+   "n": 296,
+   "direction": 57.4,
+   "exact": 10.1
+  },
+  "IL": {
+   "n": 391,
+   "direction": 50.6,
+   "exact": 10.2
+  },
+  "L1": {
+   "n": 554,
+   "direction": 53.1,
+   "exact": 9.7
+  },
+  "LL": {
+   "n": 704,
+   "direction": 54.1,
+   "exact": 17.3
+  },
+  "PL": {
+   "n": 694,
+   "direction": 51.0,
+   "exact": 12.0
+  },
+  "SA": {
+   "n": 687,
+   "direction": 53.9,
+   "exact": 14.7
+  }
+ },
  "last_result": {
   "CL": "2026-10-14",
   "EL": "2026-10-15",
@@ -20131,7 +20616,12 @@
    "ev": 26.8,
    "hist_roi": -10.2,
    "surprise": true,
-   "flag": true
+   "flag": true,
+   "strategies": [
+    "model_ev"
+   ],
+   "loss_per_100": 0.0,
+   "stake_pct": 2.97
   },
   {
    "date": "2026-10-20",
@@ -20148,7 +20638,12 @@
    "ev": 17.0,
    "hist_roi": -23.6,
    "surprise": true,
-   "flag": true
+   "flag": true,
+   "strategies": [
+    "model_ev"
+   ],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.63
   },
   {
    "date": "2026-10-17",
@@ -20165,7 +20660,12 @@
    "ev": 15.5,
    "hist_roi": -23.6,
    "surprise": true,
-   "flag": true
+   "flag": true,
+   "strategies": [
+    "model_ev"
+   ],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.41
   },
   {
    "date": "2026-10-21",
@@ -20182,7 +20682,12 @@
    "ev": 9.7,
    "hist_roi": -10.9,
    "surprise": false,
-   "flag": true
+   "flag": true,
+   "strategies": [
+    "model_ev"
+   ],
+   "loss_per_100": 0.0,
+   "stake_pct": 2.1
   },
   {
    "date": "2026-10-17",
@@ -20199,7 +20704,12 @@
    "ev": 8.8,
    "hist_roi": -23.6,
    "surprise": true,
-   "flag": true
+   "flag": true,
+   "strategies": [
+    "model_ev"
+   ],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.38
   },
   {
    "date": "2026-10-17",
@@ -20216,7 +20726,10 @@
    "ev": 6.4,
    "hist_roi": -14.5,
    "surprise": true,
-   "flag": false
+   "flag": false,
+   "strategies": [],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.35
   },
   {
    "date": "2026-10-17",
@@ -20233,7 +20746,10 @@
    "ev": 5.8,
    "hist_roi": -14.5,
    "surprise": true,
-   "flag": false
+   "flag": false,
+   "strategies": [],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.4
   },
   {
    "date": "2026-10-17",
@@ -20250,7 +20766,10 @@
    "ev": 5.0,
    "hist_roi": -23.6,
    "surprise": true,
-   "flag": false
+   "flag": false,
+   "strategies": [],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.21
   },
   {
    "date": "2026-10-17",
@@ -20267,7 +20786,10 @@
    "ev": 2.3,
    "hist_roi": -10.2,
    "surprise": true,
-   "flag": false
+   "flag": false,
+   "strategies": [],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.27
   },
   {
    "date": "2026-10-21",
@@ -20284,7 +20806,10 @@
    "ev": 2.0,
    "hist_roi": -10.2,
    "surprise": true,
-   "flag": false
+   "flag": false,
+   "strategies": [],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.25
   },
   {
    "date": "2026-10-17",
@@ -20301,7 +20826,10 @@
    "ev": 1.2,
    "hist_roi": -14.5,
    "surprise": true,
-   "flag": false
+   "flag": false,
+   "strategies": [],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.09
   },
   {
    "date": "2026-10-17",
@@ -20318,18 +20846,464 @@
    "ev": 0.1,
    "hist_roi": -23.6,
    "surprise": true,
-   "flag": false
+   "flag": false,
+   "strategies": [],
+   "loss_per_100": 0.0,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-21",
+   "league": "CL",
+   "home": "Real Madrid",
+   "away": "RB Leipzig",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Real Madrid",
+   "odds": 1.25,
+   "model_p": 79,
+   "market_p": 77,
+   "ev": -1.2,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 1.2,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-20",
+   "league": "CL",
+   "home": "Man City",
+   "away": "AEK Athens",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Man City",
+   "odds": 1.05,
+   "model_p": 93,
+   "market_p": 94,
+   "ev": -2.3,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 2.3,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-20",
+   "league": "CL",
+   "home": "Roma",
+   "away": "ŠK Slovan Bratislava",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Roma",
+   "odds": 1.15,
+   "model_p": 85,
+   "market_p": 85,
+   "ev": -2.3,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 2.3,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-21",
+   "league": "CL",
+   "home": "Betis",
+   "away": "Feyenoord",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Betis",
+   "odds": 1.5,
+   "model_p": 65,
+   "market_p": 64,
+   "ev": -2.5,
+   "hist_roi": -10.9,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 2.5,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-21",
+   "league": "CL",
+   "home": "Aston Villa",
+   "away": "Viking FK",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Aston Villa",
+   "odds": 1.2,
+   "model_p": 81,
+   "market_p": 80,
+   "ev": -2.8,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 2.8,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-21",
+   "league": "CL",
+   "home": "Inter",
+   "away": "Shakhtar",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Inter",
+   "odds": 1.2,
+   "model_p": 81,
+   "market_p": 81,
+   "ev": -2.8,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 2.8,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-20",
+   "league": "CL",
+   "home": "Liverpool",
+   "away": "Villarreal",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Liverpool",
+   "odds": 1.45,
+   "model_p": 66,
+   "market_p": 66,
+   "ev": -4.3,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 4.3,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-21",
+   "league": "CL",
+   "home": "Aston Villa",
+   "away": "VIKING FK",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Aston Villa",
+   "odds": 1.2,
+   "model_p": 79,
+   "market_p": 80,
+   "ev": -5.2,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 5.2,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-21",
+   "league": "CL",
+   "home": "Sporting",
+   "away": "LASK Linz",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Sporting",
+   "odds": 1.2,
+   "model_p": 79,
+   "market_p": 80,
+   "ev": -5.2,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 5.2,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-17",
+   "league": "SA",
+   "home": "Roma",
+   "away": "Genoa",
+   "kickoff": "21:45",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Roma",
+   "odds": 1.45,
+   "model_p": 65,
+   "market_p": 66,
+   "ev": -5.8,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 5.8,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-18",
+   "league": "IL",
+   "home": "Hapoel Be'er Sheva",
+   "away": "Hapoel Jerusalem",
+   "kickoff": "20:15",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Hapoel Be'er Sheva",
+   "odds": 1.25,
+   "model_p": 75,
+   "market_p": 77,
+   "ev": -6.2,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 6.2,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-18",
+   "league": "LL",
+   "home": "Real Madrid",
+   "away": "Sevilla",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Real Madrid",
+   "odds": 1.2,
+   "model_p": 76,
+   "market_p": 81,
+   "ev": -8.8,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 8.8,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-17",
+   "league": "L1",
+   "home": "Strasbourg",
+   "away": "Paris SG",
+   "kickoff": "18:15",
+   "market": "1x2",
+   "sel": "a",
+   "label": "Paris SG",
+   "odds": 1.35,
+   "model_p": 66,
+   "market_p": 71,
+   "ev": -10.9,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 10.9,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-17",
+   "league": "PL",
+   "home": "Man City",
+   "away": "Ipswich",
+   "kickoff": "17:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Man City",
+   "odds": 1.15,
+   "model_p": 77,
+   "market_p": 84,
+   "ev": -11.5,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 11.5,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-17",
+   "league": "LL",
+   "home": "Betis",
+   "away": "Barcelona",
+   "kickoff": "19:30",
+   "market": "1x2",
+   "sel": "a",
+   "label": "Barcelona",
+   "odds": 1.35,
+   "model_p": 65,
+   "market_p": 71,
+   "ev": -12.2,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 12.2,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-17",
+   "league": "LL",
+   "home": "Villarreal",
+   "away": "Elche",
+   "kickoff": "17:15",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Villarreal",
+   "odds": 1.35,
+   "model_p": 65,
+   "market_p": 71,
+   "ev": -12.2,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 12.2,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-17",
+   "league": "IL",
+   "home": "Maccabi Petah Tikva",
+   "away": "Maccabi Haifa",
+   "kickoff": "19:30",
+   "market": "1x2",
+   "sel": "a",
+   "label": "Maccabi Haifa",
+   "odds": 1.25,
+   "model_p": 70,
+   "market_p": 77,
+   "ev": -12.5,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 12.5,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-19",
+   "league": "PL",
+   "home": "Tottenham",
+   "away": "Coventry",
+   "kickoff": "22:00",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Tottenham",
+   "odds": 1.4,
+   "model_p": 62,
+   "market_p": 68,
+   "ev": -13.2,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 13.2,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-20",
+   "league": "CL",
+   "home": "Sabah FK",
+   "away": "Dortmund",
+   "kickoff": "19:45",
+   "market": "1x2",
+   "sel": "a",
+   "label": "Dortmund",
+   "odds": 1.25,
+   "model_p": 68,
+   "market_p": 77,
+   "ev": -15.0,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 15.0,
+   "stake_pct": 0.0
+  },
+  {
+   "date": "2026-10-17",
+   "league": "IL",
+   "home": "Hapoel Tel-Aviv",
+   "away": "Ironi Tiberias",
+   "kickoff": "18:45",
+   "market": "1x2",
+   "sel": "h",
+   "label": "Hapoel Tel-Aviv",
+   "odds": 1.15,
+   "model_p": 72,
+   "market_p": 84,
+   "ev": -17.2,
+   "hist_roi": null,
+   "surprise": false,
+   "flag": false,
+   "strategies": [
+    "favourite"
+   ],
+   "loss_per_100": 17.2,
+   "stake_pct": 0.0
   }
  ],
  "paper": {
   "n": 0,
-  "open": 5,
+  "open": 23,
   "won": 0,
   "pnl": 0.0,
   "roi": 0.0,
   "by_market": {},
+  "by_strategy": {},
   "recent": []
  },
+ "sharp_available": false,
+ "sharp_matches": 0,
  "value_truth": {
   "note": "backtest 2022-2026, 6,673 matches, average market odds (Winner margin is higher)",
   "all_ev": -13.9,

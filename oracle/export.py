@@ -145,7 +145,20 @@ def export(m, pred, ledger=True):
     from . import track, value
     if ledger:
         track.upsert(rows, m)
+    from . import sharp
+    sharp_n = 0
+    try:
+        sharp_n = sharp.compare(rows, sharp.fetch())
+    except Exception as ex:
+        print("sharp comparison skipped:", ex)
     vsel = value.scan(rows)
+    for v in vsel:   # Winner pays more than the sharp market? (only with an Odds API key)
+        r = next((x for x in rows if x["date"] == v["date"] and x["home"] == v["home"] and x["away"] == v["away"]), None)
+        sh = (r or {}).get("sharp")
+        if sh and v["market"] == "1x2":
+            v["sharp_p"] = sh["p"][v["sel"]]; v["sharp_edge"] = sh["edge"][v["sel"]]
+            v["sharp_flag"] = sh["flag"] == v["sel"]
+            v["strategies"] = value.strategies(v)
     if ledger:
         value.record(vsel)
     paper = value.settle(m)
@@ -178,7 +191,8 @@ def export(m, pred, ledger=True):
     data = dict(generated_at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
                 leagues={k: v["he"] for k, v in LEAGUES.items()}, predictions=rows,
                 ledger=_ledger_stats(m), track=track.export_block(m), backtest=bt, coverage=cov, calib=calib, last_result=fresh, stale=stale,
-                value=[v for v in vsel if v["flag"] or v["surprise"]][:80], paper=paper,
+                value=[v for v in vsel if v["flag"] or v["surprise"] or v.get("sharp_flag") or "favourite" in v["strategies"]][:120], paper=paper,
+                sharp_available=bool(sharp.key()), sharp_matches=sharp_n,
                 value_truth=dict(note="backtest 2022-2026, 6,673 matches, average market odds (Winner margin is higher)", all_ev=-13.9, longshots=-23.6, favourites=-1.4, ou=-7.9))
     (DOCS / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     return DOCS / "data.json"

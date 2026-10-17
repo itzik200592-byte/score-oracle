@@ -139,7 +139,7 @@ function viewStars(chips) {
 /* ---------- view: Winner value scanner + paper bets ---------- */
 function viewWinner(chips) {
   chips.hidden = false;
-  const opts = [["flag", "המלצות ערך"], ["surprise", "הפתעות (יחס 3+)"], ["paper", "יומן נייר"]];
+  const opts = [["flag", "ערך לפי המודל"], ["favourite", "פייבוריטים"], ["sharp", "מול השוק החד"], ["surprise", "הפתעות (יחס 3+)"], ["paper", "יומן נייר"]];
   chip.winner = chip.winner || "flag";
   chips.innerHTML = opts.map(([k, t]) => `<button class="chip" data-c="${k}" aria-pressed="${chip.winner === k}">${t}</button>`).join("");
   chips.querySelectorAll(".chip").forEach(b => b.onclick = () => { chip.winner = b.dataset.c; render(); });
@@ -151,21 +151,31 @@ function viewWinner(chips) {
     html += `<div class="stats"><div class="stat"><b class="num">${pap.n}</b><small>הימורי נייר שהסתיימו</small><span class="sub">${pap.open} פתוחים</span></div><div class="stat"><b class="num ${cls}" style="${pap.pnl < 0 ? "color:var(--bad)" : (pap.pnl > 0 ? "color:var(--good)" : "")}">${pap.pnl > 0 ? "+" : ""}${pap.pnl.toFixed(1)}</b><small>רווח ביחידות (1 יחידה להימור)</small><span class="sub num">תשואה ${pap.roi}% · ${pap.won} זכיות</span></div></div>`;
   }
   const rows = (DATA.value || []).filter(v => v.date >= todayIL());
+  const STR = { model_ev: "ערך לפי המודל", favourite: "פייבוריט", sharp_vs_winner: "Winner מעל השוק החד" };
+  if (chip.winner === "sharp" && !DATA.sharp_available) {
+    return html + `<div class="lead"><b>ההשוואה לשוק החד עדיין לא פעילה.</b> זו הדרך היחידה עם ראיות מאחוריה: כש-Winner משלם יותר מהמחיר ההוגן של בוקמייקרים חדים (Pinnacle ודומיו), יש יתרון אמיתי. כדי להפעיל: הרשמה חינמית ב-the-odds-api.com (500 בקשות בחודש), ושמירת המפתח בקובץ data/odds_api_key.txt במחשב. אחרי זה הלשונית הזאת תתמלא לבד.</div>`;
+  }
   if (chip.winner === "paper") {
-    if (!pap || !pap.recent || !pap.recent.length) return html + `<div class="empty">עדיין אין הימורי נייר שהסתיימו. כל המלצה מסומנת נרשמת אוטומטית במחיר של Winner ונסגרת מול התוצאה.</div>`;
+    html += `<div class="lead"><b>מה זה יומן נייר:</b> כל המלצה נרשמת אוטומטית כהימור של יחידה אחת במחיר של Winner באותו רגע, בלי כסף. אחרי המשחק היא נסגרת מול התוצאה. ככה רואים אחרי עשרות הימורים מה באמת מרוויח ב-Winner, לפני שמסכנים שקל. שלוש שיטות נמדדות במקביל: ערך לפי המודל, פייבוריטים חזקים, ו-Winner מעל השוק החד.</div>`;
+    if (pap && pap.by_strategy && Object.keys(pap.by_strategy).length) html += `<h2>לפי שיטה</h2>` + Object.entries(pap.by_strategy).map(([k, x]) => `<div class="rrow"><div class="m"><span>${STR[k] || k}</span><span class="num" style="color:${x.pnl > 0 ? "var(--good)" : (x.pnl < 0 ? "var(--bad)" : "inherit")}">${x.won}/${x.n} · ${x.pnl > 0 ? "+" : ""}${x.pnl} · ${x.roi}%</span></div><div class="pp">${x.open} פתוחים</div></div>`).join("");
+    if (!pap || !pap.recent || !pap.recent.length) return html + `<div class="empty">עדיין אין הימורי נייר שהסתיימו. ${pap ? pap.open : 0} פתוחים ומחכים לתוצאות.</div>`;
     pap.recent.forEach(r => { html += `<div class="rrow"><div class="m"><span>${esc(r.home)} - ${esc(r.away)}</span><span class="num" style="color:${r.pnl > 0 ? "var(--good)" : "var(--bad)"};font-weight:900">${r.pnl > 0 ? "+" : ""}${Number(r.pnl).toFixed(2)}</span></div><div class="pp">${esc(r.label)} @ <span class="num">${Number(r.odds).toFixed(2)}</span> · המודל <span class="num">${r.model_p}%</span> · תוצאה <span class="num">${esc(r.result)}</span> · ${fmtDate(r.date)}</div></div>`; });
     if (pap.by_market) html += `<h2>לפי שוק</h2>` + Object.entries(pap.by_market).map(([k, x]) => `<div class="rrow"><div class="m"><span>${{ "1x2": "1X2", ou: "מעל/מתחת", btts: "שתיהן מבקיעות", cs: "תוצאה מדויקת" }[k] || k}</span><span class="num">${x.won}/${x.n} · תשואה ${x.roi}%</span></div></div>`).join("");
     return html;
   }
-  const list = chip.winner === "flag" ? rows.filter(v => v.flag) : rows.filter(v => v.surprise);
+  const list = chip.winner === "flag" ? rows.filter(v => v.flag) : (chip.winner === "favourite" ? rows.filter(v => v.strategies.includes("favourite")) : (chip.winner === "sharp" ? rows.filter(v => v.sharp_flag) : rows.filter(v => v.surprise)));
   if (!list.length) return html + `<div class="empty">${chip.winner === "flag" ? "אין כרגע בחירה שעוברת את סף הערך אחרי המרווח של Winner. זה המצב הרגיל, לא תקלה." : "אין כרגע הפתעות (יחס 3 ומעלה שהמודל נותן להן סיכוי גבוה מהשוק)."}</div>`;
-  html += `<div class="lead">${chip.winner === "flag" ? "בחירות שבהן המודל נותן סיכוי גבוה מספיק מעל המחיר של Winner כדי לכסות את המרווח. <b>זה לא מבטיח רווח</b>: ליד כל בחירה מופיעה התשואה ההיסטורית של אותו סוג הימור." : "אנדרדוגים ותיקו ביחס 3 ומעלה שהמודל מעריך גבוה יותר מהשוק. היסטורית זה הסוג שמפסיד הכי הרבה; הסיכוי לזכייה כתוב ליד כל אחד."}</div>`;
+  const leads = { flag: "בחירות שבהן המודל נותן סיכוי גבוה מספיק מעל המחיר של Winner כדי לכסות את המרווח. <b>זה לא מבטיח רווח</b>: ליד כל בחירה מופיעה התשואה ההיסטורית של אותו סוג הימור.",
+    favourite: "פייבוריטים חזקים (יחס עד 1.60, המודל 62%+). זו השיטה שהפסידה הכי פחות בבדיקה לאחור (כ-1.4% מול השוק הממוצע, כ-10% ב-Winner). הסיכוי לזכות גבוה, הרווח קטן, וההפסד הצפוי לכל 100 ש\"ח כתוב ליד כל אחד.",
+    sharp: "בחירות שבהן Winner משלם יותר מהמחיר ההוגן של השוק החד. השיטה היחידה עם ראיות ליתרון אמיתי.",
+    surprise: "אנדרדוגים ותיקו ביחס 3 ומעלה שהמודל מעריך גבוה יותר מהשוק. היסטורית זה הסוג שמפסיד הכי הרבה; הסיכוי לזכייה כתוב ליד כל אחד." };
+  html += `<div class="lead">${leads[chip.winner]}</div>`;
   list.forEach((v, i) => {
     html += `<article class="card ${v.flag ? "S" : ""}" style="animation-delay:${Math.min(i, 8) * 35}ms">
-      <div class="ch">${v.kickoff ? `<span class="t num">${v.kickoff}</span>` : ""}<span>${fmtDate(v.date)}</span><span class="lg">${esc(DATA.leagues[v.league])}</span>${v.flag ? `<span class="star">ערך</span>` : ""}${v.surprise ? `<span class="tag gold" style="font-size:11px">הפתעה</span>` : ""}</div>
+      <div class="ch">${v.kickoff ? `<span class="t num">${v.kickoff}</span>` : ""}<span>${fmtDate(v.date)}</span><span class="lg">${esc(DATA.leagues[v.league])}</span>${(v.strategies || []).map(t => `<span class="tag ${t === "sharp_vs_winner" ? "ok" : "gold"}" style="font-size:11px">${STR[t] || t}</span>`).join("")}${v.surprise ? `<span class="tag" style="font-size:11px">הפתעה</span>` : ""}</div>
       <div class="row"><div class="teams"><div class="team fav" style="direction:rtl;text-align:right">${esc(v.label)}</div><div class="sline">${esc(v.home)} - ${esc(v.away)}</div></div><div class="bigp"><b class="num">${v.model_p}%</b><small>סיכוי לזכייה לפי המודל</small></div></div>
       <div class="oddsmini"><div>יחס Winner<b class="num">${Number(v.odds).toFixed(2)}</b></div><div>השוק נותן<b class="num">${v.market_p != null ? v.market_p + "%" : "-"}</b></div><div>תוחלת<b class="num" style="color:${v.ev > 0 ? "var(--good)" : "var(--bad)"}">${v.ev > 0 ? "+" : ""}${v.ev}%</b></div></div>
-      <div class="osrc">${v.hist_roi != null ? `הימורים מסוג זה הפסידו היסטורית <span class="num">${v.hist_roi}%</span> ליחידה (בדיקה לאחור, יחסי שוק ממוצעים).` : "אין נתון היסטורי לשוק הזה."} תוחלת = סיכוי המודל כפול היחס פחות 1.</div>
+      <div class="osrc">${v.sharp_p != null ? `השוק החד נותן <span class="num">${v.sharp_p}%</span> (יתרון מול Winner <span class="num">${v.sharp_edge > 0 ? "+" : ""}${v.sharp_edge}%</span>). ` : ""}${v.loss_per_100 > 0 ? `הפסד צפוי לכל 100 ש"ח: <span class="num" style="color:var(--bad)">${v.loss_per_100}</span> ש"ח.` : `רווח צפוי לכל 100 ש"ח: <span class="num" style="color:var(--good)">+${Math.abs(v.ev).toFixed(1)}</span> ש"ח (לפי המודל בלבד).`} גודל הימור מומלץ (רבע קלי): <b class="num">${v.stake_pct}%</b> מהבנקרול${v.stake_pct === 0 ? ", כלומר לא להמר" : ""}. ${v.hist_roi != null ? `הימורים מסוג זה הפסידו היסטורית <span class="num">${v.hist_roi}%</span> ליחידה.` : ""}</div>
       <button class="vbtn" data-v="${v.date}|${v.home}|${v.away}">פסק דין מלא</button></article>`;
   });
   return html;
