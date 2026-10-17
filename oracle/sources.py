@@ -110,6 +110,8 @@ def _espn_day(lg, day, today):
             h = next(x for x in c if x["homeAway"] == "home")
             a = next(x for x in c if x["homeAway"] == "away")
             st = e["status"]["type"]
+            if st.get("name") in ("STATUS_ABANDONED", "STATUS_POSTPONED", "STATUS_CANCELED", "STATUS_SUSPENDED"):
+                continue   # not a fixture we can settle; otherwise it would look like a missing result
             played = st.get("state") == "post" and st.get("name") in ("STATUS_FULL_TIME", "STATUS_FINAL")
             out.append(dict(date=pd.to_datetime(e["date"][:10]), league=lg, home_raw=h["team"]["displayName"],
                             away_raw=a["team"]["displayName"], hg=float(h["score"]) if played else np.nan,

@@ -17,7 +17,7 @@ OVERRIDES = {"Man City": "Manchester City", "Man United": "Manchester United", "
              "Marseille": "Marseille", "Paris FC": "Paris FC", "Union St.-Gilloise": "Union Saint-Gilloise", "Bodo/Glimt": "Bodø/Glimt",
              "Hapoel Be'er Sheva": "Hapoel Be'er", "Hapoel Tel-Aviv": "Hapoel Tel Aviv", "Maccabi Petah Tikva": "Maccabi Petah Tikva",
              "Hapoel Kiryat Shmona": "Hapoel Ironi Kiryat Shmona", "Ashdod": "Moadon Sport Ashdod", "Maccabi Raina": "Maccabi Bnei Raina",
-             "Olympiakos": "Olympiacos", "Celta": "Celta Vigo", "Leverkusen": "Bayer Leverkusen", "RB Salzburg": "Red Bull Salzburg",
+             "Olympiakos": "Olympiacos", "Celta": "Celta Vigo", "Santander": "Racing Santander", "Espanol": "Espanyol", "Leverkusen": "Bayer Leverkusen", "RB Salzburg": "Red Bull Salzburg",
              "Sporting": "Sporting CP", "Porto": "FC Porto", "Bayern": "Bayern Munich", "Dortmund": "Borussia Dortmund", "PSV": "PSV Eindhoven",
              "St Etienne": "Saint-Étienne", "Viktoria Plzeň": "Viktoria Plzen", "Beşiktaş": "Besiktas", "SK Sturm Graz": "Sturm Graz",
              "TSG Hoffenheim": "Hoffenheim", "NK Celje": "Celje", "Jagiellonia Bialystok": "Jagiellonia", "ŠK Slovan Bratislava": "Slovan Bratislava"}
