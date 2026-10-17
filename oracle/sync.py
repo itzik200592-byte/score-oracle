@@ -37,6 +37,10 @@ def run(m, push=True, full=True):
     pred = P.predict_fixtures(m, fx)
     pred.to_csv(OUT / "predictions_latest.csv", index=False, encoding="utf-8")
     print("site data:", export(m, pred))
+    import json as _j
+    st = _j.loads((ROOT / "docs" / "data.json").read_text(encoding="utf-8")).get("stale") or []
+    for x in st:
+        print(f"  WARNING: {x['league']} has {x['missing']} fixtures without a result since {x['oldest']} (results source broken?)")
     if push:
         # only add files that exist: one missing pathspec makes `git add` fail for ALL of them
         paths = [p for p in ("docs/data.json", "data/ledger.csv", "data/matches.csv", "data/odds_live.json",

@@ -140,7 +140,8 @@ def export(m, pred, ledger=True):
     for row in rows:
         e = ops.get((row["date"], _norm(row["home"]), _norm(row["away"])))
         if e:
-            row["opinion"] = e
+            v = e.get("verification") or {}
+            row["opinion"] = dict(e, verified=v.get("status", "unverified"), unknown_players=v.get("unknown", []))
     from . import track
     if ledger:
         track.upsert(rows, m)
@@ -152,6 +153,15 @@ def export(m, pred, ledger=True):
         bt = {"holdout_from": rep["holdout_start"], "n": e["n"], "exact_pct": round(100 * e["exact"], 1),
               "result_pct": round(100 * e["acc_1x2"], 1), "baseline_11": round(100 * rep["baselines"]["always 1-1"], 1),
               "tiers": [{"tier": c["tier"][0], "n": c["n"], "hit_pct": round(100 * c["actual_hit"], 1)} for c in rep["calibration"]]}
+    fresh, stale = {}, []
+    today = pd.Timestamp.now().normalize()
+    for lg, g in m.groupby("league"):
+        p = g[g.played]
+        fresh[lg] = str(p.date.max().date()) if len(p) else None
+        # fixtures that should have finished (2+ days ago) but have no result = a results source is broken
+        missing = g[(~g.played) & (g.date <= today - pd.Timedelta(days=2)) & (g.date >= today - pd.Timedelta(days=21))]
+        if len(missing):
+            stale.append(dict(league=lg, missing=int(len(missing)), oldest=str(missing.date.min().date())))
     cov = []
     for lg, g in m.groupby("league"):
         p = g[g.played]
@@ -163,6 +173,6 @@ def export(m, pred, ledger=True):
                  for lg, v in rep.get("by_league", {}).items()}
     data = dict(generated_at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
                 leagues={k: v["he"] for k, v in LEAGUES.items()}, predictions=rows,
-                ledger=_ledger_stats(m), track=track.export_block(m), backtest=bt, coverage=cov, calib=calib)
+                ledger=_ledger_stats(m), track=track.export_block(m), backtest=bt, coverage=cov, calib=calib, last_result=fresh, stale=stale)
     (DOCS / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     return DOCS / "data.json"

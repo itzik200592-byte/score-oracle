@@ -44,6 +44,11 @@ function render() {
   const tabs = [["today", days[0] === todayIL() ? "היום" : "הקרובים", nToday], ["stars", "כוכבים", nStars], ["results", "תוצאות", nRes], ["all", "הכול", DATA.predictions.length]];
   document.getElementById("mainTabs").innerHTML = tabs.map(([k, t, n]) => `<button class="mtab" role="tab" data-k="${k}" aria-selected="${k === view}">${t}<span class="cnt num">${n}</span></button>`).join("");
   document.querySelectorAll(".mtab").forEach(b => b.onclick = () => { view = b.dataset.k; safe(() => localStorage.setItem("view", view)); render(); window.scrollTo({ top: 0 }); });
+  const st = DATA.stale || [];
+  const warn = document.getElementById("warn") || Object.assign(document.createElement("div"), { id: "warn" });
+  warn.className = "lead"; warn.style.borderColor = "rgba(255,138,128,.5)";
+  if (st.length) { warn.innerHTML = `<b>אזהרת נתונים:</b> חסרות תוצאות ל${st.map(x => `${esc(DATA.leagues[x.league])} (${x.missing} משחקים מאז ${x.oldest.slice(5).replace("-", ".")})`).join(", ")}. מקור התוצאות כנראה נשבר, והחיזויים לליגה הזאת מתבססים על נתונים ישנים.`; document.getElementById("main").prepend(warn); }
+  else if (warn.parentNode) warn.remove();
   const chips = document.getElementById("chips");
   chips.hidden = true;
   const v = document.getElementById("view");
@@ -51,7 +56,8 @@ function render() {
   else if (view === "stars") v.innerHTML = viewStars(chips);
   else if (view === "results") v.innerHTML = viewResults();
   else v.innerHTML = viewAll(chips);
-  document.getElementById("foot").innerHTML = `כיסוי: ${DATA.coverage.map(c => `${esc(DATA.leagues[c.league])} <span class="num">${c.played}</span>`).join(" · ")}`;
+  const lr = DATA.last_result || {};
+  document.getElementById("foot").innerHTML = `תוצאה אחרונה במאגר: ${Object.keys(lr).filter(k => lr[k]).map(k => `${esc(DATA.leagues[k])} <span class="num">${lr[k].slice(5).replace("-", ".")}</span>`).join(" · ")}<br>המודל הסטטיסטי מבוסס על תוצאות קבוצות בלבד. שמות שחקנים מופיעים רק בחוות דעת הסוכן ומאומתים מול הסגל הנוכחי ב-ESPN.`;
 }
 
 /* ---------- compact card ---------- */
@@ -63,7 +69,8 @@ function card(p, i = 0, showDate = false) {
   const sorted = [p.pH, p.pD, p.pA].sort((x, y) => y - x), close = sorted[0] - sorted[1] < 6;
   const oddsMini = o ? `<div class="oddsmini" aria-label="יחסי Winner">${[["h", "בית"], ["d", "תיקו"], ["a", "חוץ"]].map(([k, t]) => `<div class="${st && st.outcome === k ? "pk" : ""}">${t}<b class="num">${o[k].toFixed(2)}</b></div>`).join("")}</div>` : "";
   const starB = st ? `<span class="star">${starSvg}כוכב: ${esc(st.outcome === "h" ? p.home : (st.outcome === "a" ? p.away : "תיקו"))} ${st.odds.toFixed(2)}</span>` : "";
-  const op = p.opinion ? `<div class="opnote">דעת האנליסט: נוטה ל${p.opinion.lean === "h" ? "בית" : (p.opinion.lean === "a" ? "חוץ" : "תיקו")} (ביטחון ${esc(p.opinion.confidence || "")})</div>` : "";
+  const vb = p.opinion ? (p.opinion.verified === "ok" ? `<span class="tag ok" style="font-size:11px">שחקנים אומתו מול הסגל הנוכחי</span>` : (p.opinion.verified === "problems" ? `<span class="tag no" style="font-size:11px">אזהרה: שחקן שאינו בסגל (${esc((p.opinion.unknown_players || []).join(", "))})</span>` : `<span class="tag" style="font-size:11px;color:var(--ink-faint)">סגלים לא אומתו</span>`)) : "";
+  const op = p.opinion ? `<div class="opnote">דעת האנליסט: נוטה ל${p.opinion.lean === "h" ? "בית" : (p.opinion.lean === "a" ? "חוץ" : "תיקו")} (ביטחון ${esc(p.opinion.confidence || "")}) ${vb}</div>` : "";
   return `<article class="card ${st ? "S" : ""}" style="animation-delay:${Math.min(i, 8) * 35}ms">
     <div class="ch">${ko(p) ? `<span class="t num">${ko(p)}</span>` : ""}${showDate ? `<span>${fmtDate(p.date)}</span>` : ""}<span class="lg">${esc(DATA.leagues[p.league])}</span>${starB}</div>
     <div class="row">

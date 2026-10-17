@@ -92,6 +92,8 @@ def match_to_fixtures(events, m, days=10):
         if r is not None:
             used.add((r.league, r.home, r.away))
             out.append(_entry(e, r))
+            if (not r.played) and r.date.date().isoformat() != e["date"]:
+                missing.append(dict(league=lg, date=e["date"], home=r.home, away=r.away, fix=True))   # schedule moved
         else:
             pending.append((e, hn, an))
     # self-learning: one side known -> the other side is the opposing team of that fixture; or a single leftover pair
@@ -140,7 +142,7 @@ def _entry(e, r):
             cs[f"{h_}-{a_}"] = v
         except ValueError:
             continue
-    return {"date": r.date.date().isoformat(), "home": r.home, "away": r.away, "h": e["h"], "d": e["d"], "a": e["a"],
+    return {"date": e["date"], "home": r.home, "away": r.away, "h": e["h"], "d": e["d"], "a": e["a"],
             "over25": e.get("over25"), "under25": e.get("under25"), "btts_yes": e.get("btts_yes"), "btts_no": e.get("btts_no"),
             "cs": cs, "kickoff": _kick(e["time"]), "source": "Winner.co.il", "bookmakers": "Winner (single bookmaker)"}
 

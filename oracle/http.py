@@ -7,14 +7,21 @@ _S.headers.update({"User-Agent": "Mozilla/5.0"})
 _lock = threading.Lock()
 
 
-def get(url, params=None, headers=None, ttl_hours=6.0, sleep=0.0, tries=4):
-    """Disk-cached GET returning text. ttl_hours=None means cache forever. Returns None on failure."""
-    key = hashlib.sha1((url + json.dumps(params or {}, sort_keys=True)).encode()).hexdigest()
-    f = CACHE / f"{key}.txt"
+def cache_path(url, params=None, cache_key=None):
+    key = hashlib.sha1((cache_key or (url + json.dumps(params or {}, sort_keys=True))).encode()).hexdigest()
+    return CACHE / f"{key}.txt"
+
+
+def get(url, params=None, headers=None, ttl_hours=6.0, sleep=0.0, tries=4, cache_key=None, offline=False):
+    """Disk-cached GET returning text. ttl_hours=None means cache forever. Returns None on failure.
+    cache_key: stable key independent of the URL (e.g. when an API key in the URL changes). offline: cache only."""
+    f = cache_path(url, params, cache_key)
     if f.exists():
         age_h = (time.time() - f.stat().st_mtime) / 3600
-        if ttl_hours is None or age_h < ttl_hours:
+        if ttl_hours is None or age_h < ttl_hours or offline:
             return f.read_text(encoding="utf-8")
+    if offline:
+        return None
     for i in range(tries):
         try:
             if sleep:

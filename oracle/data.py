@@ -5,7 +5,7 @@ from . import sources as S
 from .config import DATA, MATCHES_CSV, BIG4, FIRST_SEASON, season_of
 from .names import Resolver
 
-PRIORITY = {"football-data": 0, "openfootball": 1, "espn": 2, "thesportsdb": 3}
+PRIORITY = {"football-data": 0, "openfootball": 1, "espn": 2, "thesportsdb": 3, "winner": 5, "archive": 9}
 NUM_EXTRA = ["o_h", "o_d", "o_a", "o_ov", "o_un"]
 
 
@@ -29,7 +29,7 @@ def collect(fast=False):
     fr["espn"] = S.espn()
     _log(f"      {len(fr['espn'])} rows")
     _log("[5/7] TheSportsDB          (Israeli league; first run scans 3 seasons, then cached)")
-    fr["tsdb"] = S.thesportsdb("IL", seasons=1 if fast else 3)
+    fr["tsdb"] = S.thesportsdb("IL", seasons=1 if fast else 2)
     _log(f"      {len(fr['tsdb'])} rows")
     _log("[6/7] ESPN history         (Israeli league results 2020-21 .. 2024-25; fills TheSportsDB gaps)")
     fr["espn_il"] = S.espn_history("IL", first=FIRST_SEASON)
@@ -79,12 +79,29 @@ def build(fast=False):
             if CC_LG.get(cc) is None:
                 rs.register(r, "CL")
 
+    # last line of defence: played matches from the previous build (survives a dead source or an empty cache,
+    # e.g. the cloud runner that has no TheSportsDB history)
+    if MATCHES_CSV.exists():
+        try:
+            old = pd.read_csv(MATCHES_CSV, parse_dates=["date"])
+            old = old[old.played.astype(bool)][["date", "league", "home", "away", "hg", "ag"]].copy()
+            old["home_raw"], old["away_raw"] = old.home, old.away
+            old["played"], old["src"], old["cc_h"], old["cc_a"] = True, "archive", None, None
+            for n in pd.unique(pd.concat([old.home, old.away])):
+                pass
+            fr["archive"] = old
+            _log(f"[archive] {len(old)} played matches from the previous build kept as fallback")
+        except Exception as ex:
+            _log(f"archive fallback skipped: {ex}")
     parts = []
-    for key in ("fd", "ofb", "espn", "espn_il", "espn_el", "tsdb"):
+    for key in ("fd", "ofb", "espn", "espn_il", "espn_el", "tsdb", "archive"):
         df = fr[key]
         if df is None or df.empty:
             continue
-        df = _resolve_frame(df, rs)
+        if key == "archive":
+            df = df.copy(); df["home"], df["away"] = df.home_raw, df.away_raw
+        else:
+            df = _resolve_frame(df, rs)
         parts.append(df)
     allm = pd.concat(parts, ignore_index=True)
     allm["prio"] = allm.src.map(PRIORITY)
@@ -125,7 +142,11 @@ def build(fast=False):
         try:
             for x in _json.loads(extra.read_text(encoding="utf-8")):
                 dts = pd.Timestamp(x["date"])
-                if any(abs((kept[pos]["date"] - dts).days) <= 3 for pos in index.get((x["league"], x["home"], x["away"]), [])):
+                hit = [pos for pos in index.get((x["league"], x["home"], x["away"]), []) if abs((kept[pos]["date"] - dts).days) <= 3]
+                if hit:
+                    k0 = kept[hit[0]]
+                    if not k0["played"] and k0["date"] != dts:
+                        k0["date"] = dts        # the bookmaker's live schedule beats a stale fixture list
                     continue
                 d0 = dict(date=dts, league=x["league"], home=x["home"], away=x["away"], hg=np.nan, ag=np.nan,
                           played=False, src="winner", n_src=1)

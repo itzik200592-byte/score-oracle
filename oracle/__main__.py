@@ -7,7 +7,7 @@ except Exception:
     pass
 
 from . import data as D
-from .config import OUT, LEAGUES
+from .config import OUT, LEAGUES, ROOT
 
 
 def main():
@@ -27,6 +27,12 @@ def main():
     mm = sub.add_parser("match", help="predict a single match (any two teams from the same competition)")
     mm.add_argument("home"); mm.add_argument("away"); mm.add_argument("league", choices=list(LEAGUES))
     sub.add_parser("review", help="score past predictions against real results")
+    sq = sub.add_parser("squad", help="current squad from ESPN (verified source for player claims)")
+    sq.add_argument("teams", nargs="+")
+    ss = sub.add_parser("squad-save", help="store a squad read from a public page (for clubs ESPN lacks): oracle squad-save \"Team\" --source sofascore --players \"A, B, C\"")
+    ss.add_argument("team"); ss.add_argument("--source", required=True); ss.add_argument("--players", required=True, help="comma separated full names")
+    vo = sub.add_parser("verify-opinions", help="check every player named in data/opinions/*.json against current ESPN squads")
+    vo.add_argument("--date", default=None, help="only files for this date (YYYY-MM-DD)")
     cx = sub.add_parser("context", help="situation dossier for a fixture (venue records, form, congestion, H2H, table)")
     cx.add_argument("home"); cx.add_argument("away"); cx.add_argument("league", choices=list(LEAGUES))
     o = sub.add_parser("odds-sync", help="collect Winner odds from THIS computer (cloud IPs are blocked by Winner)")
@@ -55,6 +61,33 @@ def main():
     if a.cmd in ("odds-sync", "sync"):
         from . import sync as SY
         SY.run(m, push=(a.cmd == "sync" and not a.no_push), full=(a.cmd == "sync"))
+        return
+    if a.cmd == "squad":
+        from . import squads
+        for t in a.teams:
+            print(squads.squad_text(t)); print()
+        return
+    if a.cmd == "squad-save":
+        from . import squads
+        f = squads.save_manual(a.team, a.players.split(","), a.source)
+        print("saved", f, "players:", len(a.players.split(",")))
+        return
+    if a.cmd == "verify-opinions":
+        from . import squads
+        import glob, json as _j
+        bad = 0
+        for f in sorted(glob.glob(str(ROOT / "data" / "opinions" / "*.json"))):
+            if a.date and a.date not in f:
+                continue
+            j = _j.loads(open(f, encoding="utf-8").read())
+            for e in j.get("matches", []):
+                squads.verify_opinion(e)
+                v = e["verification"]
+                flag = "OK " if v["status"] == "ok" else ("?? " if v["status"] == "unverified" else "BAD")
+                print(f"{flag} {e['date']} {e['home']} - {e['away']}: {v['checked']} players checked" + (f", NOT IN CURRENT SQUAD: {v['unknown']}" if v["unknown"] else "") + ("  (no structured player list)" if v["status"] == "unverified" else ""))
+                bad += bool(v["unknown"])
+            open(f, "w", encoding="utf-8").write(_j.dumps(j, ensure_ascii=False, indent=1))
+        print(f"\n{bad} opinion(s) with players not in the current squad")
         return
     if a.cmd == "context":
         from . import context as CX

@@ -146,18 +146,40 @@ def espn_history(lg="IL", first=FIRST_SEASON, weekdays=None, months=None):
     return pd.concat(parts, ignore_index=True) if parts else _empty()
 
 
-# ------------------------------------------------ 4. TheSportsDB (Israel history + fixtures)
+# ------------------------------------------------ 4. TheSportsDB (Israel: results + fixtures)
+# The free key is rate limited, so a run makes only a handful of requests: the league's last 15 results and next 15
+# fixtures (2 calls), plus the last 10 days day-by-day (cached). Older days are read from the cache only; the deep
+# history comes from the ESPN history scan. Cache keys do not contain the API key, so a key change never refetches.
+TSDB = "https://www.thesportsdb.com/api/v1/json/123/"
+
+
+def _tsdb_rows(events, lg):
+    rows = []
+    for e in events or []:
+        try:
+            hs, as_ = e.get("intHomeScore"), e.get("intAwayScore")
+            played = hs not in (None, "") and as_ not in (None, "")
+            rows.append(dict(date=pd.to_datetime(e["dateEvent"]), league=lg, home_raw=e["strHomeTeam"],
+                             away_raw=e["strAwayTeam"], hg=float(hs) if played else np.nan,
+                             ag=float(as_) if played else np.nan, played=played, src="thesportsdb",
+                             cc_h=None, cc_a=None))
+        except Exception:
+            continue
+    return rows
+
+
 def _tsdb_day(lid, day, today):
-    ttl = None if day < today - dt.timedelta(days=4) else 2
-    txt = http.get("https://www.thesportsdb.com/api/v1/json/3/eventsday.php", params={"d": day.isoformat(), "l": lid},
-                   ttl_hours=ttl, sleep=0.8)
+    recent = day >= today - dt.timedelta(days=10)
+    txt = http.get(TSDB + "eventsday.php", params={"d": day.isoformat(), "l": lid},
+                   ttl_hours=(2 if day >= today - dt.timedelta(days=4) else None), sleep=1.5 if recent else 0,
+                   cache_key=f"tsdb:eventsday:{lid}:{day.isoformat()}", offline=not recent, tries=2)
     try:
         return (json.loads(txt).get("events") or []) if txt else []
     except Exception:
         return []
 
 
-def thesportsdb(lg="IL", seasons=3, forward_days=14):
+def thesportsdb(lg="IL", seasons=2, forward_days=14):
     lid = LEAGUES[lg]["tsdb"]
     today = dt.date.today()
     cur = current_season()
@@ -167,21 +189,22 @@ def thesportsdb(lg="IL", seasons=3, forward_days=14):
         while d <= min(b, today + dt.timedelta(days=forward_days)):
             days.append(d)
             d += dt.timedelta(days=1)
-    with ThreadPoolExecutor(2) as ex:
-        res = list(ex.map(lambda d: _tsdb_day(lid, d, today), days))
     rows = []
-    for evs in res:
-        for e in evs:
-            try:
-                hs, as_ = e.get("intHomeScore"), e.get("intAwayScore")
-                played = hs not in (None, "") and as_ not in (None, "")
-                rows.append(dict(date=pd.to_datetime(e["dateEvent"]), league=lg, home_raw=e["strHomeTeam"],
-                                 away_raw=e["strAwayTeam"], hg=float(hs) if played else np.nan,
-                                 ag=float(as_) if played else np.nan, played=played, src="thesportsdb",
-                                 cc_h=None, cc_a=None))
-            except Exception:
-                continue
-    return pd.DataFrame(rows) if rows else _empty()
+    for d in days:
+        rows += _tsdb_rows(_tsdb_day(lid, d, today), lg)
+    # two cheap calls that always reflect the latest state (last 15 results, next 15 fixtures)
+    for ep in ("eventspastleague.php", "eventsnextleague.php"):
+        txt = http.get(TSDB + ep, params={"id": lid}, ttl_hours=1, sleep=1.5, cache_key=f"tsdb:{ep}:{lid}", tries=2)
+        try:
+            rows += _tsdb_rows(json.loads(txt).get("events") if txt else [], lg)
+        except Exception:
+            pass
+    if not rows:
+        return _empty()
+    df = pd.DataFrame(rows)
+    # the same fixture can appear from several calls: keep the row with a result
+    df = df.sort_values("played", ascending=False).drop_duplicates(["date", "home_raw", "away_raw"], keep="first")
+    return df.reset_index(drop=True)
 
 
 # ------------------------------------------------ 5. openfootball (Champions League history, plain text)
