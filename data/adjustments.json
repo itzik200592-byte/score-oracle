@@ -1,47 +1,142 @@
 {
-  "Lyon": {
-    "att": 0.92,
+  "Udinese": {
+    "att": 0.95,
     "def": 1.0,
-    "until": "2026-10-15"
+    "until": "2026-10-18"
   },
-  "Crystal Palace": {
-    "att": 0.92,
+  "Osasuna": {
+    "att": 0.98,
     "def": 1.0,
-    "until": "2026-10-15"
+    "until": "2026-10-18"
+  },
+  "Angers": {
+    "att": 1.0,
+    "def": 1.04,
+    "until": "2026-10-18"
+  },
+  "Marseille": {
+    "att": 0.97,
+    "def": 1.0,
+    "until": "2026-10-18"
   },
   "Sunderland": {
     "att": 1.0,
-    "def": 1.07,
-    "until": "2026-10-15"
+    "def": 1.05,
+    "until": "2026-10-18"
   },
-  "Celta": {
+  "Brighton": {
     "att": 0.92,
     "def": 1.0,
-    "until": "2026-10-15"
+    "until": "2026-10-18"
+  },
+  "Crystal Palace": {
+    "att": 0.93,
+    "def": 1.07,
+    "until": "2026-10-18"
+  },
+  "Leeds": {
+    "att": 1.0,
+    "def": 1.03,
+    "until": "2026-10-18"
+  },
+  "Man United": {
+    "att": 0.97,
+    "def": 1.03,
+    "until": "2026-10-18"
+  },
+  "Fiorentina": {
+    "att": 1.0,
+    "def": 1.03,
+    "until": "2026-10-18"
+  },
+  "Como": {
+    "att": 0.86,
+    "def": 1.0,
+    "until": "2026-10-18"
+  },
+  "Celta": {
+    "att": 0.93,
+    "def": 1.03,
+    "until": "2026-10-18"
+  },
+  "Alaves": {
+    "att": 1.0,
+    "def": 1.05,
+    "until": "2026-10-18"
+  },
+  "Le Havre": {
+    "att": 1.0,
+    "def": 1.07,
+    "until": "2026-10-18"
+  },
+  "Auxerre": {
+    "att": 0.97,
+    "def": 1.03,
+    "until": "2026-10-18"
+  },
+  "Monaco": {
+    "att": 0.97,
+    "def": 1.02,
+    "until": "2026-10-18"
+  },
+  "Rennes": {
+    "att": 0.97,
+    "def": 1.0,
+    "until": "2026-10-18"
+  },
+  "Nott'm Forest": {
+    "att": 0.96,
+    "def": 1.03,
+    "until": "2026-10-18"
+  },
+  "Atalanta": {
+    "att": 0.96,
+    "def": 1.07,
+    "until": "2026-10-18"
+  },
+  "Sociedad": {
+    "att": 0.96,
+    "def": 1.04,
+    "until": "2026-10-18"
+  },
+  "Hapoel Be'er Sheva": {
+    "att": 0.97,
+    "def": 1.02,
+    "until": "2026-10-18"
+  },
+  "Hapoel Jerusalem": {
+    "att": 0.96,
+    "def": 1.0,
+    "until": "2026-10-18"
+  },
+  "Lyon": {
+    "att": 0.88,
+    "def": 1.04,
+    "until": "2026-10-18"
+  },
+  "Nice": {
+    "att": 1.0,
+    "def": 1.05,
+    "until": "2026-10-18"
   },
   "Juventus": {
     "att": 0.92,
     "def": 1.0,
-    "until": "2026-10-15"
+    "until": "2026-10-18"
   },
-  "Sassuolo": {
-    "att": 1.0,
-    "def": 1.07,
-    "until": "2026-10-16"
-  },
-  "Bournemouth": {
-    "att": 0.96,
+  "Lazio": {
+    "att": 0.97,
     "def": 1.0,
-    "until": "2026-10-15"
+    "until": "2026-10-18"
   },
-  "SK Sturm Graz": {
-    "att": 0.96,
+  "Real Madrid": {
+    "att": 0.92,
     "def": 1.0,
-    "until": "2026-10-15"
+    "until": "2026-10-18"
   },
-  "Olympiakos": {
-    "att": 0.96,
-    "def": 1.0,
-    "until": "2026-10-15"
+  "Sevilla": {
+    "att": 0.92,
+    "def": 1.03,
+    "until": "2026-10-18"
   }
 }

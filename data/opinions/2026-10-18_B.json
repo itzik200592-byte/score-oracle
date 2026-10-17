@@ -1,0 +1,1001 @@
+{
+ "made_at": "2026-10-17T19:30:00+03:00",
+ "matches": [
+  {
+   "date": "2026-10-18",
+   "home": "Lorient",
+   "away": "Monaco",
+   "lean": "a",
+   "confidence": "נמוכה",
+   "summary": "מונאקו מובילת הטבלה אבל חוזרת מסופיה אחרי משחק ביום חמישי, ולוריאן ניצחה אותה בשני המפגשים האחרונים. יתרון קטן לחוץ, בלי ביטחון.",
+   "home_view": "לוריאן במקום 9 עם 8 נקודות מ-6 משחקים, מאזן ביתי של 4 ניצחונות 3 תיקו 3 הפסדים ב-10 האחרונים (נתון). ניצחה את מונאקו 3:1 בשני המפגשים האחרונים ב-2025 ו-2026 (נתון). שבוע מנוחה מלא אחרי ניצחון 1:0 על פריז אף.סי (נתון). חסרים הקשרים פאדיגה ומבמבה ובמבה, לא שחקני מפתח (חדשות: FotMob, 17.10). קבוצה שמסתדרת טוב מול יריבות גדולות בבית, אבל חסרת כוח התקפי קבוע: 1.4 שערים למשחק בממוצע (שיפוט).",
+   "away_view": "מונאקו ראשונה בטבלה עם 14 נקודות, 6 משחקים בלי הפסד כולל ניצחון בפאריס (נתון). שיחקה ביום חמישי בסופיה בליגת הקונפרנס, ניצחה 2:1, וחוזרת עם יומיים מנוחה ונסיעה ארוכה מול לוריאן רעננה (חדשות: asmonaco.com, Flashscore, 15.10). אריק דייר, בלם, פצוע בירך עד סוף אוקטובר (חדשות: FotMob 17.10). ההגנה בחוץ חלשה: 1.8 שערים נספגים למשחק ב-10 משחקי החוץ האחרונים (נתון). קבוצה טובה אבל פתוחה, מה שמסביר למה 1:1 הוא הפיק של המודל (שיפוט).",
+   "factors": [
+    "מונאקו: משחק אירופי ביום חמישי + נסיעה מסופיה, יומיים מנוחה (חדשות)",
+    "מונאקו: דייר חסר בבלם (חדשות)",
+    "לוריאן: שבוע מנוחה מלא, שני ניצחונות על מונאקו במפגשים האחרונים (נתון)",
+    "לוריאן: שלושה קשרים פצועים, לא מפתח (חדשות)"
+   ],
+   "sources": [
+    "FotMob, 17.10.2026",
+    "asmonaco.com, 15.10.2026",
+    "Flashscore, 15.10.2026"
+   ],
+   "adjustments": [
+    "Monaco att 0.97 def 1.02: משחק אירופי ביום חמישי ונסיעה, בלם פותח חסר"
+   ],
+   "players": [
+    {
+     "team": "Monaco",
+     "name": "Eric Dier",
+     "claim": "out",
+     "source": "FotMob, 17.10.2026"
+    },
+    {
+     "team": "Lorient",
+     "name": "Bandiougou Fadiga",
+     "claim": "out",
+     "source": "FotMob, 17.10.2026"
+    },
+    {
+     "team": "Lorient",
+     "name": "Noah Mbamba",
+     "claim": "out",
+     "source": "FotMob, 17.10.2026"
+    },
+    {
+     "team": "Lorient",
+     "name": "Mohamed Bamba",
+     "claim": "out",
+     "source": "FotMob, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 4,
+    "unknown": [],
+    "teams": {
+     "Monaco": {
+      "ok": [
+       "Eric Dier"
+      ],
+      "unknown": [],
+      "roster_size": 30,
+      "espn_name": "AS Monaco"
+     },
+     "Lorient": {
+      "ok": [
+       "Bandiougou Fadiga",
+       "Noah Mbamba",
+       "Mohamed Bamba"
+      ],
+      "unknown": [],
+      "roster_size": 28,
+      "espn_name": "Lorient"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Paris FC",
+   "away": "Rennes",
+   "lean": "h",
+   "confidence": "נמוכה",
+   "summary": "רן שיחקה ביום חמישי בליגה האירופית ומגיעה עם יומיים מנוחה ורוטציה צפויה, פריז אף.סי התכוננה שבוע שלם. נטייה קלה לבית.",
+   "home_view": "פריז אף.סי במקום 5 עם 11 נקודות, מאזן ביתי מרשים: 7 ניצחונות ב-10 משחקי הבית האחרונים (נתון). הפסד ראשון העונה בשבת שעברה בלוריאן, ושבוע מנוחה מלא (נתון, חדשות: But Football Club 17.10). חסרים סאנגי ואיקונה, ומרשטי מופיע כחסר בחלק מהדיווח, שרגי בספק (חדשות: But Football Club 17.10). קבוצה שמנצחת במשחקים צמודים ושומרת רשת לא רע: 0.8 שערים נספגים למשחק ב-10 האחרונים (נתון). האתגר הוא היעדר שערים: 4 משחקים בלי שער מתוך 10 (נתון).",
+   "away_view": "רן במקום 3 עם 13 נקודות, שני ניצחונות רצופים כולל 1:0 על מארסיי (נתון). שיחקה ביום חמישי מול OFI כרתים בליגה האירופית ומגיעה עם יומיים מנוחה בלבד, המאמן פרנק אייז צפוי לרוטציה (חדשות: But Football Club 17.10). לפאול הוא החלוץ המרכזי עם 4 שערים בליגה (חדשות: But Football Club 17.10). בחוץ רן תנודתית: 5 ניצחונות ו-4 הפסדים ב-10 משחקי החוץ האחרונים, 1.8 שערים נספגים (נתון). קבוצה טובה שעשויה להיות פחות חדה אחרי אמצע שבוע אירופי (שיפוט).",
+   "factors": [
+    "רן: משחק אירופי ביום חמישי, יומיים מנוחה, רוטציה צפויה (חדשות)",
+    "פריז אף.סי: שבוע מנוחה מלא ומאזן ביתי חזק (נתון)",
+    "פריז אף.סי: סאנגי ואיקונה חסרים (חדשות)"
+   ],
+   "sources": [
+    "But Football Club, 17.10.2026"
+   ],
+   "adjustments": [
+    "Rennes att 0.97: משחק אירופי ביום חמישי ורוטציה צפויה"
+   ],
+   "players": [
+    {
+     "team": "Paris FC",
+     "name": "Nhoa Sangui",
+     "claim": "out",
+     "source": "But Football Club, 17.10.2026"
+    },
+    {
+     "team": "Paris FC",
+     "name": "Jonathan Ikoné",
+     "claim": "out",
+     "source": "But Football Club, 17.10.2026"
+    },
+    {
+     "team": "Paris FC",
+     "name": "Vincent Marchetti",
+     "claim": "doubtful",
+     "source": "But Football Club, 17.10.2026"
+    },
+    {
+     "team": "Paris FC",
+     "name": "Samir Chergui",
+     "claim": "doubtful",
+     "source": "But Football Club, 17.10.2026"
+    },
+    {
+     "team": "Rennes",
+     "name": "Esteban Lepaul",
+     "claim": "key",
+     "source": "But Football Club, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 5,
+    "unknown": [],
+    "teams": {
+     "Paris FC": {
+      "ok": [
+       "Nhoa Sangui",
+       "Jonathan Ikoné",
+       "Vincent Marchetti",
+       "Samir Chergui"
+      ],
+      "unknown": [],
+      "roster_size": 25,
+      "espn_name": "Paris FC"
+     },
+     "Rennes": {
+      "ok": [
+       "Esteban Lepaul"
+      ],
+      "unknown": [],
+      "roster_size": 26,
+      "espn_name": "Stade Rennais"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Nott'm Forest",
+   "away": "Arsenal",
+   "lean": "a",
+   "confidence": "בינונית",
+   "summary": "פורסט במשבר תחת גלאזנר עם גיבס-וייט ומילנקוביץ' בספק, ארסנל חסרה את סאליבה אבל עמוקה דיה. מסכים עם המודל: חוץ, סביר שבמשחק נמוך שערים.",
+   "home_view": "פורסט במקום 15 עם 5 נקודות מ-6 משחקים, ניצחון אחד בלבד ושני הפסדים רצופים, האחרון 3:1 בקריסטל פאלאס (נתון). המאמן אוליבר גלאזנר עדיין לא הצליח להטביע חותם והלחץ גדל (חדשות: VAVEL 16.10). איגור ז'סוס וסבונה פצועים לטווח ארוך, גיבס-וייט בספק אחרי פציעת שריר ולא התאמן השבוע, מילנקוביץ' בספק עם חבלה בעצם וחזר לאימון רק ביום שישי (חדשות: VAVEL 16.10, Sports Mole 17.10). בבית פורסט נותנת מעט: 0.6 שערים נספגים למשחק ב-10 משחקי הבית האחרונים, אבל גם כובשת מעט, 4 משחקים בלי שער (נתון). צפוי בלוק הגנתי עמוק (חדשות: Sports Mole 17.10).",
+   "away_view": "ארסנל שנייה בטבלה עם 15 נקודות, 8 ניצחונות ב-10 האחרונים, ממוצע 0.7 שערים נספגים (נתון). ניצחה את ליל 3:0 בליגת האלופות ביום רביעי, 4 ימי מנוחה (נתון). סאליבה עדיין חסר עם פציעת גב, הינקפייה חסר, צוליס חסר עם פציעת ירך, זובימנדי בספק אחרי פציעת קרסול (חדשות: VAVEL 16.10, Sports Mole 17.10). ארטטה אמר שהסגל קל יותר אבל אפשר להסתדר (חדשות: Sports Mole 17.10). במפגשים האחרונים בסיטי גראונד שני 0:0 רצופים, כלומר ארסנל מתקשה לפרוץ את הבלוק של פורסט (נתון).",
+   "factors": [
+    "פורסט: גיבס-וייט ומילנקוביץ' בספק, איגור ז'סוס וסבונה חסרים (חדשות)",
+    "פורסט: מאמן תחת לחץ, שני הפסדים רצופים (חדשות, נתון)",
+    "ארסנל: סאליבה, הינקפייה, צוליס חסרים, זובימנדי בספק (חדשות)",
+    "שני 0:0 רצופים בסיטי גראונד (נתון)"
+   ],
+   "sources": [
+    "VAVEL, 16.10.2026",
+    "Sports Mole, 17.10.2026"
+   ],
+   "adjustments": [
+    "Nott'm Forest att 0.96 def 1.03: גיבס-וייט ומילנקוביץ' בספק, חלוץ פצוע"
+   ],
+   "players": [
+    {
+     "team": "Nott'm Forest",
+     "name": "Igor Jesus",
+     "claim": "out",
+     "source": "VAVEL, 16.10.2026"
+    },
+    {
+     "team": "Nott'm Forest",
+     "name": "Nicolò Savona",
+     "claim": "out",
+     "source": "VAVEL, 16.10.2026"
+    },
+    {
+     "team": "Nott'm Forest",
+     "name": "Morgan Gibbs-White",
+     "claim": "doubtful",
+     "source": "VAVEL, 16.10.2026"
+    },
+    {
+     "team": "Nott'm Forest",
+     "name": "Nikola Milenkovic",
+     "claim": "doubtful",
+     "source": "VAVEL, 16.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "William Saliba",
+     "claim": "out",
+     "source": "VAVEL, 16.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Piero Hincapié",
+     "claim": "out",
+     "source": "VAVEL, 16.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Christos Tzolis",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Martín Zubimendi",
+     "claim": "doubtful",
+     "source": "VAVEL, 16.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 8,
+    "unknown": [],
+    "teams": {
+     "Nott'm Forest": {
+      "ok": [
+       "Igor Jesus",
+       "Nicolò Savona",
+       "Morgan Gibbs-White",
+       "Nikola Milenkovic"
+      ],
+      "unknown": [],
+      "roster_size": 24,
+      "espn_name": "Nottingham Forest"
+     },
+     "Arsenal": {
+      "ok": [
+       "William Saliba",
+       "Piero Hincapié",
+       "Christos Tzolis",
+       "Martín Zubimendi"
+      ],
+      "unknown": [],
+      "roster_size": 29,
+      "espn_name": "Arsenal"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Milan",
+   "away": "Atalanta",
+   "lean": "h",
+   "confidence": "בינונית",
+   "summary": "אטאלנטה מגיעה בלי שלושה בלמים (הין, קוסונו, סקאלביני), בלי אלמאס המורחק ובלי רספדורי. ההגנה המאולתרת שלה היא הסיפור של המשחק.",
+   "home_view": "מילאן במקום 6 עם 12 נקודות, 3 משחקים בלי הפסד, ובאמצע השבוע ניצחה 4:0 בזלצבורג בליגה האירופית (נתון). יומיים מנוחה בלבד (נתון). המאמן אמורים לא צפוי לשנות הרבה, גבייה וסלמאקרס חסרים, שאר הסגל זמין (חדשות: Sky Sport 16.10, Tuttosport 16.10). בבית מילאן פחות יציבה: 5 הפסדים ב-10 משחקי הבית האחרונים (נתון). מודריץ' צפוי לפתוח במרכז השדה, ורמוס בחוד (חדשות: Sky Sport 16.10). לאטאלנטה יש יד עליונה היסטורית: ניצחה ב-4 מ-6 המפגשים האחרונים (נתון).",
+   "away_view": "אטאלנטה במקום 10 עם 9 נקודות, שלושה הפסדים ב-6 האחרונים, ובחוץ רק 2 ניצחונות ב-10 משחקים עם 1.8 שערים נספגים (נתון). גם היא שיחקה באמצע השבוע בליגת הקונפרנס מול פאפוס (חדשות: Tuttosport 16.10). רשימת החסרים ארוכה: אלמאס מורחק, הין, קוסונו וסקאלביני (שלושה בלמים) פצועים, סולמאנה ורספדורי חסרים, קסייה חסר או בספק לפי המקור (חדשות: Sky Sport 16.10, Tuttosport 16.10). המאמן סארי ייאלץ להרכיב הגנה מקולאסינאץ ובלנובה וקריסטנסן, שילוב לא טבעי (שיפוט על בסיס ההרכב המשוער של Sky). קבוצה עם איכות התקפית, אבל הגנה כזאת מול מילאן בסן סירו היא סיכון (שיפוט).",
+   "factors": [
+    "אטאלנטה: שלושה בלמים חסרים + אלמאס מורחק + רספדורי חסר (חדשות)",
+    "שתי הקבוצות שיחקו באירופה באמצע השבוע, יומיים מנוחה (נתון, חדשות)",
+    "מילאן: גבייה וסלמאקרס חסרים, לא מכריע (חדשות)",
+    "אטאלנטה ניצחה 4 מ-6 המפגשים האחרונים (נתון)"
+   ],
+   "sources": [
+    "Sky Sport Italia, 16.10.2026",
+    "Tuttosport, 16.10.2026"
+   ],
+   "adjustments": [
+    "Atalanta att 0.96 def 1.07: שלושה בלמים חסרים, אלמאס מורחק, רספדורי חסר"
+   ],
+   "players": [
+    {
+     "team": "Milan",
+     "name": "Matteo Gabbia",
+     "claim": "out",
+     "source": "Tuttosport, 16.10.2026"
+    },
+    {
+     "team": "Milan",
+     "name": "Alexis Saelemaekers",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Milan",
+     "name": "Luka Modric",
+     "claim": "key",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Atalanta",
+     "name": "Eljif Elmas",
+     "claim": "suspended",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Atalanta",
+     "name": "Isak Hien",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Atalanta",
+     "name": "Odilon Kossounou",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Atalanta",
+     "name": "Giorgio Scalvini",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Atalanta",
+     "name": "Kamaldeen Sulemana",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Atalanta",
+     "name": "Giacomo Raspadori",
+     "claim": "out",
+     "source": "Tuttosport, 16.10.2026"
+    },
+    {
+     "team": "Atalanta",
+     "name": "Franck Kessié",
+     "claim": "doubtful",
+     "source": "Sky Sport Italia, 16.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 10,
+    "unknown": [],
+    "teams": {
+     "Milan": {
+      "ok": [
+       "Matteo Gabbia",
+       "Alexis Saelemaekers",
+       "Luka Modric"
+      ],
+      "unknown": [],
+      "roster_size": 28,
+      "espn_name": "AC Milan"
+     },
+     "Atalanta": {
+      "ok": [
+       "Eljif Elmas",
+       "Isak Hien",
+       "Odilon Kossounou",
+       "Giorgio Scalvini",
+       "Kamaldeen Sulemana",
+       "Giacomo Raspadori",
+       "Franck Kessié"
+      ],
+      "unknown": [],
+      "roster_size": 33,
+      "espn_name": "Atalanta"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Malaga",
+   "away": "Sociedad",
+   "lean": "a",
+   "confidence": "נמוכה",
+   "summary": "סוסיאדד חסרה את הררה ומרין ואראמבורו אחרי משחק אירופי ביום חמישי, אבל מלאגה בלי ניצחון תשע משחקים ברצף. אין לי יתרון ברור על המודל.",
+   "home_view": "מלאגה במקום 20 מתוך 21, 5 נקודות מ-9 משחקים, 9 משחקים ללא ניצחון, 0.56 שערים למשחק (נתון). בבית 4 תיקו והפסד אחד מ-5, קבוצה שמתקשה לכבוש אבל לא מתפרקת (נתון). 8 ימי מנוחה (נתון). מורייו וקחוסטה פצועים, סלינס חוזר לסגל אחרי שהוחמץ בגלל סעיף חוזי (חדשות: Comuniate 15.10). המאמן פונס צפוי לשינויים, אדריאן ניניו עשוי לפתוח (חדשות: Comuniate 15.10). קבוצה שנלחמת על הישרדות ותשחק סגור ותחפש נקודה (שיפוט).",
+   "away_view": "סוסיאדד במקום 6 עם 16 נקודות, 4 משחקים בלי הפסד, אבל 3 משחקים ב-14 יום ויומיים מנוחה אחרי 1:1 בסן ז'ילואז בליגה האירופית (נתון). יאנגל הררה נשר ברגע האחרון עם כאבים בשוק, פבלו מרין מורחק, אראמבורו ואודריוסולה ובייטיה פצועים, אוסקרסון חוזר מהרחקה (חדשות: EFE/Infobae, El Desmarque 17.10). המאמן מטרצו דיבר על רוטציה בשל עומס דקות (חדשות: Comuniate 15.10). בחוץ סוסיאדד חלשה: 2 ניצחונות ב-10 משחקי חוץ, 1.9 שערים נספגים, 0 שערים נקיים (נתון). קבוצה שכובשת הרבה אבל מאפשרת הרבה, לכן תיקו עם שערים הוא תרחיש אמיתי (שיפוט).",
+   "factors": [
+    "סוסיאדד: הררה נשר, מרין מורחק, אראמבורו חסר (חדשות)",
+    "סוסיאדד: יומיים מנוחה אחרי משחק אירופי ורוטציה (נתון, חדשות)",
+    "מלאגה: 9 משחקים ללא ניצחון, אבל 8 ימי מנוחה (נתון)",
+    "מלאגה: מורייו וקחוסטה חסרים (חדשות)"
+   ],
+   "sources": [
+    "Comuniate, 15.10.2026",
+    "EFE via Infobae, 17.10.2026",
+    "El Desmarque, 17.10.2026"
+   ],
+   "adjustments": [
+    "Sociedad att 0.96 def 1.04: הררה ומרין חסרים במרכז, אראמבורו חסר בהגנה, יומיים מנוחה ורוטציה"
+   ],
+   "players": [
+    {
+     "team": "Sociedad",
+     "name": "Yangel Herrera",
+     "claim": "out",
+     "source": "EFE via Infobae, 17.10.2026"
+    },
+    {
+     "team": "Sociedad",
+     "name": "Pablo Marín",
+     "claim": "suspended",
+     "source": "El Desmarque, 17.10.2026"
+    },
+    {
+     "team": "Sociedad",
+     "name": "Jon Aramburu",
+     "claim": "out",
+     "source": "El Desmarque, 17.10.2026"
+    },
+    {
+     "team": "Sociedad",
+     "name": "Álvaro Odriozola",
+     "claim": "out",
+     "source": "El Desmarque, 17.10.2026"
+    },
+    {
+     "team": "Sociedad",
+     "name": "Luken Beitia",
+     "claim": "out",
+     "source": "El Desmarque, 17.10.2026"
+    },
+    {
+     "team": "Sociedad",
+     "name": "Orri Óskarsson",
+     "claim": "returns",
+     "source": "El Desmarque, 17.10.2026"
+    },
+    {
+     "team": "Malaga",
+     "name": "Diego Murillo",
+     "claim": "out",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Malaga",
+     "name": "Jens Cajuste",
+     "claim": "out",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Malaga",
+     "name": "José Salinas",
+     "claim": "returns",
+     "source": "Comuniate, 15.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 9,
+    "unknown": [],
+    "teams": {
+     "Sociedad": {
+      "ok": [
+       "Yangel Herrera",
+       "Pablo Marín",
+       "Jon Aramburu",
+       "Álvaro Odriozola",
+       "Luken Beitia",
+       "Orri Óskarsson"
+      ],
+      "unknown": [],
+      "roster_size": 31,
+      "espn_name": "Real Sociedad"
+     },
+     "Malaga": {
+      "ok": [
+       "Diego Murillo",
+       "Jens Cajuste",
+       "José Salinas"
+      ],
+      "unknown": [],
+      "roster_size": 32,
+      "espn_name": "Málaga"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Hapoel Be'er Sheva",
+   "away": "Hapoel Jerusalem",
+   "lean": "h",
+   "confidence": "בינונית",
+   "summary": "באר שבע צפויה לרוטציה רחבה אחרי אלקמאר ולפני סינט-טרוידן, ירושלים מגיעה בלי ליש וסאני עם צ'ילופיה בספק. בית, אבל הפער קטן ממה שהמודל אומר.",
+   "home_view": "באר שבע במקום 7 עם 7 נקודות מ-4 משחקים, ניצחון 2:0 בפתח תקווה ואז הפסד 2:1 באלקמאר ביום חמישי (נתון). יומיים מנוחה בלבד ואימון אחד לפני המשחק (חדשות: ספורט1, 17.10). המאמן רן קוז'וך צפוי להרבה שינויים לקראת המשחק האירופי ביום חמישי מול סינט-טרוידן: ניב יהושע, מיגל ויטור, ז'ואאו ויקטור ואמיר גנאח צפויים לפתוח, ומרציאנו עשוי לנוח לטובת וולף (חדשות: ספורט1, 17.10). ונטורה ורוטמן חזרו לכשירות מלאה (חדשות: ספורט1, 14.10). בבית באר שבע מתקשה לסגור משחקים: 5 תיקו ב-10 משחקי הבית האחרונים (נתון). במפגשים מול ירושלים היא שולטת: 6 ניצחונות מ-6, כולל 5:1 ו-4:1 העונה שעברה (נתון).",
+   "away_view": "הפועל ירושלים במקום 10 עם 4 נקודות מ-5, הפסדים לטבריה ולמכבי תל אביב ולמכבי חיפה עם 11 שערים נספגים בשלושה משחקים מול היריבות החזקות (נתון). המאמן ליאור זדה מחפש פתרונות להגנה ועדיין מתלבט בכמה עמדות (חדשות: ספורט1, 17.10). יונתן ליש חסר עם פציעת אכילס, סאני עבדולסלאם חסר עם קרע קטן בשריר, אדוארד צ'ילופיה בספק גדול עם פציעה באף, הילאי מלמן שרעבי חוזר, ודמשקאן צפוי לפתוח בחוד (חדשות: ספורט1, 17.10). בחוץ הקבוצה כבשה 0.7 שערים למשחק ב-12 החודשים האחרונים, 11 משחקי חוץ עם ניצחון אחד (נתון). 5 ימי מנוחה, יתרון רעננות מול באר שבע עייפה (נתון). הסגל אומת מול רשימת סופאסקור שנשמרה ידנית.",
+   "factors": [
+    "באר שבע: רוטציה רחבה צפויה בין אלקמאר לסינט-טרוידן, יומיים מנוחה (חדשות)",
+    "ירושלים: ליש וסאני חסרים, צ'ילופיה בספק (חדשות)",
+    "ירושלים: 5 ימי מנוחה, הגנה שספגה 11 שערים בשלושה משחקים מול חזקות (נתון)",
+    "באר שבע ניצחה ב-6 המפגשים האחרונים (נתון)",
+    "ליגה ישראלית: שוק חי משולב, התאמות קטנות"
+   ],
+   "sources": [
+    "ספורט1 (מעריב), 17.10.2026",
+    "ספורט1 (מעריב), 14.10.2026"
+   ],
+   "adjustments": [
+    "Hapoel Be'er Sheva att 0.97 def 1.02: רוטציה רחבה צפויה ויומיים מנוחה, מוקטן בגלל שוק חי",
+    "Hapoel Jerusalem att 0.96: צ'ילופיה בספק, ליש וסאני חסרים"
+   ],
+   "players": [
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Ofir Marciano",
+     "claim": "doubtful",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Marco Wolff",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Lucas Ventura",
+     "claim": "returns",
+     "source": "ספורט1, 14.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Itay Rotman",
+     "claim": "returns",
+     "source": "ספורט1, 14.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Niv Yehoshua",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Miguel Vítor",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "João Victor",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Amir Ganah",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Yonatan Kay Laish",
+     "claim": "out",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Sani Abdulsalam",
+     "claim": "out",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Edward Chilufya",
+     "claim": "doubtful",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Hilay Sharabi Melman",
+     "claim": "returns",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Vitalie Damascan",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 13,
+    "unknown": [],
+    "teams": {
+     "Hapoel Be'er Sheva": {
+      "ok": [
+       "Ofir Marciano",
+       "Marco Wolff",
+       "Lucas Ventura",
+       "Itay Rotman",
+       "Niv Yehoshua",
+       "Miguel Vítor",
+       "João Victor",
+       "Amir Ganah"
+      ],
+      "unknown": [],
+      "roster_size": 35,
+      "espn_name": "Hapoel Be'er"
+     },
+     "Hapoel Jerusalem": {
+      "ok": [
+       "Yonatan Kay Laish",
+       "Sani Abdulsalam",
+       "Edward Chilufya",
+       "Hilay Sharabi Melman",
+       "Vitalie Damascan"
+      ],
+      "unknown": [],
+      "roster_size": 38,
+      "espn_name": "sofascore.com/football/team/hapoel-katamon-jerusalem/86406 (manual, 2026-10-17)"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Lyon",
+   "away": "Nice",
+   "lean": "h",
+   "confidence": "בינונית",
+   "summary": "ליון בלי אופנדה ועם רוטציה רחבה שהמאמן הכריז עליה, ניס בלי שני מגינים ואברז'ל. עדיין בית, ניס גרועה בחוץ, אבל פחות שערים מליון ממה שהמודל מצפה.",
+   "home_view": "ליון במקום 4 עם 11 נקודות, בבית 15 ניצחונות מ-21 ב-12 החודשים האחרונים (נתון). ניצחה את קריסטל פאלאס 3:2 ביום חמישי, יומיים מנוחה (נתון). לואיס אופנדה, החלוץ המרכזי, עם סדק בעצם השוק ולא ישחק עד הפגרה בנובמבר לפחות (חדשות: הודעת המועדון דרך Lyonmag ו-Maxifoot, 10-12.10). טליאפיקו חסר כשלושה שבועות, ניאקטה חזר וצפוי לפתוח, דסקאמפ יפתח בשער (חדשות: foot-sur7 17.10, lyonfoot). המאמן פונסקה הכריז במסיבת העיתונאים על רוטציה עם הרבה שחקנים, בעיקר בבלמים ובקישור (חדשות: foot-sur7, 17.10). קבוצה חזקה בבית אבל מדוללת ועייפה, לכן אני מצפה לניצחון בפער קטן יותר (שיפוט).",
+   "away_view": "ניס במקום 10 עם 8 נקודות, שני ניצחונות ואז 0:0 מול לוריאן ו-0:3 בפריז אף.סי (נתון). בחוץ ניס אסון: 14 הפסדים מ-19 ב-12 החודשים, 0.79 שערים למשחק, 9 משחקים בלי שער (נתון). 6 ימי מנוחה (נתון). המאמן אוליבייה פנטלוני אישר ביום שישי שאנטואן מנדי ומואיז בומביטו (מגינים) ולורן אברז'ל חסרים, עלי עבדי עם כאב בארבע ראשי ולא התאמן, סנסון בספק, נגומו חזר להתאמן (חדשות: ICI, But Football Club, 16-17.10). קבוצה שמגיעה לליון עם הגנה מאולתרת, מול התקפה שגם היא מאולתרת (שיפוט).",
+   "factors": [
+    "ליון: אופנדה חסר, רוטציה רחבה מוכרזת, יומיים מנוחה (חדשות)",
+    "ליון: טליאפיקו חסר, ניאקטה חוזר (חדשות)",
+    "ניס: מנדי, בומביטו, אברז'ל חסרים, עבדי בספק (חדשות)",
+    "ניס: 14 הפסדי חוץ מ-19 ב-12 חודשים (נתון)"
+   ],
+   "sources": [
+    "foot-sur7, 17.10.2026",
+    "Lyonmag, 12.10.2026",
+    "lyonfoot, 15.10.2026",
+    "ICI (France Bleu), 16.10.2026",
+    "But Football Club, 17.10.2026"
+   ],
+   "adjustments": [
+    "Lyon att 0.88 def 1.04: החלוץ המרכזי אופנדה חסר ורוטציה רחבה מוכרזת",
+    "Nice def 1.05: שני מגינים חסרים ועבדי בספק"
+   ],
+   "players": [
+    {
+     "team": "Lyon",
+     "name": "Loïs Openda",
+     "claim": "out",
+     "source": "Lyonmag, 12.10.2026"
+    },
+    {
+     "team": "Lyon",
+     "name": "Nicolás Tagliafico",
+     "claim": "out",
+     "source": "lyonfoot, 15.10.2026"
+    },
+    {
+     "team": "Lyon",
+     "name": "Moussa Niakhaté",
+     "claim": "returns",
+     "source": "foot-sur7, 17.10.2026"
+    },
+    {
+     "team": "Lyon",
+     "name": "Rémy Descamps",
+     "claim": "key",
+     "source": "foot-sur7, 17.10.2026"
+    },
+    {
+     "team": "Nice",
+     "name": "Antoine Mendy",
+     "claim": "out",
+     "source": "But Football Club, 17.10.2026"
+    },
+    {
+     "team": "Nice",
+     "name": "Moïse Bombito",
+     "claim": "out",
+     "source": "But Football Club, 17.10.2026"
+    },
+    {
+     "team": "Nice",
+     "name": "Laurent Abergel",
+     "claim": "out",
+     "source": "But Football Club, 17.10.2026"
+    },
+    {
+     "team": "Nice",
+     "name": "Ali Abdi",
+     "claim": "doubtful",
+     "source": "ICI, 16.10.2026"
+    },
+    {
+     "team": "Nice",
+     "name": "Morgan Sanson",
+     "claim": "doubtful",
+     "source": "ICI, 16.10.2026"
+    },
+    {
+     "team": "Nice",
+     "name": "Nathan N'Goumou",
+     "claim": "returns",
+     "source": "ICI, 16.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 10,
+    "unknown": [],
+    "teams": {
+     "Lyon": {
+      "ok": [
+       "Loïs Openda",
+       "Nicolás Tagliafico",
+       "Moussa Niakhaté",
+       "Rémy Descamps"
+      ],
+      "unknown": [],
+      "roster_size": 31,
+      "espn_name": "Lyon"
+     },
+     "Nice": {
+      "ok": [
+       "Antoine Mendy",
+       "Moïse Bombito",
+       "Laurent Abergel",
+       "Ali Abdi",
+       "Morgan Sanson",
+       "Nathan N'Goumou"
+      ],
+      "unknown": [],
+      "roster_size": 31,
+      "espn_name": "Nice"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Juventus",
+   "away": "Lazio",
+   "lean": "d",
+   "confidence": "נמוכה",
+   "summary": "יובנטוס בלי יילדיז ולוקאטלי ותוראם אחרי משחק אירופי ביום חמישי, לאציו שנייה בטבלה עם 7 משחקים בלי הפסד ושבוע מנוחה. אני פחות בטוח בבית מהמודל.",
+   "home_view": "יובנטוס במקום 7 עם 11 נקודות, 4 משחקים בלי הפסד כולל 2:1 בסלטה ויגו בליגה האירופית ביום חמישי, יומיים מנוחה (נתון). בבית היא חומה: 0.5 שערים נספגים למשחק ב-10 משחקי הבית האחרונים, 6 שערים נקיים (נתון). קנאן יילדיז, הכוכב ההתקפי, חסר, וכן לוקאטלי, תוראם, אקהטור וגרבארה, בוגה חזר (חדשות: Sky Sport 16.10, SOS Fanta 16.10). קולו מואני צפוי בחוד עם ניקו גונזאלס ו-וולטמאדה מאחוריו (חדשות: Sky Sport 16.10). המאמן ספאלטי, הרכב מדולל במרכז ובהתקפה אחרי נסיעה לספרד (שיפוט).",
+   "away_view": "לאציו שנייה בטבלה עם 16 נקודות, 7 משחקים בלי הפסד, 5 ניצחונות ב-6 האחרונים (נתון). 6 ימי מנוחה, בלי משחקים אירופיים (נתון). בחוץ היא קבוצה של 1:0: 0.84 שערים כבושים ו-0.68 נספגים למשחק ב-12 החודשים האחרונים, 10 שערים נקיים ב-19 משחקי חוץ (נתון). גודמונדסון חסר עם פציעה בכתף, רובלה חסר, קאטלדי ומרושיץ' וקנצ'לרי בשלבי חזרה (חדשות: Sky Sport 16.10, La Lazio Siamo Noi 16.10). המאמן גאטוזו, קבוצה הגנתית ומאורגנת שתשמח לתיקו בטורינו (שיפוט). 1:0 ללאציו ברומא ו-2:2 בטורינו במפגשים האחרונים (נתון).",
+   "factors": [
+    "יובנטוס: יילדיז, לוקאטלי, תוראם חסרים (חדשות)",
+    "יובנטוס: משחק אירופי ביום חמישי בספרד, יומיים מנוחה (נתון)",
+    "לאציו: 6 ימי מנוחה, 7 משחקים בלי הפסד (נתון)",
+    "לאציו: גודמונדסון ורובלה חסרים (חדשות)",
+    "שתי ההגנות חזקות, משחק נמוך שערים צפוי (נתון)"
+   ],
+   "sources": [
+    "Sky Sport Italia, 16.10.2026",
+    "SOS Fanta, 16.10.2026",
+    "La Lazio Siamo Noi, 16.10.2026",
+    "Lazionews, 16.10.2026"
+   ],
+   "adjustments": [
+    "Juventus att 0.92: יילדיז חסר בהתקפה, לוקאטלי ותוראם חסרים, יומיים מנוחה",
+    "Lazio att 0.97: גודמונדסון חסר"
+   ],
+   "players": [
+    {
+     "team": "Juventus",
+     "name": "Kenan Yildiz",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Juventus",
+     "name": "Manuel Locatelli",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Juventus",
+     "name": "Khéphren Thuram",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Juventus",
+     "name": "Jeff Ekhator",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Juventus",
+     "name": "Kamil Grabara",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Juventus",
+     "name": "Jérémie Boga",
+     "claim": "returns",
+     "source": "SOS Fanta, 16.10.2026"
+    },
+    {
+     "team": "Juventus",
+     "name": "Randal Kolo Muani",
+     "claim": "key",
+     "source": "SOS Fanta, 16.10.2026"
+    },
+    {
+     "team": "Lazio",
+     "name": "Albert Gudmundsson",
+     "claim": "out",
+     "source": "La Lazio Siamo Noi, 16.10.2026"
+    },
+    {
+     "team": "Lazio",
+     "name": "Nicolò Rovella",
+     "claim": "out",
+     "source": "Sky Sport Italia, 16.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 9,
+    "unknown": [],
+    "teams": {
+     "Juventus": {
+      "ok": [
+       "Kenan Yildiz",
+       "Manuel Locatelli",
+       "Khéphren Thuram",
+       "Jeff Ekhator",
+       "Kamil Grabara",
+       "Jérémie Boga",
+       "Randal Kolo Muani"
+      ],
+      "unknown": [],
+      "roster_size": 37,
+      "espn_name": "Juventus"
+     },
+     "Lazio": {
+      "ok": [
+       "Albert Gudmundsson",
+       "Nicolò Rovella"
+      ],
+      "unknown": [],
+      "roster_size": 32,
+      "espn_name": "Lazio"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Real Madrid",
+   "away": "Sevilla",
+   "lean": "h",
+   "confidence": "בינונית",
+   "summary": "ריאל בלי ויניסיוס המורחק ובלי רודריגו ומיליטאו, סביליה בלי החלוץ איסאק רומרו המורחק ובלי מרקאו וגורידי. בית, אבל שתי ההתקפות מדוללות ופחות שערים מהמודל.",
+   "home_view": "ריאל במקום 4 עם 18 נקודות, 8 ניצחונות ב-10 האחרונים, ובבית 21 ניצחונות מ-26 ב-12 החודשים האחרונים (נתון). ניצחה 4:3 ברומא בליגת האלופות ביום שלישי, 3 ימי מנוחה (נתון). ויניסיוס מורחק ל-4 משחקים אחרי אדום מול ויאריאל, רודריגו ואסנסיו פצועים לטווח ארוך, מיליטאו עדיין לא כשיר, מנדי חוזר בהדרגה ולא צפוי לפתוח (חדשות: FútbolFantasy 15-16.10, SI 17.10). המאמן מוריניו צפוי לשינויים אחרי רומא, אמבפה כמעט בטוח בחוד (חדשות: FútbolFantasy 16.10). בלי ויניסיוס ורודריגו האגפים דלים, אבל האיכות עדיין עמוקה בהרבה משל סביליה (שיפוט).",
+   "away_view": "סביליה במקום 5 עם 17 נקודות, פתיחה טובה תחת המאמן לואיס גרסיה פלאסה, 3 ניצחונות 1:0 רצופים לפני תיקו 1:1 באספניול (נתון, חדשות: Eurosport, FútbolFantasy 16.10). 5 ימי מנוחה (נתון). איסאק רומרו, החלוץ, מורחק אחרי צהוב שני מול לבאנטה, גורידי ומרקאו ומיגל סיירה פצועים, קוצ'ורשווילי בספק, סטאסין חזר אבל לא צפוי לפתוח (חדשות: FútbolFantasy 16.10). בחוץ סביליה חלשה: 5 ניצחונות מ-20 ב-12 החודשים, 1.8 שערים נספגים למשחק (נתון). ריאל ניצחה ב-5 מ-6 המפגשים האחרונים (נתון). קבוצה מסודרת שתגיע לברנבאו בלי החלוץ שלה (שיפוט).",
+   "factors": [
+    "ריאל: ויניסיוס מורחק, רודריגו ומיליטאו ואסנסיו פצועים (חדשות)",
+    "סביליה: רומרו מורחק, מרקאו וגורידי חסרים, קוצ'ורשווילי בספק (חדשות)",
+    "ריאל: 3 ימי מנוחה אחרי משחק אלופות ברומא, שינויים צפויים (נתון, חדשות)",
+    "ריאל ניצחה 5 מ-6 המפגשים האחרונים (נתון)"
+   ],
+   "sources": [
+    "FútbolFantasy, 16.10.2026",
+    "SI Español, 17.10.2026",
+    "Comuniate, 15.10.2026",
+    "Eurosport ES, 16.10.2026"
+   ],
+   "adjustments": [
+    "Real Madrid att 0.92: ויניסיוס מורחק ורודריגו פצוע",
+    "Sevilla att 0.92 def 1.03: החלוץ רומרו מורחק, מרקאו חסר בהגנה"
+   ],
+   "players": [
+    {
+     "team": "Real Madrid",
+     "name": "Vinícius Júnior",
+     "claim": "suspended",
+     "source": "SI Español, 17.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Rodrygo",
+     "claim": "out",
+     "source": "SI Español, 17.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Éder Militão",
+     "claim": "out",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Raúl Asencio",
+     "claim": "out",
+     "source": "SI Español, 17.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Ferland Mendy",
+     "claim": "doubtful",
+     "source": "SI Español, 17.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Kylian Mbappé",
+     "claim": "key",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Isaac Romero",
+     "claim": "suspended",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Jon Guridi",
+     "claim": "out",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Marcão",
+     "claim": "out",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Miguel Sierra",
+     "claim": "out",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Giorgi Kochorashvili",
+     "claim": "doubtful",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Lucas Stassin",
+     "claim": "returns",
+     "source": "FútbolFantasy, 16.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 12,
+    "unknown": [],
+    "teams": {
+     "Real Madrid": {
+      "ok": [
+       "Vinícius Júnior",
+       "Rodrygo",
+       "Éder Militão",
+       "Raúl Asencio",
+       "Ferland Mendy",
+       "Kylian Mbappé"
+      ],
+      "unknown": [],
+      "roster_size": 35,
+      "espn_name": "Real Madrid"
+     },
+     "Sevilla": {
+      "ok": [
+       "Isaac Romero",
+       "Jon Guridi",
+       "Marcão",
+       "Miguel Sierra",
+       "Giorgi Kochorashvili",
+       "Lucas Stassin"
+      ],
+      "unknown": [],
+      "roster_size": 31,
+      "espn_name": "Sevilla"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  }
+ ]
+}

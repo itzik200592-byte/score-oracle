@@ -1,0 +1,1495 @@
+{
+ "made_at": "2026-10-17T20:30:00+03:00",
+ "matches": [
+  {
+   "date": "2026-10-18",
+   "home": "Udinese",
+   "away": "Lecce",
+   "lean": "h",
+   "confidence": "נמוכה",
+   "summary": "אודינזה בלי זאניולו ועוד חמישה שחקנים, לצ'ה בלי איליץ' ובריישה. שתי קבוצות במומנטום שלילי, יתרון ביתי קטן ולא בטוח.",
+   "home_view": "אודינזה מגיעה אחרי ארבעה הפסדים רצופים ורק 0.8 נקודות למשחק בעשרת משחקי הבית האחרונים (נתון). השבוע עובדים בלי זאניולו, גיי, באיו, זאנולי, אבנקווה ופיוטרובסקי, אין מורחקים (חדשות: Corriere Salentino 16.10, Sky Sport 16.10). דייויס חוזר להרכב כחלוץ יחיד ואלאבה צפוי לזימון ראשון (חדשות). קבוצה שמבקיעה מעט בבית ונשענת על ארגון, אבל בלי זאניולו חסר לה היצירתיות מאחורי החלוץ (שיפוט). היא זקוקה לנקודות כדי לעצור את הסחרור לפני שהוא הופך למשבר (שיפוט).",
+   "away_view": "לצ'ה עם 1.4 נקודות למשחק בחוץ ב-12 החודשים האחרונים, יותר טוב מהבית שלה (נתון). חסרים איליץ' (קשר הרכב), בריישה וסקוט (חדשות: Corriere Salentino 16.10). סטוליץ' חזר לסגל, גבלס צפוי להוביל את ההתקפה (חדשות: Sky Sport 16.10). הקבוצה שברירית בהגנה מול קבוצות חזקות (0-4 מרומא, 0-3 ממילאן) אבל מתחרה טוב מול קבוצות ברמה שלה (נתון). ניצחה בפגישה האחרונה 2-1 בפברואר (נתון).",
+   "factors": [
+    "אודינזה: זאניולו חסר ועוד 5 נפקדים (חדשות) -1",
+    "אודינזה: ארבעה הפסדים רצופים, ביטחון נמוך (נתון) -1",
+    "לצ'ה: איליץ' חסר בקישור (חדשות) -1",
+    "לצ'ה: שישה ימי מנוחה, ללא אירופה (נתון) 0"
+   ],
+   "sources": [
+    "Corriere Salentino, 16.10.2026",
+    "Sky Sport Italia, 16.10.2026",
+    "DAZN Italia probabili formazioni, 16.10.2026"
+   ],
+   "adjustments": [
+    "Udinese att 0.95: זאניולו חסר, היצירה מאחורי החלוץ נפגעת"
+   ],
+   "players": [
+    {
+     "team": "Udinese",
+     "name": "Nicolò Zaniolo",
+     "claim": "out",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Udinese",
+     "name": "Idrissa Gueye",
+     "claim": "out",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Udinese",
+     "name": "Bayo Youssouf",
+     "claim": "out",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Udinese",
+     "name": "Alessandro Zanoli",
+     "claim": "out",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Udinese",
+     "name": "James Abankwah",
+     "claim": "out",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Udinese",
+     "name": "Jakub Piotrowski",
+     "claim": "doubtful",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Udinese",
+     "name": "Keinan Davis",
+     "claim": "returns",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Udinese",
+     "name": "David Alaba",
+     "claim": "key",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Lecce",
+     "name": "Ivan Ilic",
+     "claim": "out",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Lecce",
+     "name": "Medon Berisha",
+     "claim": "out",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Lecce",
+     "name": "Elijah Scott",
+     "claim": "out",
+     "source": "Corriere Salentino, 16.10.2026"
+    },
+    {
+     "team": "Lecce",
+     "name": "Nikola Stulic",
+     "claim": "returns",
+     "source": "Sky Sport Italia, 16.10.2026"
+    },
+    {
+     "team": "Lecce",
+     "name": "Willem Geubbels",
+     "claim": "key",
+     "source": "Sky Sport Italia, 16.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 13,
+    "unknown": [],
+    "teams": {
+     "Udinese": {
+      "ok": [
+       "Nicolò Zaniolo",
+       "Idrissa Gueye",
+       "Bayo Youssouf",
+       "Alessandro Zanoli",
+       "James Abankwah",
+       "Jakub Piotrowski",
+       "Keinan Davis",
+       "David Alaba"
+      ],
+      "unknown": [],
+      "roster_size": 28,
+      "espn_name": "Udinese"
+     },
+     "Lecce": {
+      "ok": [
+       "Ivan Ilic",
+       "Medon Berisha",
+       "Elijah Scott",
+       "Nikola Stulic",
+       "Willem Geubbels"
+      ],
+      "unknown": [],
+      "roster_size": 34,
+      "espn_name": "Lecce"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Osasuna",
+   "away": "Santander",
+   "lean": "h",
+   "confidence": "בינונית",
+   "summary": "אוססונה עם מאמן חדש (אראסאטה) ובלי אורוס והרנדו, מול ראסינג שספגה 12 שערים בשלושת משחקי החוץ האחרונים. נטייה ביתית.",
+   "home_view": "אוססונה עם נקודה אחת מ-15 אפשריות, הפסד 2-5 בבטיס בסיבוב האחרון, והמאמן ראמיס פוטר (נתון, חדשות: Comuniate 15.10). חאגובה אראסאטה חזר לקבוצה והוא מכיר את המועדון היטב (חדשות: Comuniate 15.10, Noticias de Navarra 14.10). חסרים איימר אורוס (שריר אחורי, מספר שבועות) והרנדו (מגן), דל קסטיו לא מתאמן עם הקבוצה, בארחה ומורו חזרו לאימונים ובסימן שאלה (חדשות: FutbolFantasy 17.10, Pamplona Actual 16.10). בלי אורוס היצירה עוברת למוי גומס ורובן גרסיה, בודימיר נשאר היעד (שיפוט). אל סדאר קולני ואפקט המאמן החדש בדרך כלל שווה מעט במשחק הראשון, אבל ההגנה שספגה 14 בחמישה משחקים לא נרפאת בשבוע (שיפוט).",
+   "away_view": "ראסינג סנטנדר עולה חדשה, מבקיעה הרבה ומקבלת הרבה: 2-2 מול ולנסיה, אבל 0-5 בסלטה ו-2-7 בברצלונה בחוץ (נתון). לפי הפרסומים אין לה פצועים או מורחקים, אנדרס מרטין חזר מפציעה ופראטי מתאמן כרגיל (חדשות: Comuniate 15.10). קנאלס הוא המוח, סאבירי ואיניגו ויסנטה מהירים בקצוות (חדשות: Comuniate 15.10). הבעיה היא הגנה שמתפרקת רחוק מהבית, ולכן גם מול אוססונה שבורה היא עלולה לספוג (שיפוט). היא צריכה נקודות חוץ ראשונות כדי להתרחק מהתחתית (שיפוט).",
+   "factors": [
+    "אוססונה: אורוס והרנדו חסרים, דל קסטיו בחוץ (חדשות) -1",
+    "אוססונה: מאמן חדש, אפקט ראשון אפשרי (חדשות) +1",
+    "ראסינג: סגל מלא (חדשות) +1",
+    "ראסינג: הגנה מתפרקת בחוץ, 12 שערים ב-3 משחקים (נתון) -2"
+   ],
+   "sources": [
+    "Comuniate, 15.10.2026",
+    "Noticias de Navarra, 14.10.2026",
+    "FutbolFantasy, 17.10.2026",
+    "Pamplona Actual, 16.10.2026"
+   ],
+   "adjustments": [
+    "Osasuna att 0.98: אורוס חסר (0.95) מול אפקט מאמן חדש (1.03)"
+   ],
+   "players": [
+    {
+     "team": "Osasuna",
+     "name": "Aimar Oroz",
+     "claim": "out",
+     "source": "Noticias de Navarra, 14.10.2026"
+    },
+    {
+     "team": "Osasuna",
+     "name": "Jorge Herrando",
+     "claim": "out",
+     "source": "Noticias de Navarra, 14.10.2026"
+    },
+    {
+     "team": "Osasuna",
+     "name": "Romain Del Castillo",
+     "claim": "out",
+     "source": "FutbolFantasy, 17.10.2026"
+    },
+    {
+     "team": "Osasuna",
+     "name": "Enrique Barja",
+     "claim": "doubtful",
+     "source": "Pamplona Actual, 16.10.2026"
+    },
+    {
+     "team": "Osasuna",
+     "name": "Raúl Moro",
+     "claim": "doubtful",
+     "source": "FutbolFantasy, 17.10.2026"
+    },
+    {
+     "team": "Osasuna",
+     "name": "Moi Gómez",
+     "claim": "key",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Osasuna",
+     "name": "Rubén García",
+     "claim": "key",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Osasuna",
+     "name": "Ante Budimir",
+     "claim": "key",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Santander",
+     "name": "Andrés Martín",
+     "claim": "returns",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Santander",
+     "name": "Matteo Prati",
+     "claim": "key",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Santander",
+     "name": "Sergio Canales",
+     "claim": "key",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Santander",
+     "name": "Yassir Zabiri",
+     "claim": "key",
+     "source": "Comuniate, 15.10.2026"
+    },
+    {
+     "team": "Santander",
+     "name": "Iñigo Vicente",
+     "claim": "key",
+     "source": "Comuniate, 15.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 13,
+    "unknown": [],
+    "teams": {
+     "Osasuna": {
+      "ok": [
+       "Aimar Oroz",
+       "Jorge Herrando",
+       "Romain Del Castillo",
+       "Enrique Barja",
+       "Raúl Moro",
+       "Moi Gómez",
+       "Rubén García",
+       "Ante Budimir"
+      ],
+      "unknown": [],
+      "roster_size": 28,
+      "espn_name": "Osasuna"
+     },
+     "Santander": {
+      "ok": [
+       "Andrés Martín",
+       "Matteo Prati",
+       "Sergio Canales",
+       "Yassir Zabiri",
+       "Iñigo Vicente"
+      ],
+      "unknown": [],
+      "roster_size": 29,
+      "espn_name": "Racing Santander"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Angers",
+   "away": "Marseille",
+   "lean": "a",
+   "confidence": "נמוכה",
+   "summary": "מרסיי במשבר (5 הפסדים ב-6) ועם יומיים מנוחה אחרי הליגה האירופית, אבל אנז'ה בלי לפור המורחק ועם קמארה בספק. עדיין נוטה למרסיי, בביטחון נמוך.",
+   "home_view": "אנז'ה מבקיעה 0.6 שערים למשחק בבית בעשרה משחקים אחרונים ונכשלה להבקיע בחמישה מהם (נתון). שבוע מנוחה מלא אחרי ההפסד 1-5 בברסט (נתון). ז'ורדן לפור מורחק אחרי האדום בברסט, אוסמן קמארה בספק עם בעיה בירך, קאלולו, לואר וסבאי החמיצו אימון בשלישי (חדשות: Sports Mole 16.10, Eurosport 17.10). אלווינה וואן דן בומן זמינים ומהווים את עמוד השדרה (חדשות: Eurosport 17.10). הגנה מאולתרת מול ההתקפה של מרסיי זה החשש העיקרי שלי (שיפוט).",
+   "away_view": "מרסיי במומנטום הגרוע ביותר שלה העונה: 5 הפסדים ב-6, כולל 0-1 בבית מול אולימפיאקוס ביום חמישי, ורק יומיים מנוחה (נתון). הויבירג חסר לפחות שבועיים עם פציעה בירך, קורנליוס חסר (חדשות: Sports Mole 16.10). ווה חוזר מהרחקה, קונדוגביה ונאדי חזרו לאימונים קבוצתיים, גוארי וחרית בדרך חזרה (חדשות: Eurosport 17.10, Mediapronos 17.10). עם פאישאו, גומס וגוארי יש איכות התקפית ברורה מעל אנז'ה (שיפוט). השאלה היא נפשית: קבוצה בלחץ ציבורי כבד שנוסעת ליריבה שלא מבקיעה, זה בדיוק משחק שנגמר 0-0 או 1-1 אם היא לא פותחת חזק (שיפוט).",
+   "factors": [
+    "אנז'ה: לפור מורחק, קמארה בספק (חדשות) -1",
+    "אנז'ה: שבוע מנוחה מלא (נתון) +1",
+    "מרסיי: הויבירג חסר, קורנליוס חסר (חדשות) -1",
+    "מרסיי: יומיים מנוחה אחרי אירופה ו-5 הפסדים ב-6 (נתון) -1"
+   ],
+   "sources": [
+    "Sports Mole, 16.10.2026",
+    "Eurosport France, 17.10.2026",
+    "Mediapronos, 17.10.2026"
+   ],
+   "adjustments": [
+    "Angers def 1.04: לפור מורחק, קמארה בספק",
+    "Marseille att 0.97: עומס, יומיים מנוחה אחרי משחק אירופי"
+   ],
+   "players": [
+    {
+     "team": "Angers",
+     "name": "Jordan Lefort",
+     "claim": "suspended",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Angers",
+     "name": "Ousmane Camara",
+     "claim": "doubtful",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Angers",
+     "name": "Joseph Kalulu Kyatengwa",
+     "claim": "doubtful",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Angers",
+     "name": "Marius Louãr",
+     "claim": "doubtful",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Angers",
+     "name": "Amine Sbaï",
+     "claim": "doubtful",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Angers",
+     "name": "Jim Allevinah",
+     "claim": "key",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Angers",
+     "name": "Branco van den Boomen",
+     "claim": "key",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Pierre-Emile Højbjerg",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Derek Cornelius",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Timothy Weah",
+     "claim": "returns",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Geoffrey Kondogbia",
+     "claim": "returns",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Tochukwu Nnadi",
+     "claim": "returns",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Amine Gouiri",
+     "claim": "doubtful",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Amine Harit",
+     "claim": "doubtful",
+     "source": "Eurosport France, 17.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Igor Paixão",
+     "claim": "key",
+     "source": "Mediapronos, 17.10.2026"
+    },
+    {
+     "team": "Marseille",
+     "name": "Angel Gomes",
+     "claim": "key",
+     "source": "Mediapronos, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 16,
+    "unknown": [],
+    "teams": {
+     "Angers": {
+      "ok": [
+       "Jordan Lefort",
+       "Ousmane Camara",
+       "Joseph Kalulu Kyatengwa",
+       "Marius Louãr",
+       "Amine Sbaï",
+       "Jim Allevinah",
+       "Branco van den Boomen"
+      ],
+      "unknown": [],
+      "roster_size": 25,
+      "espn_name": "Angers"
+     },
+     "Marseille": {
+      "ok": [
+       "Pierre-Emile Højbjerg",
+       "Derek Cornelius",
+       "Timothy Weah",
+       "Geoffrey Kondogbia",
+       "Tochukwu Nnadi",
+       "Amine Gouiri",
+       "Amine Harit",
+       "Igor Paixão",
+       "Angel Gomes"
+      ],
+      "unknown": [],
+      "roster_size": 30,
+      "espn_name": "Marseille"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Bournemouth",
+   "away": "Sunderland",
+   "lean": "h",
+   "confidence": "נמוכה",
+   "summary": "קרב תחתית בין שתי קבוצות שחזרו מנסיעה אירופית ביום חמישי. סנדרלנד בלי בלארד ומונייה בהגנה, בורנמות' עדיין בלי ניצחון ליגה. נטייה ביתית קלה.",
+   "home_view": "בורנמות' במקום 18 ובלי ניצחון ליגה העונה, אחרי 0-1 מליברפול ו-1-5 בצ'לסי (נתון, חדשות: Sports Mole 17.10). ניצחה 3-0 את שטורם גראץ ביום חמישי בבית, אז המומנטום הרגשי חיובי אבל המנוחה היא יומיים בלבד (נתון). חסרים אלכס סקוט, אראוחו, מילוסבלייביץ' וקרופי, אדלי וקלויברט חזרו לסגל וצפויים דקות מהספסל (חדשות: Sports Mole 16.10). גאנון-דואק לוחץ להרכב ראשון בליגה (חדשות: Sports Mole 17.10). בבית היא קבוצה של תיקו: 7 תיקו ב-10 משחקי בית אחרונים (נתון). הכדורגל של רוזה לוחץ גבוה ויוצר מצבים, הבעיה היא ספיגות (שיפוט).",
+   "away_view": "סנדרלנד במקום 17 אחרי שלושה הפסדים ליגה רצופים, האחרון 0-2 בבית מברייטון (נתון, חדשות: Sports Mole 17.10). ניצחה 2-1 בטוראנזה ביום חמישי עם שער בדקה 93, נסיעה לפורטוגל וחזרה (חדשות: Sports Mole 17.10). חסרים דן בלארד (שריר אחורי) ורומיין מאנדל (ברך), מונייה מחמיץ משחק שני ברציפות, איזידור בספק, ברובי חזר ועשוי לפתוח (חדשות: Sports Mole 16.10). שני מגנים חסרים מהערך הפותח, זה פוגע בהגנה שבלאו הכי ספגה 5 בסיטי (שיפוט). ג'אקה הוא המוח בקישור והקבוצה לא תתפרק, אבל הסיכוי לקלין שיט נמוך (שיפוט).",
+   "factors": [
+    "בורנמות': 4 נפקדים, רובם ספסל (חדשות) 0",
+    "בורנמות': יומיים מנוחה, אבל משחק ביתי באירופה (נתון) 0",
+    "סנדרלנד: בלארד ומונייה חסרים בהגנה, איזידור בספק (חדשות) -1",
+    "סנדרלנד: נסיעה לפורטוגל ויומיים מנוחה (נתון) -1"
+   ],
+   "sources": [
+    "Sports Mole preview, 16-17.10.2026",
+    "Sports Mole team news, 16.10.2026",
+    "WhoScored preview, 17.10.2026"
+   ],
+   "adjustments": [
+    "Sunderland def 1.05: בלארד ומונייה חסרים, נסיעה אירופית ביום חמישי"
+   ],
+   "players": [
+    {
+     "team": "Bournemouth",
+     "name": "Alex Scott",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Bournemouth",
+     "name": "Julián Araujo",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Bournemouth",
+     "name": "Veljko Milosavljevic",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Bournemouth",
+     "name": "Junior Kroupi",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Bournemouth",
+     "name": "Amine Adli",
+     "claim": "returns",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Bournemouth",
+     "name": "Justin Kluivert",
+     "claim": "returns",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Bournemouth",
+     "name": "Ben Gannon-Doak",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Sunderland",
+     "name": "Danny Ballard",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Sunderland",
+     "name": "Romaine Mundle",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Sunderland",
+     "name": "Thomas Meunier",
+     "claim": "out",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Sunderland",
+     "name": "Wilson Isidor",
+     "claim": "doubtful",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Sunderland",
+     "name": "Brian Brobbey",
+     "claim": "returns",
+     "source": "Sports Mole, 16.10.2026"
+    },
+    {
+     "team": "Sunderland",
+     "name": "Granit Xhaka",
+     "claim": "key",
+     "source": "WhoScored, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 13,
+    "unknown": [],
+    "teams": {
+     "Bournemouth": {
+      "ok": [
+       "Alex Scott",
+       "Julián Araujo",
+       "Veljko Milosavljevic",
+       "Junior Kroupi",
+       "Amine Adli",
+       "Justin Kluivert",
+       "Ben Gannon-Doak"
+      ],
+      "unknown": [],
+      "roster_size": 29,
+      "espn_name": "AFC Bournemouth"
+     },
+     "Sunderland": {
+      "ok": [
+       "Danny Ballard",
+       "Romaine Mundle",
+       "Thomas Meunier",
+       "Wilson Isidor",
+       "Brian Brobbey",
+       "Granit Xhaka"
+      ],
+      "unknown": [],
+      "roster_size": 32,
+      "espn_name": "Sunderland"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Brighton",
+   "away": "Crystal Palace",
+   "lean": "h",
+   "confidence": "בינונית",
+   "summary": "דרבי M23: ברייטון בכושר מצוין אבל בלי מיטומה ופרגוסון, פאלאס עם דיסאסי מורחק, ריאד פצוע, הנדרסון ומאטטה בספק ויומיים מנוחה אחרי ליון. נוטה לברייטון.",
+   "home_view": "ברייטון בכושר הטוב ביותר בליגה: שלושה ניצחונות רצופים כולל 3-0 על ארסנל ו-2-0 בסנדרלנד, 1.9 נקודות למשחק בבית (נתון). אבל רשימת הפציעות ארוכה: פרגוסון, צימאס, מיטומה, אזיז ויוחנה בחוץ, מינטה, וויפר וסטרוייק בספק (חדשות: Sports Mole 17.10). הכרטיס האדום של סטרוייק מסנדרלנד בוטל, אבל יש לו בעיה בירך (חדשות: Sports Mole 17.10). בלי מיטומה ומינטה הרוחב ההתקפי נפגע קשה, קוסטולאס או ראטר יובילו את ההתקפה (חדשות). הדרבי הזה מסורתית לא טוב לברייטון: הפסידה 4 מ-6 פגישות אחרונות, כולל 0-1 בבית בפברואר (נתון). הקהל יהיה בוער ושבוע מנוחה מלא זה יתרון מול יריבה שחזרה מליון (שיפוט).",
+   "away_view": "פאלאס ניצחה 3-1 את פורסט ואז נפלה 2-3 בליון ביום חמישי, יומיים מנוחה בלבד (נתון). דיסאסי מורחק, ריאד בחוץ עם הברך, ומאטטה, צ'ילוול, הנדרסון וטומיאסו בספק (חדשות: Sports Mole 17.10, The False 9 17.10). בשער בניטס או הנדרסון, בהתקפה סטרנד לארסן אם מאטטה לא כשיר, סאר קרוב לחזרה (חדשות). הקבוצה מסודרת ב-3-4-2-1 ומסוכנת במעברים, והיא יודעת לשחק את הדרבי הזה טוב (נתון: 0-0 ו-1-0 בפגישות האחרונות). אבל שני בלמים חסרים ושוער בספק זו רשימה ארוכה מדי לדרבי בחוץ אחרי משחק אירופי (שיפוט).",
+   "factors": [
+    "ברייטון: מיטומה ופרגוסון חסרים, מינטה ווויפר בספק (חדשות) -2",
+    "ברייטון: שבוע מנוחה מלא, קהל דרבי (נתון) +1",
+    "פאלאס: דיסאסי מורחק, ריאד פצוע, הנדרסון ומאטטה בספק (חדשות) -2",
+    "פאלאס: יומיים מנוחה אחרי נסיעה לליון (נתון) -1"
+   ],
+   "sources": [
+    "Sports Mole preview and team news, 17.10.2026",
+    "The False 9, 17.10.2026",
+    "The Hard Tackle, 17.10.2026"
+   ],
+   "adjustments": [
+    "Brighton att 0.92: מיטומה חסר ומינטה בספק",
+    "Crystal Palace def 1.07: דיסאסי מורחק, ריאד פצוע, הנדרסון בספק",
+    "Crystal Palace att 0.93: מאטטה בספק (0.95) ועומס אירופי (0.98)"
+   ],
+   "players": [
+    {
+     "team": "Brighton",
+     "name": "Evan Ferguson",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Stefanos Tzimas",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Kaoru Mitoma",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Femi Azeez",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Zadok Yohanna",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Yankuba Minteh",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Mats Wieffer",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Pascal Struijk",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Charalambos Kostoulas",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Georginio Rutter",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Axel Disasi",
+     "claim": "suspended",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Chadi Riad",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Jean-Philippe Mateta",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Ben Chilwell",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Dean Henderson",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Takehiro Tomiyasu",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Walter Benítez",
+     "claim": "key",
+     "source": "The False 9, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Jørgen Strand Larsen",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Ismaïla Sarr",
+     "claim": "returns",
+     "source": "Sports Mole, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 19,
+    "unknown": [],
+    "teams": {
+     "Brighton": {
+      "ok": [
+       "Evan Ferguson",
+       "Stefanos Tzimas",
+       "Kaoru Mitoma",
+       "Femi Azeez",
+       "Zadok Yohanna",
+       "Yankuba Minteh",
+       "Mats Wieffer",
+       "Pascal Struijk",
+       "Charalambos Kostoulas",
+       "Georginio Rutter"
+      ],
+      "unknown": [],
+      "roster_size": 33,
+      "espn_name": "Brighton & Hove Albion"
+     },
+     "Crystal Palace": {
+      "ok": [
+       "Axel Disasi",
+       "Chadi Riad",
+       "Jean-Philippe Mateta",
+       "Ben Chilwell",
+       "Dean Henderson",
+       "Takehiro Tomiyasu",
+       "Walter Benítez",
+       "Jørgen Strand Larsen",
+       "Ismaïla Sarr"
+      ],
+      "unknown": [],
+      "roster_size": 32,
+      "espn_name": "Crystal Palace"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Leeds",
+   "away": "Man United",
+   "lean": "h",
+   "confidence": "נמוכה",
+   "summary": "לידס במקום 7 ולא מנוצחת בשמונה משחקי בית, מנצ'סטר יונייטד במשבר תוצאות ואווירה (ניצחון אחד בשש, סערת מרטינס) ובלי ססקו, אוגרטה ודורגו. נטייה ביתית.",
+   "home_view": "לידס במקום 7 עם 9 נקודות, נקודה מהארבע הראשונות, ההפסד 1-2 בארסנל היה הראשון שלה העונה (חדשות: Sports Mole 17.10, נתון). 1.8 נקודות למשחק בבית ורק 0.6 ספיגות למשחק בעשרת משחקי הבית האחרונים, לא מנוצחת בשמונה משחקי בית תחרותיים (נתון, חדשות). שבוע מנוחה מלא (נתון). חסר ג'ו רודון (שריר אחורי, חזרה צפויה סוף אוקטובר), דן ג'יימס בסימן שאלה, הארי ווילסון חזר להתאמן (חדשות: Sports Mole 17.10). פארקה צפוי ל-3-4-2-1 עם קלברט-לואין בחוד (חדשות). בלי רודון ההגנה פחות יציבה בכדורים גבוהים, אבל הקהל של אלנד רואד במשחק הזה יהיה פקטור אמיתי (שיפוט).",
+   "away_view": "מנצ'סטר יונייטד עם ניצחון ליגה אחד בשישה, חמישה משחקים בלי ניצחון, הפסד 0-2 באתלטיקו מדריד ביום שלישי, ארבעה ימי מנוחה (נתון, חדשות: Sports Mole 17.10). חסרים ססקו (רגל), אוגרטה (רצועה צולבת), דורגו (שריר אחורי) והיטון, מאינו, שו ומזראווי בספק (חדשות: Sports Mole 17.10). ליסנדרו מרטינס צפוי לשחק למרות שתקף בפומבי את מנהל הכדורגל וילקוקס אחרי אתלטיקו, האווירה במועדון רעה (חדשות: Sports Mole 17.10). ההתקפה עם מבאומו, קוניה וברונו פרננדס מסוגלת לפתור כל משחק, ורק 0.84 נקודות למשחק בחוץ ב-12 חודשים (נתון). קבוצה בכאוס שמגיעה למגרש עוין, זה בדיוק הפרופיל שמפסיד בלידס (שיפוט).",
+   "factors": [
+    "לידס: רודון חסר בהגנה (חדשות) -1",
+    "לידס: שבוע מנוחה, 8 משחקי בית בלי הפסד, קהל (נתון) +1",
+    "יונייטד: ססקו, אוגרטה, דורגו חסרים, שו ומזראווי בספק (חדשות) -1",
+    "יונייטד: משבר תוצאות וסערת מרטינס, ארבעה ימים אחרי אתלטיקו (חדשות) -1"
+   ],
+   "sources": [
+    "Sports Mole preview, 16-17.10.2026",
+    "Sports Mole team news, 17.10.2026",
+    "ESPN preview, 17.10.2026"
+   ],
+   "adjustments": [
+    "Leeds def 1.03: רודון חסר",
+    "Man United att 0.97: משבר ואווירה רעה, 4 ימים אחרי אתלטיקו",
+    "Man United def 1.03: שו ומזראווי בספק, דורגו חסר"
+   ],
+   "players": [
+    {
+     "team": "Leeds",
+     "name": "Joe Rodon",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Leeds",
+     "name": "Daniel James",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Leeds",
+     "name": "Harry Wilson",
+     "claim": "returns",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Leeds",
+     "name": "Dominic Calvert-Lewin",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Benjamin Sesko",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Manuel Ugarte",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Patrick Dorgu",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Tom Heaton",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Kobbie Mainoo",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Luke Shaw",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Noussair Mazraoui",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Lisandro Martínez",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Bryan Mbeumo",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Matheus Cunha",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Man United",
+     "name": "Bruno Fernandes",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 15,
+    "unknown": [],
+    "teams": {
+     "Leeds": {
+      "ok": [
+       "Joe Rodon",
+       "Daniel James",
+       "Harry Wilson",
+       "Dominic Calvert-Lewin"
+      ],
+      "unknown": [],
+      "roster_size": 29,
+      "espn_name": "Leeds United"
+     },
+     "Man United": {
+      "ok": [
+       "Benjamin Sesko",
+       "Manuel Ugarte",
+       "Patrick Dorgu",
+       "Tom Heaton",
+       "Kobbie Mainoo",
+       "Luke Shaw",
+       "Noussair Mazraoui",
+       "Lisandro Martínez",
+       "Bryan Mbeumo",
+       "Matheus Cunha",
+       "Bruno Fernandes"
+      ],
+      "unknown": [],
+      "roster_size": 31,
+      "espn_name": "Manchester United"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Fiorentina",
+   "away": "Como",
+   "lean": "d",
+   "confidence": "נמוכה",
+   "summary": "קומו בלי קין ודיאו, שני שחקני ההתקפה החשובים, ושלושה ימים אחרי פיינורד. פיורנטינה במשבר ובלי אטה ופאריזי, ראניירי בספק. פחות ברור ממה שהשוק חושב, נוטה לתיקו.",
+   "home_view": "פיורנטינה בתקופה גרועה: 0-4 ברומא, 0-3 בבית מפרוזינונה, 1-2 מטורינו, ואז 4-2 בונציה, 1-1 עם נאפולי ו-1-2 בגנואה (נתון). בבית היא קבוצת תיקו: 6 תיקו ב-10 משחקי בית אחרונים, 0.6 שערים למשחק (נתון). ואנולי בלי אטה ופאריזי, ראניירי (קפטן, בלם) בספק ויש מקורות שכבר מוציאים אותו (חדשות: FiorentinaUno 16.10, Sky Sport 17.10, CalcioNews 17.10). צפוי 4-3-3 עם ברשאניני, פאג'ולי ונדור בקישור ומסטנטואונו, ניה ופלגרינו בחוד (חדשות: Sky Sport 17.10). שבוע מנוחה מלא והקהל בפרנקי לחוץ, שריקות בוז יגיעו מוקדם אם ההתחלה חלשה (שיפוט).",
+   "away_view": "קומו הייתה מצוינת: 4-1 בגנואה, 4-1 על לייפציג, 2-1 על פארמה, ואז 0-2 בפרוזינונה, 0-0 עם רומא והפסד 2-3 בפיינורד ביום רביעי, שלושה ימי מנוחה (נתון). חסרים מואיז קין (מכות בשוק, עדיין לא כשיר) ודיאו (שריר ירך, כשלושה שבועות), דוביקאס יחזור לפתוח, בוטז חוזר לשער אחרי מנוחה בצ'מפיונס (חדשות: TuttoMercatoWeb 17.10, Sky Sport 17.10, FiorentinaUno 16.10). ניקו פאס ובאטורינה הם המוח, רודריגס בקצה (חדשות). בלי קין ההתקפה מאבדת את החוד שמסיים, בלי דיאו את המהירות (שיפוט). קומו ניצחה 3 מ-4 הפגישות האחרונות, היריבה הזאת נוחה לה, אבל הסגל הפעם דק יותר ממה שהמחירים משקפים (שיפוט).",
+   "factors": [
+    "פיורנטינה: אטה ופאריזי חסרים, ראניירי בספק (חדשות) -1",
+    "פיורנטינה: משבר תוצאות, אבל שבוע מנוחה (נתון) 0",
+    "קומו: קין ודיאו חסרים, שני שחקני מפתח בהתקפה (חדשות) -2",
+    "קומו: שלושה ימים אחרי פיינורד (נתון) -1"
+   ],
+   "sources": [
+    "Sky Sport Italia, 17.10.2026",
+    "TuttoMercatoWeb, 17.10.2026",
+    "FiorentinaUno, 16.10.2026",
+    "CalcioNews.eu, 17.10.2026"
+   ],
+   "adjustments": [
+    "Como att 0.86: קין ודיאו חסרים (0.88) ועומס צ'מפיונס (0.98)",
+    "Fiorentina def 1.03: פאריזי חסר, ראניירי בספק"
+   ],
+   "players": [
+    {
+     "team": "Fiorentina",
+     "name": "Arthur Atta",
+     "claim": "out",
+     "source": "FiorentinaUno, 16.10.2026"
+    },
+    {
+     "team": "Fiorentina",
+     "name": "Fabiano Parisi",
+     "claim": "out",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Fiorentina",
+     "name": "Luca Ranieri",
+     "claim": "doubtful",
+     "source": "FiorentinaUno, 16.10.2026"
+    },
+    {
+     "team": "Fiorentina",
+     "name": "Marco Brescianini",
+     "claim": "key",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Fiorentina",
+     "name": "Nicolò Fagioli",
+     "claim": "key",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Fiorentina",
+     "name": "Cher Ndour",
+     "claim": "key",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Fiorentina",
+     "name": "Franco Mastantuono",
+     "claim": "returns",
+     "source": "TuttoMercatoWeb, 17.10.2026"
+    },
+    {
+     "team": "Fiorentina",
+     "name": "Alieu Njie",
+     "claim": "key",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Fiorentina",
+     "name": "Mateo Pellegrino",
+     "claim": "key",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Como",
+     "name": "Moise Kean",
+     "claim": "out",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Como",
+     "name": "Assane Diao",
+     "claim": "out",
+     "source": "CalcioNews.eu, 17.10.2026"
+    },
+    {
+     "team": "Como",
+     "name": "Anastasios Douvikas",
+     "claim": "key",
+     "source": "TuttoMercatoWeb, 17.10.2026"
+    },
+    {
+     "team": "Como",
+     "name": "Jean Butez",
+     "claim": "returns",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Como",
+     "name": "Nico Paz",
+     "claim": "key",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Como",
+     "name": "Martin Baturina",
+     "claim": "key",
+     "source": "Sky Sport Italia, 17.10.2026"
+    },
+    {
+     "team": "Como",
+     "name": "Jesús Rodriguez",
+     "claim": "key",
+     "source": "Sky Sport Italia, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 16,
+    "unknown": [],
+    "teams": {
+     "Fiorentina": {
+      "ok": [
+       "Arthur Atta",
+       "Fabiano Parisi",
+       "Luca Ranieri",
+       "Marco Brescianini",
+       "Nicolò Fagioli",
+       "Cher Ndour",
+       "Franco Mastantuono",
+       "Alieu Njie",
+       "Mateo Pellegrino"
+      ],
+      "unknown": [],
+      "roster_size": 27,
+      "espn_name": "Fiorentina"
+     },
+     "Como": {
+      "ok": [
+       "Moise Kean",
+       "Assane Diao",
+       "Anastasios Douvikas",
+       "Jean Butez",
+       "Nico Paz",
+       "Martin Baturina",
+       "Jesús Rodriguez"
+      ],
+      "unknown": [],
+      "roster_size": 28,
+      "espn_name": "Como"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Celta",
+   "away": "Alaves",
+   "lean": "d",
+   "confidence": "נמוכה",
+   "summary": "סלטה במשחק שלישי בשבעה ימים, בלי בורחה איגלסיאס וסטארפלט, דוראן בספק, אספאס חוזר. אלאבס בלי אנחל פרס המורחק וגרסס. שתי קבוצות שלא מבקיעות, נוטה לתיקו.",
+   "home_view": "סלטה עם ניצחון אחד ב-10 משחקים וחמישה תיקו, 0.9 שערים למשחק (נתון). חמישה פצועים: בורחה איגלסיאס (שריר השוק, בחוץ), סטארפלט, מיגל רומן ואל-עבדלאוי, פבלו דוראן בספק עם בצקת בשוק (חדשות: MinutoNoventa 17.10, FutbolFantasy 17.10). אספאס וקאסרס קיבלו אישור וזמינים, חוטגלה המועמד לחוד (חדשות: FutbolFantasy 17.10). זה המשחק השלישי בשבעה ימים אחרי אלצ'ה והפסד 1-2 ליובנטוס ביום חמישי, יומיים מנוחה (נתון, חדשות: Diario de Santiago 17.10). חיראלדס לא חזר על הרכב מאז שנכנס, רוטציה כנראה (חדשות). באלאידוס מבקיעה בבית (1.64 למשחק ב-12 חודשים) אבל גם סופגת, ו-5-0 על ראסינג היה החריג (נתון). עם אספאס בחזרה יש מי שיוצר, אבל בלי חלוץ מסיים זה בדרך כלל 1-1 (שיפוט).",
+   "away_view": "אלאבס פתחה טוב (1-0 ויאריאל, 5-2 אוססונה) ואז ארבעה משחקים בלי ניצחון, 0.4 שערים למשחק בחוץ ב-10 משחקים אחרונים ו-4 קלין שיטים (נתון). אנחל פרס מורחק, פקונדו גרסס ומיקל רודריגס פצועים (חדשות: Legalbet 17.10, Diario de Santiago 17.10). ההרכב הצפוי: סיברה, קוסקי, טנאליה, ולנטיני, ג'וני, רבאש, פבלו איבנייס, אנטוניו בלאנקו, דניס סוארס, טוני מרטינס ובויה (חדשות: Ceroacero 17.10). קבוצה הגנתית שחיה על תיקו 0-0 ו-1-1 בחוץ ושבוע מנוחה מלא מול יריבה עייפה (נתון, שיפוט). ניצחה 4-3 בבאלאידוס במרץ וכמעט לא מפסידה שם בשנים האחרונות (נתון).",
+   "factors": [
+    "סלטה: בורחה איגלסיאס וסטארפלט חסרים, דוראן בספק (חדשות) -1",
+    "סלטה: משחק שלישי בשבעה ימים, יומיים אחרי יובנטוס (נתון) -1",
+    "סלטה: אספאס חוזר (חדשות) +1",
+    "אלאבס: אנחל פרס מורחק, גרסס פצוע (חדשות) -1",
+    "אלאבס: שבוע מנוחה מלא (נתון) +1"
+   ],
+   "sources": [
+    "FutbolFantasy, 17.10.2026",
+    "MinutoNoventa, 17.10.2026",
+    "Diario de Santiago, 17.10.2026",
+    "Legalbet, 17.10.2026",
+    "Ceroacero, 17.10.2026"
+   ],
+   "adjustments": [
+    "Celta att 0.93: בורחה איגלסיאס חסר ודוראן בספק (0.95), משחק שלישי בשבוע (0.98)",
+    "Celta def 1.03: סטארפלט חסר",
+    "Alaves def 1.05: אנחל פרס מורחק וגרסס פצוע"
+   ],
+   "players": [
+    {
+     "team": "Celta",
+     "name": "Borja Iglesias",
+     "claim": "out",
+     "source": "FutbolFantasy, 17.10.2026"
+    },
+    {
+     "team": "Celta",
+     "name": "Carl Starfelt",
+     "claim": "out",
+     "source": "MinutoNoventa, 17.10.2026"
+    },
+    {
+     "team": "Celta",
+     "name": "Miguel Román",
+     "claim": "out",
+     "source": "MinutoNoventa, 17.10.2026"
+    },
+    {
+     "team": "Celta",
+     "name": "Jones El-Abdellaoui",
+     "claim": "out",
+     "source": "MinutoNoventa, 17.10.2026"
+    },
+    {
+     "team": "Celta",
+     "name": "Pablo Durán",
+     "claim": "doubtful",
+     "source": "FutbolFantasy, 17.10.2026"
+    },
+    {
+     "team": "Celta",
+     "name": "Iago Aspas",
+     "claim": "returns",
+     "source": "FutbolFantasy, 17.10.2026"
+    },
+    {
+     "team": "Celta",
+     "name": "Sebastián Cáceres",
+     "claim": "returns",
+     "source": "FutbolFantasy, 17.10.2026"
+    },
+    {
+     "team": "Celta",
+     "name": "Ferran Jutglà",
+     "claim": "key",
+     "source": "FutbolFantasy, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Ángel Pérez",
+     "claim": "suspended",
+     "source": "Legalbet, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Facundo Garcés",
+     "claim": "out",
+     "source": "Diario de Santiago, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Mikel Rodriguez",
+     "claim": "out",
+     "source": "Legalbet, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Antonio Sivera",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Ville Koski",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Nahuel Tenaglia",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Nicolás Valentini",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Jonny",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Abde Rebbach",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Pablo Ibáñez",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Antonio Blanco",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Denis Suárez",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Toni Martínez",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    },
+    {
+     "team": "Alaves",
+     "name": "Lucas Boyé",
+     "claim": "key",
+     "source": "Ceroacero, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 22,
+    "unknown": [],
+    "teams": {
+     "Celta": {
+      "ok": [
+       "Borja Iglesias",
+       "Carl Starfelt",
+       "Miguel Román",
+       "Jones El-Abdellaoui",
+       "Pablo Durán",
+       "Iago Aspas",
+       "Sebastián Cáceres",
+       "Ferran Jutglà"
+      ],
+      "unknown": [],
+      "roster_size": 30,
+      "espn_name": "Celta Vigo"
+     },
+     "Alaves": {
+      "ok": [
+       "Ángel Pérez",
+       "Facundo Garcés",
+       "Mikel Rodriguez",
+       "Antonio Sivera",
+       "Ville Koski",
+       "Nahuel Tenaglia",
+       "Nicolás Valentini",
+       "Jonny",
+       "Abde Rebbach",
+       "Pablo Ibáñez",
+       "Antonio Blanco",
+       "Denis Suárez",
+       "Toni Martínez",
+       "Lucas Boyé"
+      ],
+      "unknown": [],
+      "roster_size": 27,
+      "espn_name": "Alavés"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Le Havre",
+   "away": "Auxerre",
+   "lean": "d",
+   "confidence": "נמוכה",
+   "summary": "לה האבר היחידה בליגה בלי ניצחון ועם שלושה מגנים פצועים, אוסר עם שבעה נפקדים (רובם ספסל) והגנה שספגה 9 בשני משחקי חוץ. שתי הגנות פרוצות, נוטה לתיקו עם שערים.",
+   "home_view": "לה האבר היחידה בליג 1 שעדיין לא ניצחה, שישה משחקים בלי ניצחון, 0.7 נקודות למשחק (נתון, חדשות: RueDesJoueurs 17.10). בבית היא קבוצת תיקו ואנדר: 7 תיקו ב-16 משחקי בית ב-12 חודשים, 0.88 שערים למשחק, לא הבקיעה ב-8 מהם (נתון). דיגאר בלי חמישה: ילרט, פמבלה וזגאדו בהגנה, מפאסי בשער ומאמבימבי בהתקפה (חדשות: RueDesJoueurs 17.10). ההרכב הצפוי: גאלון, אוזיאד, מוואנגה, טובה, נדיאיי, ריצ'רדסון, אבונוג, נדיאיי, מיזוטה, נקאמורה, סמאטה (חדשות). ההגנה מאולתרת עם קשרים במגנים, וזו הסיבה שאני לא מוכן ללכת על הקלין שיט (שיפוט). שבוע מנוחה מלא ומשחק מול יריבה ישירה בתחתית, זו ההזדמנות שלה לניצחון ראשון וזה לחץ בפני עצמו (שיפוט).",
+   "away_view": "אוסר הפסידה 1-4 ברן ו-2-5 בלאנס, 1.59 ספיגות למשחק בחוץ ב-12 חודשים ורק 0.71 נקודות למשחק (נתון). רשימת נפקדים ארוכה: דיוסה, מנדנגה, סנאיה, אוקו, סיווה, אקפה, פופאנה, ולאבו-לסקארי בסימן שאלה (מקורות סותרים), מקוסו חזר ואמור לפתוח בבלם (חדשות: RueDesJoueurs 17.10, Mediapronos 17.10). רוב החסרים הם שחקני רוטציה אבל הכמות בהגנה פוגעת בעומק (שיפוט). קמרון ארצ'ר בכושר, 4 שערים ב-4 משחקים, ונמאסו לצידו (חדשות: RueDesJoueurs 17.10). קבוצה שתבקיע כנראה אבל גם תספוג, ובלה האבר היא לא ניצחה בפגישות האחרונות (0-1 ו-1-1 העונה שעברה, נתון).",
+   "factors": [
+    "לה האבר: ילרט, פמבלה וזגאדו חסרים בהגנה (חדשות) -2",
+    "לה האבר: שבוע מנוחה, לחץ של קבוצה בלי ניצחון (נתון, שיפוט) 0",
+    "אוסר: שבעה נפקדים, רובם ספסל, לאבו-לסקארי בספק (חדשות) -1",
+    "אוסר: ארצ'ר בכושר, 4 ב-4 (חדשות) +1"
+   ],
+   "sources": [
+    "RueDesJoueurs, 17.10.2026",
+    "Mediapronos, 17.10.2026",
+    "TopMercato, 17.10.2026"
+   ],
+   "adjustments": [
+    "Le Havre def 1.07: ילרט, פמבלה וזגאדו חסרים בהגנה",
+    "Auxerre def 1.03: עומק הגנתי פגוע (סנאיה, אוקו, אקפה, פופאנה)",
+    "Auxerre att 0.97: לאבו-לסקארי בספק"
+   ],
+   "players": [
+    {
+     "team": "Le Havre",
+     "name": "Elias Jelert",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Timothee Pembélé",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Stephan Zagadou",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Lionel Mpasi",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Félix Mambimbi",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Gauthier Gallon",
+     "claim": "key",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Amir Richardson",
+     "claim": "key",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Rassoul Ndiaye",
+     "claim": "key",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Mbwana Samatta",
+     "claim": "key",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Kaito Mizuta",
+     "claim": "key",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Le Havre",
+     "name": "Sota Nakamura",
+     "claim": "key",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Assane Dioussé",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Rayan Mandengue",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Marvin Senaya",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Bryan Okoh",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Telli Siwe",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Clément Akpa",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Sekou Fofana",
+     "claim": "out",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Remy Labeau Lascary",
+     "claim": "doubtful",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Christ Makosso",
+     "claim": "returns",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Cameron Archer",
+     "claim": "key",
+     "source": "RueDesJoueurs, 17.10.2026"
+    },
+    {
+     "team": "Auxerre",
+     "name": "Danny Namaso",
+     "claim": "key",
+     "source": "Mediapronos, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 22,
+    "unknown": [],
+    "teams": {
+     "Le Havre": {
+      "ok": [
+       "Elias Jelert",
+       "Timothee Pembélé",
+       "Stephan Zagadou",
+       "Lionel Mpasi",
+       "Félix Mambimbi",
+       "Gauthier Gallon",
+       "Amir Richardson",
+       "Rassoul Ndiaye",
+       "Mbwana Samatta",
+       "Kaito Mizuta",
+       "Sota Nakamura"
+      ],
+      "unknown": [],
+      "roster_size": 30,
+      "espn_name": "Le Havre AC"
+     },
+     "Auxerre": {
+      "ok": [
+       "Assane Dioussé",
+       "Rayan Mandengue",
+       "Marvin Senaya",
+       "Bryan Okoh",
+       "Telli Siwe",
+       "Clément Akpa",
+       "Sekou Fofana",
+       "Remy Labeau Lascary",
+       "Christ Makosso",
+       "Cameron Archer",
+       "Danny Namaso"
+      ],
+      "unknown": [],
+      "roster_size": 35,
+      "espn_name": "AJ Auxerre"
+     }
+    },
+    "checked_at": "2026-10-17T17:38",
+    "status": "ok"
+   }
+  }
+ ]
+}
