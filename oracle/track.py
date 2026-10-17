@@ -38,6 +38,10 @@ def load():
     for c in COLS:
         if c not in df:
             df[c] = np.nan
+    for c in ("p_pick", "pH", "pD", "pA", "over25", "btts", "exp_total", "odds_h", "odds_d", "odds_a", "star_odds", "star_p"):
+        df[c] = pd.to_numeric(df[c], errors="coerce").astype(float)
+    for c in ("star", "kickoff", "src", "tier", "pick"):
+        df[c] = df[c].astype(object)
     df["star"] = df["star"].fillna("")
     return df
 

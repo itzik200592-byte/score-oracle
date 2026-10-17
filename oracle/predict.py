@@ -43,7 +43,7 @@ def distribution(P):
     margin = _II - _JJ
     return dict(
         total=[round(100 * x, 1) for x in tp],
-        over={k: round(100 * float(P[tot >= int(k + 0.5)].sum()), 1) for k in (0.5, 1.5, 2.5, 3.5, 4.5)},
+        over={str(k): round(100 * float(P[tot >= int(k + 0.5)].sum()), 1) for k in (0.5, 1.5, 2.5, 3.5, 4.5)},
         btts=round(100 * float(P[(_II > 0) & (_JJ > 0)].sum()), 1),
         cs_home=round(100 * float(P[_JJ == 0].sum()), 1), cs_away=round(100 * float(P[_II == 0].sum()), 1),
         home_by2=round(100 * float(P[margin >= 2].sum()), 1), away_by2=round(100 * float(P[margin <= -2].sum()), 1),

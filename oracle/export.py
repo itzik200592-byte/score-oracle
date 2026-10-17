@@ -142,9 +142,13 @@ def export(m, pred, ledger=True):
         if e:
             v = e.get("verification") or {}
             row["opinion"] = dict(e, verified=v.get("status", "unverified"), unknown_players=v.get("unknown", []))
-    from . import track
+    from . import track, value
     if ledger:
         track.upsert(rows, m)
+    vsel = value.scan(rows)
+    if ledger:
+        value.record(vsel)
+    paper = value.settle(m)
     bt = None
     f = OUT / "backtest_report.json"
     if f.exists():
@@ -173,6 +177,8 @@ def export(m, pred, ledger=True):
                  for lg, v in rep.get("by_league", {}).items()}
     data = dict(generated_at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
                 leagues={k: v["he"] for k, v in LEAGUES.items()}, predictions=rows,
-                ledger=_ledger_stats(m), track=track.export_block(m), backtest=bt, coverage=cov, calib=calib, last_result=fresh, stale=stale)
+                ledger=_ledger_stats(m), track=track.export_block(m), backtest=bt, coverage=cov, calib=calib, last_result=fresh, stale=stale,
+                value=[v for v in vsel if v["flag"] or v["surprise"]][:80], paper=paper,
+                value_truth=dict(note="backtest 2022-2026, 6,673 matches, average market odds (Winner margin is higher)", all_ev=-13.9, longshots=-23.6, favourites=-1.4, ou=-7.9))
     (DOCS / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     return DOCS / "data.json"

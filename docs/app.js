@@ -41,7 +41,8 @@ function render() {
   const nToday = DATA.predictions.filter(p => p.date === (days[0] || todayIL())).length;
   const nStars = DATA.predictions.filter(p => p.odds && p.odds.star && p.date >= todayIL()).length;
   const nRes = (DATA.track && DATA.track.overall && DATA.track.overall.n) || 0;
-  const tabs = [["today", days[0] === todayIL() ? "היום" : "הקרובים", nToday], ["stars", "כוכבים", nStars], ["results", "תוצאות", nRes], ["all", "הכול", DATA.predictions.length]];
+  const nVal = (DATA.value || []).filter(v => v.flag && v.date >= todayIL()).length;
+  const tabs = [["today", days[0] === todayIL() ? "היום" : "הקרובים", nToday], ["winner", "Winner", nVal], ["stars", "כוכבים", nStars], ["results", "תוצאות", nRes], ["all", "הכול", DATA.predictions.length]];
   document.getElementById("mainTabs").innerHTML = tabs.map(([k, t, n]) => `<button class="mtab" role="tab" data-k="${k}" aria-selected="${k === view}">${t}<span class="cnt num">${n}</span></button>`).join("");
   document.querySelectorAll(".mtab").forEach(b => b.onclick = () => { view = b.dataset.k; safe(() => localStorage.setItem("view", view)); render(); window.scrollTo({ top: 0 }); });
   const st = DATA.stale || [];
@@ -53,6 +54,7 @@ function render() {
   chips.hidden = true;
   const v = document.getElementById("view");
   if (view === "today") v.innerHTML = viewToday();
+  else if (view === "winner") v.innerHTML = viewWinner(chips);
   else if (view === "stars") v.innerHTML = viewStars(chips);
   else if (view === "results") v.innerHTML = viewResults();
   else v.innerHTML = viewAll(chips);
@@ -130,6 +132,41 @@ function viewStars(chips) {
       <div class="bigp"><b class="num">${s.model_p}%</b><small>סיכוי לפגוע</small></div>
       <button class="vbtn" style="grid-column:1/-1;margin-top:2px" data-v="${p.date}|${p.home}|${p.away}">פסק דין מלא</button>
     </article>`;
+  });
+  return html;
+}
+
+/* ---------- view: Winner value scanner + paper bets ---------- */
+function viewWinner(chips) {
+  chips.hidden = false;
+  const opts = [["flag", "המלצות ערך"], ["surprise", "הפתעות (יחס 3+)"], ["paper", "יומן נייר"]];
+  chip.winner = chip.winner || "flag";
+  chips.innerHTML = opts.map(([k, t]) => `<button class="chip" data-c="${k}" aria-pressed="${chip.winner === k}">${t}</button>`).join("");
+  chips.querySelectorAll(".chip").forEach(b => b.onclick = () => { chip.winner = b.dataset.c; render(); });
+  const T = DATA.value_truth || {};
+  const pap = DATA.paper;
+  let html = `<div class="lead" style="border-color:rgba(255,201,77,.5)"><b>קודם האמת, ואז ההמלצות.</b> בבדיקה לאחור על 6,673 משחקים (2022-2026), הימור קבוע על כל בחירה שהמודל ראה בה ערך הפסיד <b class="num">${T.all_ev}%</b> מול יחסי שוק ממוצעים, והפתעות ביחס 6 ומעלה הפסידו <b class="num">${T.longshots}%</b>. המרווח של Winner (11-18%) גבוה מהממוצע, ולכן בפועל זה גרוע יותר. <b>אף מודל סטטיסטי לא מנצח את הבוקמייקר לאורך זמן.</b> לכן כל המלצה כאן נרשמת כהימור נייר במחיר של Winner, ואת הרווח האמיתי תראה ביומן לפני שאתה מסכן כסף.</div>`;
+  if (pap) {
+    const cls = pap.pnl > 0 ? "val" : (pap.pnl < 0 ? "" : "");
+    html += `<div class="stats"><div class="stat"><b class="num">${pap.n}</b><small>הימורי נייר שהסתיימו</small><span class="sub">${pap.open} פתוחים</span></div><div class="stat"><b class="num ${cls}" style="${pap.pnl < 0 ? "color:var(--bad)" : (pap.pnl > 0 ? "color:var(--good)" : "")}">${pap.pnl > 0 ? "+" : ""}${pap.pnl.toFixed(1)}</b><small>רווח ביחידות (1 יחידה להימור)</small><span class="sub num">תשואה ${pap.roi}% · ${pap.won} זכיות</span></div></div>`;
+  }
+  const rows = (DATA.value || []).filter(v => v.date >= todayIL());
+  if (chip.winner === "paper") {
+    if (!pap || !pap.recent || !pap.recent.length) return html + `<div class="empty">עדיין אין הימורי נייר שהסתיימו. כל המלצה מסומנת נרשמת אוטומטית במחיר של Winner ונסגרת מול התוצאה.</div>`;
+    pap.recent.forEach(r => { html += `<div class="rrow"><div class="m"><span>${esc(r.home)} - ${esc(r.away)}</span><span class="num" style="color:${r.pnl > 0 ? "var(--good)" : "var(--bad)"};font-weight:900">${r.pnl > 0 ? "+" : ""}${Number(r.pnl).toFixed(2)}</span></div><div class="pp">${esc(r.label)} @ <span class="num">${Number(r.odds).toFixed(2)}</span> · המודל <span class="num">${r.model_p}%</span> · תוצאה <span class="num">${esc(r.result)}</span> · ${fmtDate(r.date)}</div></div>`; });
+    if (pap.by_market) html += `<h2>לפי שוק</h2>` + Object.entries(pap.by_market).map(([k, x]) => `<div class="rrow"><div class="m"><span>${{ "1x2": "1X2", ou: "מעל/מתחת", btts: "שתיהן מבקיעות", cs: "תוצאה מדויקת" }[k] || k}</span><span class="num">${x.won}/${x.n} · תשואה ${x.roi}%</span></div></div>`).join("");
+    return html;
+  }
+  const list = chip.winner === "flag" ? rows.filter(v => v.flag) : rows.filter(v => v.surprise);
+  if (!list.length) return html + `<div class="empty">${chip.winner === "flag" ? "אין כרגע בחירה שעוברת את סף הערך אחרי המרווח של Winner. זה המצב הרגיל, לא תקלה." : "אין כרגע הפתעות (יחס 3 ומעלה שהמודל נותן להן סיכוי גבוה מהשוק)."}</div>`;
+  html += `<div class="lead">${chip.winner === "flag" ? "בחירות שבהן המודל נותן סיכוי גבוה מספיק מעל המחיר של Winner כדי לכסות את המרווח. <b>זה לא מבטיח רווח</b>: ליד כל בחירה מופיעה התשואה ההיסטורית של אותו סוג הימור." : "אנדרדוגים ותיקו ביחס 3 ומעלה שהמודל מעריך גבוה יותר מהשוק. היסטורית זה הסוג שמפסיד הכי הרבה; הסיכוי לזכייה כתוב ליד כל אחד."}</div>`;
+  list.forEach((v, i) => {
+    html += `<article class="card ${v.flag ? "S" : ""}" style="animation-delay:${Math.min(i, 8) * 35}ms">
+      <div class="ch">${v.kickoff ? `<span class="t num">${v.kickoff}</span>` : ""}<span>${fmtDate(v.date)}</span><span class="lg">${esc(DATA.leagues[v.league])}</span>${v.flag ? `<span class="star">ערך</span>` : ""}${v.surprise ? `<span class="tag gold" style="font-size:11px">הפתעה</span>` : ""}</div>
+      <div class="row"><div class="teams"><div class="team fav" style="direction:rtl;text-align:right">${esc(v.label)}</div><div class="sline">${esc(v.home)} - ${esc(v.away)}</div></div><div class="bigp"><b class="num">${v.model_p}%</b><small>סיכוי לזכייה לפי המודל</small></div></div>
+      <div class="oddsmini"><div>יחס Winner<b class="num">${Number(v.odds).toFixed(2)}</b></div><div>השוק נותן<b class="num">${v.market_p != null ? v.market_p + "%" : "-"}</b></div><div>תוחלת<b class="num" style="color:${v.ev > 0 ? "var(--good)" : "var(--bad)"}">${v.ev > 0 ? "+" : ""}${v.ev}%</b></div></div>
+      <div class="osrc">${v.hist_roi != null ? `הימורים מסוג זה הפסידו היסטורית <span class="num">${v.hist_roi}%</span> ליחידה (בדיקה לאחור, יחסי שוק ממוצעים).` : "אין נתון היסטורי לשוק הזה."} תוחלת = סיכוי המודל כפול היחס פחות 1.</div>
+      <button class="vbtn" data-v="${v.date}|${v.home}|${v.away}">פסק דין מלא</button></article>`;
   });
   return html;
 }
