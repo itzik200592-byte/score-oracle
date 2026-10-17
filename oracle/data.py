@@ -141,6 +141,7 @@ def build(fast=False):
         import json as _json
         try:
             for x in _json.loads(extra.read_text(encoding="utf-8")):
+                x = dict(x, home=rs.resolve(x["home"], x["league"]), away=rs.resolve(x["away"], x["league"]))
                 dts = pd.Timestamp(x["date"])
                 hit = [pos for pos in index.get((x["league"], x["home"], x["away"]), []) if abs((kept[pos]["date"] - dts).days) <= 3]
                 if hit:

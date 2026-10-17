@@ -56,7 +56,7 @@ def fetch(leagues=None):
         for g in games:
             date = g["commence_time"][:10]
             h, a = g["home_team"], g["away_team"]
-            probs, sharp = [], []
+            probs, pinn = [], None
             for b in g.get("bookmakers", []):
                 mk = next((m for m in b.get("markets", []) if m["key"] == "h2h"), None)
                 if not mk:
@@ -64,40 +64,67 @@ def fetch(leagues=None):
                 o = {x["name"]: x["price"] for x in mk["outcomes"]}
                 if h in o and a in o and "Draw" in o:
                     p = devig_power([o[h], o["Draw"], o[a]])
-                    (sharp if b["key"] in SHARP_BOOKS else probs).append(p)
-                    if b["key"] in SHARP_BOOKS:
-                        pass
-            use = sharp if sharp else probs
-            if not use:
+                    probs.append(p)
+                    if b["key"] == "pinnacle":
+                        pinn = p
+            if not probs:
                 continue
-            p = np.mean(use, axis=0)
-            out[(date, _n(h), _n(a))] = dict(h=float(p[0]), d=float(p[1]), a=float(p[2]), books=len(probs) + len(sharp),
-                                           sharp=bool(sharp), league=lg)
+            # Pinnacle is the reference price; without it, the median across books resists mislabeled outliers
+            p = pinn if pinn is not None else np.median(np.array(probs), axis=0)
+            out[(date, _n(h), _n(a))] = dict(h=float(p[0]), d=float(p[1]), a=float(p[2]), books=len(probs),
+                                           sharp=pinn is not None, league=lg)
     return out
+
+
+STOP = {"fc", "cf", "afc", "club", "united", "city", "town", "de", "sc", "ac", "as", "ssc", "us", "sk", "fk", "nk", "tsg", "rb", "vfb", "sl"}
+
+
+def _toks(s):
+    return {t for t in _n(s).replace("-", " ").replace("'", "").split() if t not in STOP and len(t) > 1}
+
+
+def _same(a, b):
+    """our canonical name vs API name: exact after aliases, token containment, or close match."""
+    import difflib
+    na, nb = _n(a), _n(b)
+    if na == nb:
+        return True
+    ta, tb = _toks(a), _toks(b)
+    if ta and tb and (ta <= tb or tb <= ta):
+        return True
+    return difflib.SequenceMatcher(None, na, nb).ratio() >= 0.84
 
 
 def compare(rows, sharp_map, min_edge=0.03):
     """Annotate exported prediction rows with sharp fair probs and Winner-vs-sharp edge."""
     if not sharp_map:
         return 0
+    by_date = {}
+    for (d, h, a), v in sharp_map.items():
+        by_date.setdefault(d, []).append((h, a, v))
     n = 0
     for r in rows:
         o = r.get("odds")
         if not o:
             continue
-        key_ = (r["date"], _n(r["home"]), _n(r["away"]))
-        s = sharp_map.get(key_)
-        if not s:
-            for dd in (-1, 1):
-                d2 = (dt.date.fromisoformat(r["date"]) + dt.timedelta(days=dd)).isoformat()
-                s = sharp_map.get((d2, key_[1], key_[2]))
-                if s:
+        s = None
+        for dd in (0, -1, 1):
+            d2 = (dt.date.fromisoformat(r["date"]) + dt.timedelta(days=dd)).isoformat()
+            for h, a, v in by_date.get(d2, []):
+                if _same(r["home"], h) and _same(r["away"], a):
+                    s = v
                     break
+            if s:
+                break
         if not s:
             continue
         edge = {k: round(100 * (s[k] * o[k] - 1), 1) for k in "hda"}
         best = max(edge, key=edge.get)
+        # consistency: Winner's and the sharp market's favourite must agree and no edge may exceed +25%
+        # (that size only happens when the fixture or the home/away sides are mismatched)
+        w_imp = {k: 1 / o[k] for k in "hda"}
+        consistent = max(w_imp, key=w_imp.get) == max("hda", key=lambda k: s[k]) and edge[best] <= 25
         r["sharp"] = dict(p={k: round(100 * s[k]) for k in "hda"}, edge=edge, books=s["books"], is_sharp=s["sharp"],
-                          flag=(best if edge[best] >= 100 * min_edge else None))
+                          consistent=consistent, flag=(best if consistent and edge[best] >= 100 * min_edge else None))
         n += 1
     return n

@@ -113,6 +113,14 @@ class Resolver:
             if res is not None:
                 self.fuzzy_log.append((name, res, pool_lg))
         if res is None:
-            res = re.sub(r"\s*\([A-Z]{3}\)\s*$", "", name).strip()
+            # unknown club: the first spelling seen becomes canonical, later spellings (case, accents) map to it
+            auto = self.by_league.setdefault("_auto", {})
+            if n in auto:
+                res = auto[n]
+            else:
+                res = re.sub(r"\s*\([A-Z]{3}\)\s*$", "", name).strip()
+                if res.isupper() and len(res) > 3:      # 'VIKING FK' -> 'Viking Fk' is worse; keep title case only for all-caps
+                    res = res.title().replace(" Fk", " FK").replace(" Fc", " FC").replace(" Sk", " SK")
+                auto[n] = res
         self.cache[k] = res
         return res
