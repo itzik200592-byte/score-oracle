@@ -98,10 +98,7 @@ def build(fast=False):
         df = fr[key]
         if df is None or df.empty:
             continue
-        if key == "archive":
-            df = df.copy(); df["home"], df["away"] = df.home_raw, df.away_raw
-        else:
-            df = _resolve_frame(df, rs)
+        df = _resolve_frame(df, rs)   # archive rows too: an older spelling of an unknown club must merge with the new one
         parts.append(df)
     allm = pd.concat(parts, ignore_index=True)
     allm["prio"] = allm.src.map(PRIORITY)
