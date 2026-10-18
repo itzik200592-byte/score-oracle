@@ -1,9 +1,8 @@
-made,date,league,home,away,key,label,p,price,rank,result,hit,settled
-2026-10-18T15:38,2026-10-18,IL,Hapoel Be'er Sheva,Hapoel Jerusalem,1x,בית לא מפסידה (1X),92.3,,1,,False,False
-2026-10-18T15:38,2026-10-18,LL,Real Madrid,Sevilla,h_scores,הבית מבקיעה,91.7,,2,,False,False
-2026-10-18T15:38,2026-10-19,PL,Tottenham,Coventry,h_scores,הבית מבקיעה,87.3,,1,,False,False
-2026-10-18T15:38,2026-10-20,CL,Man City,AEK Athens,1x,בית לא מפסידה (1X),98.3,,1,,False,False
-2026-10-18T15:38,2026-10-20,CL,Roma,ŠK Slovan Bratislava,h_scores,הבית מבקיעה,96.2,,2,,False,False
-2026-10-18T15:38,2026-10-20,CL,Paris SG,Barcelona,o15,מעל 1.5 שערים,91.5,,3,,False,False
-2026-10-18T15:38,2026-10-20,CL,Liverpool,Villarreal,h_scores,הבית מבקיעה,91.0,,4,,False,False
-2026-10-18T15:38,2026-10-20,CL,Sabah FK,Dortmund,a_scores,החוץ מבקיעה,90.9,,5,,False,False
+made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
+2026-10-18T15:57,2026-10-18,LL,Malaga,Sociedad,hc:-1:A,יתרון: Malaga לא מפסידה,59.2,1.5,1,,False,False,
+2026-10-18T15:57,2026-10-19,SA,Monza,Cagliari,u25,מתחת 2.5 שערים,54.5,1.55,1,,False,False,
+2026-10-18T15:57,2026-10-19,SA,Parma,Torino,tg23,2 עד 3 שערים,47.2,1.9,2,,False,False,
+2026-10-18T15:57,2026-10-19,LL,Getafe,Vallecano,tg23,2 עד 3 שערים,46.5,1.9,3,,False,False,
+2026-10-18T15:57,2026-10-20,CL,Man City,AEK Athens,tg4p,4 שערים ומעלה,60.0,1.6,1,,False,False,
+2026-10-18T15:57,2026-10-20,CL,Fenerbahce,Slavia Praha,btts,שתיהן מבקיעות,59.3,1.5,2,,False,False,
+2026-10-18T15:57,2026-10-20,CL,Napoli,Bodo/Glimt,1,Napoli מנצחת,59.0,1.55,3,,False,False,

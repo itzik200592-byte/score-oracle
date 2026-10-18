@@ -67,7 +67,7 @@ def strategies(s):
     t = []
     if s["flag"]:
         t.append("model_ev")                                   # model edge above Winner's margin (historically lost)
-    if s["market"] == "1x2" and s["odds"] <= 1.6 and s["model_p"] >= 62:
+    if s["market"] == "1x2" and 1.5 <= s["odds"] <= 1.9 and s["model_p"] >= 52:
         t.append("favourite")                                  # strong favourites: least negative bucket in the backtest
     if s.get("sharp_flag"):
         t.append("sharp_vs_winner")                            # Winner pays more than the sharp market (only evidence-backed edge)

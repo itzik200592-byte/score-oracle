@@ -57,7 +57,7 @@ def _attach_odds(m, rows):
         if key in live:
             e = live[key]
             o = dict(h=e["h"], d=e["d"], a=e["a"], src=e.get("source") or "live", at=fetched)
-            for k in ("over25", "under25", "btts_yes", "btts_no", "kickoff", "tg"):
+            for k in ("over25", "under25", "btts_yes", "btts_no", "kickoff", "tg", "hc"):
                 if e.get(k):
                     o[k] = e[k]
             cs = (e.get("cs") or {}).get(row["pick"].replace("-", "-"))
@@ -169,7 +169,7 @@ def export(m, pred, ledger=True):
     picks_track = picks.settle(m)
     daily = {d: picks.day_picks(rows, d) for d in days}
     for r in rows:   # per-match market menu (probabilities + Winner prices) for the verdict sheet
-        r["menu"] = picks.menu(r)[:40]
+        r["menu"] = picks.menu(r)[:30]
     bt = None
     f = OUT / "backtest_report.json"
     if f.exists():

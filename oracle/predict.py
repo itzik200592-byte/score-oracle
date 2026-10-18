@@ -50,6 +50,7 @@ def distribution(P):
         home_by2=round(100 * float(P[margin >= 2].sum()), 1), away_by2=round(100 * float(P[margin <= -2].sum()), 1),
         exp_total=round(mean_t, 2), likely_total=int(np.argmax(tp)),
         mk={k: round(100 * v, 1) for k, v in market_probs_fast(P).items()},
+        marg={str(d): round(100 * float(P[(_II - _JJ) == d].sum() if -6 < d < 6 else (P[(_II - _JJ) <= d].sum() if d <= -6 else P[(_II - _JJ) >= d].sum())), 2) for d in range(-6, 7)},
         top=[dict(s=f"{i}-{j}", p=round(100 * pr, 1)) for pr, i, j in flat[:8]])
 
 

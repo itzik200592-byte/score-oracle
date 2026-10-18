@@ -1,89 +1,102 @@
-"""Daily 'strongest recommendation': the most probable non-trivial market of the day, with an honest price check.
+"""Daily recommendations, WINNER ONLY.
 
-Probabilities come from the same calibrated score matrix as everything else; scripts/market_calibration.py showed that
-when the model says 85-95% for a market it happens 89-92% of the time (slightly conservative). A market only qualifies
-when it is likely (>= MIN_P) AND clearly above its own base rate (a 'lift'), so near-certain trivia (over 0.5 goals,
-under 4.5 goals) does not crowd out real information. Every day's picks are logged and settled to prove the claimed
-probability."""
-import json, datetime as dt
+Rules (set by the user): only markets Winner actually sells, only selections priced at MIN_ODDS (1.50) or more.
+Winner sells: 1X2, over/under 2.5, total-goals ranges (0-1, 2-3, 4+), both teams to score, and the 3-way handicap
+('הימור יתרון'). Everything is priced from the same calibrated score matrix; a selection's probability can never
+exceed ~1/odds, so with odds >= 1.50 the achievable ceiling is about 60-65%: a '90% pick' does not exist at these
+prices, and the module says so instead of inventing one.
+Every day's top picks are logged before kickoff and settled, so the claimed probability is audited."""
+import datetime as dt
 import numpy as np, pandas as pd
 from .config import DATA
-from .markets import MARKETS, ON_WINNER, market_probs_fast
 
 PICKS_CSV = DATA / "daily_picks.csv"
-CAL_JSON = DATA / "market_calibration.json"
-MIN_P = 0.85
-MIN_LIFT = 8.0          # percentage points above the market's unconditional base rate
-TRIVIAL = {"o05", "u45"}  # near-certain for almost every match: shown in the menu, never the headline
+MIN_ODDS = 1.50
+MKT_LABEL = {"o25": "מעל 2.5 שערים", "u25": "מתחת 2.5 שערים", "tg01": "0 עד 1 שערים", "tg23": "2 עד 3 שערים", "tg4p": "4 שערים ומעלה",
+             "btts": "שתיהן מבקיעות", "nobtts": "לפחות אחת לא מבקיעה"}
 
 
-def _base():
-    try:
-        return {k: v["base_rate"] for k, v in json.loads(CAL_JSON.read_text(encoding="utf-8")).items()}
-    except Exception:
-        return {}
+def _marg(row):
+    """P(home goals - away goals = d) for d in -6..6 (ends carry the tails)."""
+    mg = (row.get("dist") or {}).get("marg")
+    return None if not mg else {int(k): v / 100 for k, v in mg.items()}
 
 
-def winner_prices(o):
-    """Map our market keys to Winner decimal prices from the odds block (only markets Winner really sells)."""
-    if not o:
-        return {}
-    pr = {"1": o.get("h"), "x": o.get("d"), "2": o.get("a"), "o25": o.get("over25"), "u25": o.get("under25"),
-          "btts": o.get("btts_yes"), "nobtts": o.get("btts_no")}
-    pr.update(o.get("tg") or {})
-    return {k: v for k, v in pr.items() if v}
+def hc_probs(marg, s):
+    """Winner's 3-way handicap. s = the margin (home-away) that ties after the handicap. A: d>s, X: d==s, B: d<s."""
+    a = sum(p for d, p in marg.items() if d > s)
+    x = marg.get(s, 0.0)
+    b = sum(p for d, p in marg.items() if d < s)
+    return a, x, b
+
+
+def hc_eval(d, s):
+    return "A" if d > s else ("X" if d == s else "B")
+
+
+def _hc_labels(h, a, s):
+    """Plain-Hebrew meaning of Winner's 3-way handicap outcomes (A: d>s, X: d==s, B: d<s; d = home - away goals)."""
+    def not_lose(team, n):
+        return f"{team} לא מפסידה" if n == 1 else f"{team} לא מפסידה בהפרש {n} או יותר"
+    if s > 0:
+        return (f"{h} מנצחת בהפרש {s + 1} או יותר", f"{h} מנצחת בדיוק בהפרש {s}", not_lose(a, s))
+    L = -s
+    return (not_lose(h, L), f"{a} מנצחת בדיוק בהפרש {L}", f"{a} מנצחת בהפרש {L + 1} או יותר")
 
 
 def menu(row):
-    """All markets of one match, most probable first: key, label, p%, lift, Winner price/EV (if sold), sold flag."""
-    mk = (row.get("dist") or {}).get("mk")
-    if not mk:
+    """All Winner-sold selections of one match with model probability, price, EV and eligibility (price >= MIN_ODDS)."""
+    o, dist = row.get("odds"), row.get("dist")
+    if not o or not dist:
         return []
-    base = _base()
-    prices = winner_prices(row.get("odds"))
+    h, a = row["home"], row["away"]
     out = []
-    for k, p in mk.items():
-        b = base.get(k)
-        price = prices.get(k)
-        out.append(dict(key=k, label=MARKETS[k][0], p=p, base=b, lift=None if b is None else round(p - b, 1),
-                        price=price, ev=None if not price else round(p / 100 * price - 1, 3), on_winner=k in ON_WINNER))
+
+    def add(key, label, p, price, group):
+        if price:
+            out.append(dict(key=key, label=label, p=round(100 * p, 1), price=float(price), ev=round(p * float(price) - 1, 3),
+                            eligible=float(price) >= MIN_ODDS, group=group))
+
+    add("1", f"{h} מנצחת", row["pH"] / 100, o.get("h"), "תוצאה")
+    add("x", "תיקו", row["pD"] / 100, o.get("d"), "תוצאה")
+    add("2", f"{a} מנצחת", row["pA"] / 100, o.get("a"), "תוצאה")
+    mk = dist.get("mk") or {}
+    for k, price in (("o25", o.get("over25")), ("u25", o.get("under25")), ("btts", o.get("btts_yes")), ("nobtts", o.get("btts_no"))):
+        if price and k in mk:
+            add(k, MKT_LABEL[k], mk[k] / 100, price, "שערים")
+    for k, price in (o.get("tg") or {}).items():
+        if k in mk:
+            add(k, MKT_LABEL[k], mk[k] / 100, price, "שערים")
+    hc, marg = o.get("hc"), _marg(row)
+    if hc and marg:
+        pa, px, pb = hc_probs(marg, hc["s"])
+        labs = _hc_labels(h, a, hc["s"])
+        for k, p, lab, pr in (("A", pa, labs[0], hc["prices"][0]), ("X", px, labs[1], hc["prices"][1]), ("B", pb, labs[2], hc["prices"][2])):
+            add(f"hc:{hc['s']}:{k}", "יתרון: " + lab, p, pr, "יתרון")
     return sorted(out, key=lambda x: -x["p"])
 
 
-def day_picks(rows, day, top=8):
-    """rows: exported predictions. Returns the day's headline + lists."""
-    cand = []
+def day_picks(rows, day, top=6):
+    elig_all = []
     for r in rows:
         if r["date"] != day:
             continue
+        ko = (r.get("odds") or {}).get("kickoff")
         for m in menu(r):
-            if m["key"] in TRIVIAL or m["p"] < 100 * MIN_P or (m["lift"] is not None and m["lift"] < MIN_LIFT):
-                continue
-            cand.append(dict(m, date=r["date"], league=r["league"], home=r["home"], away=r["away"],
-                             kickoff=(r.get("odds") or {}).get("kickoff")))
-    # one line per match: its most probable qualifying market (a match shouldn't fill the list three times)
+            if m["eligible"]:
+                elig_all.append(dict(m, date=r["date"], league=r["league"], home=r["home"], away=r["away"], kickoff=ko))
     best = {}
-    for c in sorted(cand, key=lambda x: -x["p"]):
+    for c in sorted(elig_all, key=lambda x: (-x["p"], -x["ev"])):
         best.setdefault((c["home"], c["away"]), c)
-    safe = sorted(best.values(), key=lambda x: -x["p"])[:top]
-    # what Winner itself sells, even if less probable: highest-probability sold market per match
-    sold = []
-    for r in rows:
-        if r["date"] != day:
-            continue
-        ms = [m for m in menu(r) if m["on_winner"] and m["price"] and m["key"] in ("1", "2", "o25", "u25", "tg23", "tg4p", "tg01", "btts", "nobtts")]
-        if ms:
-            m = max(ms, key=lambda x: x["p"])
-            sold.append(dict(m, date=r["date"], league=r["league"], home=r["home"], away=r["away"], kickoff=(r.get("odds") or {}).get("kickoff")))
-    sold = sorted(sold, key=lambda x: -x["p"])[:top]
-    ev = sorted([dict(m, date=r["date"], league=r["league"], home=r["home"], away=r["away"], kickoff=(r.get("odds") or {}).get("kickoff"))
-                 for r in rows if r["date"] == day for m in menu(r) if m["price"] and m["key"] in ("1", "x", "2", "o25", "u25", "btts", "nobtts")],
-                key=lambda x: -x["ev"])[:5]
-    return dict(date=day, headline=safe[0] if safe else None, safe=safe, sold=sold, best_ev=ev)
+    top_list = sorted(best.values(), key=lambda x: (-x["p"], -x["ev"]))[:top]
+    # underdogs: price >= 3, the selection whose model probability most exceeds what the price implies
+    dogs = sorted([c for c in elig_all if c["price"] >= 3.0], key=lambda x: -x["ev"])[:4]
+    return dict(date=day, headline=top_list[0] if top_list else None, top=top_list, underdogs=dogs, min_odds=MIN_ODDS,
+                ceiling=round(100 * max((c["p"] / 100 for c in elig_all), default=0), 1))
 
 
-# ---------------------------------------------------------------- accountability: log every day's picks, settle them
-PCOLS = ["made", "date", "league", "home", "away", "key", "label", "p", "price", "rank", "result", "hit", "settled"]
+# ---------------------------------------------------------------- accountability
+PCOLS = ["made", "date", "league", "home", "away", "key", "label", "p", "price", "rank", "result", "hit", "settled", "pnl"]
 
 
 def _load():
@@ -93,24 +106,21 @@ def _load():
     for c in PCOLS:
         if c not in df:
             df[c] = None
-    for c in ("p", "price", "rank"):
+    for c in ("p", "price", "rank", "pnl"):
         df[c] = pd.to_numeric(df[c], errors="coerce")
     df["settled"] = df["settled"].astype(str).isin(["True", "true", "1"])
     df["hit"] = df["hit"].astype(str).isin(["True", "true", "1"])
-    for c in ("result",):
-        df[c] = df[c].astype(object).where(df[c].notna(), "")
+    df["result"] = df["result"].astype(object).where(df["result"].notna(), "")
     return df
 
 
 def record(rows, days):
-    """Log the top qualifying markets (headline + next ones) of each day once, before kickoff."""
     now = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None)
     led = _load()
     have = {(r.date, r.home, r.away, r.key) for r in led.itertuples()}
     new = []
     for d in days:
-        dp = day_picks(rows, d, top=5)
-        for i, c in enumerate(dp["safe"]):
+        for i, c in enumerate(day_picks(rows, d, top=3)["top"]):
             if (c["date"], c["home"], c["away"], c["key"]) in have:
                 continue
             ko = c.get("kickoff")
@@ -119,11 +129,39 @@ def record(rows, days):
                 if now >= dt.datetime.fromisoformat(c["date"]).replace(hour=hh, minute=mm) - dt.timedelta(hours=3, minutes=15):
                     continue
             new.append(dict(made=now.isoformat(timespec="minutes"), date=c["date"], league=c["league"], home=c["home"], away=c["away"],
-                            key=c["key"], label=c["label"], p=c["p"], price=c.get("price"), rank=i + 1, result="", hit=False, settled=False))
+                            key=c["key"], label=c["label"], p=c["p"], price=c["price"], rank=i + 1, result="", hit=False, settled=False, pnl=np.nan))
     if new:
         led = pd.concat([led, pd.DataFrame(new)], ignore_index=True)
         led.to_csv(PICKS_CSV, index=False, encoding="utf-8")
     return len(new)
+
+
+def _won(key, hg, ag):
+    d = hg - ag
+    if key == "1":
+        return hg > ag
+    if key == "x":
+        return hg == ag
+    if key == "2":
+        return ag > hg
+    if key == "o25":
+        return hg + ag >= 3
+    if key == "u25":
+        return hg + ag <= 2
+    if key == "tg01":
+        return hg + ag <= 1
+    if key == "tg23":
+        return 2 <= hg + ag <= 3
+    if key == "tg4p":
+        return hg + ag >= 4
+    if key == "btts":
+        return hg > 0 and ag > 0
+    if key == "nobtts":
+        return hg == 0 or ag == 0
+    if key.startswith("hc:"):
+        _, s, side = key.split(":")
+        return hc_eval(d, int(s)) == side
+    return False
 
 
 def settle(m):
@@ -140,15 +178,18 @@ def settle(m):
         if g.empty:
             continue
         hg, ag = int(g.iloc[0].hg), int(g.iloc[0].ag)
+        hit = _won(r.key, hg, ag)
         led.at[i, "result"] = f"{hg}-{ag}"
-        led.at[i, "hit"] = bool(MARKETS[r.key][1](hg, ag))
+        led.at[i, "hit"] = bool(hit)
+        led.at[i, "pnl"] = round(float(r.price) - 1, 2) if hit else -1.0
         led.at[i, "settled"] = True
     led.to_csv(PICKS_CSV, index=False, encoding="utf-8")
     s = led[led.settled]
     if s.empty:
         return dict(n=0, open=int(len(led)), recent=[])
+    head = s[s["rank"] == 1]
     return dict(n=int(len(s)), open=int((~led.settled).sum()), hits=int(s.hit.sum()), hit_rate=round(100 * float(s.hit.mean()), 1),
-                promised=round(float(s.p.mean()), 1),
-                headline=dict(n=int((s["rank"] == 1).sum()), hits=int(s[s["rank"] == 1].hit.sum())),
-                recent=[dict(date=r.date, home=r.home, away=r.away, label=r.label, p=r.p, result=r.result, hit=bool(r.hit), price=None if pd.isna(r.price) else r.price)
+                promised=round(float(s.p.mean()), 1), pnl=round(float(s.pnl.sum()), 2), roi=round(100 * float(s.pnl.sum()) / len(s), 1),
+                headline=dict(n=int(len(head)), hits=int(head.hit.sum()), pnl=round(float(head.pnl.sum()), 2)),
+                recent=[dict(date=r.date, home=r.home, away=r.away, label=r.label, p=r.p, price=r.price, result=r.result, hit=bool(r.hit), pnl=r.pnl)
                         for r in s.sort_values("date", ascending=False).head(30).itertuples()])

@@ -51,6 +51,13 @@ def parse(j):
             for o in outs:
                 if "2.5" in o.get("desc", ""):
                     e["over25" if "מעל" in o["desc"] else "under25"] = _price(o)
+        elif mp.startswith("הימור יתרון") and "תוצאת סיום" in mp and len(outs) == 3:
+            import re as _re
+            d0 = team_he.clean(outs[0].get("desc", ""))
+            mm = _re.search(r"\(([+-])\s*(\d+)\)", d0)
+            if mm:
+                sign, line = (1 if mm.group(1) == "+" else -1), int(mm.group(2))
+                e["hc"] = dict(s=-sign * line, labels=[team_he.clean(o.get("desc", "")) for o in outs], prices=[_price(o) for o in outs])
         elif mp.startswith("סך הכל שערים") and "תוצאת סיום" in mp:
             tg = {}
             for o in outs:
@@ -156,7 +163,7 @@ def _entry(e, r):
             continue
     return {"date": e["date"], "home": r.home, "away": r.away, "h": e["h"], "d": e["d"], "a": e["a"],
             "over25": e.get("over25"), "under25": e.get("under25"), "btts_yes": e.get("btts_yes"), "btts_no": e.get("btts_no"),
-            "cs": cs, "tg": e.get("tg"), "kickoff": _kick(e["time"]), "source": "Winner.co.il", "bookmakers": "Winner (single bookmaker)"}
+            "cs": cs, "tg": e.get("tg"), "hc": e.get("hc"), "kickoff": _kick(e["time"]), "source": "Winner.co.il", "bookmakers": "Winner (single bookmaker)"}
 
 
 EXTRA_JSON = DATA / "extra_fixtures.json"

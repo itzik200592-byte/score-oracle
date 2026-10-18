@@ -105,28 +105,28 @@ function viewToday() {
   return html;
 }
 
-/* ---------- view: daily strongest recommendation ---------- */
-function pickRow(x, showPrice = true) {
-  const priceTxt = x.price ? `Winner <b class="num">${Number(x.price).toFixed(2)}</b> · תוחלת <b class="num" style="color:${x.ev > 0 ? "var(--good)" : "var(--bad)"}">${x.ev > 0 ? "+" : ""}${(100 * x.ev).toFixed(0)}%</b>` : `<span class="noval">לא נמכר ב-Winner</span>`;
-  return `<article class="card" style="padding:12px"><div class="row"><div class="teams"><div class="team fav" style="direction:rtl;text-align:right;font-size:15.5px">${esc(x.label)}</div>
-    <div class="sline">${esc(x.home)} - ${esc(x.away)}</div><div class="sline">${x.kickoff ? `<span class="num">${x.kickoff}</span> · ` : ""}${esc(DATA.leagues[x.league])}${x.lift != null ? ` · מעל הבסיס <span class="num">+${x.lift}</span> נק'` : ""}</div>
-    ${showPrice ? `<div class="sline">${priceTxt}</div>` : ""}</div><div class="bigp"><b class="num">${x.p}%</b><small>סיכוי</small></div></div>
-    <button class="vbtn" style="margin-top:8px;min-height:40px" data-v="${x.date}|${x.home}|${x.away}">כל השווקים במשחק</button></article>`;
+/* ---------- view: daily recommendations (Winner only, odds 1.50+) ---------- */
+function pickRow(x, i) {
+  const ev = x.ev, evTxt = `<b class="num" style="color:${ev > 0 ? "var(--good)" : "var(--bad)"}">${ev > 0 ? "+" : ""}${Math.round(100 * ev)}%</b>`;
+  return `<article class="card ${i === 0 ? "S" : ""}" style="padding:12px"><div class="row"><div class="teams"><div class="team fav" style="direction:rtl;text-align:right;font-size:15.5px">${esc(x.label)}</div>
+    <div class="sline">${esc(x.home)} - ${esc(x.away)}</div><div class="sline">${x.kickoff ? `<span class="num">${x.kickoff}</span> · ` : ""}${esc(DATA.leagues[x.league])}</div>
+    <div class="sline">יחס Winner <b class="num">${Number(x.price).toFixed(2)}</b> · תוחלת לפי המודל ${evTxt}</div></div>
+    <div class="bigp"><b class="num">${x.p}%</b><small>סיכוי</small></div></div>
+    <button class="vbtn" style="margin-top:8px;min-height:40px" data-v="${x.date}|${x.home}|${x.away}">כל השווקים של Winner במשחק</button></article>`;
 }
 function viewDaily() {
   const days = Object.keys(DATA.daily || {}).sort();
   if (!days.length) return `<div class="empty">אין נתונים להמלצה היומית.</div>`;
   const pt = DATA.picks_track;
-  let html = `<div class="lead"><b>איך נבחרת ההמלצה:</b> מכל השווקים של כל משחק (כפל סיכוי, קבוצה מנצחת ומעל גול, שערי קבוצה, שער נקי, סך שערים), נבחר השוק עם הסיכוי הגבוה ביותר, בתנאי שהוא <b>גבוה מ-85% וגם גבוה בהרבה משכיחותו הרגילה</b> (כדי ש"מעל 0.5 שערים" לא יזכה כל יום). בבדיקה על 9,089 משחקים: <b>כשהמודל נתן 85%+, זה קרה בפועל ב-89-92%</b>, כלומר הוא שמרן.<br><b>הבעיה:</b> שווקים כמו "בית לא מפסידה" לא נמכרים ב-Winner. ב-Winner אפשר רק 1X2, מעל/מתחת 2.5, טווחי שערים ושתיהן מבקיעות, ושם היחס הנמוך מבטל את הרווח.</div>`;
-  if (pt && pt.n) html += `<div class="stats"><div class="stat"><b class="num">${pt.hits}/${pt.n}</b><small>המלצות 85%+ שפגעו</small><span class="sub num">${pt.hit_rate}% בפועל מול ${pt.promised}% שהובטח</span></div>${pt.headline && pt.headline.n ? `<div class="stat"><b class="num">${pt.headline.hits}/${pt.headline.n}</b><small>ההמלצה הראשית היומית</small><span class="sub">${pt.open} פתוחות</span></div>` : ""}</div>`;
-  else if (pt) html += `<div class="lead">מעקב: ${pt.open} המלצות 85%+ נרשמו ומחכות לתוצאות. כאן יופיע כמה מהן פגעו מול מה שהובטח.</div>`;
-  days.slice(0, 2).forEach((d, di) => {
+  let html = `<div class="lead"><b>כללי ההמלצה:</b> רק שווקים ש-Winner באמת מוכר (1X2, מעל/מתחת 2.5, טווחי שערים, שתיהן מבקיעות, והימור "יתרון"), ורק בחירה ביחס <b>1.50 ומעלה</b>. ההסתברות מחושבת מהמודל שנבדק על אלפי משחקים.<br><b>תקרה מתמטית:</b> ביחס 1.50 הסיכוי המשתמע הוא לכל היותר 66%, ועם המרווח של Winner בפועל כ-60%. <b>המלצה של 90% בתנאים האלה לא קיימת</b>, ואני לא ממציא אחת.<br>בבדיקה לאחור על 823 ימים: הבחירה הסבירה ביותר ביום (יחס 1.50+) פגעה ב-<b>62%</b>, והתשואה הייתה כמעט אפס מול יחסים ממוצעים בשוק, ושלילית ב-Winner בגלל המרווח שלו.</div>`;
+  if (pt && pt.n) html += `<div class="stats"><div class="stat"><b class="num">${pt.hits}/${pt.n}</b><small>המלצות שפגעו</small><span class="sub num">${pt.hit_rate}% בפועל מול ${pt.promised}% שהובטח</span></div><div class="stat"><b class="num" style="color:${pt.pnl < 0 ? "var(--bad)" : "var(--good)"}">${pt.pnl > 0 ? "+" : ""}${pt.pnl}</b><small>רווח ביחידות במחירי Winner</small><span class="sub num">תשואה ${pt.roi}% · ${pt.open} פתוחות</span></div></div>`;
+  else if (pt) html += `<div class="lead">מעקב: ${pt.open} המלצות נרשמו ומחכות לתוצאות. כאן יופיע כמה פגעו ומה הרווח ביחס Winner.</div>`;
+  days.slice(0, 2).forEach(d => {
     const t = DATA.daily[d];
     html += `<div class="day">${dayLabel(d)}</div>`;
-    if (t.headline) html += `<h2 style="margin-top:6px">ההמלצה החזקה</h2>` + pickRow(t.headline).replace('<article class="card"', '<article class="card S"');
-    else html += `<div class="lead">אין היום שוק שעומד בתנאים (85%+ וגבוה משכיחותו). זה לא תקלה: לפעמים אין המלצה חזקה.</div>`;
-    if (t.safe && t.safe.length > 1) html += `<h2>עוד בטוחים (אחד לכל משחק)</h2>` + t.safe.slice(1).map(x => pickRow(x)).join("");
-    if (t.sold && t.sold.length) html += `<h2>הכי סביר ממה ש-Winner מוכר</h2><div class="lead">מהשווקים ש-Winner באמת מוכר, זה הסביר ביותר בכל משחק. התוחלת שלילית כמעט תמיד: המחיר כבר מגלם את הסיכוי ועוד מרווח.</div>` + t.sold.slice(0, 6).map(x => pickRow(x)).join("");
+    if (!t.top || !t.top.length) { html += `<div class="lead">אין בחירה ביחס 1.50+ עם נתוני Winner למשחקי היום.</div>`; return; }
+    html += `<h2 style="margin-top:6px">ההמלצה החזקה</h2><div class="lead" style="margin:6px 0 10px">הסיכוי הגבוה ביותר ביום ביחס 1.50+: <b class="num">${t.top[0].p}%</b>. תקרת היום: ${t.ceiling}%.</div>` + t.top.map((x, i) => pickRow(x, i)).join("");
+    if (t.underdogs && t.underdogs.length) html += `<h2>אנדרדוגים (יחס 3+)</h2><div class="lead">בחירות ביחס 3 ומעלה שהמודל מעריך גבוה מהמחיר. <b>היסטורית הימורים כאלה הפסידו 14-24%</b>; ה"תוחלת" כאן היא של המודל בלבד.</div>` + t.underdogs.map(x => pickRow(x, -1)).join("");
   });
   return html;
 }
