@@ -86,12 +86,32 @@ def stake_pct(s):
 PCOLS = ["made", "date", "league", "home", "away", "market", "sel", "label", "odds", "model_p", "ev", "kickoff", "stake", "result", "pnl", "settled", "strategy"]
 
 
+_STR = ("made", "date", "league", "home", "away", "market", "sel", "label", "kickoff", "result", "strategy")
+
+
+def _load_paper():
+    """Paper ledger with explicit dtypes: a column that is still empty must not be inferred as float
+    (newer pandas refuses to write '2-0' into it, which broke the cloud run)."""
+    if not PAPER_CSV.exists():
+        return pd.DataFrame(columns=PCOLS)
+    led = pd.read_csv(PAPER_CSV, dtype={c: object for c in _STR})
+    for c in PCOLS:
+        if c not in led:
+            led[c] = None
+    for c in _STR:
+        led[c] = led[c].astype(object).where(led[c].notna(), "")
+    for c in ("odds", "model_p", "ev", "stake", "pnl"):
+        led[c] = pd.to_numeric(led[c], errors="coerce").astype(float)
+    led["settled"] = led["settled"].astype(str).isin(["True", "true", "1"])
+    if (led["strategy"] == "").any():
+        led.loc[led["strategy"] == "", "strategy"] = "model_ev"
+    return led
+
+
 def record(selections):
     """Log every flagged selection once (first time seen, before kickoff) as a 1-unit paper bet."""
     now = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None)
-    led = pd.read_csv(PAPER_CSV) if PAPER_CSV.exists() else pd.DataFrame(columns=PCOLS)
-    if "strategy" not in led:
-        led["strategy"] = "model_ev"
+    led = _load_paper()
     have = {(r.date, r.home, r.away, r.market, r.sel, r.strategy) for r in led.itertuples()}
     new = []
     for s in selections:
@@ -115,15 +135,13 @@ def record(selections):
 
 
 def settle(m):
-    if not PAPER_CSV.exists():
-        return None
-    led = pd.read_csv(PAPER_CSV)
+    led = _load_paper()
     if led.empty:
         return None
     res = m[m.played][["league", "date", "home", "away", "hg", "ag"]].copy()
     res["date_r"] = res.date.dt.date.astype(str)
     for i, r in led.iterrows():
-        if r.settled is True or str(r.settled) == "True":
+        if bool(r.settled):
             continue
         g = res[(res.league == r.league) & (res.home == r.home) & (res.away == r.away)]
         g = g[(pd.to_datetime(g.date_r) - pd.Timestamp(r.date)).abs() <= pd.Timedelta(days=3)]
@@ -138,16 +156,14 @@ def settle(m):
         led.at[i, "pnl"] = round(float(r.stake) * (float(r.odds) - 1), 2) if won else -float(r.stake)
         led.at[i, "settled"] = True
     led.to_csv(PAPER_CSV, index=False, encoding="utf-8")
-    if "strategy" not in led:
-        led["strategy"] = "model_ev"
-    s = led[led.settled.astype(str) == "True"]
+    s = led[led.settled]
     by = {}
     for mk, g in s.groupby("market"):
         by[mk] = dict(n=int(len(g)), won=int((g.pnl > 0).sum()), pnl=round(float(g.pnl.sum()), 2), roi=round(100 * float(g.pnl.sum()) / max(len(g), 1), 1))
     by_strat = {}
     for st, g in s.groupby("strategy"):
         by_strat[st] = dict(n=int(len(g)), won=int((g.pnl > 0).sum()), pnl=round(float(g.pnl.sum()), 2), roi=round(100 * float(g.pnl.sum()) / max(len(g), 1), 1),
-                            open=int(((led.strategy == st) & (led.settled.astype(str) != "True")).sum()))
+                            open=int(((led.strategy == st) & (~led.settled)).sum()))
     return dict(n=int(len(s)), open=int(len(led) - len(s)), won=int((s.pnl > 0).sum()), pnl=round(float(s.pnl.sum()), 2),
                 roi=round(100 * float(s.pnl.sum()) / max(len(s), 1), 1), by_market=by, by_strategy=by_strat,
                 recent=[dict(date=r.date, home=r.home, away=r.away, label=r.label, odds=r.odds, model_p=r.model_p, result=r.result, pnl=r.pnl, strategy=r.strategy)
