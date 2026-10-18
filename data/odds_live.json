@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-10-18T18:44+03:00",
+ "fetched_at": "2026-10-18T18:59+03:00",
  "matches": [
   {
    "date": "2026-10-18",
@@ -46,6 +46,19 @@
     "tg01": 4.2,
     "tg23": 2.0,
     "tg4p": 2.3
+   },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "מילאן (-1)",
+     "(+1) X",
+     "אטאלנטה (+1)"
+    ],
+    "prices": [
+     2.45,
+     3.35,
+     1.85
+    ]
    },
    "kickoff": "19:00",
    "source": "Winner.co.il",
@@ -97,6 +110,19 @@
     "tg23": 1.9,
     "tg4p": 3.9
    },
+   "hc": {
+    "s": -1,
+    "labels": [
+     "פארמה (+1)",
+     "(-1) X",
+     "טורינו (-1)"
+    ],
+    "prices": [
+     1.45,
+     3.3,
+     4.0
+    ]
+   },
    "kickoff": "21:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -146,6 +172,19 @@
     "tg01": 2.95,
     "tg23": 1.9,
     "tg4p": 3.2
+   },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "מונזה (-1)",
+     "(+1) X",
+     "קליארי (+1)"
+    ],
+    "prices": [
+     3.95,
+     3.45,
+     1.4
+    ]
    },
    "kickoff": "19:30",
    "source": "Winner.co.il",
@@ -197,6 +236,19 @@
     "tg23": 1.9,
     "tg4p": 2.7
    },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "יובנטוס (-1)",
+     "(+1) X",
+     "לאציו (+1)"
+    ],
+    "prices": [
+     2.2,
+     3.15,
+     2.1
+    ]
+   },
    "kickoff": "21:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -246,6 +298,19 @@
     "tg01": 3.6,
     "tg23": 1.9,
     "tg4p": 2.7
+   },
+   "hc": {
+    "s": -1,
+    "labels": [
+     "נוטינגהאם פורסט (+1)",
+     "(-1) X",
+     "ארסנל (-1)"
+    ],
+    "prices": [
+     2.05,
+     3.2,
+     2.25
+    ]
    },
    "kickoff": "18:30",
    "source": "Winner.co.il",
@@ -297,6 +362,19 @@
     "tg23": 2.05,
     "tg4p": 2.1
    },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "טוטנהאם (-1)",
+     "(+1) X",
+     "קובנטרי (+1)"
+    ],
+    "prices": [
+     1.95,
+     3.3,
+     2.3
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -346,6 +424,19 @@
     "tg01": 5.3,
     "tg23": 2.0,
     "tg4p": 2.05
+   },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "הפועל באר שבע (-1)",
+     "(+1) X",
+     "הפועל ירושלים (+1)"
+    ],
+    "prices": [
+     1.45,
+     3.8,
+     3.4
+    ]
    },
    "kickoff": "20:15",
    "source": "Winner.co.il",
@@ -397,6 +488,19 @@
     "tg23": 2.0,
     "tg4p": 2.1
    },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "בית\"ר ירושלים (-1)",
+     "(+1) X",
+     "מכבי תל אביב (+1)"
+    ],
+    "prices": [
+     5.0,
+     4.6,
+     1.2
+    ]
+   },
    "kickoff": "20:30",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -443,6 +547,7 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": null,
    "kickoff": "21:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -489,6 +594,7 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": null,
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -538,6 +644,19 @@
     "tg01": 3.65,
     "tg23": 1.95,
     "tg4p": 2.6
+   },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "לה האבר (-1)",
+     "(+1) X",
+     "אוקזר (+1)"
+    ],
+    "prices": [
+     3.55,
+     3.5,
+     1.45
+    ]
    },
    "kickoff": "18:15",
    "source": "Winner.co.il",
@@ -589,6 +708,19 @@
     "tg23": 1.9,
     "tg4p": 2.9
    },
+   "hc": {
+    "s": -1,
+    "labels": [
+     "לוריין (+1)",
+     "(-1) X",
+     "מונאקו (-1)"
+    ],
+    "prices": [
+     1.55,
+     3.35,
+     3.2
+    ]
+   },
    "kickoff": "18:15",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -638,6 +770,19 @@
     "tg01": 4.1,
     "tg23": 2.0,
     "tg4p": 2.3
+   },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "ליון (-1)",
+     "(+1) X",
+     "ניס (+1)"
+    ],
+    "prices": [
+     2.7,
+     3.35,
+     1.7
+    ]
    },
    "kickoff": "21:45",
    "source": "Winner.co.il",
@@ -689,6 +834,19 @@
     "tg23": 2.0,
     "tg4p": 2.3
    },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "פ.צ. פאריס (-1)",
+     "(+1) X",
+     "ראן (+1)"
+    ],
+    "prices": [
+     3.15,
+     3.5,
+     1.55
+    ]
+   },
    "kickoff": "18:15",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -735,6 +893,7 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": null,
    "kickoff": "21:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -784,6 +943,19 @@
     "tg01": 2.4,
     "tg23": 1.9,
     "tg4p": 4.3
+   },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "סלטה ויגו (-1)",
+     "(+1) X",
+     "אלאבס (+1)"
+    ],
+    "prices": [
+     3.8,
+     3.15,
+     1.5
+    ]
    },
    "kickoff": "17:15",
    "source": "Winner.co.il",
@@ -835,6 +1007,19 @@
     "tg23": 1.9,
     "tg4p": 4.6
    },
+   "hc": {
+    "s": -1,
+    "labels": [
+     "חטאפה (+1)",
+     "(-1) X",
+     "ראיו וייקאנו (-1)"
+    ],
+    "prices": [
+     1.35,
+     3.35,
+     4.7
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -884,6 +1069,19 @@
     "tg01": 4.3,
     "tg23": 2.0,
     "tg4p": 2.3
+   },
+   "hc": {
+    "s": -1,
+    "labels": [
+     "מלאגה (+1)",
+     "(-1) X",
+     "ריאל סוסיאדד (-1)"
+    ],
+    "prices": [
+     1.5,
+     3.6,
+     3.35
+    ]
    },
    "kickoff": "19:30",
    "source": "Winner.co.il",
@@ -935,6 +1133,19 @@
     "tg23": 2.2,
     "tg4p": 1.8
    },
+   "hc": {
+    "s": 2,
+    "labels": [
+     "ריאל מדריד (-2)",
+     "(+2) X",
+     "סביליה (+2)"
+    ],
+    "prices": [
+     2.25,
+     3.55,
+     1.9
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -981,6 +1192,7 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": null,
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1027,6 +1239,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "לך פוזנן (+1)",
+     "(-1) X",
+     "סנדרלנד (-1)"
+    ],
+    "prices": [
+     2.0,
+     3.15,
+     2.3
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1073,6 +1298,19 @@
     "0-6": 35.0
    },
    "tg": null,
+   "hc": {
+    "s": -2,
+    "labels": [
+     "אופי כרתים (+2)",
+     "(-2) X",
+     "באייר לברקוזן (-2)"
+    ],
+    "prices": [
+     1.85,
+     3.6,
+     2.3
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1119,6 +1357,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "דינמו זגרב (-1)",
+     "(+1) X",
+     "ניימיכן (+1)"
+    ],
+    "prices": [
+     2.4,
+     3.4,
+     1.85
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1165,6 +1416,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "פרנצוורוש (-1)",
+     "(+1) X",
+     "טורנסה (+1)"
+    ],
+    "prices": [
+     1.75,
+     3.25,
+     2.65
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1211,6 +1475,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 2,
+    "labels": [
+     "סן ז'ילואז (-2)",
+     "(+2) X",
+     "הפועל באר שבע (+2)"
+    ],
+    "prices": [
+     2.6,
+     3.5,
+     1.75
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1257,6 +1534,19 @@
     "0-6": 90.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "אררט ארמניה (+1)",
+     "(-1) X",
+     "אלקמאר (-1)"
+    ],
+    "prices": [
+     2.2,
+     3.3,
+     2.0
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1303,6 +1593,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "בורנמות' (-1)",
+     "(+1) X",
+     "מילאן (+1)"
+    ],
+    "prices": [
+     3.35,
+     3.5,
+     1.5
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1349,6 +1652,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "ביאליסטוק (+1)",
+     "(-1) X",
+     "אנדרלכט (-1)"
+    ],
+    "prices": [
+     1.45,
+     3.5,
+     3.55
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1395,6 +1711,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "סלטיק (+1)",
+     "(-1) X",
+     "סלטה ויגו (-1)"
+    ],
+    "prices": [
+     1.45,
+     3.5,
+     3.65
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1441,6 +1770,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "לילסטרום (+1)",
+     "(-1) X",
+     "ריאל סוסיאדד (-1)"
+    ],
+    "prices": [
+     2.15,
+     3.25,
+     2.05
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1487,6 +1829,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "יובנטוס (-1)",
+     "(+1) X",
+     "ראן (+1)"
+    ],
+    "prices": [
+     2.25,
+     3.2,
+     2.05
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1533,6 +1888,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "שטורם גראץ (+1)",
+     "(-1) X",
+     "מארסיי (-1)"
+    ],
+    "prices": [
+     1.55,
+     3.45,
+     3.15
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1579,6 +1947,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "אולימפיאקוס (-1)",
+     "(+1) X",
+     "ספרטה פראג (+1)"
+    ],
+    "prices": [
+     2.2,
+     3.2,
+     2.05
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1625,6 +2006,19 @@
     "0-6": 70.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "אומוניה ניקוסיה (+1)",
+     "(-1) X",
+     "בנפיקה ליסבון (-1)"
+    ],
+    "prices": [
+     2.55,
+     3.25,
+     1.85
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1671,6 +2065,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "צלייה (+1)",
+     "(-1) X",
+     "זלצבורג (-1)"
+    ],
+    "prices": [
+     1.75,
+     3.4,
+     2.6
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1717,6 +2124,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "בשיקטאש (-1)",
+     "(+1) X",
+     "קריסטל פאלאס (+1)"
+    ],
+    "prices": [
+     3.2,
+     3.6,
+     1.5
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1763,6 +2183,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "הופנהיים (-1)",
+     "(+1) X",
+     "ליון (+1)"
+    ],
+    "prices": [
+     2.9,
+     3.55,
+     1.6
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1809,6 +2242,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "ויקטוריה פלזן (-1)",
+     "(+1) X",
+     "לבסקי סופיה (+1)"
+    ],
+    "prices": [
+     2.45,
+     3.3,
+     1.85
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1858,6 +2304,19 @@
     "tg01": 6.2,
     "tg23": 2.2,
     "tg4p": 1.8
+   },
+   "hc": {
+    "s": -1,
+    "labels": [
+     "סבאח (+1)",
+     "(-1) X",
+     "בורוסיה דורטמונד (-1)"
+    ],
+    "prices": [
+     3.1,
+     3.55,
+     1.55
+    ]
    },
    "kickoff": "19:45",
    "source": "Winner.co.il",
@@ -1909,6 +2368,19 @@
     "tg23": 2.4,
     "tg4p": 1.6
    },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "רומא (-1)",
+     "(+1) X",
+     "סלובן ברטיסלבה (+1)"
+    ],
+    "prices": [
+     1.3,
+     4.0,
+     4.4
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -1958,6 +2430,19 @@
     "tg01": 4.4,
     "tg23": 2.0,
     "tg4p": 2.2
+   },
+   "hc": {
+    "s": 2,
+    "labels": [
+     "פנרבחצ'ה (-2)",
+     "(+2) X",
+     "סלביה פראג (+2)"
+    ],
+    "prices": [
+     4.35,
+     4.0,
+     1.3
+    ]
    },
    "kickoff": "19:45",
    "source": "Winner.co.il",
@@ -2009,6 +2494,19 @@
     "tg23": 2.45,
     "tg4p": 1.6
    },
+   "hc": {
+    "s": 2,
+    "labels": [
+     "מנצ'סטר סיטי (-2)",
+     "(+2) X",
+     "א.א.ק. אתונה (+2)"
+    ],
+    "prices": [
+     1.45,
+     3.75,
+     3.4
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2058,6 +2556,19 @@
     "tg01": 5.0,
     "tg23": 2.1,
     "tg4p": 2.0
+   },
+   "hc": {
+    "s": 2,
+    "labels": [
+     "ליברפול (-2)",
+     "(+2) X",
+     "ויאריאל (+2)"
+    ],
+    "prices": [
+     3.45,
+     3.7,
+     1.45
+    ]
    },
    "kickoff": "22:00",
    "source": "Winner.co.il",
@@ -2109,6 +2620,19 @@
     "tg23": 2.9,
     "tg4p": 1.3
    },
+   "hc": {
+    "s": -1,
+    "labels": [
+     "פאריס סן ז'רמן (+1)",
+     "(-1) X",
+     "ברצלונה (-1)"
+    ],
+    "prices": [
+     1.4,
+     4.2,
+     3.4
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2158,6 +2682,19 @@
     "tg01": 4.8,
     "tg23": 2.05,
     "tg4p": 2.1
+   },
+   "hc": {
+    "s": 2,
+    "labels": [
+     "פורטו (-2)",
+     "(+2) X",
+     "פ.ס.וו. איינדהובן (+2)"
+    ],
+    "prices": [
+     4.1,
+     3.8,
+     1.35
+    ]
    },
    "kickoff": "22:00",
    "source": "Winner.co.il",
@@ -2209,6 +2746,19 @@
     "tg23": 2.1,
     "tg4p": 2.0
    },
+   "hc": {
+    "s": 2,
+    "labels": [
+     "נאפולי (-2)",
+     "(+2) X",
+     "בודו גלימט (+2)"
+    ],
+    "prices": [
+     3.9,
+     4.0,
+     1.35
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2255,6 +2805,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "קומו (-1)",
+     "(+1) X",
+     "מנצ'סטר יונייטד (+1)"
+    ],
+    "prices": [
+     3.4,
+     3.6,
+     1.5
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2305,6 +2868,19 @@
     "tg23": 2.05,
     "tg4p": 2.1
    },
+   "hc": {
+    "s": 1,
+    "labels": [
+     "שטוטגרט (-1)",
+     "(+1) X",
+     "אתלטיקו מדריד (+1)"
+    ],
+    "prices": [
+     5.0,
+     4.0,
+     1.25
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2351,6 +2927,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "ליל (-1)",
+     "(+1) X",
+     "גלאטסראיי (+1)"
+    ],
+    "prices": [
+     3.35,
+     3.6,
+     1.5
+    ]
+   },
    "kickoff": "19:45",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2397,6 +2986,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "קלאב ברוז' (-1)",
+     "(+1) X",
+     "לאנס (+1)"
+    ],
+    "prices": [
+     3.1,
+     3.6,
+     1.55
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2443,6 +3045,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 2,
+    "labels": [
+     "אסטון וילה (-2)",
+     "(+2) X",
+     "ויקינג (+2)"
+    ],
+    "prices": [
+     2.15,
+     3.65,
+     1.95
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2489,6 +3104,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 2,
+    "labels": [
+     "אינטר (-2)",
+     "(+2) X",
+     "שחטאר דונייצק (+2)"
+    ],
+    "prices": [
+     2.05,
+     3.6,
+     2.05
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2535,6 +3163,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "ביירן מינכן (-1)",
+     "(+1) X",
+     "ארסנל (+1)"
+    ],
+    "prices": [
+     3.2,
+     3.6,
+     1.5
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2581,6 +3222,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 2,
+    "labels": [
+     "ריאל מדריד (-2)",
+     "(+2) X",
+     "לייפציג (+2)"
+    ],
+    "prices": [
+     2.2,
+     3.75,
+     1.9
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2627,6 +3281,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 2,
+    "labels": [
+     "ספורטינג ליסבון (-2)",
+     "(+2) X",
+     "לאסק לינץ (+2)"
+    ],
+    "prices": [
+     2.1,
+     3.6,
+     2.0
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2673,6 +3340,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": 1,
+    "labels": [
+     "ריאל בטיס (-1)",
+     "(+1) X",
+     "פיינורד (+1)"
+    ],
+    "prices": [
+     1.95,
+     3.5,
+     2.2
+    ]
+   },
    "kickoff": "22:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
@@ -2719,6 +3399,19 @@
     "0-6": 100.0
    },
    "tg": null,
+   "hc": {
+    "s": -1,
+    "labels": [
+     "לבאנטה (+1)",
+     "(-1) X",
+     "אתלטיק בילבאו (-1)"
+    ],
+    "prices": [
+     1.55,
+     3.35,
+     3.3
+    ]
+   },
    "kickoff": "21:00",
    "source": "Winner.co.il",
    "bookmakers": "Winner (single bookmaker)"
