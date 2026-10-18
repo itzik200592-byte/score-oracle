@@ -51,6 +51,18 @@ def parse(j):
             for o in outs:
                 if "2.5" in o.get("desc", ""):
                     e["over25" if "מעל" in o["desc"] else "under25"] = _price(o)
+        elif mp.startswith("סך הכל שערים") and "תוצאת סיום" in mp:
+            tg = {}
+            for o in outs:
+                d_ = team_he.clean(o.get("desc", "")).replace(" ", "")
+                if d_ in ("1-0", "0-1"):
+                    tg["tg01"] = _price(o)
+                elif d_ in ("3-2", "2-3"):
+                    tg["tg23"] = _price(o)
+                elif d_.startswith("4"):
+                    tg["tg4p"] = _price(o)
+            if len(tg) == 3:
+                e["tg"] = tg
         elif mp.startswith("האם כל קבוצה תבקיע") and "תוצאת סיום" in mp:
             for o in outs:
                 e["btts_yes" if o.get("desc", "").strip() == "כן" else "btts_no"] = _price(o)
@@ -144,7 +156,7 @@ def _entry(e, r):
             continue
     return {"date": e["date"], "home": r.home, "away": r.away, "h": e["h"], "d": e["d"], "a": e["a"],
             "over25": e.get("over25"), "under25": e.get("under25"), "btts_yes": e.get("btts_yes"), "btts_no": e.get("btts_no"),
-            "cs": cs, "kickoff": _kick(e["time"]), "source": "Winner.co.il", "bookmakers": "Winner (single bookmaker)"}
+            "cs": cs, "tg": e.get("tg"), "kickoff": _kick(e["time"]), "source": "Winner.co.il", "bookmakers": "Winner (single bookmaker)"}
 
 
 EXTRA_JSON = DATA / "extra_fixtures.json"

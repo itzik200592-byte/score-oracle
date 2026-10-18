@@ -4,7 +4,7 @@ const DAYS = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", 
 const LG_ORDER = ["IL", "CL", "EL", "PL", "LL", "SA", "L1"];
 let DATA = null;
 let view = safe(() => localStorage.getItem("view")) || "today";
-let chip = { stars: "all", all: "all" };
+let chip = { stars: "daily", all: "all" };
 document.getElementById("run").href = `https://github.com/${REPO}/actions/workflows/oracle.yml`;
 
 function safe(f) { try { return f(); } catch (_) { return null; } }
@@ -105,13 +105,40 @@ function viewToday() {
   return html;
 }
 
+/* ---------- view: daily strongest recommendation ---------- */
+function pickRow(x, showPrice = true) {
+  const priceTxt = x.price ? `Winner <b class="num">${Number(x.price).toFixed(2)}</b> · תוחלת <b class="num" style="color:${x.ev > 0 ? "var(--good)" : "var(--bad)"}">${x.ev > 0 ? "+" : ""}${(100 * x.ev).toFixed(0)}%</b>` : `<span class="noval">לא נמכר ב-Winner</span>`;
+  return `<article class="card" style="padding:12px"><div class="row"><div class="teams"><div class="team fav" style="direction:rtl;text-align:right;font-size:15.5px">${esc(x.label)}</div>
+    <div class="sline">${esc(x.home)} - ${esc(x.away)}</div><div class="sline">${x.kickoff ? `<span class="num">${x.kickoff}</span> · ` : ""}${esc(DATA.leagues[x.league])}${x.lift != null ? ` · מעל הבסיס <span class="num">+${x.lift}</span> נק'` : ""}</div>
+    ${showPrice ? `<div class="sline">${priceTxt}</div>` : ""}</div><div class="bigp"><b class="num">${x.p}%</b><small>סיכוי</small></div></div>
+    <button class="vbtn" style="margin-top:8px;min-height:40px" data-v="${x.date}|${x.home}|${x.away}">כל השווקים במשחק</button></article>`;
+}
+function viewDaily() {
+  const days = Object.keys(DATA.daily || {}).sort();
+  if (!days.length) return `<div class="empty">אין נתונים להמלצה היומית.</div>`;
+  const pt = DATA.picks_track;
+  let html = `<div class="lead"><b>איך נבחרת ההמלצה:</b> מכל השווקים של כל משחק (כפל סיכוי, קבוצה מנצחת ומעל גול, שערי קבוצה, שער נקי, סך שערים), נבחר השוק עם הסיכוי הגבוה ביותר, בתנאי שהוא <b>גבוה מ-85% וגם גבוה בהרבה משכיחותו הרגילה</b> (כדי ש"מעל 0.5 שערים" לא יזכה כל יום). בבדיקה על 9,089 משחקים: <b>כשהמודל נתן 85%+, זה קרה בפועל ב-89-92%</b>, כלומר הוא שמרן.<br><b>הבעיה:</b> שווקים כמו "בית לא מפסידה" לא נמכרים ב-Winner. ב-Winner אפשר רק 1X2, מעל/מתחת 2.5, טווחי שערים ושתיהן מבקיעות, ושם היחס הנמוך מבטל את הרווח.</div>`;
+  if (pt && pt.n) html += `<div class="stats"><div class="stat"><b class="num">${pt.hits}/${pt.n}</b><small>המלצות 85%+ שפגעו</small><span class="sub num">${pt.hit_rate}% בפועל מול ${pt.promised}% שהובטח</span></div>${pt.headline && pt.headline.n ? `<div class="stat"><b class="num">${pt.headline.hits}/${pt.headline.n}</b><small>ההמלצה הראשית היומית</small><span class="sub">${pt.open} פתוחות</span></div>` : ""}</div>`;
+  else if (pt) html += `<div class="lead">מעקב: ${pt.open} המלצות 85%+ נרשמו ומחכות לתוצאות. כאן יופיע כמה מהן פגעו מול מה שהובטח.</div>`;
+  days.slice(0, 2).forEach((d, di) => {
+    const t = DATA.daily[d];
+    html += `<div class="day">${dayLabel(d)}</div>`;
+    if (t.headline) html += `<h2 style="margin-top:6px">ההמלצה החזקה</h2>` + pickRow(t.headline).replace('<article class="card"', '<article class="card S"');
+    else html += `<div class="lead">אין היום שוק שעומד בתנאים (85%+ וגבוה משכיחותו). זה לא תקלה: לפעמים אין המלצה חזקה.</div>`;
+    if (t.safe && t.safe.length > 1) html += `<h2>עוד בטוחים (אחד לכל משחק)</h2>` + t.safe.slice(1).map(x => pickRow(x)).join("");
+    if (t.sold && t.sold.length) html += `<h2>הכי סביר ממה ש-Winner מוכר</h2><div class="lead">מהשווקים ש-Winner באמת מוכר, זה הסביר ביותר בכל משחק. התוחלת שלילית כמעט תמיד: המחיר כבר מגלם את הסיכוי ועוד מרווח.</div>` + t.sold.slice(0, 6).map(x => pickRow(x)).join("");
+  });
+  return html;
+}
+
 /* ---------- view: stars ---------- */
 function viewStars(chips) {
   chips.hidden = false;
   const all = DATA.predictions.filter(p => p.odds && p.odds.star && p.date >= todayIL());
-  const opts = [["all", "הכול"], ["today", "היום"], ["value", "יתרון מול השוק"]];
+  const opts = [["daily", "המלצת היום"], ["all", "כוכבי יחס 1.5+"], ["today", "כוכבים היום"], ["value", "יתרון מול השוק"]];
   chips.innerHTML = opts.map(([k, t]) => `<button class="chip" data-c="${k}" aria-pressed="${chip.stars === k}">${t}</button>`).join("");
   chips.querySelectorAll(".chip").forEach(b => b.onclick = () => { chip.stars = b.dataset.c; render(); });
+  if (chip.stars === "daily") return viewDaily();
   let rows = all;
   if (chip.stars === "today") rows = all.filter(p => p.date === (upcomingDays()[0] || todayIL()));
   if (chip.stars === "value") rows = all.filter(p => p.odds.star.value);

@@ -5,6 +5,7 @@ from .config import WEIGHTS_JSON, LEDGER_CSV, ADJ_JSON, OUT, LEAGUES
 from .models import Suite, COMPONENTS, outcome_probs, over25, btts
 from .evaluate import blend, group_of, GROUPS
 from .sniper import pick, top_k, tier
+from .markets import market_probs_fast
 from .models import score_matrix, DEFAULT_RHO, BIG4
 from .odds import load_live, devig_power, lambdas_from_probs, p_over_from, LIVE_MARKET_WEIGHT
 from .names import norm
@@ -48,6 +49,7 @@ def distribution(P):
         cs_home=round(100 * float(P[_JJ == 0].sum()), 1), cs_away=round(100 * float(P[_II == 0].sum()), 1),
         home_by2=round(100 * float(P[margin >= 2].sum()), 1), away_by2=round(100 * float(P[margin <= -2].sum()), 1),
         exp_total=round(mean_t, 2), likely_total=int(np.argmax(tp)),
+        mk={k: round(100 * v, 1) for k, v in market_probs_fast(P).items()},
         top=[dict(s=f"{i}-{j}", p=round(100 * pr, 1)) for pr, i, j in flat[:8]])
 
 

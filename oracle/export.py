@@ -57,7 +57,7 @@ def _attach_odds(m, rows):
         if key in live:
             e = live[key]
             o = dict(h=e["h"], d=e["d"], a=e["a"], src=e.get("source") or "live", at=fetched)
-            for k in ("over25", "under25", "btts_yes", "btts_no", "kickoff"):
+            for k in ("over25", "under25", "btts_yes", "btts_no", "kickoff", "tg"):
                 if e.get(k):
                     o[k] = e[k]
             cs = (e.get("cs") or {}).get(row["pick"].replace("-", "-"))
@@ -162,6 +162,14 @@ def export(m, pred, ledger=True):
     if ledger:
         value.record(vsel)
     paper = value.settle(m)
+    from . import picks
+    days = sorted({r["date"] for r in rows if r["date"] >= str(pd.Timestamp.now().date())})[:3]
+    if ledger:
+        picks.record(rows, days)
+    picks_track = picks.settle(m)
+    daily = {d: picks.day_picks(rows, d) for d in days}
+    for r in rows:   # per-match market menu (probabilities + Winner prices) for the verdict sheet
+        r["menu"] = picks.menu(r)[:40]
     bt = None
     f = OUT / "backtest_report.json"
     if f.exists():
@@ -192,7 +200,7 @@ def export(m, pred, ledger=True):
                 leagues={k: v["he"] for k, v in LEAGUES.items()}, predictions=rows,
                 ledger=_ledger_stats(m), track=track.export_block(m), backtest=bt, coverage=cov, calib=calib, last_result=fresh, stale=stale,
                 value=[v for v in vsel if v["flag"] or v["surprise"] or v.get("sharp_flag") or "favourite" in v["strategies"]][:120], paper=paper,
-                sharp_available=bool(sharp.key()), sharp_matches=sharp_n,
+                sharp_available=bool(sharp.key()), sharp_matches=sharp_n, daily=daily, picks_track=picks_track,
                 value_truth=dict(note="backtest 2022-2026, 6,673 matches, average market odds (Winner margin is higher)", all_ev=-13.9, longshots=-23.6, favourites=-1.4, ou=-7.9))
     (DOCS / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     return DOCS / "data.json"

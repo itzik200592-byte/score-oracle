@@ -56,6 +56,7 @@ def build(fast=False):
     for lg, g in fr["fd"].groupby("league"):
         for n in pd.unique(pd.concat([g.home_raw, g.away_raw])):
             rs.register(n, lg)
+    rs.register("Deportivo", "LL")   # canonical spelling of football-data's 'La Coruna' (aliased in names.py)
     il = fr["tsdb"]
     if not il.empty:
         # exact aliases only: fuzzy-resolving here once merged Maccabi Haifa into Maccabi Raina

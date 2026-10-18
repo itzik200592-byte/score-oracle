@@ -41,7 +41,7 @@ _ALIAS_RAW = {
     "PSV Eindhoven": "PSV", "AFC Ajax": "Ajax", "Galatasaray SK": "Galatasaray", "Club Brugge KV": "Club Brugge",
     "FC Copenhagen": "Copenhagen", "FC Kobenhavn": "Copenhagen", "Qarabag Agdam FK": "Qarabag",
     "SK Slavia Praha": "Slavia Praha", "FK Bodo/Glimt": "Bodo/Glimt", "Bodo Glimt": "Bodo/Glimt",
-    "Ferencvarosi TC": "Ferencvaros", "Lokomotiv Moskva": "Lokomotiv Moscow", "Paphos FC": "Paphos", "FC Kairat Almaty": "Kairat", "Kairat Almaty": "Kairat", "Pafos": "Paphos",
+    "La Coruna": "Deportivo", "Deportivo La Coruna": "Deportivo", "RC Deportivo": "Deportivo", "Ferencvarosi TC": "Ferencvaros", "Lokomotiv Moskva": "Lokomotiv Moscow", "Paphos FC": "Paphos", "FC Kairat Almaty": "Kairat", "Kairat Almaty": "Kairat", "Pafos": "Paphos",
     "FK Kairat": "Kairat", "Sporting Clube de Braga": "Braga", "SC Braga": "Braga", "Rangers FC": "Rangers",
     "Glasgow Rangers": "Rangers", "FC Red Bull Salzburg": "RB Salzburg", "Red Bull Salzburg": "RB Salzburg",
     "Olympiakos Piraeus": "Olympiakos", "Olympiacos Piraeus": "Olympiakos", "Slavia Prague": "Slavia Praha",
