@@ -1,9 +1,9 @@
 made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result,pnl,settled,strategy
 2026-10-17T14:02,2026-10-21,LL,Levante,Ath Bilbao,1x2,h,Levante,3.25,39.0,26.8,21:00,1.0,,,False,model_ev
 2026-10-17T14:02,2026-10-20,CL,Sabah FK,Dortmund,1x2,h,Sabah FK,7.8,15.0,17.0,19:45,1.0,,,False,model_ev
-2026-10-17T14:02,2026-10-17,IL,Hapoel Tel-Aviv,Ironi Tiberias,1x2,a,Ironi Tiberias,10.5,11.0,15.5,18:45,1.0,,,False,model_ev
+2026-10-17T14:02,2026-10-17,IL,Hapoel Tel-Aviv,Ironi Tiberias,1x2,a,Ironi Tiberias,10.5,11.0,15.5,18:45,1.0,1-0,-1.0,True,model_ev
 2026-10-17T14:02,2026-10-21,CL,Lille,Galatasaray,1x2,h,Lille,2.15,51.0,9.7,19:45,1.0,,,False,model_ev
-2026-10-17T14:02,2026-10-17,IL,Hapoel Tel-Aviv,Ironi Tiberias,1x2,d,תיקו,6.8,16.0,8.8,18:45,1.0,,,False,model_ev
+2026-10-17T14:02,2026-10-17,IL,Hapoel Tel-Aviv,Ironi Tiberias,1x2,d,תיקו,6.8,16.0,8.8,18:45,1.0,1-0,-1.0,True,model_ev
 2026-10-17T14:12,2026-10-21,CL,Real Madrid,RB Leipzig,1x2,h,Real Madrid,1.25,79.0,-1.2,22:00,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-20,CL,Man City,AEK Athens,1x2,h,Man City,1.05,93.0,-2.3,22:00,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-20,CL,Roma,ŠK Slovan Bratislava,1x2,h,Roma,1.15,85.0,-2.3,22:00,1.0,,,False,favourite
@@ -18,9 +18,9 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-10-17T14:12,2026-10-18,LL,Real Madrid,Sevilla,1x2,h,Real Madrid,1.2,76.0,-8.8,22:00,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-17,L1,Strasbourg,Paris SG,1x2,a,Paris SG,1.35,66.0,-10.9,18:15,1.0,1-3,0.35,True,favourite
 2026-10-17T14:12,2026-10-17,LL,Betis,Barcelona,1x2,a,Barcelona,1.35,65.0,-12.2,19:30,1.0,2-5,0.35,True,favourite
-2026-10-17T14:12,2026-10-17,IL,Maccabi Petah Tikva,Maccabi Haifa,1x2,a,Maccabi Haifa,1.25,70.0,-12.5,19:30,1.0,,,False,favourite
+2026-10-17T14:12,2026-10-17,IL,Maccabi Petah Tikva,Maccabi Haifa,1x2,a,Maccabi Haifa,1.25,70.0,-12.5,19:30,1.0,1-2,0.25,True,favourite
 2026-10-17T14:12,2026-10-19,PL,Tottenham,Coventry,1x2,h,Tottenham,1.4,62.0,-13.2,22:00,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-20,CL,Sabah FK,Dortmund,1x2,a,Dortmund,1.25,68.0,-15.0,19:45,1.0,,,False,favourite
-2026-10-17T14:12,2026-10-17,IL,Hapoel Tel-Aviv,Ironi Tiberias,1x2,h,Hapoel Tel-Aviv,1.15,72.0,-17.2,18:45,1.0,,,False,favourite
+2026-10-17T14:12,2026-10-17,IL,Hapoel Tel-Aviv,Ironi Tiberias,1x2,h,Hapoel Tel-Aviv,1.15,72.0,-17.2,18:45,1.0,1-0,0.15,True,favourite
 2026-10-17T14:39,2026-10-18,PL,Brighton,Crystal Palace,1x2,h,Brighton,1.45,62.0,-10.1,16:00,1.0,,,False,favourite
 2026-10-18T06:57,2026-10-18,SA,Juventus,Lazio,1x2,h,Juventus,1.65,53.0,-12.6,21:45,1.0,,,False,sharp_vs_winner

@@ -194,13 +194,30 @@ def thesportsdb(lg="IL", seasons=2, forward_days=14):
     rows = []
     for d in days:
         rows += _tsdb_rows(_tsdb_day(lid, d, today), lg)
-    # two cheap calls that always reflect the latest state (last 15 results, next 15 fixtures)
+    # two cheap calls that always reflect the latest state (last/next league events)
+    rounds = set()
     for ep in ("eventspastleague.php", "eventsnextleague.php"):
         txt = http.get(TSDB + ep, params={"id": lid}, ttl_hours=1, sleep=1.5, cache_key=f"tsdb:{ep}:{lid}", tries=2)
         try:
-            rows += _tsdb_rows(json.loads(txt).get("events") if txt else [], lg)
+            evs = json.loads(txt).get("events") if txt else []
+            rows += _tsdb_rows(evs, lg)
+            rounds |= {int(e["intRound"]) for e in evs or [] if e.get("intRound") not in (None, "")}
         except Exception:
             pass
+    # eventsday/past/next are incomplete on the free key; a whole ROUND (7 matches, with scores) is complete.
+    # Fetch the current round and its neighbours (3 calls) so every finished match of the weekend is captured.
+    if rounds:
+        cur_r = max(rounds)
+        season = f"{cur}-{cur + 1}"
+        for r in sorted({cur_r - 1, cur_r, cur_r + 1} - {0}):
+            if r < 1:
+                continue
+            txt = http.get(TSDB + "eventsround.php", params={"id": lid, "r": r, "s": season}, ttl_hours=1, sleep=1.5,
+                           cache_key=f"tsdb:round:{lid}:{season}:{r}", tries=2)
+            try:
+                rows += _tsdb_rows(json.loads(txt).get("events") if txt else [], lg)
+            except Exception:
+                pass
     if not rows:
         return _empty()
     df = pd.DataFrame(rows)
