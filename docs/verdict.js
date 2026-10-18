@@ -61,7 +61,7 @@ function buildPrompt(p) {
 }
 
 document.addEventListener("click", e => {
-  const b = e.target.closest(".vbtn");
+  const b = e.target.closest(".vbtn, .rank-row");
   if (!b) return;
   const [date, home, away] = b.dataset.v.split("|");
   const p = DATA.predictions.find(x => x.date === date && x.home === home && x.away === away);

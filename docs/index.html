@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Rubik:wght@800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<script>document.write('<link rel="stylesheet" href="style.css?v=' + Math.floor(Date.now() / 300000) + '">')</script>
 </head>
 <body>
 <a class="skip" href="#main">דלג לתוכן</a>
@@ -52,7 +52,6 @@
 <footer id="foot"></footer>
 <dialog class="sheet" id="sheet" aria-label="פסק דין"></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="app.js"></script>
-<script src="verdict.js"></script>
+<script>var __v = Math.floor(Date.now() / 300000); document.write('<script src="app.js?v=' + __v + '"><\/script><script src="verdict.js?v=' + __v + '"><\/script>')</script>
 </body>
 </html>

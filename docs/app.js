@@ -3,7 +3,7 @@ const REPO = "itzik200592-byte/score-oracle";
 const DAYS = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
 const LG_ORDER = ["IL", "CL", "EL", "PL", "LL", "SA", "L1"];
 let DATA = null;
-let view = safe(() => localStorage.getItem("view")) || "today";
+let view = safe(() => localStorage.getItem("view2")) || "stars";
 let chip = { stars: "daily", all: "all" };
 document.getElementById("run").href = `https://github.com/${REPO}/actions/workflows/oracle.yml`;
 
@@ -42,9 +42,10 @@ function render() {
   const nStars = DATA.predictions.filter(p => p.odds && p.odds.star && p.date >= todayIL()).length;
   const nRes = (DATA.track && DATA.track.overall && DATA.track.overall.n) || 0;
   const nVal = (DATA.value || []).filter(v => v.flag && v.date >= todayIL()).length;
-  const tabs = [["today", days[0] === todayIL() ? "היום" : "הקרובים", nToday], ["winner", "Winner", nVal], ["stars", "כוכבים", nStars], ["results", "תוצאות", nRes], ["all", "הכול", DATA.predictions.length]];
+  const nPicks = ((DATA.daily || {})[days[0]] || { top: [] }).top.length;
+  const tabs = [["stars", "המלצות", nPicks], ["today", days[0] === todayIL() ? "היום" : "הקרובים", nToday], ["winner", "Winner", nVal], ["results", "תוצאות", nRes], ["all", "הכול", DATA.predictions.length]];
   document.getElementById("mainTabs").innerHTML = tabs.map(([k, t, n]) => `<button class="mtab" role="tab" data-k="${k}" aria-selected="${k === view}">${t}<span class="cnt num">${n}</span></button>`).join("");
-  document.querySelectorAll(".mtab").forEach(b => b.onclick = () => { view = b.dataset.k; safe(() => localStorage.setItem("view", view)); render(); window.scrollTo({ top: 0 }); });
+  document.querySelectorAll(".mtab").forEach(b => b.onclick = () => { view = b.dataset.k; safe(() => localStorage.setItem("view2", view)); render(); window.scrollTo({ top: 0 }); });
   const st = DATA.stale || [];
   const warn = document.getElementById("warn") || Object.assign(document.createElement("div"), { id: "warn" });
   warn.className = "lead"; warn.style.borderColor = "rgba(255,138,128,.5)";
@@ -106,28 +107,38 @@ function viewToday() {
 }
 
 /* ---------- view: daily recommendations (Winner only, odds 1.50+) ---------- */
-function pickRow(x, i) {
-  const ev = x.ev, evTxt = `<b class="num" style="color:${ev > 0 ? "var(--good)" : "var(--bad)"}">${ev > 0 ? "+" : ""}${Math.round(100 * ev)}%</b>`;
-  return `<article class="card ${i === 0 ? "S" : ""}" style="padding:12px"><div class="row"><div class="teams"><div class="team fav" style="direction:rtl;text-align:right;font-size:15.5px">${esc(x.label)}</div>
-    <div class="sline">${esc(x.home)} - ${esc(x.away)}</div><div class="sline">${x.kickoff ? `<span class="num">${x.kickoff}</span> · ` : ""}${esc(DATA.leagues[x.league])}</div>
-    <div class="sline">יחס Winner <b class="num">${Number(x.price).toFixed(2)}</b> · תוחלת לפי המודל ${evTxt}</div></div>
-    <div class="bigp"><b class="num">${x.p}%</b><small>סיכוי</small></div></div>
-    <button class="vbtn" style="margin-top:8px;min-height:40px" data-v="${x.date}|${x.home}|${x.away}">כל השווקים של Winner במשחק</button></article>`;
+const evTag = ev => `<span class="num" style="color:${ev > 0 ? "var(--good)" : "var(--bad)"}">${ev > 0 ? "+" : ""}${Math.round(100 * ev)}%</span>`;
+function heroPick(x, day) {
+  return `<article class="hero-pick"><div class="hp-top"><span class="hp-badge">ההמלצה החזקה ${dayLabel(day).split(",")[0]}</span><span class="hp-time num">${x.kickoff || ""}</span></div>
+    <div class="hp-main"><div class="hp-p num">${x.p}<small>%</small></div><div class="hp-txt"><div class="hp-label">${esc(x.label)}</div><div class="hp-match">${esc(x.home)} - ${esc(x.away)}</div><div class="hp-meta">${esc(DATA.leagues[x.league])}</div></div></div>
+    <div class="hp-row"><div><small>יחס Winner</small><b class="num">${Number(x.price).toFixed(2)}</b></div><div><small>תוחלת (מודל)</small><b>${evTag(x.ev)}</b></div><div><small>בבדיקה היסטורית</small><b class="num">62%</b></div></div>
+    <button class="vbtn" data-v="${x.date}|${x.home}|${x.away}">כל השווקים של Winner במשחק</button></article>`;
+}
+function rankRow(x, i) {
+  return `<button class="rank-row" data-v="${x.date}|${x.home}|${x.away}" aria-label="${esc(x.label)}, ${esc(x.home)} נגד ${esc(x.away)}, סיכוי ${x.p} אחוז"><span class="rr-n num">${i + 1}</span>
+    <span class="rr-mid"><b>${esc(x.label)}</b><small>${esc(x.home)} - ${esc(x.away)} · <span class="num">${x.kickoff || ""}</span></small></span>
+    <span class="rr-end"><b class="num">${x.p}%</b><small class="num">${Number(x.price).toFixed(2)} · ${evTag(x.ev)}</small></span></button>`;
 }
 function viewDaily() {
   const days = Object.keys(DATA.daily || {}).sort();
   if (!days.length) return `<div class="empty">אין נתונים להמלצה היומית.</div>`;
   const pt = DATA.picks_track;
-  let html = `<div class="lead"><b>כללי ההמלצה:</b> רק שווקים ש-Winner באמת מוכר (1X2, מעל/מתחת 2.5, טווחי שערים, שתיהן מבקיעות, והימור "יתרון"), ורק בחירה ביחס <b>1.50 ומעלה</b>. ההסתברות מחושבת מהמודל שנבדק על אלפי משחקים.<br><b>תקרה מתמטית:</b> ביחס 1.50 הסיכוי המשתמע הוא לכל היותר 66%, ועם המרווח של Winner בפועל כ-60%. <b>המלצה של 90% בתנאים האלה לא קיימת</b>, ואני לא ממציא אחת.<br>בבדיקה לאחור על 823 ימים: הבחירה הסבירה ביותר ביום (יחס 1.50+) פגעה ב-<b>62%</b>, והתשואה הייתה כמעט אפס מול יחסים ממוצעים בשוק, ושלילית ב-Winner בגלל המרווח שלו.</div>`;
-  if (pt && pt.n) html += `<div class="stats"><div class="stat"><b class="num">${pt.hits}/${pt.n}</b><small>המלצות שפגעו</small><span class="sub num">${pt.hit_rate}% בפועל מול ${pt.promised}% שהובטח</span></div><div class="stat"><b class="num" style="color:${pt.pnl < 0 ? "var(--bad)" : "var(--good)"}">${pt.pnl > 0 ? "+" : ""}${pt.pnl}</b><small>רווח ביחידות במחירי Winner</small><span class="sub num">תשואה ${pt.roi}% · ${pt.open} פתוחות</span></div></div>`;
-  else if (pt) html += `<div class="lead">מעקב: ${pt.open} המלצות נרשמו ומחכות לתוצאות. כאן יופיע כמה פגעו ומה הרווח ביחס Winner.</div>`;
+  const first = days.find(d => DATA.daily[d].headline) || days[0];
+  let html = "";
+  const t0 = DATA.daily[first];
+  if (t0 && t0.headline) html += heroPick(t0.headline, first);
+  else html += `<div class="lead">אין כרגע בחירה ביחס 1.50+ עם נתוני Winner.</div>`;
+  // ranked lists: highest probability first, one line per match
   days.slice(0, 2).forEach(d => {
     const t = DATA.daily[d];
-    html += `<div class="day">${dayLabel(d)}</div>`;
-    if (!t.top || !t.top.length) { html += `<div class="lead">אין בחירה ביחס 1.50+ עם נתוני Winner למשחקי היום.</div>`; return; }
-    html += `<h2 style="margin-top:6px">ההמלצה החזקה</h2><div class="lead" style="margin:6px 0 10px">הסיכוי הגבוה ביותר ביום ביחס 1.50+: <b class="num">${t.top[0].p}%</b>. תקרת היום: ${t.ceiling}%.</div>` + t.top.map((x, i) => pickRow(x, i)).join("");
-    if (t.underdogs && t.underdogs.length) html += `<h2>אנדרדוגים (יחס 3+)</h2><div class="lead">בחירות ביחס 3 ומעלה שהמודל מעריך גבוה מהמחיר. <b>היסטורית הימורים כאלה הפסידו 14-24%</b>; ה"תוחלת" כאן היא של המודל בלבד.</div>` + t.underdogs.map(x => pickRow(x, -1)).join("");
+    if (!t || !t.top || !t.top.length) return;
+    html += `<div class="day">${dayLabel(d)} · מדורג לפי סיכוי</div><div class="rank-list">${t.top.map((x, i) => rankRow(x, i)).join("")}</div>`;
   });
+  if (pt && pt.n) html += `<div class="stats" style="margin-top:18px"><div class="stat"><b class="num">${pt.hits}/${pt.n}</b><small>המלצות שפגעו</small><span class="sub num">${pt.hit_rate}% בפועל מול ${pt.promised}% שהובטח</span></div><div class="stat"><b class="num" style="color:${pt.pnl < 0 ? "var(--bad)" : "var(--good)"}">${pt.pnl > 0 ? "+" : ""}${pt.pnl}</b><small>רווח ביחידות במחירי Winner</small><span class="sub num">תשואה ${pt.roi}% · ${pt.open} פתוחות</span></div></div>`;
+  else if (pt) html += `<div class="lead" style="margin-top:18px">מעקב: ${pt.open} המלצות נרשמו ומחכות לתוצאות. כאן יופיע כמה פגעו והרווח במחירי Winner.</div>`;
+  const dogs = days.slice(0, 1).flatMap(d => (DATA.daily[d].underdogs || []));
+  if (dogs.length) html += `<details class="help"><summary>אנדרדוגים (יחס 3+)</summary><div class="note"><p>בחירות ביחס 3 ומעלה שהמודל מעריך גבוה מהמחיר. היסטורית הימורים כאלה <b>הפסידו 14-24%</b>; התוחלת היא של המודל בלבד.</p></div><div class="rank-list" style="padding-bottom:10px">${dogs.map((x, i) => rankRow(x, i)).join("")}</div></details>`;
+  html += `<details class="help"><summary>איך נבחרות ההמלצות</summary><div class="note"><p><b>רק Winner:</b> שווקים ש-Winner באמת מוכר (1X2, מעל/מתחת 2.5, טווחי שערים, שתיהן מבקיעות, "הימור יתרון"), ורק ביחס <b>1.50 ומעלה</b>. ההסתברות מחושבת מהמודל שנבדק על אלפי משחקים.</p><p><b>תקרה מתמטית:</b> ביחס 1.50 הסיכוי המשתמע הוא לכל היותר 66%, ועם המרווח של Winner כ-60%. המלצה של 90% בתנאים האלה לא קיימת.</p><p><b>בבדיקה על 823 ימים:</b> הבחירה הסבירה ביותר ביום (יחס 1.50+) פגעה ב-62%, והתשואה הייתה כמעט אפס מול יחסי שוק ממוצעים, ושלילית ב-Winner בגלל המרווח שלו.</p><p><b>"יתרון +1"</b> ב-Winner הוא בעצם "הקבוצה לא מפסידה" (כפל סיכוי) במחיר של Winner.</p></div></details>`;
   return html;
 }
 

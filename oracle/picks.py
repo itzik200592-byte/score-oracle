@@ -72,11 +72,11 @@ def menu(row):
         pa, px, pb = hc_probs(marg, hc["s"])
         labs = _hc_labels(h, a, hc["s"])
         for k, p, lab, pr in (("A", pa, labs[0], hc["prices"][0]), ("X", px, labs[1], hc["prices"][1]), ("B", pb, labs[2], hc["prices"][2])):
-            add(f"hc:{hc['s']}:{k}", "יתרון: " + lab, p, pr, "יתרון")
+            add(f"hc:{hc['s']}:{k}", lab + " (יתרון)", p, pr, "יתרון")
     return sorted(out, key=lambda x: -x["p"])
 
 
-def day_picks(rows, day, top=6):
+def day_picks(rows, day, top=10):
     elig_all = []
     for r in rows:
         if r["date"] != day:
