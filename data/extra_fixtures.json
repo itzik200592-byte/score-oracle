@@ -46,5 +46,41 @@
   "date": "2026-10-17",
   "home": "Espanol",
   "away": "Ath Madrid"
+ },
+ {
+  "league": "SA",
+  "date": "2026-10-18",
+  "home": "Fiorentina",
+  "away": "Como"
+ },
+ {
+  "league": "PL",
+  "date": "2026-10-18",
+  "home": "Brighton",
+  "away": "Crystal Palace"
+ },
+ {
+  "league": "PL",
+  "date": "2026-10-18",
+  "home": "Bournemouth",
+  "away": "Sunderland"
+ },
+ {
+  "league": "PL",
+  "date": "2026-10-18",
+  "home": "Leeds",
+  "away": "Man United"
+ },
+ {
+  "league": "L1",
+  "date": "2026-10-18",
+  "home": "Angers",
+  "away": "Marseille"
+ },
+ {
+  "league": "LL",
+  "date": "2026-10-18",
+  "home": "Osasuna",
+  "away": "Santander"
  }
 ]
