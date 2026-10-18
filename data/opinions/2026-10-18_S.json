@@ -1,0 +1,602 @@
+{
+ "made_at": "2026-10-18T10:40:00+03:00",
+ "matches": [
+  {
+   "date": "2026-10-18",
+   "home": "Brighton",
+   "away": "Crystal Palace",
+   "lean": "h",
+   "confidence": "בינונית",
+   "summary": "ברייטון בכושר מצוין ומול פאלאס מדוללת (דיסאסי מורחק, ריאד פצוע, הנדרסון ומאטטה בספק) אחרי נסיעה לליון, אבל הדרבי הזה נוטה להפתיע וההתקפה של ברייטון דלילה: נוטה לברייטון 2-1.",
+   "home_view": "ברייטון בלי מיטומה, פרגוסון, צימאס, אזיז ויוחנה (חדשות: אתר המועדון וספורטס מול, 16-17.10). מינטה וויפר אמורים לחזור אחרי המשחק (חדשות: הורצלר, 16.10). סטרוייק עם בעיית ירך ובדיקה ביום שבת, ובמקרה שלא יהיה כשיר בלם אחר ישלים (חדשות: Football365 ו-Rotowire). אין פציעות חדשות אחרי 4:0 על קאונאס ביום חמישי (חדשות). ההרכב המשוער עם קוסטולאס בחוד (חדשות: Sports Mole 17.10). ההפסד 3:0 של ארסנל ברייטון והרצף הטוב נתון, אבל ברייטון הפסידה 4 מ-6 הדרבים האחרונים (נתון). ההתקפה בלי מיטומה ופרגוסון תלויה בקוסטולאס, וזה הסיכון שלה (שיפוט).",
+   "away_view": "פאלאס הפסידה 2:3 בליון ביום חמישי, שלושה ימי מנוחה בלבד (נתון). דיסאסי מושעה במשחק האחרון, ריאד בחוץ עם הרצועה, ולכן המשחק אמור להתבסס על בלמים פחות מנוסים (חדשות: Football365 16.10). הנדרסון חסר חמישה משחקים ובדיקה אחרונה, בניטס אמור לפתוח בשער (חדשות: Football365 16.10, ספייג' אמר שאינו יודע, 16.10). מאטטה, צ'ילוול וטומיאסו נבדקים, מאטטה וטומיאסו לא צפויים לפתוח, סאר אולי על הספסל (חדשות). ההרכב המשוער 3-4-2-1 עם סטרנד לארסן בחוד (חדשות: Sports Mole 17.10). פאלאס יודעת לשחק את הדרבי הזה, 0:0 ו-1:0 בפגישות האחרונות (נתון), והמעברים שלה מסוכנים (שיפוט).",
+   "factors": [
+    "ברייטון: מיטומה, פרגוסון, צימאס חסרים, מינטה וויפר רק אחרי המשחק (חדשות) -1",
+    "ברייטון: שבוע מנוחה וקהל דרבי (נתון) +1",
+    "פאלאס: דיסאסי מושעה, ריאד פצוע, הנדרסון ומאטטה בספק (חדשות) -2",
+    "פאלאס: שלושה ימי מנוחה אחרי ליון (נתון) -1",
+    "דרבי M23: ברייטון הפסידה 4 מ-6 (נתון), סיכון לאפקט הפתעה"
+   ],
+   "sources": [
+    "אתר ברייטון, 16.10.2026",
+    "Football365, 16.10.2026",
+    "Sports Mole, 17.10.2026",
+    "Read Crystal Palace ו-AOL (מסיבת העיתונאים של ספייג'), 16.10.2026"
+   ],
+   "adjustments": [
+    "Brighton att 0.95: מיטומה ופרגוסון חסרים, אבל הקבוצה מנצחת בלעדיהם ולכן הוקל מ-0.92",
+    "Crystal Palace att 0.95: מאטטה לא צפוי לפתוח ושלושה ימי מנוחה אחרי ליון",
+    "Crystal Palace def 1.06: דיסאסי מושעה וריאד פצוע (שני בלמים), שוער ראשון בספק"
+   ],
+   "players": [
+    {
+     "team": "Brighton",
+     "name": "Evan Ferguson",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Stefanos Tzimas",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Kaoru Mitoma",
+     "claim": "out",
+     "source": "אתר ברייטון, 16.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Femi Azeez",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Zadok Yohanna",
+     "claim": "out",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Yankuba Minteh",
+     "claim": "out",
+     "source": "אתר ברייטון, 16.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Mats Wieffer",
+     "claim": "out",
+     "source": "אתר ברייטון, 16.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Pascal Struijk",
+     "claim": "doubtful",
+     "source": "Rotowire, 17.10.2026"
+    },
+    {
+     "team": "Brighton",
+     "name": "Charalambos Kostoulas",
+     "claim": "key",
+     "source": "Football365, 16.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Axel Disasi",
+     "claim": "suspended",
+     "source": "Football365, 16.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Chadi Riad",
+     "claim": "out",
+     "source": "Football365, 16.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Dean Henderson",
+     "claim": "doubtful",
+     "source": "Football365, 16.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Walter Benítez",
+     "claim": "key",
+     "source": "Football365, 16.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Jean-Philippe Mateta",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Ben Chilwell",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Takehiro Tomiyasu",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Ismaïla Sarr",
+     "claim": "returns",
+     "source": "Football365, 16.10.2026"
+    },
+    {
+     "team": "Crystal Palace",
+     "name": "Jørgen Strand Larsen",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 18,
+    "unknown": [],
+    "teams": {
+     "Brighton": {
+      "ok": [
+       "Evan Ferguson",
+       "Stefanos Tzimas",
+       "Kaoru Mitoma",
+       "Femi Azeez",
+       "Zadok Yohanna",
+       "Yankuba Minteh",
+       "Mats Wieffer",
+       "Pascal Struijk",
+       "Charalambos Kostoulas"
+      ],
+      "unknown": [],
+      "roster_size": 33,
+      "espn_name": "Brighton & Hove Albion"
+     },
+     "Crystal Palace": {
+      "ok": [
+       "Axel Disasi",
+       "Chadi Riad",
+       "Dean Henderson",
+       "Walter Benítez",
+       "Jean-Philippe Mateta",
+       "Ben Chilwell",
+       "Takehiro Tomiyasu",
+       "Ismaïla Sarr",
+       "Jørgen Strand Larsen"
+      ],
+      "unknown": [],
+      "roster_size": 32,
+      "espn_name": "Crystal Palace"
+     }
+    },
+    "checked_at": "2026-10-18T10:11",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Nott'm Forest",
+   "away": "Arsenal",
+   "lean": "a",
+   "confidence": "בינונית",
+   "summary": "ארסנל עם סאקה, אודגור והאברץ חוזרים מול פורסט במשבר, אבל שני 0:0 רצופים בסיטי גראונד ושאלה סביב זובימנדי משאירים את זה צמוד: 0-1.",
+   "home_view": "פורסט במקום 15 עם 5 נקודות מ-6, הפסד 0:1 בבית לקובנטרי והפסד 1:3 בפאלאס (נתון, חדשות: Read Arsenal 17.10). איגור ז'סוס וסבונה בחוץ (חדשות: גלאזנר, BBC 16.10). גיבס-וייט בספק עם פציעת שריר קלה אבל צפוי לפתוח, חלופה מהספסל אם לא (חדשות: Sports Mole 17.10, גלאזנר 16.10). מילנקוביץ' התאמן לראשונה ביום שישי ולא צפוי לפתוח (חדשות). ההרכב המשוער עם דלאפ בחוד (חדשות: Sports Mole 17.10). בלוק עמוק ומעברים (שיפוט).",
+   "away_view": "ארסנל שנייה עם 15 נקודות, הפסד ליגה יחיד 0:3 בברייטון, ניצחה את לידס 2:1 ואת ליל 3:0 באלופות (נתון). סאקה התאושש ממחלה ואמור לפתוח, אודגור והאברץ חוזרים (חדשות: Read Arsenal 17.10, Brit Brief). זובימנדי עם קרסול ובדיקה אחרונה ביום שבת, מחליף אחר ישחק לצד רייס אם לא (חדשות: ארטטה 16.10). סאליבה והינקפייה וצוליס בחוץ (חדשות: ארטטה 16.10). האברץ הפייבוריט בחוד (חדשות, Read Arsenal). ארטטה עצמו הזכיר ששני הביקורים האחרונים בסיטי גראונד הסתיימו 0:0 (חדשות).",
+   "factors": [
+    "ארסנל: סאקה, אודגור והאברץ חוזרים (חדשות) +1",
+    "ארסנל: סאליבה, הינקפייה, צוליס חסרים, זובימנדי בספק (חדשות) -1",
+    "פורסט: ז'סוס וסבונה חסרים, גיבס-וייט בספק, מילנקוביץ' לא פותח (חדשות) -1",
+    "פורסט: מאמן תחת לחץ, 15 בטבלה (נתון)",
+    "שני 0:0 רצופים בסיטי גראונד (נתון)"
+   ],
+   "sources": [
+    "Arsenal.com, מסיבת עיתונאים של ארטטה, 16.10.2026",
+    "BBC Sport דרך AOL, גלאזנר, 16.10.2026",
+    "Read Arsenal, 17.10.2026",
+    "Sports Mole, 17.10.2026"
+   ],
+   "adjustments": [
+    "Nott'm Forest att 0.97: ז'סוס חסר וגיבס-וייט בספק אבל צפוי לפתוח, הוקל מ-0.96",
+    "Nott'm Forest def 1.02: מילנקוביץ' לא צפוי לפתוח, הוקל מ-1.03"
+   ],
+   "players": [
+    {
+     "team": "Nott'm Forest",
+     "name": "Igor Jesus",
+     "claim": "out",
+     "source": "BBC Sport, 16.10.2026"
+    },
+    {
+     "team": "Nott'm Forest",
+     "name": "Nicolò Savona",
+     "claim": "out",
+     "source": "BBC Sport, 16.10.2026"
+    },
+    {
+     "team": "Nott'm Forest",
+     "name": "Morgan Gibbs-White",
+     "claim": "doubtful",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Nott'm Forest",
+     "name": "Nikola Milenkovic",
+     "claim": "doubtful",
+     "source": "BBC Sport, 16.10.2026"
+    },
+    {
+     "team": "Nott'm Forest",
+     "name": "Liam Delap",
+     "claim": "key",
+     "source": "Sports Mole, 17.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "William Saliba",
+     "claim": "out",
+     "source": "Arsenal.com, 16.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Piero Hincapié",
+     "claim": "out",
+     "source": "Arsenal.com, 16.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Christos Tzolis",
+     "claim": "out",
+     "source": "Arsenal.com, 16.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Martín Zubimendi",
+     "claim": "doubtful",
+     "source": "Arsenal.com, 16.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Bukayo Saka",
+     "claim": "returns",
+     "source": "Read Arsenal, 17.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Martin Ødegaard",
+     "claim": "returns",
+     "source": "Read Arsenal, 17.10.2026"
+    },
+    {
+     "team": "Arsenal",
+     "name": "Kai Havertz",
+     "claim": "returns",
+     "source": "Read Arsenal, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 12,
+    "unknown": [],
+    "teams": {
+     "Nott'm Forest": {
+      "ok": [
+       "Igor Jesus",
+       "Nicolò Savona",
+       "Morgan Gibbs-White",
+       "Nikola Milenkovic",
+       "Liam Delap"
+      ],
+      "unknown": [],
+      "roster_size": 24,
+      "espn_name": "Nottingham Forest"
+     },
+     "Arsenal": {
+      "ok": [
+       "William Saliba",
+       "Piero Hincapié",
+       "Christos Tzolis",
+       "Martín Zubimendi",
+       "Bukayo Saka",
+       "Martin Ødegaard",
+       "Kai Havertz"
+      ],
+      "unknown": [],
+      "roster_size": 29,
+      "espn_name": "Arsenal"
+     }
+    },
+    "checked_at": "2026-10-18T10:11",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Hapoel Be'er Sheva",
+   "away": "Hapoel Jerusalem",
+   "lean": "h",
+   "confidence": "בינונית",
+   "summary": "באר שבע עם 8 ניצחונות רצופים על ירושלים אבל עם רוטציה בגלל אירופה, מול ירושלים חלשה בהגנה וחסרה שלושה: ניצחון בית 2-0, פחות בטוח מאשר השוק.",
+   "home_view": "באר שבע רביעית עם 13 נקודות אחרי 6 מחזורים, ארבעה ניצחונות, ושלושה ניצחונות רצופים בלי ספיגה לפני ההפסד 1:2 באלקמאר ביום חמישי (נתון, חדשות: ספורט1 17.10, ספורט5). נחמיאס נפצע באירופה ויחסר (חדשות: ספורט1 17.10). קוז'וך צפוי להרבה שינויים אחרי אימון אחד בלבד: ניב יהושע, מיגל ויטור, ז'ואאו ויקטור, אמיר גנאח ואוגריסה צפויים לפתוח, ומרציאנו עשוי לנוח לטובת וולף (חדשות: ספורט1, 17.10). המשחק הבא באירופה מול סן ז'יל והמועדון אומר שהסגל עמוק (חדשות). ירושלים הפסידה בכל 8 הפגישות האחרונות בטרנר ובכלל (חדשות: ספורט1 17.10).",
+   "away_view": "ירושלים במקום 7 עם 7 נקודות לפי ספורט5 (במקורות אחרים 9, הטבלה לא אחידה), ספגה בכל 6 המחזורים (חדשות: ספורט1 17.10). יונתן ליש חסר עם אכילס, סאני עבדולסלאם עם קרע שרירי, צ'ילופיה עם פציעה באף ולא ברור שישחק (חדשות: ספורט1 17.10). דמסקאן חזר מפציעה ואמור לפתוח בחוד והילאי מלמן שרעבי חזר לכשירות (חדשות). המאמן זדה עדיין מתלבט בכמה עמדות (חדשות). הסגל אומת מול רשימת סופאסקור ששמורה ידנית (נתון). אין הרכב מאושר, הסיקור הוא על בסיס כתבות מ-17.10 ו-18.10 בלבד.",
+   "factors": [
+    "באר שבע: רוטציה צפויה אחרי אלקמאר ולפני סן ז'יל, אימון אחד בלבד (חדשות) -1",
+    "באר שבע: נחמיאס חסר (חדשות) -1",
+    "ירושלים: ליש וסאני חסרים, צ'ילופיה בספק (חדשות) -1",
+    "ירושלים: ספגה בכל 6 המחזורים והפסידה 8 רצופים לבאר שבע (נתון, חדשות)",
+    "ליגה ישראלית: שוק חי משולב, התאמות קטנות"
+   ],
+   "sources": [
+    "ספורט1 (מעריב), 17.10.2026",
+    "ספורט5, 18.10.2026",
+    "וואלה ספורט, 18.10.2026"
+   ],
+   "adjustments": [
+    "Hapoel Be'er Sheva att 0.97 def 1.02: רוטציה צפויה ונחמיאס חסר, מוקטן כי השוק החי כבר מגלם",
+    "Hapoel Jerusalem att 0.96: ליש וסאני חסרים וצ'ילופיה בספק"
+   ],
+   "players": [
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Idan Nachmias",
+     "claim": "out",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Marco Wolff",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Niv Yehoshua",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Miguel Vítor",
+     "claim": "returns",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "João Victor",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Amir Ganah",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Be'er Sheva",
+     "name": "Adrián Ugarriza",
+     "claim": "key",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Yonatan Kay Laish",
+     "claim": "out",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Sani Abdulsalam",
+     "claim": "out",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Edward Chilufya",
+     "claim": "doubtful",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Hilay Sharabi Melman",
+     "claim": "returns",
+     "source": "ספורט1, 17.10.2026"
+    },
+    {
+     "team": "Hapoel Jerusalem",
+     "name": "Vitalie Damascan",
+     "claim": "returns",
+     "source": "ספורט1, 17.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 12,
+    "unknown": [],
+    "teams": {
+     "Hapoel Be'er Sheva": {
+      "ok": [
+       "Idan Nachmias",
+       "Marco Wolff",
+       "Niv Yehoshua",
+       "Miguel Vítor",
+       "João Victor",
+       "Amir Ganah",
+       "Adrián Ugarriza"
+      ],
+      "unknown": [],
+      "roster_size": 35,
+      "espn_name": "Hapoel Be'er"
+     },
+     "Hapoel Jerusalem": {
+      "ok": [
+       "Yonatan Kay Laish",
+       "Sani Abdulsalam",
+       "Edward Chilufya",
+       "Hilay Sharabi Melman",
+       "Vitalie Damascan"
+      ],
+      "unknown": [],
+      "roster_size": 38,
+      "espn_name": "sofascore.com/football/team/hapoel-katamon-jerusalem/86406 (manual, 2026-10-17)"
+     }
+    },
+    "checked_at": "2026-10-18T10:11",
+    "status": "ok"
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "home": "Real Madrid",
+   "away": "Sevilla",
+   "lean": "h",
+   "confidence": "גבוהה",
+   "summary": "ריאל בלי ויניסיוס המושעה ורודריגו, עם רוטציה אחרי רומא, מול סביליה שחסרה את החלוץ איסאק רומרו וארבעה נוספים ולא ניצחה בברנבאו מאז 2008: 2-0, אבל עם אפשרות להתאמת שערים.",
+   "home_view": "ריאל רביעית עם 18 נקודות (נתון). ויניסיוס מושעה לארבעה משחקים, רודריגו ואסנסיו פצועים (חדשות: FútbolFantasy, Dorsal16, 16-18.10). מיליטאו חזר לאימון אבל לא צפוי לשחק, מנדי חוזר בהדרגה (חדשות). ההרכב המשוער עם גולר ודיומנדה בכנפיים ואמבפה בחוד (חדשות: OKDiario 18.10, FútbolFantasy). מוריניו אמר שהשחקנים עייפים ואמר שיש לו אפשרויות לרענן (חדשות: מסיבת עיתונאים). ההרכב עדיין חזק עם אמבפה (שיפוט).",
+   "away_view": "סביליה חמישית, בעיה בחוץ, 5 ניצחונות מ-20 ב-12 החודשים (נתון). איסאק רומרו מושעה, מיגל סיירה פצוע לחודשיים, גורידי ומרקאו בחוץ, קוצ'ורשווילי בספק ואולי רק ספסל (חדשות: גרסיה פלאסה, 16.10). סטאסין חזר לאימון אבל לא צפוי לפתוח, ולמעשה יש רק שני חלוצים זמינים לפי המאמן (חדשות). ההרכב המשוער עם יורה בחוד (חדשות: FútbolFantasy). המאמן מדבר על ניסיון לשחק בגובה העיניים (חדשות).",
+   "factors": [
+    "ריאל: ויניסיוס מושעה, רודריגו ואסנסיו פצועים (חדשות) -1",
+    "ריאל: עייפות ורוטציה אחרי רומא, מוריניו עצמו אמר (חדשות) -1",
+    "סביליה: רומרו מושעה, סיירה, גורידי ומרקאו בחוץ, קוצ'ורשווילי בספק (חדשות) -2",
+    "סביליה: לא ניצחה בברנבאו מאז 2008 (חדשות)",
+    "ריאל ניצחה 5 מ-6 הפגישות האחרונות (נתון)"
+   ],
+   "sources": [
+    "FútbolFantasy, 16.10.2026",
+    "Dorsal16, 17.10.2026",
+    "OKDiario, 18.10.2026",
+    "Jornada Perfecta (גרסיה פלאסה), 16.10.2026",
+    "Goal ו-Muchodeporte (מוריניו), 17.10.2026"
+   ],
+   "adjustments": [
+    "Real Madrid att 0.93: ויניסיוס מושעה ורודריגו פצוע, אך אמבפה פותח ולכן הוקל מ-0.92",
+    "Sevilla att 0.92 def 1.03: רומרו מושעה וסיירה פצוע (שני חלוצים בלבד), מרקאו חסר ובעיה סביב קוצ'ורשווילי"
+   ],
+   "players": [
+    {
+     "team": "Real Madrid",
+     "name": "Vinícius Júnior",
+     "claim": "suspended",
+     "source": "Dorsal16, 17.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Rodrygo",
+     "claim": "out",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Raúl Asencio",
+     "claim": "out",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Éder Militão",
+     "claim": "doubtful",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Ferland Mendy",
+     "claim": "doubtful",
+     "source": "Dorsal16, 17.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Kylian Mbappé",
+     "claim": "key",
+     "source": "OKDiario, 18.10.2026"
+    },
+    {
+     "team": "Real Madrid",
+     "name": "Arda Güler",
+     "claim": "key",
+     "source": "OKDiario, 18.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Isaac Romero",
+     "claim": "suspended",
+     "source": "Jornada Perfecta, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Miguel Sierra",
+     "claim": "out",
+     "source": "Jornada Perfecta, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Jon Guridi",
+     "claim": "out",
+     "source": "Jornada Perfecta, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Marcão",
+     "claim": "out",
+     "source": "FútbolFantasy, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Giorgi Kochorashvili",
+     "claim": "doubtful",
+     "source": "Jornada Perfecta, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Lucas Stassin",
+     "claim": "returns",
+     "source": "Jornada Perfecta, 16.10.2026"
+    },
+    {
+     "team": "Sevilla",
+     "name": "Robbie Ure",
+     "claim": "key",
+     "source": "FútbolFantasy, 16.10.2026"
+    }
+   ],
+   "verification": {
+    "checked": 14,
+    "unknown": [],
+    "teams": {
+     "Real Madrid": {
+      "ok": [
+       "Vinícius Júnior",
+       "Rodrygo",
+       "Raúl Asencio",
+       "Éder Militão",
+       "Ferland Mendy",
+       "Kylian Mbappé",
+       "Arda Güler"
+      ],
+      "unknown": [],
+      "roster_size": 35,
+      "espn_name": "Real Madrid"
+     },
+     "Sevilla": {
+      "ok": [
+       "Isaac Romero",
+       "Miguel Sierra",
+       "Jon Guridi",
+       "Marcão",
+       "Giorgi Kochorashvili",
+       "Lucas Stassin",
+       "Robbie Ure"
+      ],
+      "unknown": [],
+      "roster_size": 31,
+      "espn_name": "Sevilla"
+     }
+    },
+    "checked_at": "2026-10-18T10:11",
+    "status": "ok"
+   }
+  }
+ ]
+}
