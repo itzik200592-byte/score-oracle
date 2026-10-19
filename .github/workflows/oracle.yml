@@ -67,8 +67,9 @@ jobs:
         run: |
           git config user.name "score-oracle-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add docs/data.json data/ledger.csv data/ensemble.json data/matches.csv data/extra_fixtures.json data/adjustments.json 2>/dev/null || true
-          git add docs/data.json data/ledger.csv data/ensemble.json data/matches.csv
+          git add docs/data.json data/*.csv data/*.json data/opinions 2>/dev/null || true
           git diff --cached --quiet || git commit -m "predictions $(date -u +%Y-%m-%d\ %H:%M) UTC"
+          git stash --include-untracked 2>/dev/null || true
           git pull --rebase -X theirs
           git push
+          git stash drop 2>/dev/null || true
