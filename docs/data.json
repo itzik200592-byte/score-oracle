@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-19T09:03+00:00",
+ "generated_at": "2026-10-19T13:18+00:00",
  "leagues": {
   "PL": "פרמיירליג אנגלית",
   "LL": "לה ליגה ספרדית",
@@ -622,22 +622,6 @@
      "2026-05-03 Getafe 0-2 Vallecano (LL)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 31,
-     "d": 33,
-     "a": 36
-    },
-    "edge": {
-     "h": -13.6,
-     "d": -7.6,
-     "a": -9.7
-    },
-    "books": 21,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "hc:-1:A",
@@ -980,22 +964,6 @@
      "partial": false
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 63,
-     "d": 21,
-     "a": 16
-    },
-    "edge": {
-     "h": -8.7,
-     "d": -13.6,
-     "a": -14.5
-    },
-    "books": 25,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -1344,22 +1312,6 @@
      "2025-03-30 Cagliari 3-0 Monza (SA)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 41,
-     "d": 29,
-     "a": 30
-    },
-    "edge": {
-     "h": -4.0,
-     "d": -11.7,
-     "a": -15.3
-    },
-    "books": 24,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "hc:1:B",
@@ -1706,22 +1658,6 @@
      "2025-09-29 Parma 2-1 Torino (SA)",
      "2026-03-13 Torino 4-1 Parma (SA)"
     ]
-   },
-   "sharp": {
-    "p": {
-     "h": 30,
-     "d": 31,
-     "a": 39
-    },
-    "edge": {
-     "h": -10.9,
-     "d": -9.0,
-     "a": -10.4
-    },
-    "books": 24,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -2077,22 +2013,6 @@
     "h2h": [
      "2024-11-28 Slavia Praha 1-2 Fenerbahce (EL)"
     ]
-   },
-   "sharp": {
-    "p": {
-     "h": 58,
-     "d": 22,
-     "a": 20
-    },
-    "edge": {
-     "h": -6.6,
-     "d": -15.7,
-     "a": -13.2
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -2460,22 +2380,6 @@
      "2022-05-03 Villarreal 2-3 Liverpool (CL)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 66,
-     "d": 19,
-     "a": 15
-    },
-    "edge": {
-     "h": -7.0,
-     "d": -16.7,
-     "a": -15.8
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "o25",
@@ -2647,7 +2551,7 @@
      "0.5": 98.2,
      "1.5": 91.6,
      "2.5": 78.1,
-     "3.5": 60.1,
+     "3.5": 60.0,
      "4.5": 41.5
     },
     "btts": 35.9,
@@ -2667,14 +2571,14 @@
      "o05": 98.2,
      "o15": 91.6,
      "o25": 78.1,
-     "o35": 60.1,
+     "o35": 60.0,
      "u15": 8.4,
      "u25": 21.9,
-     "u35": 39.9,
+     "u35": 40.0,
      "u45": 58.5,
      "tg01": 8.4,
      "tg23": 31.6,
-     "tg4p": 60.1,
+     "tg4p": 60.0,
      "btts": 35.9,
      "nobtts": 64.1,
      "h_scores": 97.4,
@@ -2839,22 +2743,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 90,
-     "d": 7,
-     "a": 3
-    },
-    "edge": {
-     "h": -5.4,
-     "d": -45.3,
-     "a": -38.5
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "1",
@@ -2895,9 +2783,9 @@
     {
      "key": "tg4p",
      "label": "4 שערים ומעלה",
-     "p": 60.1,
+     "p": 60.0,
      "price": 1.6,
-     "ev": -0.038,
+     "ev": -0.04,
      "eligible": true,
      "group": "שערים"
     },
@@ -3066,7 +2954,7 @@
      "2_o15": 15.7,
      "1_o25": 43.4,
      "2_o25": 13.2,
-     "1x_o05": 76.0,
+     "1x_o05": 75.9,
      "x2_o05": 36.5,
      "1x_u45": 60.0,
      "x2_u45": 34.1,
@@ -3225,22 +3113,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 61,
-     "d": 21,
-     "a": 19
-    },
-    "edge": {
-     "h": -5.6,
-     "d": -15.9,
-     "a": -14.4
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -3609,22 +3481,6 @@
      "2025-10-01 Barcelona 1-2 Paris SG (CL)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 40,
-     "d": 20,
-     "a": 40
-    },
-    "edge": {
-     "h": -8.4,
-     "d": -17.8,
-     "a": -5.7
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": false,
-    "flag": null
-   },
    "menu": [
     {
      "key": "o25",
@@ -3802,7 +3658,7 @@
     "btts": 61.9,
     "cs_home": 29.0,
     "cs_away": 13.5,
-    "home_by2": 32.9,
+    "home_by2": 33.0,
     "away_by2": 9.7,
     "exp_total": 3.31,
     "likely_total": 3,
@@ -3842,7 +3698,7 @@
      "x2_u45": 37.1,
      "1_cs": 24.6,
      "2_cs": 9.1,
-     "h_by2": 32.9,
+     "h_by2": 33.0,
      "a_by2": 9.7
     },
     "marg": {
@@ -3995,22 +3851,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 61,
-     "d": 20,
-     "a": 19
-    },
-    "edge": {
-     "h": -1.8,
-     "d": -22.4,
-     "a": -18.4
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -4239,10 +4079,10 @@
      "-3": 0.21,
      "-2": 1.01,
      "-1": 3.53,
-     "0": 9.82,
+     "0": 9.83,
      "1": 16.13,
      "2": 19.78,
-     "3": 18.38,
+     "3": 18.37,
      "4": 13.79,
      "5": 8.71,
      "6": 8.59
@@ -4375,22 +4215,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 83,
-     "d": 11,
-     "a": 6
-    },
-    "edge": {
-     "h": -4.5,
-     "d": -24.1,
-     "a": -32.9
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "1",
@@ -4478,7 +4302,7 @@
      "label": "ŠK Slovan Bratislava לא מפסידה (יתרון)",
      "p": 14.6,
      "price": 4.4,
-     "ev": -0.357,
+     "ev": -0.356,
      "eligible": true,
      "group": "יתרון"
     },
@@ -4620,7 +4444,7 @@
      "-1": 20.77,
      "0": 17.3,
      "1": 8.97,
-     "2": 3.78,
+     "2": 3.77,
      "3": 1.25,
      "4": 0.35,
      "5": 0.09,
@@ -4754,22 +4578,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 10,
-     "d": 15,
-     "a": 76
-    },
-    "edge": {
-     "h": -25.0,
-     "d": -18.5,
-     "a": -5.2
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "2",
@@ -4848,7 +4656,7 @@
      "label": "Sabah FK לא מפסידה (יתרון)",
      "p": 31.8,
      "price": 3.1,
-     "ev": -0.015,
+     "ev": -0.016,
      "eligible": true,
      "group": "יתרון"
     },
@@ -5141,22 +4949,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 30,
-     "d": 25,
-     "a": 46
-    },
-    "edge": {
-     "h": -10.0,
-     "d": -11.5,
-     "a": -8.8
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "hc:1:B",
@@ -5389,7 +5181,7 @@
      "2": 20.06,
      "3": 17.23,
      "4": 12.02,
-     "5": 7.07,
+     "5": 7.06,
      "6": 6.15
     },
     "top": [
@@ -5514,22 +5306,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 80,
-     "d": 13,
-     "a": 7
-    },
-    "edge": {
-     "h": -4.6,
-     "d": -25.7,
-     "a": -35.0
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -5865,22 +5641,6 @@
      "2024-04-17 Bayern 1-0 Arsenal (CL)",
      "2025-11-26 Arsenal 3-1 Bayern (CL)"
     ]
-   },
-   "sharp": {
-    "p": {
-     "h": 47,
-     "d": 24,
-     "a": 29
-    },
-    "edge": {
-     "h": -0.5,
-     "d": -18.7,
-     "a": -14.3
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -6223,22 +5983,6 @@
      "2026-01-29 Betis 2-1 Feyenoord (EL)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 65,
-     "d": 19,
-     "a": 17
-    },
-    "edge": {
-     "h": -3.1,
-     "d": -17.5,
-     "a": -18.4
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "o25",
@@ -6569,22 +6313,6 @@
      "partial": false
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 47,
-     "d": 24,
-     "a": 29
-    },
-    "edge": {
-     "h": -3.3,
-     "d": -16.0,
-     "a": -13.4
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -6917,22 +6645,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 42,
-     "d": 25,
-     "a": 33
-    },
-    "edge": {
-     "h": -10.2,
-     "d": -12.0,
-     "a": -9.0
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "btts",
@@ -7119,7 +6831,7 @@
      "2_o25": 4.1,
      "1x_o05": 91.7,
      "x2_o05": 15.0,
-     "1x_u45": 57.2,
+     "1x_u45": 57.3,
      "x2_u45": 14.7,
      "1_cs": 41.9,
      "2_cs": 2.2,
@@ -7267,22 +6979,6 @@
      "2021-09-28 Shakhtar 0-0 Inter (CL)",
      "2021-11-24 Inter 2-0 Shakhtar (CL)"
     ]
-   },
-   "sharp": {
-    "p": {
-     "h": 82,
-     "d": 11,
-     "a": 7
-    },
-    "edge": {
-     "h": -5.4,
-     "d": -29.2,
-     "a": -33.5
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -7460,7 +7156,7 @@
      "nobtts": 38.1,
      "h_scores": 84.2,
      "a_scores": 73.0,
-     "h_o15": 56.0,
+     "h_o15": 55.9,
      "a_o15": 38.2,
      "h_cs": 27.0,
      "a_cs": 15.8,
@@ -7622,22 +7318,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 44,
-     "d": 26,
-     "a": 30
-    },
-    "edge": {
-     "h": -5.1,
-     "d": -12.8,
-     "a": -12.4
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -7845,7 +7525,7 @@
      "3": 16.7,
      "4": 11.67,
      "5": 6.9,
-     "6": 6.1
+     "6": 6.11
     },
     "top": [
      {
@@ -7974,22 +7654,6 @@
      "2024-03-06 Real Madrid 1-1 RB Leipzig (CL)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 79,
-     "d": 12,
-     "a": 9
-    },
-    "edge": {
-     "h": -1.4,
-     "d": -29.3,
-     "a": -30.3
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "o25",
@@ -8023,7 +7687,7 @@
      "label": "Real Madrid מנצחת בהפרש 3 או יותר (יתרון)",
      "p": 41.4,
      "price": 2.15,
-     "ev": -0.111,
+     "ev": -0.11,
      "eligible": true,
      "group": "יתרון"
     },
@@ -8320,22 +7984,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 81,
-     "d": 11,
-     "a": 8
-    },
-    "edge": {
-     "h": -3.0,
-     "d": -29.3,
-     "a": -30.4
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -8670,22 +8318,6 @@
      "2026-02-08 Ath Bilbao 4-2 Levante (LL)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 25,
-     "d": 31,
-     "a": 44
-    },
-    "edge": {
-     "h": -20.9,
-     "d": -3.7,
-     "a": -7.0
-    },
-    "books": 18,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "hc:-1:A",
@@ -8845,7 +8477,7 @@
      "h_scores": 65.9,
      "a_scores": 85.9,
      "h_o15": 30.1,
-     "a_o15": 59.7,
+     "a_o15": 59.8,
      "h_cs": 14.1,
      "a_cs": 34.1,
      "1_o15": 15.5,
@@ -8996,22 +8628,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 16,
-     "d": 20,
-     "a": 64
-    },
-    "edge": {
-     "h": -20.8,
-     "d": -20.9,
-     "a": -11.0
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -9324,22 +8940,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 46,
-     "d": 24,
-     "a": 30
-    },
-    "edge": {
-     "h": -9.0,
-     "d": -19.6,
-     "a": -17.1
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "hc:1:B",
@@ -9466,7 +9066,7 @@
      "0.5": 93.2,
      "1.5": 77.0,
      "2.5": 53.5,
-     "3.5": 31.8,
+     "3.5": 31.9,
      "4.5": 16.4
     },
     "btts": 56.1,
@@ -9486,14 +9086,14 @@
      "o05": 93.2,
      "o15": 77.0,
      "o25": 53.5,
-     "o35": 31.8,
+     "o35": 31.9,
      "u15": 23.0,
      "u25": 46.5,
-     "u35": 68.2,
+     "u35": 68.1,
      "u45": 83.6,
      "tg01": 23.0,
      "tg23": 45.2,
-     "tg4p": 31.8,
+     "tg4p": 31.9,
      "btts": 56.1,
      "nobtts": 43.9,
      "h_scores": 79.8,
@@ -9650,22 +9250,6 @@
      "partial": false
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 43,
-     "d": 26,
-     "a": 31
-    },
-    "edge": {
-     "h": -13.0,
-     "d": -15.8,
-     "a": -15.9
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -9978,22 +9562,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 37,
-     "d": 26,
-     "a": 37
-    },
-    "edge": {
-     "h": -7.7,
-     "d": -18.4,
-     "a": -19.1
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": false,
-    "flag": null
-   },
    "menu": [
     {
      "key": "hc:-1:A",
@@ -10118,7 +9686,7 @@
     ],
     "over": {
      "0.5": 94.7,
-     "1.5": 81.2,
+     "1.5": 81.3,
      "2.5": 59.7,
      "3.5": 38.0,
      "4.5": 21.1
@@ -10138,14 +9706,14 @@
      "x2": 44.3,
      "12": 77.3,
      "o05": 94.7,
-     "o15": 81.2,
+     "o15": 81.3,
      "o25": 59.7,
      "o35": 38.0,
-     "u15": 18.8,
+     "u15": 18.7,
      "u25": 40.3,
      "u35": 62.0,
      "u45": 78.9,
-     "tg01": 18.8,
+     "tg01": 18.7,
      "tg23": 43.2,
      "tg4p": 38.0,
      "btts": 58.7,
@@ -10312,22 +9880,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 58,
-     "d": 22,
-     "a": 20
-    },
-    "edge": {
-     "h": -7.5,
-     "d": -22.0,
-     "a": -24.1
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -10640,22 +10192,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 71,
-     "d": 18,
-     "a": 11
-    },
-    "edge": {
-     "h": -7.3,
-     "d": -24.4,
-     "a": -31.1
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "1",
@@ -10966,22 +10502,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 31,
-     "d": 26,
-     "a": 43
-    },
-    "edge": {
-     "h": -18.9,
-     "d": -17.4,
-     "a": -9.3
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -11302,22 +10822,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 62,
-     "d": 21,
-     "a": 17
-    },
-    "edge": {
-     "h": -6.9,
-     "d": -23.0,
-     "a": -25.5
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "1",
@@ -11637,22 +11141,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 18,
-     "d": 21,
-     "a": 61
-    },
-    "edge": {
-     "h": -22.2,
-     "d": -27.1,
-     "a": -7.8
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "2",
@@ -11964,22 +11452,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 16,
-     "d": 19,
-     "a": 65
-    },
-    "edge": {
-     "h": -24.4,
-     "d": -25.4,
-     "a": -6.4
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "o25",
@@ -12094,7 +11566,7 @@
    ],
    "dist": {
     "total": [
-     6.6,
+     6.7,
      15.9,
      23.4,
      21.7,
@@ -12103,7 +11575,7 @@
      7.5
     ],
     "over": {
-     "0.5": 93.4,
+     "0.5": 93.3,
      "1.5": 77.4,
      "2.5": 54.0,
      "3.5": 32.3,
@@ -12123,7 +11595,7 @@
      "1x": 54.6,
      "x2": 70.1,
      "12": 75.3,
-     "o05": 93.4,
+     "o05": 93.3,
      "o15": 77.4,
      "o25": 54.0,
      "o35": 32.3,
@@ -12197,7 +11669,7 @@
      },
      {
       "s": "0-0",
-      "p": 6.6
+      "p": 6.7
      },
      {
       "s": "2-2",
@@ -12290,22 +11762,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 20,
-     "d": 23,
-     "a": 57
-    },
-    "edge": {
-     "h": -25.1,
-     "d": -23.2,
-     "a": -5.2
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -12617,22 +12073,6 @@
      "partial": true
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 7,
-     "d": 12,
-     "a": 80
-    },
-    "edge": {
-     "h": -43.3,
-     "d": -39.4,
-     "a": -3.5
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -13575,22 +13015,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 26,
-     "d": 26,
-     "a": 48
-    },
-    "edge": {
-     "h": -22.4,
-     "d": -18.0,
-     "a": -6.3
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "o25",
@@ -13904,22 +13328,6 @@
      "2024-11-07 TSG Hoffenheim 2-2 Lyon (EL)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 50,
-     "d": 23,
-     "a": 27
-    },
-    "edge": {
-     "h": -8.3,
-     "d": -21.4,
-     "a": -18.1
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "o25",
@@ -14230,22 +13638,6 @@
      "partial": false
     },
     "h2h": []
-   },
-   "sharp": {
-    "p": {
-     "h": 75,
-     "d": 15,
-     "a": 10
-    },
-    "edge": {
-     "h": -6.5,
-     "d": -28.3,
-     "a": -30.1
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -14566,22 +13958,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 57,
-     "d": 23,
-     "a": 20
-    },
-    "edge": {
-     "h": -8.1,
-     "d": -20.5,
-     "a": -23.8
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "1",
@@ -14882,22 +14258,6 @@
      "2026-02-01 Nice 2-2 Brest (L1)"
     ]
    },
-   "sharp": {
-    "p": {
-     "h": 44,
-     "d": 29,
-     "a": 28
-    },
-    "edge": {
-     "h": -8.2,
-     "d": -4.1,
-     "a": -16.9
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "1",
@@ -15157,22 +14517,6 @@
     },
     "h2h": []
    },
-   "sharp": {
-    "p": {
-     "h": 55,
-     "d": 26,
-     "a": 19
-    },
-    "edge": {
-     "h": -3.6,
-     "d": -13.9,
-     "a": -17.4
-    },
-    "books": 20,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
-   },
    "menu": [
     {
      "key": "1",
@@ -15426,22 +14770,6 @@
      "2024-11-30 Nott'm Forest 1-0 Ipswich (PL)",
      "2025-03-15 Ipswich 2-4 Nott'm Forest (PL)"
     ]
-   },
-   "sharp": {
-    "p": {
-     "h": 31,
-     "d": 27,
-     "a": 42
-    },
-    "edge": {
-     "h": -11.3,
-     "d": -10.8,
-     "a": -9.8
-    },
-    "books": 24,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -15705,22 +15033,6 @@
      "2024-11-24 Torino 1-1 Monza (SA)",
      "2025-03-02 Monza 0-2 Torino (SA)"
     ]
-   },
-   "sharp": {
-    "p": {
-     "h": 45,
-     "d": 27,
-     "a": 28
-    },
-    "edge": {
-     "h": -8.3,
-     "d": -12.6,
-     "a": -9.2
-    },
-    "books": 22,
-    "is_sharp": true,
-    "consistent": true,
-    "flag": null
    },
    "menu": [
     {
@@ -17041,7 +16353,7 @@
      "1": 23.33,
      "2": 19.09,
      "3": 11.66,
-     "4": 5.8,
+     "4": 5.81,
      "5": 2.45,
      "6": 1.32
     },
@@ -19565,7 +18877,7 @@
      "a_cs": 20.2,
      "1_o15": 42.7,
      "2_o15": 10.2,
-     "1_o25": 30.6,
+     "1_o25": 30.7,
      "2_o25": 7.5,
      "1x_o05": 73.1,
      "x2_o05": 32.5,
@@ -21355,7 +20667,7 @@
      "0": 21.66,
      "1": 21.72,
      "2": 16.58,
-     "3": 9.67,
+     "3": 9.68,
      "4": 4.6,
      "5": 1.85,
      "6": 0.91
@@ -21939,7 +21251,7 @@
     "marg": {
      "-6": 0.13,
      "-5": 0.45,
-     "-4": 1.6,
+     "-4": 1.59,
      "-3": 4.72,
      "-2": 11.12,
      "-1": 19.11,
@@ -23659,7 +22971,7 @@
     },
     "btts": 51.8,
     "cs_home": 19.3,
-    "cs_away": 36.1,
+    "cs_away": 36.0,
     "home_by2": 8.6,
     "away_by2": 27.8,
     "exp_total": 2.67,
@@ -23684,12 +22996,12 @@
      "tg4p": 27.9,
      "btts": 51.8,
      "nobtts": 48.2,
-     "h_scores": 63.9,
+     "h_scores": 64.0,
      "a_scores": 80.7,
      "h_o15": 27.3,
      "a_o15": 48.9,
      "h_cs": 19.3,
-     "a_cs": 36.1,
+     "a_cs": 36.0,
      "1_o15": 16.5,
      "2_o15": 40.4,
      "1_o25": 12.8,
@@ -26816,30 +26128,7 @@
   ],
   "since": "2026-10-14"
  },
- "backtest": {
-  "holdout_from": "2024-12-01",
-  "n": 3650,
-  "exact_pct": 12.4,
-  "result_pct": 53.8,
-  "baseline_11": 11.0,
-  "tiers": [
-   {
-    "tier": "C",
-    "n": 1825,
-    "hit_pct": 10.1
-   },
-   {
-    "tier": "B",
-    "n": 1095,
-    "hit_pct": 13.7
-   },
-   {
-    "tier": "A",
-    "n": 730,
-    "hit_pct": 16.2
-   }
-  ]
- },
+ "backtest": null,
  "coverage": [
   {
    "league": "CL",
@@ -26856,7 +26145,7 @@
   {
    "league": "IL",
    "played": 1431,
-   "upcoming": 16,
+   "upcoming": 15,
    "last": "2026-10-18"
   },
   {
@@ -26884,43 +26173,7 @@
    "last": "2026-10-18"
   }
  ],
- "calib": {
-  "CL": {
-   "n": 324,
-   "direction": 60.8,
-   "exact": 6.8
-  },
-  "EL": {
-   "n": 296,
-   "direction": 57.4,
-   "exact": 10.1
-  },
-  "IL": {
-   "n": 391,
-   "direction": 50.6,
-   "exact": 10.2
-  },
-  "L1": {
-   "n": 554,
-   "direction": 53.1,
-   "exact": 9.7
-  },
-  "LL": {
-   "n": 704,
-   "direction": 54.1,
-   "exact": 17.3
-  },
-  "PL": {
-   "n": 694,
-   "direction": 51.0,
-   "exact": 12.0
-  },
-  "SA": {
-   "n": 687,
-   "direction": 53.9,
-   "exact": 14.7
-  }
- },
+ "calib": {},
  "last_result": {
   "CL": "2026-10-14",
   "EL": "2026-10-15",
@@ -26952,10 +26205,7 @@
     "model_ev"
    ],
    "loss_per_100": 0.0,
-   "stake_pct": 2.66,
-   "sharp_p": 25,
-   "sharp_edge": -20.9,
-   "sharp_flag": false
+   "stake_pct": 2.66
   },
   {
    "date": "2026-10-22",
@@ -26977,10 +26227,7 @@
     "model_ev"
    ],
    "loss_per_100": 0.0,
-   "stake_pct": 2.13,
-   "sharp_p": 27,
-   "sharp_edge": -18.1,
-   "sharp_flag": false
+   "stake_pct": 2.13
   },
   {
    "date": "2026-10-22",
@@ -27002,10 +26249,7 @@
     "model_ev"
    ],
    "loss_per_100": 0.0,
-   "stake_pct": 1.14,
-   "sharp_p": 20,
-   "sharp_edge": -25.1,
-   "sharp_flag": false
+   "stake_pct": 1.14
   },
   {
    "date": "2026-10-20",
@@ -27027,10 +26271,7 @@
     "model_ev"
    ],
    "loss_per_100": 0.0,
-   "stake_pct": 0.34,
-   "sharp_p": 10,
-   "sharp_edge": -25.0,
-   "sharp_flag": false
+   "stake_pct": 0.34
   },
   {
    "date": "2026-10-22",
@@ -27072,10 +26313,7 @@
    "flag": false,
    "strategies": [],
    "loss_per_100": 0.0,
-   "stake_pct": 0.24,
-   "sharp_p": 7,
-   "sharp_edge": -43.3,
-   "sharp_flag": false
+   "stake_pct": 0.24
   },
   {
    "date": "2026-10-22",
@@ -27095,10 +26333,7 @@
    "flag": false,
    "strategies": [],
    "loss_per_100": 0.0,
-   "stake_pct": 0.26,
-   "sharp_p": 11,
-   "sharp_edge": -31.1,
-   "sharp_flag": false
+   "stake_pct": 0.26
   },
   {
    "date": "2026-10-23",
@@ -27120,10 +26355,7 @@
     "favourite"
    ],
    "loss_per_100": 0.3,
-   "stake_pct": 0.0,
-   "sharp_p": 55,
-   "sharp_edge": -3.6,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-21",
@@ -27145,10 +26377,7 @@
     "favourite"
    ],
    "loss_per_100": 2.5,
-   "stake_pct": 0.0,
-   "sharp_p": 65,
-   "sharp_edge": -3.1,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-22",
@@ -27170,10 +26399,7 @@
     "favourite"
    ],
    "loss_per_100": 8.5,
-   "stake_pct": 0.0,
-   "sharp_p": 61,
-   "sharp_edge": -7.8,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-20",
@@ -27195,10 +26421,7 @@
     "favourite"
    ],
    "loss_per_100": 8.6,
-   "stake_pct": 0.0,
-   "sharp_p": 61,
-   "sharp_edge": -5.6,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-20",
@@ -27220,10 +26443,7 @@
     "favourite"
    ],
    "loss_per_100": 8.8,
-   "stake_pct": 0.0,
-   "sharp_p": 58,
-   "sharp_edge": -6.6,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-22",
@@ -27245,10 +26465,7 @@
     "favourite"
    ],
    "loss_per_100": 10.4,
-   "stake_pct": 0.0,
-   "sharp_p": 58,
-   "sharp_edge": -7.5,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-20",
@@ -27270,10 +26487,7 @@
     "favourite"
    ],
    "loss_per_100": 12.0,
-   "stake_pct": 0.0,
-   "sharp_p": 61,
-   "sharp_edge": -1.8,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-22",
@@ -27295,10 +26509,7 @@
     "favourite"
    ],
    "loss_per_100": 13.0,
-   "stake_pct": 0.0,
-   "sharp_p": 62,
-   "sharp_edge": -6.9,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-22",
@@ -27320,10 +26531,7 @@
     "favourite"
    ],
    "loss_per_100": 13.6,
-   "stake_pct": 0.0,
-   "sharp_p": 57,
-   "sharp_edge": -8.1,
-   "sharp_flag": false
+   "stake_pct": 0.0
   },
   {
    "date": "2026-10-22",
@@ -27542,8 +26750,8 @@
    }
   ]
  },
- "sharp_available": true,
- "sharp_matches": 43,
+ "sharp_available": false,
+ "sharp_matches": 0,
  "daily": {
   "2026-10-19": {
    "date": "2026-10-19",
@@ -27699,9 +26907,9 @@
    "headline": {
     "key": "tg4p",
     "label": "4 שערים ומעלה",
-    "p": 60.1,
+    "p": 60.0,
     "price": 1.6,
-    "ev": -0.038,
+    "ev": -0.04,
     "eligible": true,
     "group": "שערים",
     "date": "2026-10-20",
@@ -27714,9 +26922,9 @@
     {
      "key": "tg4p",
      "label": "4 שערים ומעלה",
-     "p": 60.1,
+     "p": 60.0,
      "price": 1.6,
-     "ev": -0.038,
+     "ev": -0.04,
      "eligible": true,
      "group": "שערים",
      "date": "2026-10-20",
@@ -27872,7 +27080,7 @@
      "label": "Sabah FK לא מפסידה (יתרון)",
      "p": 31.8,
      "price": 3.1,
-     "ev": -0.015,
+     "ev": -0.016,
      "eligible": true,
      "group": "יתרון",
      "date": "2026-10-20",
@@ -27897,7 +27105,7 @@
     }
    ],
    "min_odds": 1.5,
-   "ceiling": 60.1
+   "ceiling": 60.0
   },
   "2026-10-21": {
    "date": "2026-10-21",
@@ -28047,7 +27255,7 @@
      "label": "Real Madrid מנצחת בהפרש 3 או יותר (יתרון)",
      "p": 41.4,
      "price": 2.15,
-     "ev": -0.111,
+     "ev": -0.11,
      "eligible": true,
      "group": "יתרון",
      "date": "2026-10-21",
