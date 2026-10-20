@@ -4,7 +4,7 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-10-18T15:57,2026-10-19,SA,Parma,Torino,tg23,2 עד 3 שערים,47.2,1.9,2,0-3,True,True,0.9
 2026-10-18T15:57,2026-10-19,LL,Getafe,Vallecano,tg23,2 עד 3 שערים,46.5,1.9,3,1-1,True,True,0.9
 2026-10-18T15:57,2026-10-20,CL,Man City,AEK Athens,tg4p,4 שערים ומעלה,60.0,1.6,1,,False,False,
-2026-10-18T15:57,2026-10-20,CL,Fenerbahce,Slavia Praha,btts,שתיהן מבקיעות,59.3,1.5,2,,False,False,
+2026-10-18T15:57,2026-10-20,CL,Fenerbahce,Slavia Praha,btts,שתיהן מבקיעות,59.3,1.5,2,2-2,True,True,0.5
 2026-10-18T15:57,2026-10-20,CL,Napoli,Bodo/Glimt,1,Napoli מנצחת,59.0,1.55,3,,False,False,
 2026-10-19T05:44,2026-10-21,LL,Levante,Ath Bilbao,hc:-1:A,Levante לא מפסידה (יתרון),65.8,1.55,1,,False,False,
 2026-10-19T05:44,2026-10-21,CL,Betis,Feyenoord,1,Betis מנצחת,65.0,1.5,2,,False,False,
