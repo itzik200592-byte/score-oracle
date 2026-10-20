@@ -19,7 +19,7 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-10-17T14:12,2026-10-17,L1,Strasbourg,Paris SG,1x2,a,Paris SG,1.35,66.0,-10.9,18:15,1.0,1-3,0.35,True,favourite
 2026-10-17T14:12,2026-10-17,LL,Betis,Barcelona,1x2,a,Barcelona,1.35,65.0,-12.2,19:30,1.0,2-5,0.35,True,favourite
 2026-10-17T14:12,2026-10-17,IL,Maccabi Petah Tikva,Maccabi Haifa,1x2,a,Maccabi Haifa,1.25,70.0,-12.5,19:30,1.0,1-2,0.25,True,favourite
-2026-10-17T14:12,2026-10-19,PL,Tottenham,Coventry,1x2,h,Tottenham,1.4,62.0,-13.2,22:00,1.0,,,False,favourite
+2026-10-17T14:12,2026-10-19,PL,Tottenham,Coventry,1x2,h,Tottenham,1.4,62.0,-13.2,22:00,1.0,3-1,0.4,True,favourite
 2026-10-17T14:12,2026-10-20,CL,Sabah FK,Dortmund,1x2,a,Dortmund,1.25,68.0,-15.0,19:45,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-17,IL,Hapoel Tel-Aviv,Ironi Tiberias,1x2,h,Hapoel Tel-Aviv,1.15,72.0,-17.2,18:45,1.0,1-0,0.15,True,favourite
 2026-10-17T14:39,2026-10-18,PL,Brighton,Crystal Palace,1x2,h,Brighton,1.45,62.0,-10.1,16:00,1.0,5-0,0.45,True,favourite
