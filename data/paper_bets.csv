@@ -5,12 +5,12 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-10-17T14:02,2026-10-21,CL,Lille,Galatasaray,1x2,h,Lille,2.15,51.0,9.7,19:45,1.0,,,False,model_ev
 2026-10-17T14:02,2026-10-17,IL,Hapoel Tel-Aviv,Ironi Tiberias,1x2,d,תיקו,6.8,16.0,8.8,18:45,1.0,1-0,-1.0,True,model_ev
 2026-10-17T14:12,2026-10-21,CL,Real Madrid,RB Leipzig,1x2,h,Real Madrid,1.25,79.0,-1.2,22:00,1.0,,,False,favourite
-2026-10-17T14:12,2026-10-20,CL,Man City,AEK Athens,1x2,h,Man City,1.05,93.0,-2.3,22:00,1.0,,,False,favourite
-2026-10-17T14:12,2026-10-20,CL,Roma,ŠK Slovan Bratislava,1x2,h,Roma,1.15,85.0,-2.3,22:00,1.0,,,False,favourite
+2026-10-17T14:12,2026-10-20,CL,Man City,AEK Athens,1x2,h,Man City,1.05,93.0,-2.3,22:00,1.0,5-1,0.05,True,favourite
+2026-10-17T14:12,2026-10-20,CL,Roma,ŠK Slovan Bratislava,1x2,h,Roma,1.15,85.0,-2.3,22:00,1.0,4-0,0.15,True,favourite
 2026-10-17T14:12,2026-10-21,CL,Betis,Feyenoord,1x2,h,Betis,1.5,65.0,-2.5,22:00,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-21,CL,Aston Villa,Viking FK,1x2,h,Aston Villa,1.2,81.0,-2.8,22:00,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-21,CL,Inter,Shakhtar,1x2,h,Inter,1.2,81.0,-2.8,22:00,1.0,,,False,favourite
-2026-10-17T14:12,2026-10-20,CL,Liverpool,Villarreal,1x2,h,Liverpool,1.45,66.0,-4.3,22:00,1.0,,,False,favourite
+2026-10-17T14:12,2026-10-20,CL,Liverpool,Villarreal,1x2,h,Liverpool,1.45,66.0,-4.3,22:00,1.0,4-3,0.45,True,favourite
 2026-10-17T14:12,2026-10-21,CL,Aston Villa,VIKING FK,1x2,h,Aston Villa,1.2,79.0,-5.2,22:00,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-21,CL,Sporting,LASK Linz,1x2,h,Sporting,1.2,79.0,-5.2,22:00,1.0,,,False,favourite
 2026-10-17T14:12,2026-10-17,SA,Roma,Genoa,1x2,h,Roma,1.45,65.0,-5.8,21:45,1.0,2-0,0.45,True,favourite
@@ -35,10 +35,10 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-10-18T15:53,2026-10-23,LL,Alaves,Malaga,1x2,h,Alaves,1.8,52.0,-6.4,22:00,1.0,,,False,favourite
 2026-10-18T15:53,2026-10-18,L1,Lyon,Nice,1x2,h,Lyon,1.75,53.0,-7.3,21:45,1.0,2-1,0.75,True,favourite
 2026-10-18T15:53,2026-10-22,EL,Lech Poznan,Sunderland,1x2,a,Sunderland,1.5,61.0,-8.5,19:45,1.0,,,False,favourite
-2026-10-18T15:53,2026-10-20,CL,Napoli,Bodo/Glimt,1x2,h,Napoli,1.55,59.0,-8.6,22:00,1.0,,,False,favourite
+2026-10-18T15:53,2026-10-20,CL,Napoli,Bodo/Glimt,1x2,h,Napoli,1.55,59.0,-8.6,22:00,1.0,4-3,0.55,True,favourite
 2026-10-18T15:53,2026-10-20,CL,Fenerbahce,Slavia Praha,1x2,h,Fenerbahce,1.6,57.0,-8.8,19:45,1.0,2-2,-1.0,True,favourite
 2026-10-18T15:53,2026-10-22,EL,Dinamo Zagreb,NEC Nijmegen,1x2,h,Dinamo Zagreb,1.6,56.0,-10.4,19:45,1.0,,,False,favourite
-2026-10-18T15:53,2026-10-20,CL,Porto,PSV,1x2,h,Porto,1.6,55.0,-12.0,22:00,1.0,,,False,favourite
+2026-10-18T15:53,2026-10-20,CL,Porto,PSV,1x2,h,Porto,1.6,55.0,-12.0,22:00,1.0,0-1,-1.0,True,favourite
 2026-10-18T15:53,2026-10-22,EL,Viktoria Plzeň,Levski Sofia,1x2,h,Viktoria Plzeň,1.6,54.0,-13.6,22:00,1.0,,,False,favourite
 2026-10-18T15:53,2026-10-22,EL,Juventus,Rennes,1x2,h,Juventus,1.5,57.0,-14.5,19:45,1.0,,,False,favourite
 2026-10-18T15:53,2026-10-22,EL,Olympiakos,Sparta Praha,1x2,h,Olympiakos,1.5,57.0,-14.5,22:00,1.0,,,False,favourite
