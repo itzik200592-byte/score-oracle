@@ -12576,7 +12576,7 @@ date,league,hg,ag,played,o_h,o_d,o_a,o_ov,o_un,src,home,away,n_src,xg_h,xg_a,sea
 2026-10-21,CL,2.0,4.0,True,,,,,,espn,Lille,Galatasaray,2,,,2026,,
 2026-10-21,CL,4.0,1.0,True,,,,,,espn,Real Madrid,RB Leipzig,2,,,2026,,
 2026-10-21,CL,2.0,3.0,True,,,,,,espn,Sporting,LASK Linz,2,,,2026,,
-2026-10-21,LL,3.0,1.0,True,3.42,3.29,2.15,1.91,1.83,football-data,Levante,Ath Bilbao,4,,,2026,1.131483568804757,1.474072167203234
+2026-10-21,LL,3.0,1.0,True,3.42,3.29,2.15,1.91,1.83,football-data,Levante,Ath Bilbao,3,,,2026,1.131483568804757,1.474072167203234
 2026-10-22,EL,0.0,4.0,True,,,,,,espn,Ararat-Armenia,AZ Alkmaar,2,,,2026,,
 2026-10-22,EL,2.0,2.0,True,,,,,,espn,Beşiktaş,Crystal Palace,2,,,2026,,
 2026-10-22,EL,3.0,0.0,True,,,,,,espn,Bournemouth,Milan,2,,,2026,,
@@ -12595,52 +12595,52 @@ date,league,hg,ag,played,o_h,o_d,o_a,o_ov,o_un,src,home,away,n_src,xg_h,xg_a,sea
 2026-10-22,EL,3.0,0.0,True,,,,,,espn,TSG Hoffenheim,Lyon,2,,,2026,,
 2026-10-22,EL,4.0,0.0,True,,,,,,espn,Union St.-Gilloise,Hapoel Be'er Sheva,2,,,2026,,
 2026-10-22,EL,1.0,2.0,True,,,,,,espn,Viktoria Plzeň,Levski Sofia,2,,,2026,,
-2026-10-23,L1,,,False,,,,,,espn,Brest,Nice,1,,,2026,,
-2026-10-23,LL,,,False,,,,,,espn,Alaves,Malaga,1,,,2026,,
-2026-10-23,PL,,,False,,,,,,espn,Ipswich,Nott'm Forest,1,,,2026,,
-2026-10-23,SA,,,False,,,,,,espn,Torino,Monza,1,,,2026,,
+2026-10-23,L1,,,False,2.21,3.49,3.11,1.69,2.1,football-data,Brest,Nice,2,,,2026,1.575568900117431,1.3034331890457815
+2026-10-23,LL,,,False,1.62,3.77,5.65,2.0,1.77,football-data,Alaves,Malaga,2,,,2026,1.7238665444532424,0.8203708699526568
+2026-10-23,PL,,,False,3.01,3.44,2.28,1.72,2.06,football-data,Ipswich,Nott'm Forest,2,,,2026,1.3098845802355517,1.5289828832800987
+2026-10-23,SA,,,False,2.09,3.45,3.43,1.79,1.96,football-data,Torino,Monza,2,,,2026,1.5648245737206423,1.182657826628932
 2026-10-24,IL,,,False,,,,,,thesportsdb,Hapoel Jerusalem,Hapoel Tel-Aviv,1,,,2026,,
 2026-10-24,IL,,,False,,,,,,thesportsdb,Hapoel Kiryat Shmona,Bnei Sakhnin,1,,,2026,,
 2026-10-24,IL,,,False,,,,,,thesportsdb,Hapoel Ramat Gan,Maccabi Petah Tikva,1,,,2026,,
 2026-10-24,IL,,,False,,,,,,thesportsdb,Ironi Tiberias,Maccabi Netanya,1,,,2026,,
 2026-10-24,IL,,,False,,,,,,thesportsdb,Maccabi Haifa,Hapoel Be'er Sheva,1,,,2026,,
 2026-10-24,IL,,,False,,,,,,thesportsdb,Maccabi Tel Aviv,Hapoel Haifa,1,,,2026,,
-2026-10-24,L1,,,False,,,,,,espn,Lens,Paris FC,1,,,2026,,
-2026-10-24,LL,,,False,,,,,,espn,Ath Madrid,Deportivo,1,,,2026,,
-2026-10-24,LL,,,False,,,,,,espn,Santander,Espanol,1,,,2026,,
-2026-10-24,LL,,,False,,,,,,espn,Valencia,Villarreal,1,,,2026,,
-2026-10-24,LL,,,False,,,,,,espn,Vallecano,Elche,1,,,2026,,
-2026-10-24,PL,,,False,,,,,,espn,Arsenal,Everton,1,,,2026,,
-2026-10-24,PL,,,False,,,,,,espn,Aston Villa,Man City,1,,,2026,,
-2026-10-24,PL,,,False,,,,,,espn,Chelsea,Tottenham,1,,,2026,,
-2026-10-24,PL,,,False,,,,,,espn,Coventry,Fulham,1,,,2026,,
-2026-10-24,SA,,,False,,,,,,espn,Cagliari,Bologna,1,,,2026,,
-2026-10-24,SA,,,False,,,,,,espn,Como,Sassuolo,1,,,2026,,
-2026-10-24,SA,,,False,,,,,,espn,Lazio,Parma,1,,,2026,,
-2026-10-24,SA,,,False,,,,,,espn,Napoli,Roma,1,,,2026,,
+2026-10-24,L1,,,False,2.39,3.56,2.74,1.62,2.21,football-data,Lens,Paris FC,2,,,2026,1.5482493251427931,1.4356625160031327
+2026-10-24,LL,,,False,1.26,5.81,10.67,1.54,2.38,football-data,Ath Madrid,Deportivo,2,,,2026,2.426024757503579,0.7140828207664301
+2026-10-24,LL,,,False,2.37,3.6,2.76,1.63,2.21,football-data,Santander,Espanol,2,,,2026,1.553463198165725,1.4273286754828842
+2026-10-24,LL,,,False,3.16,3.57,2.15,1.7,2.08,football-data,Valencia,Villarreal,2,,,2026,1.2803368237441914,1.5908071925007492
+2026-10-24,LL,,,False,1.77,3.72,4.36,1.82,1.91,football-data,Vallecano,Elche,2,,,2026,1.7075157111426011,1.0099880033790838
+2026-10-24,PL,,,False,1.43,4.41,7.27,1.8,1.94,football-data,Arsenal,Everton,2,,,2026,1.9878114439362449,0.7614280254677798
+2026-10-24,PL,,,False,4.73,4.26,1.62,1.5,2.49,football-data,Aston Villa,Man City,2,,,2026,1.1469557781885875,2.0667579408708177
+2026-10-24,PL,,,False,1.69,4.12,4.35,1.5,2.5,football-data,Chelsea,Tottenham,2,,,2026,2.0137278341276277,1.201524652157482
+2026-10-24,PL,,,False,3.04,3.46,2.23,1.7,2.07,football-data,Coventry,Fulham,2,,,2026,1.306085469319498,1.5522966342213984
+2026-10-24,SA,,,False,3.07,3.07,2.44,2.14,1.67,football-data,Cagliari,Bologna,2,,,2026,1.119524418320355,1.2791703463279964
+2026-10-24,SA,,,False,1.49,4.6,5.78,1.43,2.71,football-data,Como,Sassuolo,2,,,2026,2.266672497184673,1.0950541677919514
+2026-10-24,SA,,,False,1.39,4.56,8.18,1.83,1.92,football-data,Lazio,Parma,2,,,2026,2.0176003297872307,0.7040953620958598
+2026-10-24,SA,,,False,2.76,3.32,2.51,1.84,1.91,football-data,Napoli,Roma,2,,,2026,1.3087300708725604,1.381142381740079
 2026-10-25,IL,,,False,,,,,,thesportsdb,Hapoel Petah Tikva,Beitar Jerusalem,1,,,2026,,
-2026-10-25,L1,,,False,,,,,,espn,Angers,Lorient,1,,,2026,,
-2026-10-25,L1,,,False,,,,,,espn,Auxerre,Le Mans,1,,,2026,,
-2026-10-25,L1,,,False,,,,,,espn,Marseille,Le Havre,1,,,2026,,
-2026-10-25,L1,,,False,,,,,,espn,Monaco,Lille,1,,,2026,,
-2026-10-25,L1,,,False,,,,,,espn,Paris SG,Lyon,1,,,2026,,
-2026-10-25,L1,,,False,,,,,,espn,Rennes,Strasbourg,1,,,2026,,
-2026-10-25,L1,,,False,,,,,,espn,Toulouse,Troyes,1,,,2026,,
-2026-10-25,LL,,,False,,,,,,espn,Ath Bilbao,Getafe,1,,,2026,,
-2026-10-25,LL,,,False,,,,,,espn,Barcelona,Real Madrid,1,,,2026,,
-2026-10-25,LL,,,False,,,,,,espn,Celta,Betis,1,,,2026,,
-2026-10-25,LL,,,False,,,,,,espn,Sociedad,Levante,1,,,2026,,
-2026-10-25,PL,,,False,,,,,,espn,Crystal Palace,Newcastle,1,,,2026,,
-2026-10-25,PL,,,False,,,,,,espn,Hull,Brentford,1,,,2026,,
-2026-10-25,PL,,,False,,,,,,espn,Liverpool,Brighton,1,,,2026,,
-2026-10-25,PL,,,False,,,,,,espn,Man United,Bournemouth,1,,,2026,,
-2026-10-25,PL,,,False,,,,,,espn,Sunderland,Leeds,1,,,2026,,
-2026-10-25,SA,,,False,,,,,,espn,Atalanta,Frosinone,1,,,2026,,
-2026-10-25,SA,,,False,,,,,,espn,Genoa,Venezia,1,,,2026,,
-2026-10-25,SA,,,False,,,,,,espn,Inter,Fiorentina,1,,,2026,,
-2026-10-25,SA,,,False,,,,,,espn,Lecce,Juventus,1,,,2026,,
-2026-10-25,SA,,,False,,,,,,espn,Udinese,Milan,1,,,2026,,
-2026-10-26,LL,,,False,,,,,,espn,Sevilla,Osasuna,1,,,2026,,
+2026-10-25,L1,,,False,2.86,3.28,2.42,1.97,1.77,football-data,Angers,Lorient,2,,,2026,1.21421994067364,1.3390616521121632
+2026-10-25,L1,,,False,2.08,3.59,3.22,1.67,2.12,football-data,Auxerre,Le Mans,2,,,2026,1.6333187490234524,1.2778071815176069
+2026-10-25,L1,,,False,1.55,4.38,5.09,1.52,2.41,football-data,Marseille,Le Havre,2,,,2026,2.0911122919662297,1.0759517694111806
+2026-10-25,L1,,,False,2.04,3.43,3.46,1.78,1.96,football-data,Monaco,Lille,2,,,2026,1.5807109059018845,1.172801268602066
+2026-10-25,L1,,,False,1.75,4.2,3.92,1.41,2.75,football-data,Rennes,Strasbourg,2,,,2026,2.0615397160744497,1.336331165771138
+2026-10-25,L1,,,False,1.59,4.13,4.97,1.59,2.26,football-data,Toulouse,Troyes,2,,,2026,1.990167466910792,1.0503723454370797
+2026-10-25,LL,,,False,1.56,3.81,6.11,2.24,1.6,football-data,Ath Bilbao,Getafe,2,,,2026,1.6553851284730383,0.698066562635793
+2026-10-25,LL,,,False,1.6,5.23,3.98,1.16,4.78,football-data,Barcelona,Real Madrid,2,,,2026,2.652281353613564,1.6781861481754012
+2026-10-25,LL,,,False,2.89,3.37,2.35,1.79,1.94,football-data,Celta,Betis,2,,,2026,1.2886835988371348,1.4490704667310967
+2026-10-25,LL,,,False,1.64,4.08,4.74,1.56,2.32,football-data,Sociedad,Levante,2,,,2026,1.9840407610625963,1.1027953244877795
+2026-10-25,PL,,,False,2.86,3.58,2.28,1.57,2.3,football-data,Crystal Palace,Newcastle,2,,,2026,1.4351050415290194,1.623761388785543
+2026-10-25,PL,,,False,4.6,3.92,1.69,1.63,2.19,football-data,Hull,Brentford,2,,,2026,1.0816335276985745,1.891529751243829
+2026-10-25,PL,,,False,2.09,3.76,3.13,1.53,2.41,football-data,Liverpool,Brighton,2,,,2026,1.7462322350166153,1.4006603633768735
+2026-10-25,PL,,,False,2.1,3.63,3.19,1.6,2.26,football-data,Man United,Bournemouth,2,,,2026,1.6838507624592685,1.338048555286599
+2026-10-25,PL,,,False,3.04,3.21,2.35,2.07,1.7,football-data,Sunderland,Leeds,2,,,2026,1.1380940201046796,1.3249012250976515
+2026-10-25,SA,,,False,1.79,4.11,3.75,1.38,2.91,football-data,Atalanta,Frosinone,2,,,2026,2.0751739075260596,1.4060683894917272
+2026-10-25,SA,,,False,2.08,3.34,3.49,1.91,1.83,football-data,Genoa,Venezia,2,,,2026,1.4987598393741468,1.1127689532594192
+2026-10-25,SA,,,False,1.34,5.31,7.7,1.4,2.8,football-data,Inter,Fiorentina,2,,,2026,2.4713070161034505,0.9592775183130501
+2026-10-25,SA,,,False,7.31,4.32,1.43,1.81,1.93,football-data,Lecce,Juventus,2,,,2026,0.7595215410203597,1.97574209822695
+2026-10-25,SA,,,False,5.02,3.76,1.66,1.83,1.91,football-data,Udinese,Milan,2,,,2026,0.9350641227763125,1.7720965603412637
+2026-10-26,L1,,,False,1.43,4.94,6.1,1.37,2.93,football-data,Paris SG,Lyon,2,,,2026,2.402172638276563,1.1061643609014817
+2026-10-26,LL,,,False,1.92,3.36,4.0,2.1,1.67,football-data,Sevilla,Osasuna,2,,,2026,1.4840214669185248,0.9552689787258108
 2026-10-27,SA,,,False,,,,,,espn,Roma,Cagliari,1,,,2026,,
 2026-10-27,SA,,,False,,,,,,espn,Sassuolo,Lazio,1,,,2026,,
 2026-10-27,SA,,,False,,,,,,espn,Torino,Como,1,,,2026,,
