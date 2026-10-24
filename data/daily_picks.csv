@@ -27,4 +27,4 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-10-23T21:27,2026-10-26,L1,Paris SG,Lyon,x,תיקו,19.0,4.94,2,,False,False,
 2026-10-24T16:00,2026-10-24,LL,Valencia,Villarreal,2,Villarreal מנצחת,44.0,2.15,2,1-2,True,True,1.15
 2026-10-24T16:00,2026-10-24,L1,Lens,Paris FC,1,Lens מנצחת,41.0,2.39,3,2-1,True,True,1.39
-2026-10-24T20:53,2026-10-24,LL,Ath Madrid,Deportivo,x,תיקו,17.0,5.81,1,,False,False,
+2026-10-24T20:53,2026-10-24,LL,Ath Madrid,Deportivo,x,תיקו,17.0,5.81,1,1-0,False,True,-1.0
