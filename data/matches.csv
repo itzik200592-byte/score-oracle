@@ -12576,7 +12576,7 @@ date,league,hg,ag,played,o_h,o_d,o_a,o_ov,o_un,src,home,away,n_src,xg_h,xg_a,sea
 2026-10-21,CL,2.0,4.0,True,,,,,,espn,Lille,Galatasaray,2,,,2026,,
 2026-10-21,CL,4.0,1.0,True,,,,,,espn,Real Madrid,RB Leipzig,2,,,2026,,
 2026-10-21,CL,2.0,3.0,True,,,,,,espn,Sporting,LASK Linz,2,,,2026,,
-2026-10-21,LL,3.0,1.0,True,3.42,3.29,2.15,1.91,1.83,football-data,Levante,Ath Bilbao,3,,,2026,1.131483568804757,1.474072167203234
+2026-10-21,LL,3.0,1.0,True,3.42,3.29,2.15,1.91,1.83,football-data,Levante,Ath Bilbao,3,1.84305,1.71396,2026,1.131483568804757,1.474072167203234
 2026-10-22,EL,0.0,4.0,True,,,,,,espn,Ararat-Armenia,AZ Alkmaar,2,,,2026,,
 2026-10-22,EL,2.0,2.0,True,,,,,,espn,Beşiktaş,Crystal Palace,2,,,2026,,
 2026-10-22,EL,3.0,0.0,True,,,,,,espn,Bournemouth,Milan,2,,,2026,,
@@ -12599,25 +12599,25 @@ date,league,hg,ag,played,o_h,o_d,o_a,o_ov,o_un,src,home,away,n_src,xg_h,xg_a,sea
 2026-10-23,LL,1.0,1.0,True,1.62,3.77,5.65,2.0,1.77,football-data,Alaves,Malaga,3,1.80426,0.805685,2026,1.7238665444532424,0.8203708699526568
 2026-10-23,PL,1.0,1.0,True,3.01,3.44,2.28,1.72,2.06,football-data,Ipswich,Nott'm Forest,3,0.856862,2.75509,2026,1.3098845802355517,1.5289828832800987
 2026-10-23,SA,3.0,2.0,True,2.09,3.45,3.43,1.79,1.96,football-data,Torino,Monza,3,1.44549,0.441913,2026,1.5648245737206423,1.182657826628932
-2026-10-24,IL,0.0,0.0,True,,,,,,thesportsdb,Hapoel Jerusalem,Hapoel Tel-Aviv,1,,,2026,,
-2026-10-24,IL,0.0,0.0,True,,,,,,thesportsdb,Hapoel Kiryat Shmona,Bnei Sakhnin,1,,,2026,,
-2026-10-24,IL,,,False,,,,,,thesportsdb,Hapoel Ramat Gan,Maccabi Petah Tikva,1,,,2026,,
-2026-10-24,IL,,,False,,,,,,thesportsdb,Ironi Tiberias,Maccabi Netanya,1,,,2026,,
+2026-10-24,IL,0.0,3.0,True,,,,,,thesportsdb,Hapoel Jerusalem,Hapoel Tel-Aviv,2,,,2026,,
+2026-10-24,IL,0.0,1.0,True,,,,,,thesportsdb,Hapoel Kiryat Shmona,Bnei Sakhnin,2,,,2026,,
+2026-10-24,IL,1.0,2.0,True,,,,,,thesportsdb,Hapoel Ramat Gan,Maccabi Petah Tikva,1,,,2026,,
+2026-10-24,IL,1.0,1.0,True,,,,,,thesportsdb,Ironi Tiberias,Maccabi Netanya,1,,,2026,,
 2026-10-24,IL,,,False,,,,,,thesportsdb,Maccabi Haifa,Hapoel Be'er Sheva,1,,,2026,,
-2026-10-24,IL,,,False,,,,,,thesportsdb,Maccabi Tel Aviv,Hapoel Haifa,1,,,2026,,
-2026-10-24,L1,,,False,2.39,3.56,2.74,1.62,2.21,football-data,Lens,Paris FC,2,,,2026,1.5482493251427931,1.4356625160031327
+2026-10-24,IL,6.0,2.0,True,,,,,,thesportsdb,Maccabi Tel Aviv,Hapoel Haifa,1,,,2026,,
+2026-10-24,L1,2.0,1.0,True,2.39,3.56,2.74,1.62,2.21,football-data,Lens,Paris FC,2,,,2026,1.5482493251427931,1.4356625160031327
 2026-10-24,LL,,,False,1.26,5.81,10.67,1.54,2.38,football-data,Ath Madrid,Deportivo,2,,,2026,2.426024757503579,0.7140828207664301
-2026-10-24,LL,,,False,2.37,3.6,2.76,1.63,2.21,football-data,Santander,Espanol,2,,,2026,1.553463198165725,1.4273286754828842
-2026-10-24,LL,,,False,3.16,3.57,2.15,1.7,2.08,football-data,Valencia,Villarreal,2,,,2026,1.2803368237441914,1.5908071925007492
-2026-10-24,LL,0.0,3.0,True,1.77,3.72,4.36,1.82,1.91,football-data,Vallecano,Elche,2,,,2026,1.7075157111426011,1.0099880033790838
-2026-10-24,PL,2.0,0.0,True,1.43,4.41,7.27,1.8,1.94,football-data,Arsenal,Everton,2,,,2026,1.9878114439362449,0.7614280254677798
-2026-10-24,PL,2.0,1.0,True,4.73,4.26,1.62,1.5,2.49,football-data,Aston Villa,Man City,2,,,2026,1.1469557781885875,2.0667579408708177
-2026-10-24,PL,,,False,1.69,4.12,4.35,1.5,2.5,football-data,Chelsea,Tottenham,2,,,2026,2.0137278341276277,1.201524652157482
-2026-10-24,PL,0.0,1.0,True,3.04,3.46,2.23,1.7,2.07,football-data,Coventry,Fulham,2,,,2026,1.306085469319498,1.5522966342213984
-2026-10-24,SA,0.0,2.0,True,3.07,3.07,2.44,2.14,1.67,football-data,Cagliari,Bologna,2,,,2026,1.119524418320355,1.2791703463279964
-2026-10-24,SA,2.0,0.0,True,1.49,4.6,5.78,1.43,2.71,football-data,Como,Sassuolo,2,,,2026,2.266672497184673,1.0950541677919514
-2026-10-24,SA,,,False,1.39,4.56,8.18,1.83,1.92,football-data,Lazio,Parma,2,,,2026,2.0176003297872307,0.7040953620958598
-2026-10-24,SA,,,False,2.76,3.32,2.51,1.84,1.91,football-data,Napoli,Roma,2,,,2026,1.3087300708725604,1.381142381740079
+2026-10-24,LL,2.0,1.0,True,2.37,3.6,2.76,1.63,2.21,football-data,Santander,Espanol,2,2.82622,0.580589,2026,1.553463198165725,1.4273286754828842
+2026-10-24,LL,1.0,2.0,True,3.16,3.57,2.15,1.7,2.08,football-data,Valencia,Villarreal,2,1.1723,1.506,2026,1.2803368237441914,1.5908071925007492
+2026-10-24,LL,0.0,3.0,True,1.77,3.72,4.36,1.82,1.91,football-data,Vallecano,Elche,3,1.23307,2.40158,2026,1.7075157111426011,1.0099880033790838
+2026-10-24,PL,2.0,0.0,True,1.43,4.41,7.27,1.8,1.94,football-data,Arsenal,Everton,3,2.28617,0.721815,2026,1.9878114439362449,0.7614280254677798
+2026-10-24,PL,2.0,1.0,True,4.73,4.26,1.62,1.5,2.49,football-data,Aston Villa,Man City,3,0.645964,2.28542,2026,1.1469557781885875,2.0667579408708177
+2026-10-24,PL,0.0,2.0,True,1.69,4.12,4.35,1.5,2.5,football-data,Chelsea,Tottenham,2,0.460466,0.979641,2026,2.0137278341276277,1.201524652157482
+2026-10-24,PL,0.0,1.0,True,3.04,3.46,2.23,1.7,2.07,football-data,Coventry,Fulham,3,0.402537,0.572746,2026,1.306085469319498,1.5522966342213984
+2026-10-24,SA,0.0,2.0,True,3.07,3.07,2.44,2.14,1.67,football-data,Cagliari,Bologna,3,0.240178,1.78092,2026,1.119524418320355,1.2791703463279964
+2026-10-24,SA,2.0,0.0,True,1.49,4.6,5.78,1.43,2.71,football-data,Como,Sassuolo,3,2.32125,0.286436,2026,2.266672497184673,1.0950541677919514
+2026-10-24,SA,2.0,1.0,True,1.39,4.56,8.18,1.83,1.92,football-data,Lazio,Parma,2,,,2026,2.0176003297872307,0.7040953620958598
+2026-10-24,SA,3.0,3.0,True,2.76,3.32,2.51,1.84,1.91,football-data,Napoli,Roma,2,2.98059,1.96142,2026,1.3087300708725604,1.381142381740079
 2026-10-25,IL,,,False,,,,,,thesportsdb,Hapoel Petah Tikva,Beitar Jerusalem,1,,,2026,,
 2026-10-25,L1,,,False,2.86,3.28,2.42,1.97,1.77,football-data,Angers,Lorient,2,,,2026,1.21421994067364,1.3390616521121632
 2026-10-25,L1,,,False,2.08,3.59,3.22,1.67,2.12,football-data,Auxerre,Le Mans,2,,,2026,1.6333187490234524,1.2778071815176069
