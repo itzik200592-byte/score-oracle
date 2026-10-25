@@ -43,15 +43,15 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-10-18T15:53,2026-10-22,EL,Juventus,Rennes,1x2,h,Juventus,1.5,57.0,-14.5,19:45,1.0,2-2,-1.0,True,favourite
 2026-10-18T15:53,2026-10-22,EL,Olympiakos,Sparta Praha,1x2,h,Olympiakos,1.5,57.0,-14.5,22:00,1.0,1-0,0.5,True,favourite
 2026-10-18T15:53,2026-10-18,SA,Juventus,Lazio,1x2,h,Juventus,1.5,53.0,-20.5,21:45,1.0,0-3,-1.0,True,favourite
-2026-10-23T17:10,2026-10-25,L1,Toulouse,Troyes,1x2,h,Toulouse,1.59,60.0,-4.6,,1.0,,,False,favourite
+2026-10-23T17:10,2026-10-25,L1,Toulouse,Troyes,1x2,h,Toulouse,1.59,60.0,-4.6,,1.0,0-0,-1.0,True,favourite
 2026-10-23T17:10,2026-10-25,SA,Atalanta,Frosinone,1x2,h,Atalanta,1.79,53.0,-5.1,,1.0,4-4,-1.0,True,favourite
 2026-10-23T17:10,2026-10-24,PL,Chelsea,Tottenham,1x2,h,Chelsea,1.69,56.0,-5.4,,1.0,0-2,-1.0,True,favourite
-2026-10-23T17:10,2026-10-25,L1,Marseille,Le Havre,1x2,h,Marseille,1.55,61.0,-5.4,,1.0,,,False,favourite
+2026-10-23T17:10,2026-10-25,L1,Marseille,Le Havre,1x2,h,Marseille,1.55,61.0,-5.4,,1.0,4-3,0.55,True,favourite
 2026-10-23T17:10,2026-10-24,LL,Vallecano,Elche,1x2,h,Vallecano,1.77,53.0,-6.2,,1.0,0-3,-1.0,True,favourite
-2026-10-23T17:10,2026-10-25,LL,Sociedad,Levante,1x2,h,Sociedad,1.64,57.0,-6.5,,1.0,,,False,favourite
+2026-10-23T17:10,2026-10-25,LL,Sociedad,Levante,1x2,h,Sociedad,1.64,57.0,-6.5,,1.0,2-1,0.64,True,favourite
 2026-10-23T17:10,2026-10-25,SA,Udinese,Milan,1x2,a,Milan,1.66,56.0,-7.0,,1.0,,,False,favourite
 2026-10-23T17:10,2026-10-25,LL,Barcelona,Real Madrid,1x2,h,Barcelona,1.6,58.0,-7.2,,1.0,,,False,favourite
-2026-10-23T17:10,2026-10-25,L1,Rennes,Strasbourg,1x2,h,Rennes,1.75,53.0,-7.3,,1.0,,,False,favourite
+2026-10-23T17:10,2026-10-25,L1,Rennes,Strasbourg,1x2,h,Rennes,1.75,53.0,-7.3,,1.0,3-0,0.75,True,favourite
 2026-10-23T17:10,2026-10-24,PL,Aston Villa,Man City,1x2,a,Man City,1.62,57.0,-7.7,,1.0,2-1,-1.0,True,favourite
 2026-10-23T17:10,2026-10-25,LL,Ath Bilbao,Getafe,1x2,h,Ath Bilbao,1.56,58.0,-9.5,,1.0,4-0,0.56,True,favourite
 2026-10-23T17:10,2026-10-25,PL,Hull,Brentford,1x2,a,Brentford,1.69,53.0,-10.4,,1.0,1-1,-1.0,True,favourite
