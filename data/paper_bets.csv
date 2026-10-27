@@ -55,3 +55,8 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-10-23T17:10,2026-10-24,PL,Aston Villa,Man City,1x2,a,Man City,1.62,57.0,-7.7,,1.0,2-1,-1.0,True,favourite
 2026-10-23T17:10,2026-10-25,LL,Ath Bilbao,Getafe,1x2,h,Ath Bilbao,1.56,58.0,-9.5,,1.0,4-0,0.56,True,favourite
 2026-10-23T17:10,2026-10-25,PL,Hull,Brentford,1x2,a,Brentford,1.69,53.0,-10.4,,1.0,1-1,-1.0,True,favourite
+2026-10-27T15:23,2026-10-28,SA,Monza,Napoli,1x2,a,Napoli,1.74,55.0,-4.3,,1.0,,,False,favourite
+2026-10-27T15:23,2026-10-28,SA,Genoa,Juventus,1x2,a,Juventus,1.68,56.0,-5.9,,1.0,,,False,favourite
+2026-10-27T15:23,2026-10-27,SA,Torino,Como,1x2,a,Como,1.74,54.0,-6.0,,1.0,,,False,favourite
+2026-10-27T15:23,2026-10-29,SA,Frosinone,Lecce,1x2,h,Frosinone,1.66,56.0,-7.0,,1.0,,,False,favourite
+2026-10-27T15:23,2026-10-28,SA,Milan,Bologna,1x2,h,Milan,1.62,57.0,-7.7,,1.0,,,False,favourite
