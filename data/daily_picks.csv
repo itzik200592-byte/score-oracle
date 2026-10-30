@@ -37,12 +37,15 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-10-27T15:23,2026-10-28,SA,Monza,Napoli,2,Napoli מנצחת,55.0,1.74,3,1-4,True,True,0.74
 2026-10-27T15:23,2026-10-29,SA,Frosinone,Lecce,1,Frosinone מנצחת,56.0,1.66,1,5-1,True,True,0.66
 2026-10-27T15:23,2026-10-29,SA,Fiorentina,Atalanta,1,Fiorentina מנצחת,42.0,2.18,2,2-2,False,True,-1.0
-2026-10-30T10:03,2026-10-30,L1,Nice,Rennes,2,Rennes מנצחת,38.0,2.53,1,,False,False,
-2026-10-30T10:03,2026-10-30,L1,Lille,Lens,2,Lens מנצחת,37.0,2.52,2,,False,False,
-2026-10-30T10:03,2026-10-30,LL,Villarreal,Espanol,x,תיקו,19.0,4.99,3,,False,False,
+2026-10-30T10:03,2026-10-30,L1,Nice,Rennes,2,Rennes מנצחת,38.0,2.53,1,5-2,False,True,-1.0
+2026-10-30T10:03,2026-10-30,L1,Lille,Lens,2,Lens מנצחת,37.0,2.52,2,1-0,False,True,-1.0
+2026-10-30T10:03,2026-10-30,LL,Villarreal,Espanol,x,תיקו,19.0,4.99,3,0-1,False,True,-1.0
 2026-10-30T10:03,2026-10-31,SA,Udinese,Roma,2,Roma מנצחת,61.0,1.53,1,,False,False,
 2026-10-30T10:03,2026-10-31,LL,Levante,Ath Madrid,2,Ath Madrid מנצחת,60.0,1.53,2,,False,False,
 2026-10-30T10:03,2026-10-31,PL,Tottenham,Crystal Palace,1,Tottenham מנצחת,60.0,1.53,3,,False,False,
 2026-10-30T10:03,2026-11-01,L1,Strasbourg,Auxerre,1,Strasbourg מנצחת,52.0,1.81,1,,False,False,
 2026-10-30T10:03,2026-11-01,L1,Marseille,Toulouse,1,Marseille מנצחת,50.0,1.9,2,,False,False,
 2026-10-30T10:03,2026-11-01,SA,Frosinone,Torino,1,Frosinone מנצחת,45.0,2.14,3,,False,False,
+2026-10-30T22:23,2026-11-02,LL,Deportivo,Osasuna,1,Deportivo מנצחת,45.0,2.13,1,,False,False,
+2026-10-30T22:23,2026-11-02,PL,Newcastle,Everton,1,Newcastle מנצחת,42.0,2.28,2,,False,False,
+2026-10-30T22:23,2026-11-02,SA,Sassuolo,Fiorentina,2,Fiorentina מנצחת,41.0,2.31,3,,False,False,
