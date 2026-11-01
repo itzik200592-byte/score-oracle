@@ -42,12 +42,12 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-10-30T10:03,2026-10-30,LL,Villarreal,Espanol,x,תיקו,19.0,4.99,3,0-1,False,True,-1.0
 2026-10-30T10:03,2026-10-31,SA,Udinese,Roma,2,Roma מנצחת,61.0,1.53,1,2-5,True,True,0.53
 2026-10-30T10:03,2026-10-31,LL,Levante,Ath Madrid,2,Ath Madrid מנצחת,60.0,1.53,2,0-2,True,True,0.53
-2026-10-30T10:03,2026-10-31,PL,Tottenham,Crystal Palace,1,Tottenham מנצחת,60.0,1.53,3,,False,False,
+2026-10-30T10:03,2026-10-31,PL,Tottenham,Crystal Palace,1,Tottenham מנצחת,60.0,1.53,3,2-0,True,True,0.53
 2026-10-30T10:03,2026-11-01,L1,Strasbourg,Auxerre,1,Strasbourg מנצחת,52.0,1.81,1,,False,False,
 2026-10-30T10:03,2026-11-01,L1,Marseille,Toulouse,1,Marseille מנצחת,50.0,1.9,2,,False,False,
 2026-10-30T10:03,2026-11-01,SA,Frosinone,Torino,1,Frosinone מנצחת,45.0,2.14,3,,False,False,
 2026-10-30T22:23,2026-11-02,LL,Deportivo,Osasuna,1,Deportivo מנצחת,45.0,2.13,1,,False,False,
 2026-10-30T22:23,2026-11-02,PL,Newcastle,Everton,1,Newcastle מנצחת,42.0,2.28,2,,False,False,
 2026-10-30T22:23,2026-11-02,SA,Sassuolo,Fiorentina,2,Fiorentina מנצחת,41.0,2.31,3,,False,False,
-2026-10-31T19:21,2026-10-31,PL,Aston Villa,Fulham,1,Aston Villa מנצחת,49.0,1.93,2,,False,False,
-2026-10-31T19:21,2026-10-31,SA,Milan,Inter,2,Inter מנצחת,48.0,1.98,3,,False,False,
+2026-10-31T19:21,2026-10-31,PL,Aston Villa,Fulham,1,Aston Villa מנצחת,49.0,1.93,2,1-1,False,True,-1.0
+2026-10-31T19:21,2026-10-31,SA,Milan,Inter,2,Inter מנצחת,48.0,1.98,3,3-1,False,True,-1.0

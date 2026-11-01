@@ -65,4 +65,4 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-10-30T10:03,2026-10-31,PL,Man City,Brighton,1x2,h,Man City,1.62,58.0,-6.0,,1.0,0-1,-1.0,True,favourite
 2026-10-30T10:03,2026-10-31,SA,Udinese,Roma,1x2,a,Roma,1.53,61.0,-6.7,,1.0,2-5,0.53,True,favourite
 2026-10-30T10:03,2026-10-31,LL,Levante,Ath Madrid,1x2,a,Ath Madrid,1.53,60.0,-8.2,,1.0,0-2,0.53,True,favourite
-2026-10-30T10:03,2026-10-31,PL,Tottenham,Crystal Palace,1x2,h,Tottenham,1.53,60.0,-8.2,,1.0,,,False,favourite
+2026-10-30T10:03,2026-10-31,PL,Tottenham,Crystal Palace,1x2,h,Tottenham,1.53,60.0,-8.2,,1.0,2-0,0.53,True,favourite
