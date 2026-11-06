@@ -12733,11 +12733,11 @@ date,league,hg,ag,played,o_h,o_d,o_a,o_ov,o_un,src,home,away,n_src,xg_h,xg_a,sea
 2026-11-05,EL,1.0,3.0,True,,,,,,espn,Sparta Praha,Bournemouth,2,,,2026,,
 2026-11-05,EL,0.0,2.0,True,,,,,,espn,Sunderland,Dinamo Zagreb,2,,,2026,,
 2026-11-05,EL,3.0,2.0,True,,,,,,espn,Torreense,Ararat-Armenia,2,,,2026,,
-2026-11-06,IL,2.0,2.0,True,,,,,,thesportsdb,Maccabi Tel Aviv,Maccabi Petah Tikva,1,,,2026,,
-2026-11-06,L1,,,False,2.19,3.64,3.01,1.63,2.19,football-data,Toulouse,Strasbourg,2,,,2026,1.6185630082951283,1.355029330582917
-2026-11-06,LL,,,False,1.86,3.4,4.38,2.2,1.63,football-data,Sevilla,Alaves,2,,,2026,1.4897362074661156,0.8847436942096057
-2026-11-06,PL,,,False,1.67,3.95,4.79,1.69,2.09,football-data,Everton,Coventry,2,,,2026,1.864137515015365,1.023810573853749
-2026-11-06,SA,,,False,2.27,3.37,3.08,1.79,1.97,football-data,Venezia,Udinese,2,,,2026,1.491871153136179,1.2569373088325346
+2026-11-06,IL,2.0,2.0,True,,,,,,thesportsdb,Maccabi Tel Aviv,Maccabi Petah Tikva,2,,,2026,,
+2026-11-06,L1,3.0,1.0,True,2.19,3.64,3.01,1.63,2.19,football-data,Toulouse,Strasbourg,2,,,2026,1.6185630082951283,1.355029330582917
+2026-11-06,LL,0.0,0.0,True,1.86,3.4,4.38,2.2,1.63,football-data,Sevilla,Alaves,2,,,2026,1.4897362074661156,0.8847436942096057
+2026-11-06,PL,3.0,1.0,True,1.67,3.95,4.79,1.69,2.09,football-data,Everton,Coventry,2,,,2026,1.864137515015365,1.023810573853749
+2026-11-06,SA,2.0,1.0,True,2.27,3.37,3.08,1.79,1.97,football-data,Venezia,Udinese,2,,,2026,1.491871153136179,1.2569373088325346
 2026-11-07,IL,,,False,,,,,,thesportsdb,Hapoel Be'er Sheva,Hapoel Tel-Aviv,1,,,2026,,
 2026-11-07,IL,,,False,,,,,,thesportsdb,Hapoel Jerusalem,Bnei Sakhnin,1,,,2026,,
 2026-11-07,IL,,,False,,,,,,thesportsdb,Hapoel Kiryat Shmona,Hapoel Haifa,1,,,2026,,

@@ -53,9 +53,9 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-10-31T19:21,2026-10-31,SA,Milan,Inter,2,Inter מנצחת,48.0,1.98,3,3-1,False,True,-1.0
 2026-11-01T19:42,2026-11-01,LL,Ath Bilbao,Sociedad,1,Ath Bilbao מנצחת,45.0,2.12,2,2-1,True,True,1.12
 2026-11-01T19:42,2026-11-01,SA,Juventus,Napoli,1,Juventus מנצחת,42.0,2.25,3,2-0,True,True,1.25
-2026-11-06T16:48,2026-11-06,PL,Everton,Coventry,1,Everton מנצחת,56.0,1.67,1,,False,False,
-2026-11-06T16:48,2026-11-06,LL,Sevilla,Alaves,1,Sevilla מנצחת,50.0,1.86,2,,False,False,
-2026-11-06T16:48,2026-11-06,L1,Toulouse,Strasbourg,1,Toulouse מנצחת,43.0,2.19,3,,False,False,
+2026-11-06T16:48,2026-11-06,PL,Everton,Coventry,1,Everton מנצחת,56.0,1.67,1,3-1,True,True,0.67
+2026-11-06T16:48,2026-11-06,LL,Sevilla,Alaves,1,Sevilla מנצחת,50.0,1.86,2,0-0,False,True,-1.0
+2026-11-06T16:48,2026-11-06,L1,Toulouse,Strasbourg,1,Toulouse מנצחת,43.0,2.19,3,3-1,True,True,1.19
 2026-11-06T16:48,2026-11-07,PL,Nott'm Forest,Man City,2,Man City מנצחת,55.0,1.69,1,,False,False,
 2026-11-06T16:48,2026-11-07,SA,Torino,Lecce,1,Torino מנצחת,52.0,1.8,2,,False,False,
 2026-11-06T16:48,2026-11-07,L1,Auxerre,Paris FC,2,Paris FC מנצחת,52.0,1.75,3,,False,False,
