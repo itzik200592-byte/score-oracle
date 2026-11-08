@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T00:39+00:00",
+ "generated_at": "2026-11-08T10:24+00:00",
  "leagues": {
   "PL": "פרמיירליג אנגלית",
   "LL": "לה ליגה ספרדית",
@@ -7749,30 +7749,7 @@
   ],
   "since": "2026-10-14"
  },
- "backtest": {
-  "holdout_from": "2026-03-14",
-  "n": 1081,
-  "exact_pct": 12.9,
-  "result_pct": 55.3,
-  "baseline_11": 10.8,
-  "tiers": [
-   {
-    "tier": "C",
-    "n": 540,
-    "hit_pct": 9.3
-   },
-   {
-    "tier": "B",
-    "n": 324,
-    "hit_pct": 15.7
-   },
-   {
-    "tier": "A",
-    "n": 217,
-    "hit_pct": 17.5
-   }
-  ]
- },
+ "backtest": null,
  "coverage": [
   {
    "league": "CL",
@@ -7817,43 +7794,7 @@
    "last": "2026-11-07"
   }
  ],
- "calib": {
-  "CL": {
-   "n": 93,
-   "direction": 68.8,
-   "exact": 8.6
-  },
-  "EL": {
-   "n": 91,
-   "direction": 56.0,
-   "exact": 9.9
-  },
-  "IL": {
-   "n": 122,
-   "direction": 53.3,
-   "exact": 11.5
-  },
-  "L1": {
-   "n": 164,
-   "direction": 53.7,
-   "exact": 11.0
-  },
-  "LL": {
-   "n": 223,
-   "direction": 54.3,
-   "exact": 15.2
-  },
-  "PL": {
-   "n": 184,
-   "direction": 46.7,
-   "exact": 14.7
-  },
-  "SA": {
-   "n": 204,
-   "direction": 60.3,
-   "exact": 14.2
-  }
- },
+ "calib": {},
  "last_result": {
   "CL": "2026-11-04",
   "EL": "2026-11-05",
