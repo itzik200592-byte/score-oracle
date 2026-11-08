@@ -70,7 +70,7 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-11-06T16:48,2026-11-08,SA,Genoa,Milan,1x2,a,Milan,1.8,52.0,-6.4,,1.0,,,False,favourite
 2026-11-06T16:48,2026-11-06,PL,Everton,Coventry,1x2,h,Everton,1.67,56.0,-6.5,,1.0,3-1,0.67,True,favourite
 2026-11-06T16:48,2026-11-08,LL,Sociedad,Vallecano,1x2,h,Sociedad,1.66,56.0,-7.0,,1.0,,,False,favourite
-2026-11-06T16:48,2026-11-07,PL,Nott'm Forest,Man City,1x2,a,Man City,1.69,55.0,-7.1,,1.0,,,False,favourite
+2026-11-06T16:48,2026-11-07,PL,Nott'm Forest,Man City,1x2,a,Man City,1.69,55.0,-7.1,,1.0,3-1,-1.0,True,favourite
 2026-11-06T16:48,2026-11-08,PL,Crystal Palace,Liverpool,1x2,a,Liverpool,1.57,59.0,-7.4,,1.0,,,False,favourite
 2026-11-06T16:48,2026-11-08,L1,Le Mans,Monaco,1x2,a,Monaco,1.71,54.0,-7.7,,1.0,,,False,favourite
-2026-11-06T16:48,2026-11-07,L1,Auxerre,Paris FC,1x2,a,Paris FC,1.75,52.0,-9.0,,1.0,,,False,favourite
+2026-11-06T16:48,2026-11-07,L1,Auxerre,Paris FC,1x2,a,Paris FC,1.75,52.0,-9.0,,1.0,0-1,0.75,True,favourite
