@@ -59,7 +59,9 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-11-06T16:48,2026-11-07,PL,Nott'm Forest,Man City,2,Man City מנצחת,55.0,1.69,1,3-1,False,True,-1.0
 2026-11-06T16:48,2026-11-07,SA,Torino,Lecce,1,Torino מנצחת,52.0,1.8,2,1-1,False,True,-1.0
 2026-11-06T16:48,2026-11-07,L1,Auxerre,Paris FC,2,Paris FC מנצחת,52.0,1.75,3,0-1,True,True,0.75
-2026-11-06T16:48,2026-11-08,PL,Crystal Palace,Liverpool,2,Liverpool מנצחת,59.0,1.57,1,,False,False,
-2026-11-06T16:48,2026-11-08,LL,Sociedad,Vallecano,1,Sociedad מנצחת,56.0,1.66,2,,False,False,
+2026-11-06T16:48,2026-11-08,PL,Crystal Palace,Liverpool,2,Liverpool מנצחת,59.0,1.57,1,1-3,True,True,0.57
+2026-11-06T16:48,2026-11-08,LL,Sociedad,Vallecano,1,Sociedad מנצחת,56.0,1.66,2,1-0,True,True,0.66
 2026-11-06T16:48,2026-11-08,L1,Le Mans,Monaco,2,Monaco מנצחת,54.0,1.71,3,,False,False,
 2026-11-07T19:29,2026-11-07,LL,Valencia,Real Madrid,x,תיקו,17.0,6.14,3,0-3,False,True,-1.0
+2026-11-08T17:58,2026-11-08,LL,Ath Madrid,Barcelona,2,Barcelona מנצחת,51.0,1.81,2,,False,False,
+2026-11-08T17:58,2026-11-08,LL,Celta,Levante,1,Celta מנצחת,50.0,1.86,3,,False,False,
