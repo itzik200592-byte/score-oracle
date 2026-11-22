@@ -70,7 +70,7 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-11-20T11:42,2026-11-21,PL,Tottenham,Ipswich,1,Tottenham מנצחת,61.0,1.52,1,2-0,True,True,0.52
 2026-11-20T11:42,2026-11-21,PL,Newcastle,Arsenal,2,Arsenal מנצחת,59.0,1.57,2,2-2,False,True,-1.0
 2026-11-20T11:42,2026-11-21,PL,Aston Villa,Sunderland,1,Aston Villa מנצחת,54.0,1.76,3,0-0,False,True,-1.0
-2026-11-20T11:42,2026-11-22,SA,Milan,Frosinone,1,Milan מנצחת,61.0,1.52,1,,False,False,
+2026-11-20T11:42,2026-11-22,SA,Milan,Frosinone,1,Milan מנצחת,61.0,1.52,1,5-1,True,True,0.52
 2026-11-20T11:42,2026-11-22,SA,Atalanta,Inter,2,Inter מנצחת,59.0,1.59,2,,False,False,
 2026-11-20T11:42,2026-11-22,LL,Getafe,Ath Madrid,2,Ath Madrid מנצחת,59.0,1.56,3,,False,False,
 2026-11-21T02:16,2026-11-23,SA,Monza,Fiorentina,2,Fiorentina מנצחת,49.0,1.92,1,,False,False,
@@ -78,3 +78,4 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-11-21T02:16,2026-11-23,LL,Levante,Elche,1,Levante מנצחת,44.0,2.15,3,,False,False,
 2026-11-21T19:18,2026-11-21,L1,Lens,Toulouse,1,Lens מנצחת,51.0,1.85,2,1-1,False,True,-1.0
 2026-11-21T19:18,2026-11-21,L1,Strasbourg,Brest,1,Strasbourg מנצחת,44.0,2.18,3,0-1,False,True,-1.0
+2026-11-22T19:42,2026-11-22,L1,Marseille,Le Mans,x,תיקו,20.0,4.66,3,,False,False,
