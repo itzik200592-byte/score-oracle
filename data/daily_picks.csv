@@ -79,3 +79,12 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-11-21T19:18,2026-11-21,L1,Lens,Toulouse,1,Lens מנצחת,51.0,1.85,2,1-1,False,True,-1.0
 2026-11-21T19:18,2026-11-21,L1,Strasbourg,Brest,1,Strasbourg מנצחת,44.0,2.18,3,0-1,False,True,-1.0
 2026-11-22T19:42,2026-11-22,L1,Marseille,Le Mans,x,תיקו,20.0,4.66,3,2-3,False,True,-1.0
+2026-11-27T12:22,2026-11-27,LL,Levante,Santander,1,Levante מנצחת,48.0,2.0,1,,False,False,
+2026-11-27T12:22,2026-11-27,L1,Brest,Paris FC,2,Paris FC מנצחת,43.0,2.15,2,,False,False,
+2026-11-27T12:22,2026-11-27,SA,Venezia,Bologna,2,Bologna מנצחת,42.0,2.4,3,,False,False,
+2026-11-27T12:22,2026-11-28,LL,Betis,Vallecano,1,Betis מנצחת,59.0,1.58,1,,False,False,
+2026-11-27T12:22,2026-11-28,L1,Angers,Lens,2,Lens מנצחת,56.0,1.68,2,,False,False,
+2026-11-27T12:22,2026-11-28,L1,Nice,Troyes,1,Nice מנצחת,56.0,1.67,3,,False,False,
+2026-11-27T12:22,2026-11-29,PL,Brighton,Newcastle,1,Brighton מנצחת,60.0,1.56,1,,False,False,
+2026-11-27T12:22,2026-11-29,SA,Sassuolo,Napoli,2,Napoli מנצחת,57.0,1.65,2,,False,False,
+2026-11-27T12:22,2026-11-29,PL,Everton,Liverpool,2,Liverpool מנצחת,53.0,1.76,3,,False,False,

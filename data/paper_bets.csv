@@ -83,3 +83,12 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-11-20T11:42,2026-11-22,SA,Milan,Frosinone,1x2,h,Milan,1.52,61.0,-7.3,,1.0,5-1,0.52,True,favourite
 2026-11-20T11:42,2026-11-21,PL,Newcastle,Arsenal,1x2,a,Arsenal,1.57,59.0,-7.4,,1.0,2-2,-1.0,True,favourite
 2026-11-20T11:42,2026-11-22,LL,Getafe,Ath Madrid,1x2,a,Ath Madrid,1.56,59.0,-8.0,,1.0,0-3,0.56,True,favourite
+2026-11-27T12:22,2026-11-30,SA,Lecce,Atalanta,1x2,a,Atalanta,1.84,52.0,-4.3,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-28,L1,Angers,Lens,1x2,a,Lens,1.68,56.0,-5.9,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-29,SA,Sassuolo,Napoli,1x2,a,Napoli,1.65,57.0,-6.0,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-29,PL,Brighton,Newcastle,1x2,h,Brighton,1.56,60.0,-6.4,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-28,L1,Nice,Troyes,1x2,h,Nice,1.67,56.0,-6.5,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-30,SA,Cagliari,Milan,1x2,a,Milan,1.7,55.0,-6.5,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-29,PL,Everton,Liverpool,1x2,a,Liverpool,1.76,53.0,-6.7,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-28,LL,Betis,Vallecano,1x2,h,Betis,1.58,59.0,-6.8,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-28,LL,Malaga,Ath Bilbao,1x2,a,Ath Bilbao,1.72,54.0,-7.1,,1.0,,,False,favourite
