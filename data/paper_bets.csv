@@ -90,5 +90,5 @@ made,date,league,home,away,market,sel,label,odds,model_p,ev,kickoff,stake,result
 2026-11-27T12:22,2026-11-28,L1,Nice,Troyes,1x2,h,Nice,1.67,56.0,-6.5,,1.0,,,False,favourite
 2026-11-27T12:22,2026-11-30,SA,Cagliari,Milan,1x2,a,Milan,1.7,55.0,-6.5,,1.0,,,False,favourite
 2026-11-27T12:22,2026-11-29,PL,Everton,Liverpool,1x2,a,Liverpool,1.76,53.0,-6.7,,1.0,,,False,favourite
-2026-11-27T12:22,2026-11-28,LL,Betis,Vallecano,1x2,h,Betis,1.58,59.0,-6.8,,1.0,,,False,favourite
-2026-11-27T12:22,2026-11-28,LL,Malaga,Ath Bilbao,1x2,a,Ath Bilbao,1.72,54.0,-7.1,,1.0,,,False,favourite
+2026-11-27T12:22,2026-11-28,LL,Betis,Vallecano,1x2,h,Betis,1.58,59.0,-6.8,,1.0,0-1,-1.0,True,favourite
+2026-11-27T12:22,2026-11-28,LL,Malaga,Ath Bilbao,1x2,a,Ath Bilbao,1.72,54.0,-7.1,,1.0,3-4,0.72,True,favourite

@@ -82,7 +82,7 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-11-27T12:22,2026-11-27,LL,Levante,Santander,1,Levante מנצחת,48.0,2.0,1,1-3,False,True,-1.0
 2026-11-27T12:22,2026-11-27,L1,Brest,Paris FC,2,Paris FC מנצחת,43.0,2.15,2,1-0,False,True,-1.0
 2026-11-27T12:22,2026-11-27,SA,Venezia,Bologna,2,Bologna מנצחת,42.0,2.4,3,0-0,False,True,-1.0
-2026-11-27T12:22,2026-11-28,LL,Betis,Vallecano,1,Betis מנצחת,59.0,1.58,1,,False,False,
+2026-11-27T12:22,2026-11-28,LL,Betis,Vallecano,1,Betis מנצחת,59.0,1.58,1,0-1,False,True,-1.0
 2026-11-27T12:22,2026-11-28,L1,Angers,Lens,2,Lens מנצחת,56.0,1.68,2,,False,False,
 2026-11-27T12:22,2026-11-28,L1,Nice,Troyes,1,Nice מנצחת,56.0,1.67,3,,False,False,
 2026-11-27T12:22,2026-11-29,PL,Brighton,Newcastle,1,Brighton מנצחת,60.0,1.56,1,,False,False,
@@ -91,3 +91,4 @@ made,date,league,home,away,key,label,p,price,rank,result,hit,settled,pnl
 2026-11-27T23:30,2026-11-30,SA,Cagliari,Milan,2,Milan מנצחת,55.0,1.7,1,,False,False,
 2026-11-27T23:30,2026-11-30,SA,Lecce,Atalanta,2,Atalanta מנצחת,52.0,1.84,2,,False,False,
 2026-11-27T23:30,2026-11-30,LL,Espanol,Getafe,1,Espanol מנצחת,46.0,2.06,3,,False,False,
+2026-11-28T17:35,2026-11-28,PL,Ipswich,Aston Villa,2,Aston Villa מנצחת,49.0,1.96,3,,False,False,
