@@ -12855,10 +12855,10 @@ date,league,hg,ag,played,o_h,o_d,o_a,o_ov,o_un,src,home,away,n_src,xg_h,xg_a,sea
 2026-11-26,EL,2.0,2.0,True,,,,,,espn,Union St.-Gilloise,Lech Poznan,2,,,2026,,
 2026-11-26,EL,4.0,0.0,True,,,,,,espn,Viktoria Plzeň,Benfica,2,,,2026,,
 2026-11-27,IL,2.0,0.0,True,,,,,,thesportsdb,Maccabi Petah Tikva,Hapoel Tel-Aviv,2,,,2026,,
-2026-11-27,L1,1.0,0.0,True,3.3,3.36,2.15,1.86,1.88,football-data,Brest,Paris FC,2,,,2026,1.1704260479050628,1.4951685617941195
-2026-11-27,LL,1.0,3.0,True,2.0,3.94,3.24,1.39,2.86,football-data,Levante,Santander,2,,,2026,1.9405950821855806,1.5067193340329095
-2026-11-27,PL,3.0,2.0,True,2.41,3.34,2.88,1.86,1.87,football-data,Nott'm Forest,Chelsea,2,,,2026,1.398520932046447,1.2627634524467146
-2026-11-27,SA,0.0,0.0,True,3.01,3.19,2.4,2.07,1.71,football-data,Venezia,Bologna,2,,,2026,1.1506638883211835,1.3140555589789287
+2026-11-27,L1,1.0,0.0,True,3.3,3.36,2.15,1.86,1.88,football-data,Brest,Paris FC,3,,,2026,1.1704260479050628,1.4951685617941195
+2026-11-27,LL,1.0,3.0,True,2.0,3.94,3.24,1.39,2.86,football-data,Levante,Santander,3,,,2026,1.9405950821855806,1.5067193340329095
+2026-11-27,PL,3.0,2.0,True,2.41,3.34,2.88,1.86,1.87,football-data,Nott'm Forest,Chelsea,3,,,2026,1.398520932046447,1.2627634524467146
+2026-11-27,SA,0.0,0.0,True,3.01,3.19,2.4,2.07,1.71,football-data,Venezia,Bologna,3,,,2026,1.1506638883211835,1.3140555589789287
 2026-11-28,IL,,,False,,,,,,thesportsdb,Beitar Jerusalem,Hapoel Jerusalem,1,,,2026,,
 2026-11-28,IL,,,False,,,,,,thesportsdb,Bnei Sakhnin,Maccabi Haifa,1,,,2026,,
 2026-11-28,IL,,,False,,,,,,thesportsdb,Hapoel Haifa,Ironi Tiberias,1,,,2026,,
@@ -13001,3 +13001,22 @@ date,league,hg,ag,played,o_h,o_d,o_a,o_ov,o_un,src,home,away,n_src,xg_h,xg_a,sea
 2026-12-11,L1,,,False,,,,,,espn,Auxerre,Toulouse,1,,,2026,,
 2026-12-11,LL,,,False,,,,,,espn,Elche,Sevilla,1,,,2026,,
 2026-12-11,SA,,,False,,,,,,espn,Udinese,Frosinone,1,,,2026,,
+2026-12-12,IL,,,False,,,,,,thesportsdb,Beitar Jerusalem,Hapoel Tel-Aviv,1,,,2026,,
+2026-12-12,IL,,,False,,,,,,thesportsdb,Hapoel Haifa,Hapoel Be'er Sheva,1,,,2026,,
+2026-12-12,IL,,,False,,,,,,thesportsdb,Maccabi Tel Aviv,Hapoel Jerusalem,1,,,2026,,
+2026-12-12,L1,,,False,,,,,,espn,Angers,Strasbourg,1,,,2026,,
+2026-12-12,L1,,,False,,,,,,espn,Brest,Troyes,1,,,2026,,
+2026-12-12,L1,,,False,,,,,,espn,Le Havre,Le Mans,1,,,2026,,
+2026-12-12,L1,,,False,,,,,,espn,Nice,Lens,1,,,2026,,
+2026-12-12,L1,,,False,,,,,,espn,Paris SG,Paris FC,1,,,2026,,
+2026-12-12,LL,,,False,,,,,,espn,Betis,Santander,1,,,2026,,
+2026-12-12,LL,,,False,,,,,,espn,Levante,Alaves,1,,,2026,,
+2026-12-12,LL,,,False,,,,,,espn,Malaga,Barcelona,1,,,2026,,
+2026-12-12,LL,,,False,,,,,,espn,Villarreal,Vallecano,1,,,2026,,
+2026-12-12,PL,,,False,,,,,,espn,Fulham,Brentford,1,,,2026,,
+2026-12-12,PL,,,False,,,,,,espn,Ipswich,Newcastle,1,,,2026,,
+2026-12-12,PL,,,False,,,,,,espn,Liverpool,Leeds,1,,,2026,,
+2026-12-12,PL,,,False,,,,,,espn,Man City,Chelsea,1,,,2026,,
+2026-12-12,SA,,,False,,,,,,espn,Cagliari,Venezia,1,,,2026,,
+2026-12-12,SA,,,False,,,,,,espn,Como,Bologna,1,,,2026,,
+2026-12-12,SA,,,False,,,,,,espn,Lecce,Sassuolo,1,,,2026,,
